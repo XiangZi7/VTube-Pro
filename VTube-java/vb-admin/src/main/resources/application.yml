@@ -49,3 +49,5 @@ vtube:
       - /default/**
       - /css/**
       - /js/**
+      # 视频管理
+      - /video/**
