@@ -1,0 +1,10 @@
+
+// 修改scss变量
+$vxe-font-size: 14px;
+$vxe-font-color: #666;
+$vxe-primary-color: #409eff;
+$vxe-table-font-color: $vxe-font-color;
+$vxe-table-border-color: #e8eaec;
+$vxe-table-border-radius: 10px;
+
+@import 'vxe-table/styles/index.scss';
