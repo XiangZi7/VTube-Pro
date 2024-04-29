@@ -1,0 +1,32 @@
+:root {
+  --van-base-font: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Segoe UI, Arial, Roboto, "PingFang SC", "miui", "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+}
+
+html, body {
+  font-family: var(--van-base-font), ui-sans-serif;
+}
+
+.tab-transition-enter-active,
+.tab-transition-leave-active {
+  transition: background-color 0.5s;
+}
+
+.tab-transition-enter,
+.tab-transition-leave-to {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(226, 226, 226);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgb(246, 247, 248);
+  border-radius: 10px;
+}

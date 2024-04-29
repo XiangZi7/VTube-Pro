@@ -1,0 +1,51 @@
+spring:
+  # 环境 dev|test|prod
+  profiles:
+    active: dev
+  #文件上传设置
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+      enabled: true
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+#打开Mybatis plus select信息
+mybatis-plus:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# Sa-Token 配置
+sa-token:
+  # token名称 (同时也是cookie名称)
+  token-name: Authorization
+  # 是否允许同一账号并发登录 (为true时允许一起登录, 为false时新登录挤掉旧登录)
+  is-concurrent: true
+  # 在多人登录同一账号时，是否共用一个token(不共用，避免登出时导致其他用户也登出)
+  is-share: false
+  # token风格(默认可取值：uuid、simple-uuid、random-32、random-64、random-128、tik)
+  token-style: random-64
+  # 是否输出操作日志
+  is-log: false
+vtube:
+  aop:
+    visits: 30
+  sa-token:
+    # 路由放行
+    excludes:
+      - /test/**
+      - /favicon.ico
+      #文档
+      - /swagger-ui/**
+      - /swagger-resources/**
+      - /v3/**
+      - /error
+      # 内容管理
+      - /default/**
+      - /css/**
+      - /js/**
