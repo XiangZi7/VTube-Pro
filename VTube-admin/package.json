@@ -14,8 +14,7 @@
     "lint": "eslint src --fix --ext .ts,.tsx,.js,.jsx --max-warnings 0",
     "prettier-format": "prettier --config .prettierrc.cjs \"src/**/*.{js,ts,vue}\" --write",
     "build:dev": "vue-tsc --noEmit && vite build --mode development",
-    "build:pro": "vue-tsc --noEmit && vite build --mode production",
-    "commit": "git add -A && git-cz && git push"
+    "build:pro": "vue-tsc --noEmit && vite build --mode production"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json}": [

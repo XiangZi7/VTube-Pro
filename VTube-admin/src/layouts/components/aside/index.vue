@@ -34,10 +34,8 @@
           data-v0-t="card"
         >
           <div class="flex flex-col space-y-1.5 p-6 pb-4">
-            <h3
-              class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight"
-            >
-              Upgrade to Pro
+            <h3 class="text-2xl font-semibold leading-none tracking-tight">
+              welcome to Pro
             </h3>
             <p class="text-sm text-muted-foreground">
               Unlock all features and get unlimited access to our support team

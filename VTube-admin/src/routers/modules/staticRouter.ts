@@ -37,6 +37,11 @@ export const staticRouter: RouteRecordRaw[] = [
         name: 'video',
         component: () => import('@/pages/video/index.vue'),
       },
+      {
+        path: '/setting',
+        name: 'setting',
+        component: () => import('@/pages/setting/index.vue'),
+      },
     ],
   },
   {

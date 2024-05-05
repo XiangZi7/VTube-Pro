@@ -28,7 +28,7 @@ defineProps({
   <vxe-table
     round
     :data="tableData"
-    height="90%"
+    height="87%"
     auto-resize
     :column-config="{ resizable: true }"
     :row-config="{ isHover: true }"
@@ -36,6 +36,7 @@ defineProps({
     <vxe-column
       v-for="config in tableColumn"
       :key="config.key"
+      :align="config.align ?? 'center'"
       :type="config.type"
       :field="config.field"
       :title="config.title"
