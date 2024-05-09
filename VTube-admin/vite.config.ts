@@ -47,6 +47,14 @@ export default ({ mode }: ConfigEnv): UserConfig => {
     },
     // 打包配置
     build: {
+      rollupOptions: {
+        // 静态资源分类打包
+        output: {
+          chunkFileNames: 'static/js/[name]-[hash].js',
+          entryFileNames: 'static/js/[name]-[hash].js',
+          assetFileNames: 'static/[ext]/[name]-[hash].[ext]',
+        },
+      },
       target: "modules", // 设置最终构建的浏览器兼容目标。modules:支持原生 ES 模块的浏览器
       outDir: "dist", // 指定输出路径
       assetsDir: "assets", // 指定生成静态资源的存放路径

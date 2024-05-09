@@ -1,8 +1,17 @@
-export interface RowVO {
+export interface VideoVO {
   id: number
-  name: string
-  role: string
-  sex: string
-  age: number
-  address: string
+  title: string
+  description: string
+  views: number
+  likes: number
+  userId: number
+  userName: string
+  createTime: string
+  videoPath: string
+  imagePath: string
+}
+
+export interface queryParamVO {
+  title?: string
+  userId?: number
 }

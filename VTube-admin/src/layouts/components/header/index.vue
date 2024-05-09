@@ -3,42 +3,42 @@ import { Icon } from '@iconify/vue'
 </script>
 
 <template>
-  <header
-    class="flex h-14 lg:h-[60px] items-center gap-4 border-b bg-gray-100/40 px-6 dark:bg-gray-800/40"
-  >
-    <div class="w-full flex-1 flex items-center gap-3">
-      <h1
-        class="relative flex items-center text-4xl font-bold text-gray-800 dark:text-white dark:opacity-80 transition-colors cursor-pointer"
+  <header class="flex items-center justify-between mx-5 px-6 py-4 bg-white/90 shadow-app rounded-b-2xl ">
+    <div class="w-full md:w-1/2">
+      <input
+        class="flex h-10 border-input bg-background text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 px-4 py-2 border rounded-md w-full"
+        placeholder="Search"
+      />
+    </div>
+    <div class="flex items-center space-x-4">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="w-5 h-5 text-gray-600"
       >
-        VTube
-        <span class="ml-1 rounded-xl bg-current p-2 text-[0.7em] leading-none">
-          <span class="text-white dark:text-black">Admin</span>
-        </span>
-      </h1>
+        <path
+          d="M22 17a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9.5C2 7 4 5 6.5 5H18c2.2 0 4 1.8 4 4v8Z"
+        ></path>
+        <polyline points="15,9 18,9 18,11"></polyline>
+        <path d="M6.5 5C9 5 11 7 11 9.5V17a2 2 0 0 1-2 2v0"></path>
+        <line x1="6" x2="7" y1="10" y2="10"></line>
+      </svg>
+      <span
+        class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full"
+      >
+        <img
+          class="aspect-square h-full w-full"
+          alt="Profile"
+          src="https://generated.vusercontent.net/placeholder.svg?height=40&amp;width=40"
+        />
+      </span>
     </div>
-    <div class="flex items-center gap-1">
-      <Icon icon="fluent:weather-hail-day-20-regular" class="text-lg" />
-      <span class="text-sm text-gray-500 dark:text-gray-400"> 27° </span>
-    </div>
-    <Icon icon="material-symbols:bluetooth" class="text-lg" />
-    <Icon icon="material-symbols:wifi" class="text-lg" />
-    <Icon icon="ic:baseline-battery-charging-80" class="text-lg" />
-    <button
-      class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground rounded-full border border-gray-200 w-8 h-8 dark:border-gray-800"
-      type="button"
-      id="radix-:r2:"
-      aria-haspopup="menu"
-      aria-expanded="false"
-      data-state="closed"
-    >
-      <img
-        src="https://generated.vusercontent.net/placeholder.svg"
-        width="32"
-        height="32"
-        class="rounded-full"
-        alt="Avatar"
-        style="aspect-ratio: 32 / 32; object-fit: cover"
-      /><span class="sr-only">Toggle user menu</span>
-    </button>
   </header>
 </template>

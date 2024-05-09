@@ -19,10 +19,13 @@ module.exports = {
         "plugin:@typescript-eslint/recommended",
         "plugin:vue/vue3-essential",
         "airbnb-base",
+        'eslint-config-prettier',
         "prettier"
     ],
+    ignorePatterns: ['dist', 'node_modules', '.eslintrc.cjs'],
     // eslint 会对代码进行校验，parser是将代码转换为ESTree(AST),ESlint会对ESTree校验
     parser: "vue-eslint-parser",
+
     // 解析器的配置项
     parserOptions: {
         // eslint的版本号，或者年份都可以
@@ -50,7 +53,9 @@ module.exports = {
      */
     plugins: [
         "@typescript-eslint",
-        "vue"
+        "vue",
+        'import',
+        'prettier'
     ],
     settings: {
         // 设置项目内的别名

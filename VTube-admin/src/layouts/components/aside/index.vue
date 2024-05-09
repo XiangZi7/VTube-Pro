@@ -1,59 +1,39 @@
 <template>
-  <div
-    class="hidden border-r bg-gray-100/40 lg:block dark:bg-gray-800/40 overflow-hidden"
+  <aside
+    class="w-full flex-shrink-0 rounded-tr-2xl  box-border bg-white/90 text-sm dark:border-black dark:bg-neutral-900/80 dark:text-neutral-200 md:w-64 px-4 py-8 border-r md:block hidden text-neutral-800 shadow-app"
   >
-    <div class="flex h-full max-h-screen flex-col gap-2">
-      <div class="flex h-[60px] items-center border-b px-6">
-        <a class="flex items-center gap-2 font-semibold" href="#">
-          <Icon icon="skill-icons:apple-light" class="text-2xl" />
-          <span class="">Apps</span>
-        </a>
-        <button
-          class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground ml-auto h-8 w-8"
-        >
-          <Icon icon="ph:bell" />
-          <span class="sr-only">Toggle notifications</span>
-        </button>
-      </div>
-      <div class="flex-1 overflow-auto py-2">
-        <nav class="grid items-start px-4 text-sm font-medium">
-          <router-link
-            v-for="item in data"
-            :key="item.title"
-            :to="item.route"
-            class="flex items-center gap-3 rounded-lg bg-gray-100 px-3 py-2 text-gray-900 transition-all hover:text-gray-900 dark:bg-gray-800 dark:text-gray-50 dark:hover:text-gray-50"
-            href="#"
-          >
-            {{ item.title }}
-          </router-link>
-        </nav>
-      </div>
-      <div class="mt-auto p-4">
-        <div
-          class="rounded-lg border bg-card text-card-foreground shadow-sm"
-          data-v0-t="card"
-        >
-          <div class="flex flex-col space-y-1.5 p-6 pb-4">
-            <h3 class="text-2xl font-semibold leading-none tracking-tight">
-              welcome to Pro
-            </h3>
-            <p class="text-sm text-muted-foreground">
-              Unlock all features and get unlimited access to our support team
-            </p>
-          </div>
-          <div class="p-6">
-            <button
-              class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 w-full"
-            >
-              Upgrade
-            </button>
-          </div>
-        </div>
-      </div>
+    <div class="flex items-center space-x-3">
+      <span
+        class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full"
+      >
+        <img
+          class="aspect-square h-full w-full"
+          alt="Admin"
+          src="https://generated.vusercontent.net/placeholder.svg?height=40&amp;width=40"
+        />
+      </span>
+      <span class="text-lg font-semibold">Admin</span>
     </div>
-  </div>
+    <nav class="flex flex-col mt-8 space-y-1">
+      <button
+        class="inline-flex items-center hover:bg-gray-100 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 justify-start"
+        v-for="(item, index) in data"
+        :key="item.title"
+        :class="
+          index == currentTab
+            ? 'bg-gray-100 dark:bg-gray-800 dark:hover:text-gray-50'
+            : 'dark:text-gray-400'
+        "
+      >
+        <Icon :icon="item.icon" class="w-5 h-5 mr-3" />
+        {{ item.title }}
+      </button>
+    </nav>
+  </aside>
 </template>
 <script setup lang="ts">
 import { Icon } from '@iconify/vue'
 import { data } from './data.ts'
+
+const currentTab = ref(0)
 </script>

@@ -1,5 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
+
 import { staticRouter } from './modules/staticRouter'
+
 import NProgress from '@/comfig/nprogress'
 
 // 创建 router 实例

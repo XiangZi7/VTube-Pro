@@ -38,6 +38,12 @@
   background-color: hsl(var(--primary));
 }
 
+.shadow-app {
+  --tw-shadow: 0 0 1px 0 rgba(0, 0, 0, .25), 0 4px 8px 0 rgba(0, 0, 0, .05), 0 16px 32px 0 rgba(0, 0, 0, .05);
+  --tw-shadow-colored: 0 0 1px 0 var(--tw-shadow-color), 0 4px 8px 0 var(--tw-shadow-color), 0 16px 32px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .text-primary-foreground {
   color: hsl(var(--primary-foreground));
 }
@@ -62,4 +68,17 @@
   background: 226, 226, 226;
   background-color: rgb(66, 66, 66);
   border-radius: 10px;
+}
+
+html, body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 245 245 / var(--tw-bg-opacity));
+}
+
+* {
+  box-sizing: border-box;
 }

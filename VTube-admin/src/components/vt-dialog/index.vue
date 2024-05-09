@@ -5,9 +5,17 @@
     @click="close"
   >
     <div
-      class="bg-white max-w-lg gap-4 border p-6 shadow-lg rounded-lg sm:max-w-[420px]"
+      :style="{ width: width + 'px' }"
+      class="bg-white border p-6 shadow-lg rounded-lg relative"
       @click.stop
     >
+      <div class="absolute right-5 top-2">
+        <Icon
+          icon="material-symbols:close-rounded"
+          class="text-xl cursor-pointer"
+          @click="VModel = false"
+        />
+      </div>
       <div
         v-if="isHeader"
         class="dialog-header py-2 text-black whitespace-nowrap text-lg font-semibold leading-none tracking-tight"
@@ -15,10 +23,10 @@
         <slot name="header">Confirm Action</slot>
       </div>
       <div class="dialog-content text-sm text-muted-foreground text-gray-500">
-        <slot name="content"
+        <slot
           >Are you sure you want to proceed with this action? This cannot be
-          undone.</slot
-        >
+          undone.
+        </slot>
       </div>
       <div class="dialog-footer py-2 text-right" v-if="isFooter">
         <slot name="footer"></slot>
@@ -28,6 +36,8 @@
 </template>
 
 <script setup lang="ts">
+import { Icon } from '@iconify/vue'
+
 const VModel = defineModel<boolean>()
 defineProps({
   isHeader: {
@@ -37,6 +47,10 @@ defineProps({
   isFooter: {
     type: Boolean,
     default: true,
+  },
+  width: {
+    type: [String, Number],
+    default: 500,
   },
 })
 const close = () => {
