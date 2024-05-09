@@ -18,8 +18,8 @@ public class Comment implements Serializable {
     /**
      * 评论ID
      */
-    @TableId(value = "id", type = IdType.AUTO)
-    private Integer id;
+    @TableId(value = "comment_id", type = IdType.AUTO)
+    private Integer commentId;
 
     /**
      * 评论内容
@@ -60,7 +60,7 @@ public class Comment implements Serializable {
             return false;
         }
         Comment other = (Comment) that;
-        return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
+        return (this.getCommentId() == null ? other.getCommentId() == null : this.getCommentId().equals(other.getCommentId()))
             && (this.getContent() == null ? other.getContent() == null : this.getContent().equals(other.getContent()))
             && (this.getVideoId() == null ? other.getVideoId() == null : this.getVideoId().equals(other.getVideoId()))
             && (this.getUserId() == null ? other.getUserId() == null : this.getUserId().equals(other.getUserId()))
@@ -71,7 +71,7 @@ public class Comment implements Serializable {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
+        result = prime * result + ((getCommentId() == null) ? 0 : getCommentId().hashCode());
         result = prime * result + ((getContent() == null) ? 0 : getContent().hashCode());
         result = prime * result + ((getVideoId() == null) ? 0 : getVideoId().hashCode());
         result = prime * result + ((getUserId() == null) ? 0 : getUserId().hashCode());
@@ -85,7 +85,7 @@ public class Comment implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
+        sb.append(", commentId=").append(commentId);
         sb.append(", content=").append(content);
         sb.append(", videoId=").append(videoId);
         sb.append(", userId=").append(userId);

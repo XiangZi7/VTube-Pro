@@ -5,14 +5,29 @@
 <mapper namespace="com.vtube.mapper.DictionaryMapper">
 
     <resultMap id="BaseResultMap" type="com.vtube.domain.Dictionary">
-            <id property="id" column="id" jdbcType="INTEGER"/>
+            <id property="dictionaryId" column="dictionary_id" jdbcType="INTEGER"/>
             <result property="type" column="type" jdbcType="VARCHAR"/>
             <result property="code" column="code" jdbcType="VARCHAR"/>
             <result property="name" column="name" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,type,code,
+        dictionary_id,type,code,
         name
     </sql>
+
+    <select id="selectDictData" resultType="com.vtube.vo.dictVO">
+        SELECT name as label, code as value
+        from vt_dictionary
+        WHERE type = #{dict}
+    </select>
+
+    <select id="selectDictUserData" resultType="com.vtube.vo.dictVO">
+        SELECT username as label, user_id as value
+        from vt_user
+        where 1 = 1
+        <if test="keyword != null and keyword != ''">
+            and username LIKE concat('%',#{keyword},'%')
+        </if>
+    </select>
 </mapper>

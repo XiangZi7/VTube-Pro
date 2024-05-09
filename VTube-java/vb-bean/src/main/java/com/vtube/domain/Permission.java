@@ -17,8 +17,8 @@ public class Permission implements Serializable {
     /**
      * 权限ID
      */
-    @TableId(value = "id", type = IdType.AUTO)
-    private Integer id;
+    @TableId(value = "permission_id", type = IdType.AUTO)
+    private Integer permissionId;
 
     /**
      * 权限名称
@@ -47,7 +47,7 @@ public class Permission implements Serializable {
             return false;
         }
         Permission other = (Permission) that;
-        return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
+        return (this.getPermissionId() == null ? other.getPermissionId() == null : this.getPermissionId().equals(other.getPermissionId()))
             && (this.getName() == null ? other.getName() == null : this.getName().equals(other.getName()))
             && (this.getCode() == null ? other.getCode() == null : this.getCode().equals(other.getCode()));
     }
@@ -56,7 +56,7 @@ public class Permission implements Serializable {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
+        result = prime * result + ((getPermissionId() == null) ? 0 : getPermissionId().hashCode());
         result = prime * result + ((getName() == null) ? 0 : getName().hashCode());
         result = prime * result + ((getCode() == null) ? 0 : getCode().hashCode());
         return result;
@@ -68,7 +68,7 @@ public class Permission implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
+        sb.append(", permissionId=").append(permissionId);
         sb.append(", name=").append(name);
         sb.append(", code=").append(code);
         sb.append(", serialVersionUID=").append(serialVersionUID);

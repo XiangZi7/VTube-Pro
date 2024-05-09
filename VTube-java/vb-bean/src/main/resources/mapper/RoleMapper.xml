@@ -5,11 +5,11 @@
 <mapper namespace="com.vtube.mapper.RoleMapper">
 
     <resultMap id="BaseResultMap" type="com.vtube.domain.Role">
-            <id property="id" column="id" jdbcType="INTEGER"/>
+            <id property="roleId" column="role_id" jdbcType="INTEGER"/>
             <result property="name" column="name" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,name
+        role_id,name
     </sql>
 </mapper>

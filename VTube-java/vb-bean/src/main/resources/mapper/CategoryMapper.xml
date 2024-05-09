@@ -5,12 +5,12 @@
 <mapper namespace="com.vtube.mapper.CategoryMapper">
 
     <resultMap id="BaseResultMap" type="com.vtube.domain.Category">
-            <id property="id" column="id" jdbcType="INTEGER"/>
+            <id property="categoryId" column="category_id" jdbcType="INTEGER"/>
             <result property="name" column="name" jdbcType="VARCHAR"/>
             <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,name,create_time
+        category_id,name,create_time
     </sql>
 </mapper>

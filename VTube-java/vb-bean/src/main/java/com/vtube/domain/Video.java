@@ -18,8 +18,8 @@ public class Video implements Serializable {
     /**
      * 视频ID
      */
-    @TableId(value = "id", type = IdType.AUTO)
-    private Integer id;
+    @TableId(value = "video_id", type = IdType.AUTO)
+    private Integer videoId;
 
     /**
      * 视频标题
@@ -58,16 +58,19 @@ public class Video implements Serializable {
     private LocalDateTime createTime;
 
     /**
-     * 
+     * 视频地址
      */
     @TableField(value = "video_path")
     private String videoPath;
 
     /**
-     * 
+     * 封面地址
      */
     @TableField(value = "image_path")
     private String imagePath;
+
+    @TableField(exist = false)
+    private String userName;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
@@ -84,7 +87,7 @@ public class Video implements Serializable {
             return false;
         }
         Video other = (Video) that;
-        return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
+        return (this.getVideoId() == null ? other.getVideoId() == null : this.getVideoId().equals(other.getVideoId()))
             && (this.getTitle() == null ? other.getTitle() == null : this.getTitle().equals(other.getTitle()))
             && (this.getDescription() == null ? other.getDescription() == null : this.getDescription().equals(other.getDescription()))
             && (this.getViews() == null ? other.getViews() == null : this.getViews().equals(other.getViews()))
@@ -99,7 +102,7 @@ public class Video implements Serializable {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
+        result = prime * result + ((getVideoId() == null) ? 0 : getVideoId().hashCode());
         result = prime * result + ((getTitle() == null) ? 0 : getTitle().hashCode());
         result = prime * result + ((getDescription() == null) ? 0 : getDescription().hashCode());
         result = prime * result + ((getViews() == null) ? 0 : getViews().hashCode());
@@ -117,7 +120,7 @@ public class Video implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
+        sb.append(", videoId=").append(videoId);
         sb.append(", title=").append(title);
         sb.append(", description=").append(description);
         sb.append(", views=").append(views);

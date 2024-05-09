@@ -14,10 +14,10 @@ import java.net.InetAddress;
 
 @Slf4j
 @SpringBootApplication
-public class VbAdminApplication implements ApplicationListener<WebServerInitializedEvent> {
+public class AdminApplication implements ApplicationListener<WebServerInitializedEvent> {
 
 	public static void main(String[] args) {
-		SpringApplication.run(VbAdminApplication.class, args);
+		SpringApplication.run(AdminApplication.class, args);
 	}
 
 	@SneakyThrows

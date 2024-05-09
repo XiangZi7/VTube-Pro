@@ -5,7 +5,7 @@
 <mapper namespace="com.vtube.mapper.VideoMapper">
 
     <resultMap id="BaseResultMap" type="com.vtube.domain.Video">
-            <id property="id" column="id" jdbcType="INTEGER"/>
+            <id property="videoId" column="video_id" jdbcType="INTEGER"/>
             <result property="title" column="title" jdbcType="VARCHAR"/>
             <result property="description" column="description" jdbcType="VARCHAR"/>
             <result property="views" column="views" jdbcType="INTEGER"/>
@@ -17,14 +17,31 @@
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,title,description,
+        video_id,title,description,
         views,likes,user_id,
         create_time,video_path,image_path
     </sql>
+
     <select id="VideoList" resultType="com.vtube.domain.Video">
         SELECT
-        <include refid="Base_Column_List"/>
-        FROM vt_video
-        ORDER BY create_time DESC
+        vt_video.video_id,
+        title,
+        description,
+        views,
+        likes,
+        vt_video.user_id,
+        vt_video.create_time,
+        video_path,
+        image_path,
+        vu.username AS userName
+        FROM vt_video left join vt_user vu on vt_video.user_id = vu.user_id
+        where 1=1
+        <if test="video.title != null and video.title != ''">
+            and title LIKE concat('%',#{video.title},'%')
+        </if>
+        <if test="video.userId != null and video.userId != ''">
+            and vt_video.user_id = #{video.userId}
+        </if>
+        ORDER BY vt_video.create_time DESC
     </select>
 </mapper>

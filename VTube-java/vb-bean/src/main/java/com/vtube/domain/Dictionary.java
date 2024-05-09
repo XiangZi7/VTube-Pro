@@ -17,8 +17,8 @@ public class Dictionary implements Serializable {
     /**
      * 字典ID
      */
-    @TableId(value = "id", type = IdType.AUTO)
-    private Integer id;
+    @TableId(value = "dictionary_id", type = IdType.AUTO)
+    private Integer dictionaryId;
 
     /**
      * 字典类型
@@ -53,7 +53,7 @@ public class Dictionary implements Serializable {
             return false;
         }
         Dictionary other = (Dictionary) that;
-        return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
+        return (this.getDictionaryId() == null ? other.getDictionaryId() == null : this.getDictionaryId().equals(other.getDictionaryId()))
             && (this.getType() == null ? other.getType() == null : this.getType().equals(other.getType()))
             && (this.getCode() == null ? other.getCode() == null : this.getCode().equals(other.getCode()))
             && (this.getName() == null ? other.getName() == null : this.getName().equals(other.getName()));
@@ -63,7 +63,7 @@ public class Dictionary implements Serializable {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
+        result = prime * result + ((getDictionaryId() == null) ? 0 : getDictionaryId().hashCode());
         result = prime * result + ((getType() == null) ? 0 : getType().hashCode());
         result = prime * result + ((getCode() == null) ? 0 : getCode().hashCode());
         result = prime * result + ((getName() == null) ? 0 : getName().hashCode());
@@ -76,7 +76,7 @@ public class Dictionary implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
+        sb.append(", dictionaryId=").append(dictionaryId);
         sb.append(", type=").append(type);
         sb.append(", code=").append(code);
         sb.append(", name=").append(name);

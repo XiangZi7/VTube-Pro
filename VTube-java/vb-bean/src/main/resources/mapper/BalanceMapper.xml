@@ -5,14 +5,14 @@
 <mapper namespace="com.vtube.mapper.BalanceMapper">
 
     <resultMap id="BaseResultMap" type="com.vtube.domain.Balance">
-            <id property="id" column="id" jdbcType="INTEGER"/>
+            <id property="balanceId" column="balance_id" jdbcType="INTEGER"/>
             <result property="userId" column="user_id" jdbcType="INTEGER"/>
             <result property="amount" column="amount" jdbcType="DECIMAL"/>
             <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,user_id,amount,
+        balance_id,user_id,amount,
         create_time
     </sql>
 </mapper>

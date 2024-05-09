@@ -5,12 +5,12 @@
 <mapper namespace="com.vtube.mapper.PermissionMapper">
 
     <resultMap id="BaseResultMap" type="com.vtube.domain.Permission">
-            <id property="id" column="id" jdbcType="INTEGER"/>
+            <id property="permissionId" column="permission_id" jdbcType="INTEGER"/>
             <result property="name" column="name" jdbcType="VARCHAR"/>
             <result property="code" column="code" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,name,code
+        permission_id,name,code
     </sql>
 </mapper>

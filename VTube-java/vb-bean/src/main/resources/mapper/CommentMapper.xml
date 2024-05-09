@@ -5,7 +5,7 @@
 <mapper namespace="com.vtube.mapper.CommentMapper">
 
     <resultMap id="BaseResultMap" type="com.vtube.domain.Comment">
-            <id property="id" column="id" jdbcType="INTEGER"/>
+            <id property="commentId" column="comment_id" jdbcType="INTEGER"/>
             <result property="content" column="content" jdbcType="VARCHAR"/>
             <result property="videoId" column="video_id" jdbcType="INTEGER"/>
             <result property="userId" column="user_id" jdbcType="INTEGER"/>
@@ -13,7 +13,7 @@
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,content,video_id,
+        comment_id,content,video_id,
         user_id,create_time
     </sql>
 </mapper>

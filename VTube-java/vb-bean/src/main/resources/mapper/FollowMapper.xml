@@ -5,14 +5,14 @@
 <mapper namespace="com.vtube.mapper.FollowMapper">
 
     <resultMap id="BaseResultMap" type="com.vtube.domain.Follow">
-            <id property="id" column="id" jdbcType="INTEGER"/>
+            <id property="followId" column="follow_id" jdbcType="INTEGER"/>
             <result property="followerId" column="follower_id" jdbcType="INTEGER"/>
             <result property="followedId" column="followed_id" jdbcType="INTEGER"/>
             <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,follower_id,followed_id,
+        follow_id,follower_id,followed_id,
         create_time
     </sql>
 </mapper>

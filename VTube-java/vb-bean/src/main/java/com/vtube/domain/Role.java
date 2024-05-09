@@ -17,8 +17,8 @@ public class Role implements Serializable {
     /**
      * 角色ID
      */
-    @TableId(value = "id", type = IdType.AUTO)
-    private Integer id;
+    @TableId(value = "role_id", type = IdType.AUTO)
+    private Integer roleId;
 
     /**
      * 角色名称
@@ -41,7 +41,7 @@ public class Role implements Serializable {
             return false;
         }
         Role other = (Role) that;
-        return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
+        return (this.getRoleId() == null ? other.getRoleId() == null : this.getRoleId().equals(other.getRoleId()))
             && (this.getName() == null ? other.getName() == null : this.getName().equals(other.getName()));
     }
 
@@ -49,7 +49,7 @@ public class Role implements Serializable {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
+        result = prime * result + ((getRoleId() == null) ? 0 : getRoleId().hashCode());
         result = prime * result + ((getName() == null) ? 0 : getName().hashCode());
         return result;
     }
@@ -60,7 +60,7 @@ public class Role implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
+        sb.append(", roleId=").append(roleId);
         sb.append(", name=").append(name);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");

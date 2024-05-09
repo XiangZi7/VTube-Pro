@@ -19,8 +19,8 @@ public class Vip implements Serializable {
     /**
      * 会员ID
      */
-    @TableId(value = "id", type = IdType.AUTO)
-    private Integer id;
+    @TableId(value = "vip_id", type = IdType.AUTO)
+    private Integer vipId;
 
     /**
      * 用户ID
@@ -61,7 +61,7 @@ public class Vip implements Serializable {
             return false;
         }
         Vip other = (Vip) that;
-        return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
+        return (this.getVipId() == null ? other.getVipId() == null : this.getVipId().equals(other.getVipId()))
             && (this.getUserId() == null ? other.getUserId() == null : this.getUserId().equals(other.getUserId()))
             && (this.getExpireDate() == null ? other.getExpireDate() == null : this.getExpireDate().equals(other.getExpireDate()))
             && (this.getIsVip() == null ? other.getIsVip() == null : this.getIsVip().equals(other.getIsVip()))
@@ -72,7 +72,7 @@ public class Vip implements Serializable {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
+        result = prime * result + ((getVipId() == null) ? 0 : getVipId().hashCode());
         result = prime * result + ((getUserId() == null) ? 0 : getUserId().hashCode());
         result = prime * result + ((getExpireDate() == null) ? 0 : getExpireDate().hashCode());
         result = prime * result + ((getIsVip() == null) ? 0 : getIsVip().hashCode());
@@ -86,7 +86,7 @@ public class Vip implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
+        sb.append(", vipId=").append(vipId);
         sb.append(", userId=").append(userId);
         sb.append(", expireDate=").append(expireDate);
         sb.append(", isVip=").append(isVip);

@@ -5,7 +5,7 @@
 <mapper namespace="com.vtube.mapper.AdminMapper">
 
     <resultMap id="BaseResultMap" type="com.vtube.domain.Admin">
-            <id property="id" column="id" jdbcType="INTEGER"/>
+            <id property="adminId" column="admin_id" jdbcType="INTEGER"/>
             <result property="username" column="username" jdbcType="VARCHAR"/>
             <result property="password" column="password" jdbcType="VARCHAR"/>
             <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
@@ -13,7 +13,7 @@
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,username,password,
+        admin_id,username,password,
         create_time,avatar_path
     </sql>
 </mapper>

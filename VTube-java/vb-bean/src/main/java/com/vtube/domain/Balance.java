@@ -19,8 +19,8 @@ public class Balance implements Serializable {
     /**
      * 余额ID
      */
-    @TableId(value = "id", type = IdType.AUTO)
-    private Integer id;
+    @TableId(value = "balance_id", type = IdType.AUTO)
+    private Integer balanceId;
 
     /**
      * 用户ID
@@ -55,7 +55,7 @@ public class Balance implements Serializable {
             return false;
         }
         Balance other = (Balance) that;
-        return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
+        return (this.getBalanceId() == null ? other.getBalanceId() == null : this.getBalanceId().equals(other.getBalanceId()))
             && (this.getUserId() == null ? other.getUserId() == null : this.getUserId().equals(other.getUserId()))
             && (this.getAmount() == null ? other.getAmount() == null : this.getAmount().equals(other.getAmount()))
             && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()));
@@ -65,7 +65,7 @@ public class Balance implements Serializable {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
+        result = prime * result + ((getBalanceId() == null) ? 0 : getBalanceId().hashCode());
         result = prime * result + ((getUserId() == null) ? 0 : getUserId().hashCode());
         result = prime * result + ((getAmount() == null) ? 0 : getAmount().hashCode());
         result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
@@ -78,7 +78,7 @@ public class Balance implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
+        sb.append(", balanceId=").append(balanceId);
         sb.append(", userId=").append(userId);
         sb.append(", amount=").append(amount);
         sb.append(", createTime=").append(createTime);

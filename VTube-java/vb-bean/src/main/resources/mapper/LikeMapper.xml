@@ -5,14 +5,14 @@
 <mapper namespace="com.vtube.mapper.LikeMapper">
 
     <resultMap id="BaseResultMap" type="com.vtube.domain.Like">
-            <id property="id" column="id" jdbcType="INTEGER"/>
+            <id property="likeId" column="like_id" jdbcType="INTEGER"/>
             <result property="userId" column="user_id" jdbcType="INTEGER"/>
             <result property="videoId" column="video_id" jdbcType="INTEGER"/>
             <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,user_id,video_id,
+        like_id,user_id,video_id,
         create_time
     </sql>
 </mapper>
