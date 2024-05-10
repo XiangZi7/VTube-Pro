@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {VxeColumnProps} from "vxe-table";
+import { VxeColumnProps } from 'vxe-table'
 
 defineProps({
   tableColumn: {
@@ -29,10 +29,10 @@ const Emits = defineEmits(['pageChange'])
 <template>
   <el-table :data="tableData" class="!flex-1">
     <el-table-column
-        v-for="item in tableColumn"
-        :key="item.field"
-        :prop="item.field"
-        :label="item.title"
+      v-for="item in tableColumn"
+      :key="item.field"
+      :prop="item.field"
+      :label="item.title"
     />
   </el-table>
 </template>

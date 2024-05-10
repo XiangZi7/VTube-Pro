@@ -91,20 +91,22 @@ const deletes = async (id: number) => {
 </script>
 <template>
   <div class="flex flex-col h-full">
-    <div class="h-full w-full p-2 box-border flex flex-1 flex-col shadow-app rounded-2xl bg-white/90 gap-2 overflow-x-hidden overflow-auto">
+    <div
+      class="h-full w-full p-2 box-border flex flex-1 flex-col shadow-app rounded-2xl bg-white/90 gap-2 overflow-x-hidden overflow-auto"
+    >
       <div class="p-2">
         <button
-            class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3"
+          class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3"
         >
           Add user
         </button>
       </div>
       <el-table :data="tableData" class="!flex-1">
         <el-table-column
-            v-for="item in tableColumn"
-            :key="item.field"
-            :prop="item.field"
-            :label="item.title"
+          v-for="item in tableColumn"
+          :key="item.field"
+          :prop="item.field"
+          :label="item.title"
         />
       </el-table>
     </div>

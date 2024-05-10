@@ -3,7 +3,9 @@ import { Icon } from '@iconify/vue'
 </script>
 
 <template>
-  <header class="flex items-center justify-between mx-5 px-6 py-4 bg-white/90 shadow-app rounded-b-2xl ">
+  <header
+    class="flex items-center justify-between mx-5 px-6 py-4 bg-white/90 shadow-app rounded-b-2xl"
+  >
     <div class="w-full md:w-1/2">
       <input
         class="flex h-10 border-input bg-background text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 px-4 py-2 border rounded-md w-full"
