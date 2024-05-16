@@ -56,4 +56,4 @@ export const httpPost = <T>(
   url: string,
   data?: object,
   header?: object
-): Promise<T> => instance.post(url, data, header)
+): Promise<ApiResponse<T>> => instance.post(url, data, header)

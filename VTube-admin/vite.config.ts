@@ -3,6 +3,7 @@ import path from 'path'
 import vue from '@vitejs/plugin-vue'
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
+
 // https://vitejs.dev/config/
 export default ({ mode }: ConfigEnv): UserConfig => {
   const Env = loadEnv(mode, process.cwd());
@@ -10,7 +11,7 @@ export default ({ mode }: ConfigEnv): UserConfig => {
   return defineConfig ({
     plugins: [vue(),
       AutoImport({
-        imports: ["vue", "vue-router"],
+        imports: ["vue", "vue-router","pinia"],
         dirs: ["src/utils/**", "src/stores/modules/**", "src/hooks/**"],
         dts: "src/auto-import/imports.d.ts",
         eslintrc: {

@@ -12,9 +12,9 @@ export const SideBarData = [
         count: 0,
       },
       {
-        Title: 'MV',
+        Title: 'Video',
         icon: 'akar-icons:music-album',
-        router: '/mv',
+        router: '/video',
         count: 0,
       },
       {
@@ -45,4 +45,4 @@ export const SideBarData = [
       },
     ],
   },
-];
+]

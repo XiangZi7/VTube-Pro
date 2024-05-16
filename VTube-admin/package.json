@@ -10,6 +10,7 @@
   },
   "scripts": {
     "dev": "vite",
+    "VTube-admin": "vite",
     "preview": "vite preview",
     "lint": "eslint src --fix --ext .ts,.tsx,.js,.jsx --max-warnings 0",
     "prettier-format": "prettier --config .prettierrc.cjs \"src/**/*.{js,ts,vue}\" --write",
@@ -19,6 +20,7 @@
   "dependencies": {
     "@types/nprogress": "^0.2.3",
     "element-plus": "^2.7.2",
+    "unplugin-icons": "^0.19.0",
     "vue": "^3.4.21",
     "vue-router": "^4.3.2",
     "vxe-table": "^4.6.6"

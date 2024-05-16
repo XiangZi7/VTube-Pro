@@ -83,6 +83,13 @@ body {
   box-sizing: border-box;
 }
 
+html, body, #app{
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
 @keyframes jumbo {
   from {
     background-position: 50% 50%, 50% 50%;

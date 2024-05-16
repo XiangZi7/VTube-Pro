@@ -36,6 +36,24 @@ defineExpose({ dialogDisplay, openDialog })
             />
           </div>
           <div class="mb-4">
+            <label for="title" class="block text-sm font-medium text-gray-700"
+              >分类</label
+            >
+            <el-select
+              v-model="acceptParam!.model.categoryId"
+              :disabled="acceptParam?.disabled"
+              required
+              placeholder="请选择分类"
+            >
+              <el-option
+                v-for="(col, index) in acceptParam?.enumMap?.get('categoryName')"
+                :key="index"
+                :label="col.label"
+                :value="col.value"
+              />
+            </el-select>
+          </div>
+          <div class="mb-4">
             <label
               for="description"
               class="block text-sm font-medium text-gray-700"
@@ -83,15 +101,19 @@ defineExpose({ dialogDisplay, openDialog })
             <label for="userId" class="block text-sm font-medium text-gray-700"
               >上传者</label
             >
-            <input
+            <el-select
               v-model="acceptParam!.model.userId"
               :disabled="acceptParam?.disabled"
-              id="userId"
               required
-              name="userId"
-              class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm"
-              placeholder="Enter your userId"
-            />
+              placeholder="请选择用户"
+            >
+              <el-option
+                v-for="(col, index) in acceptParam?.enumMap?.get('userName')"
+                :key="index"
+                :label="col.label"
+                :value="col.value"
+              />
+            </el-select>
           </div>
           <div class="mb-4">
             <label

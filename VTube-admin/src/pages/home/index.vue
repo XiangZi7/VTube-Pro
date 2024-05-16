@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-5">
+  <div class="flex flex-col gap-5 w-full h-full min-h-full">
     <div class="flex items-center">
       <h1 class="font-semibold text-lg md:text-2xl">Notes</h1>
       <button

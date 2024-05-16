@@ -1,114 +1,96 @@
 <script setup lang="ts">
+import { TableColumn, TableRef } from '@/interface/components/vt-table-v2.ts'
 import { Icon } from '@iconify/vue'
-import { VxeColumnProps } from 'vxe-table'
-
-import { queryParamVO, VideoVO } from '@/interface/pages/video.ts'
 import Dialog from './dialog.vue'
-
-import { Pagination } from '@/interface/http'
+import { VideoVO } from '@/interface/pages/video'
 
 const DialogRef = ref<InstanceType<typeof Dialog> | null>(null)
-
-const tableColumn = ref<(VxeColumnProps & { slot?: string })[]>([
-  { field: 'videoId', title: 'id' },
-  { field: 'title', title: '标题' },
-  { field: 'description', title: '描述', width: 200 },
-  { field: 'views', title: '关注度' },
-  { field: 'likes', title: '点赞' },
-  { field: 'userName', title: '上传者' },
-  { field: 'createTime', title: '创建时间', sortable: true },
-  { field: '', title: '', width: 200, fixed: 'right', slot: 'action' },
+const vtTable = ref<TableRef>()
+const tableColumn = ref<TableColumn[]>([
+  { prop: 'videoId', label: 'id' },
+  { prop: 'title', label: '标题', search: { el: 'input' } },
+  {
+    prop: 'categoryName',
+    label: '分类',
+    enum: 'category',
+    search: { el: 'select', props: { filterable: true }, key: 'categoryId' },
+  },
+  {
+    prop: 'description',
+    label: '描述',
+    width: 200,
+  },
+  { prop: 'views', label: '关注度' },
+  { prop: 'likes', label: '点赞' },
+  {
+    prop: 'userName',
+    label: '上传者',
+    enum: 'user',
+    search: { el: 'select', props: { filterable: true }, key: 'userId' },
+  },
+  {
+    prop: 'createTime',
+    label: '创建时间',
+    search: { el: 'date-picker' },
+  },
+  { prop: '', label: '操作', width: 150, fixed: 'right', slotName: 'action' },
 ])
 
-const tableData = ref<VideoVO[]>([])
-const total = ref<number>(0)
-const current = ref<number>(1)
-const currentSize = ref<number>(20)
-const queryParam = ref<queryParamVO>({})
 // 打开对话框
 const openDialog = (title: string, row: Partial<VideoVO> = {}) => {
   const props = {
     title,
     model: row,
+    enumMap: vtTable.value?.enumMap,
     disabled: title === '查看',
   }
   DialogRef.value?.openDialog(props)
 }
-// 获取数据
-const fetchData = async (pageNum: number = 1, pageSize: number = 20) => {
-  // params
-  const queryParams: any = queryParam.value
-  const params: any = {
-    pageNum,
-    pageSize,
-  }
-
-  Object.keys(queryParams).forEach((key: string) => {
-    if (queryParams[key]) {
-      params[key] = queryParams[key]
-    }
-  })
-
-  const res = await httpGet<Pagination>('/video/list', params)
-  console.log(res)
-  tableData.value = res.data.records
-  total.value = res.data.total
-}
-// 分页
-const pageChange = (currentPage: number, Size: number) => {
-  currentSize.value = Size
-  current.value = currentPage
-  fetchData(currentPage, Size)
-}
-
-onMounted(() => {
-  fetchData()
-})
-
-// 搜索
-const search = () => {
-  fetchData()
-}
-
-// 重置
-const reset = () => {
-  const queryParams: any = queryParam.value
-
-  // 将所有 queryParam 的值重置为空字符串或 undefined
-  Object.keys(queryParams).forEach((key: string) => {
-    queryParams[key] = '' // 或者将值重置为 undefined
-  })
-
-  // 更新 queryParam
-  queryParam.value = { ...queryParams }
-  fetchData()
-}
 // 删除
 const deletes = async (id: number) => {
-  const res = await httpPost('/video/deletes', [id])
-  console.log(res)
+  const { code, data, message } = await httpPost('/video/deletes', [id])
+  meassgePro(code, data as string, message)
 }
 </script>
 <template>
   <div class="flex flex-col h-full">
     <div
-      class="h-full w-full p-2 box-border flex flex-1 flex-col shadow-app rounded-2xl bg-white/90 gap-2 overflow-x-hidden overflow-auto"
+      class="h-full w-full p-2 box-border flex flex-1 flex-col shadow-app rounded-2xl bg-white/90 gap-2"
     >
-      <div class="p-2">
-        <button
-          class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3"
-        >
-          Add user
-        </button>
-      </div>
-      <el-table :data="tableData" class="!flex-1">
-        <el-table-column
-          v-for="item in tableColumn"
-          :key="item.field"
-          :prop="item.field"
-          :label="item.title"
-        />
-      </el-table>
+      <vt-table-v2
+        ref="vtTable"
+        api="/video/list"
+        :columns="tableColumn"
+        class="!flex-1"
+      >
+        <template #btn>
+          <div class="p-2">
+            <button
+              @click="openDialog('新增')"
+              class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3"
+            >
+              Add user
+            </button>
+          </div>
+        </template>
+        <template #action="{ row }">
+          <div class="space-x-2 flex text-xl justify-around">
+            <Icon
+              icon="ic:round-remove-red-eye"
+              class="cursor-pointer"
+              @click="openDialog('查看', row)"
+            />
+            <el-popconfirm
+              :title="`确定要删除《${row.title}?》`"
+              @confirm="deletes(row.videoId)"
+            >
+              <template #reference>
+                <Icon icon="mdi:trash-can-outline" class="cursor-pointer" />
+              </template>
+            </el-popconfirm>
+          </div>
+        </template>
+      </vt-table-v2>
     </div>
   </div>
   <Dialog ref="DialogRef" />

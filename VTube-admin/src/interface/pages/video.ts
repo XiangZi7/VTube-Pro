@@ -9,6 +9,7 @@ export interface VideoVO {
   createTime: string
   videoPath: string
   imagePath: string
+  categoryId: string;
 }
 
 export interface queryParamVO {
