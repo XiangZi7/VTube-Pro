@@ -1,6 +1,7 @@
 package com.vtube.controller;
 
 import com.vtube.domain.Dictionary;
+import com.vtube.mapper.CategoryMapper;
 import com.vtube.mapper.DictionaryMapper;
 import com.vtube.model.ApiResult;
 import com.vtube.vo.dictVO;
@@ -22,6 +23,8 @@ public class dictController {
 
     @Resource
     private DictionaryMapper dictionaryMapper;
+    @Resource
+    private CategoryMapper categoryMapper;
 
     @GetMapping("/{dict}")
     public ApiResult<?> dict(@PathVariable("dict") String dict) {
@@ -32,5 +35,10 @@ public class dictController {
     public ApiResult<?> user() {
         List<dictVO> dictionaries = dictionaryMapper.selectDictUserData();
         return ApiResult.ok(dictionaries);
+    }
+    @GetMapping("/category")
+    public ApiResult<?> category() {
+        List<dictVO> dictVOS = categoryMapper.categoryDict();
+        return ApiResult.ok(dictVOS);
     }
 }

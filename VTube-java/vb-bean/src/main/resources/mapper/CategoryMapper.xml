@@ -6,11 +6,16 @@
 
     <resultMap id="BaseResultMap" type="com.vtube.domain.Category">
             <id property="categoryId" column="category_id" jdbcType="INTEGER"/>
+            <result property="parentId" column="parent_id" jdbcType="INTEGER"/>
             <result property="name" column="name" jdbcType="VARCHAR"/>
             <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        category_id,name,create_time
+        category_id,parent_id,name,
+        create_time
     </sql>
+    <select id="categoryDict" resultType="com.vtube.vo.dictVO">
+        SELECT category_id as value,name as label FROM vt_category
+    </select>
 </mapper>

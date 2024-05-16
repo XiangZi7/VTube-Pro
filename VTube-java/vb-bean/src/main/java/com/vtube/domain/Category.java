@@ -22,6 +22,12 @@ public class Category implements Serializable {
     private Integer categoryId;
 
     /**
+     * 父分类ID
+     */
+    @TableField(value = "parent_id")
+    private Integer parentId;
+
+    /**
      * 分类名称
      */
     @TableField(value = "name")
@@ -49,6 +55,7 @@ public class Category implements Serializable {
         }
         Category other = (Category) that;
         return (this.getCategoryId() == null ? other.getCategoryId() == null : this.getCategoryId().equals(other.getCategoryId()))
+            && (this.getParentId() == null ? other.getParentId() == null : this.getParentId().equals(other.getParentId()))
             && (this.getName() == null ? other.getName() == null : this.getName().equals(other.getName()))
             && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()));
     }
@@ -58,6 +65,7 @@ public class Category implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((getCategoryId() == null) ? 0 : getCategoryId().hashCode());
+        result = prime * result + ((getParentId() == null) ? 0 : getParentId().hashCode());
         result = prime * result + ((getName() == null) ? 0 : getName().hashCode());
         result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         return result;
@@ -70,6 +78,7 @@ public class Category implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", categoryId=").append(categoryId);
+        sb.append(", parentId=").append(parentId);
         sb.append(", name=").append(name);
         sb.append(", createTime=").append(createTime);
         sb.append(", serialVersionUID=").append(serialVersionUID);

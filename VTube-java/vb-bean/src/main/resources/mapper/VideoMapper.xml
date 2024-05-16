@@ -8,9 +8,6 @@
             <id property="videoId" column="video_id" jdbcType="INTEGER"/>
             <result property="title" column="title" jdbcType="VARCHAR"/>
             <result property="description" column="description" jdbcType="VARCHAR"/>
-            <result property="views" column="views" jdbcType="INTEGER"/>
-            <result property="likes" column="likes" jdbcType="INTEGER"/>
-            <result property="userId" column="user_id" jdbcType="INTEGER"/>
             <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
             <result property="videoPath" column="video_path" jdbcType="VARCHAR"/>
             <result property="imagePath" column="image_path" jdbcType="VARCHAR"/>
@@ -18,30 +15,37 @@
 
     <sql id="Base_Column_List">
         video_id,title,description,
-        views,likes,user_id,
         create_time,video_path,image_path
     </sql>
-
-    <select id="VideoList" resultType="com.vtube.domain.Video">
+    <select id="VideoList" resultType="com.vtube.vo.VideoVO">
         SELECT
-        vt_video.video_id,
-        title,
-        description,
-        views,
-        likes,
-        vt_video.user_id,
-        vt_video.create_time,
-        video_path,
-        image_path,
-        vu.username AS userName
-        FROM vt_video left join vt_user vu on vt_video.user_id = vu.user_id
-        where 1=1
+        v.video_id,
+        v.title,
+        v.description,
+        v.create_time,
+        v.video_path,
+        v.image_path,
+        vd.views,
+        vd.likes,
+        u.username as userName,
+        u.user_id as userId,
+        c.category_id,
+        c.name as categoryName
+        FROM vt_video v
+        LEFT JOIN vt_video_data vd ON v.video_id = vd.video_id
+        LEFT JOIN vt_user u ON vd.user_id = u.user_id
+        LEFT JOIN vt_video_category vc ON v.video_id = vc.video_id
+        LEFT JOIN vt_category c ON vc.category_id = c.category_id
+        WHERE 1=1
         <if test="video.title != null and video.title != ''">
-            and title LIKE concat('%',#{video.title},'%')
+            AND v.title LIKE concat('%', #{video.title}, '%')
         </if>
         <if test="video.userId != null and video.userId != ''">
-            and vt_video.user_id = #{video.userId}
+            AND u.user_id = #{video.userId}
         </if>
-        ORDER BY vt_video.create_time DESC
+        <if test="video.categoryId != null and video.categoryId != ''">
+            AND c.category_id = #{video.categoryId}
+        </if>
+        ORDER BY v.create_time DESC
     </select>
 </mapper>

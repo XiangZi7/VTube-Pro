@@ -34,24 +34,6 @@ public class Video implements Serializable {
     private String description;
 
     /**
-     * 播放量
-     */
-    @TableField(value = "views")
-    private Integer views;
-
-    /**
-     * 点赞数
-     */
-    @TableField(value = "likes")
-    private Integer likes;
-
-    /**
-     * 用户ID
-     */
-    @TableField(value = "user_id")
-    private Integer userId;
-
-    /**
      * 创建时间
      */
     @TableField(value = "create_time")
@@ -68,9 +50,6 @@ public class Video implements Serializable {
      */
     @TableField(value = "image_path")
     private String imagePath;
-
-    @TableField(exist = false)
-    private String userName;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
@@ -90,9 +69,6 @@ public class Video implements Serializable {
         return (this.getVideoId() == null ? other.getVideoId() == null : this.getVideoId().equals(other.getVideoId()))
             && (this.getTitle() == null ? other.getTitle() == null : this.getTitle().equals(other.getTitle()))
             && (this.getDescription() == null ? other.getDescription() == null : this.getDescription().equals(other.getDescription()))
-            && (this.getViews() == null ? other.getViews() == null : this.getViews().equals(other.getViews()))
-            && (this.getLikes() == null ? other.getLikes() == null : this.getLikes().equals(other.getLikes()))
-            && (this.getUserId() == null ? other.getUserId() == null : this.getUserId().equals(other.getUserId()))
             && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()))
             && (this.getVideoPath() == null ? other.getVideoPath() == null : this.getVideoPath().equals(other.getVideoPath()))
             && (this.getImagePath() == null ? other.getImagePath() == null : this.getImagePath().equals(other.getImagePath()));
@@ -105,9 +81,6 @@ public class Video implements Serializable {
         result = prime * result + ((getVideoId() == null) ? 0 : getVideoId().hashCode());
         result = prime * result + ((getTitle() == null) ? 0 : getTitle().hashCode());
         result = prime * result + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        result = prime * result + ((getViews() == null) ? 0 : getViews().hashCode());
-        result = prime * result + ((getLikes() == null) ? 0 : getLikes().hashCode());
-        result = prime * result + ((getUserId() == null) ? 0 : getUserId().hashCode());
         result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         result = prime * result + ((getVideoPath() == null) ? 0 : getVideoPath().hashCode());
         result = prime * result + ((getImagePath() == null) ? 0 : getImagePath().hashCode());
@@ -123,9 +96,6 @@ public class Video implements Serializable {
         sb.append(", videoId=").append(videoId);
         sb.append(", title=").append(title);
         sb.append(", description=").append(description);
-        sb.append(", views=").append(views);
-        sb.append(", likes=").append(likes);
-        sb.append(", userId=").append(userId);
         sb.append(", createTime=").append(createTime);
         sb.append(", videoPath=").append(videoPath);
         sb.append(", imagePath=").append(imagePath);

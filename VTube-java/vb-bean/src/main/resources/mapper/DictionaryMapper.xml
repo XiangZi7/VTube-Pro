@@ -15,7 +15,6 @@
         dictionary_id,type,code,
         name
     </sql>
-
     <select id="selectDictData" resultType="com.vtube.vo.dictVO">
         SELECT name as label, code as value
         from vt_dictionary
