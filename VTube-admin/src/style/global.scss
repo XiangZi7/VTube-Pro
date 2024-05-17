@@ -32,10 +32,33 @@
   --ds-shadow-menu: var(--ds-shadow-border), 0px 1px 1px rgba(0, 0, 0, .02), 0px 4px 8px -4px rgba(0, 0, 0, .04), 0px 16px 24px -8px rgba(0, 0, 0, .06);
   --ds-shadow-modal: var(--ds-shadow-border), 0px 1px 1px rgba(0, 0, 0, .02), 0px 8px 16px -4px rgba(0, 0, 0, .04), 0px 24px 32px -8px rgba(0, 0, 0, .06);
   --ds-shadow-fullscreen: var(--ds-shadow-border), 0px 1px 1px rgba(0, 0, 0, .02), 0px 8px 16px -4px rgba(0, 0, 0, .04), 0px 24px 32px -8px rgba(0, 0, 0, .06);
+  --nextui-default-500: 240 5% 65%;
+  --nextui-default-400: 240 5% 65%;
+  --nextui-box-shadow-medium: 0px 0px 15px 0px rgb(0 0 0 / .03), 0px 2px 30px 0px rgb(0 0 0 / .08), 0px 0px 1px 0px rgb(0 0 0 / .3);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
 }
 
 .bg-primary {
   background-color: hsl(var(--primary));
+}
+
+.text-primary {
+  background-color: var(--primary);
+}
+
+.bg-default-400-20 {
+  background-color: hsl(var(--nextui-default-400) / .2);
+}
+
+.shadow-medium {
+  --tw-shadow: var(--nextui-box-shadow-medium);
+  --tw-shadow-colored: var(--nextui-box-shadow-medium);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-default {
+  --tw-shadow-color: hsl(var(--nextui-default) / .5);
+  --tw-shadow: var(--tw-shadow-colored);
 }
 
 .shadow-app {
@@ -70,7 +93,8 @@
   border-radius: 10px;
 }
 
-html, body {
+html,
+body {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
@@ -83,7 +107,9 @@ body {
   box-sizing: border-box;
 }
 
-html, body, #app{
+html,
+body,
+#app {
   width: 100%;
   height: 100vh;
   margin: 0;
@@ -102,23 +128,23 @@ html, body, #app{
 
 .jumbo {
   --stripes: repeating-linear-gradient(100deg,
-          #fff 0%,
-          #fff 7%,
-          transparent 10%,
-          transparent 12%,
-          #fff 16%);
+      #fff 0%,
+      #fff 7%,
+      transparent 10%,
+      transparent 12%,
+      #fff 16%);
   --stripesDark: repeating-linear-gradient(100deg,
-          #000 0%,
-          #000 7%,
-          transparent 10%,
-          transparent 12%,
-          #000 16%);
+      #000 0%,
+      #000 7%,
+      transparent 10%,
+      transparent 12%,
+      #000 16%);
   --rainbow: repeating-linear-gradient(100deg,
-          #60a5fa 10%,
-          #e879f9 15%,
-          #60a5fa 20%,
-          #5eead4 25%,
-          #60a5fa 30%);
+      #60a5fa 10%,
+      #e879f9 15%,
+      #60a5fa 20%,
+      #5eead4 25%,
+      #60a5fa 30%);
   background-image: var(--stripes), var(--rainbow);
   background-size: 300%, 200%;
   background-position: 50% 50%, 50% 50%;
@@ -181,19 +207,28 @@ html, body, #app{
   height: 170px;
   position: relative;
 }
+
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-5px);
   }
 }
+
 @keyframes float-reverse {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
-    transform: translateY(5px); /* 注意这里是正值，与原动画相反 */
+    transform: translateY(5px);
+    /* 注意这里是正值，与原动画相反 */
   }
 }

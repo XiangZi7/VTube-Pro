@@ -4,6 +4,7 @@ import en from 'element-plus/dist/locale/en.mjs'
 
 const language = ref('zh-cn')
 const locale = computed(() => (language.value === 'zh-cn' ? zhCn : en))
+useTheme()
 </script>
 
 <template>

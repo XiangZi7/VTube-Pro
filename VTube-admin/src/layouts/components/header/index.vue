@@ -8,7 +8,7 @@ const { isAside } = storeToRefs(menuStore)
 
 <template>
   <header
-    class="flex items-center mx-5 px-6 py-4 bg-white/60 shadow-app rounded-b-2xl"
+    class="flex items-center mb-3 px-6 py-4 rounded-b-2xl transition-width duration-300 ease-in-out dark:text-neutral-200"
   >
     <div class="flex items-center w-auto gap-2">
       <Icon
@@ -21,10 +21,18 @@ const { isAside } = storeToRefs(menuStore)
     </div>
     <div class="flex items-center w-80 ml-auto gap-2">
       <div class="w-full flex items-center gap-2">
-        <input
-          class="flex h-10 border-input bg-background text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 px-4 py-2 border rounded-2xl w-full"
-          placeholder="Search"
-        />
+        <el-input class="el-ipt" placeholder="Search">
+          <template #prefix>
+            <Icon icon="f7:search" />
+          </template>
+          <template #suffix>
+            <div
+              class="text-gray-900 transition-all  dark:text-gray-50/50 text-xs"
+            >
+              CTRL + K
+            </div>
+          </template>
+        </el-input>
       </div>
       <div class="flex items-center space-x-4">
         <!-- Iocn的地方-->

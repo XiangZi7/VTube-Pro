@@ -24,7 +24,7 @@ export function getTimeState() {
  * @param code 请求码
  * @param message 信息
  */
-export const meassgePro = (code: number, data: string, message: string) => {
+export const messagePro = (code: number, data: string, message?: string) => {
   ElNotification({
     type: code === 200 ? "success" : "error",
     message: data || message,

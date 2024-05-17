@@ -1,14 +1,33 @@
 <script setup lang="ts">
-import { VideoVO } from '@/interface/pages/video.ts'
 import { DialogState } from '@/interface/pages/dialog'
 
 const dialogDisplay = ref(false)
 
-const acceptParam = ref<DialogState<Partial<VideoVO>>>()
+const acceptParam = ref<DialogState>({
+  title: '',
+  model: undefined,
+  disabled: false,
+  api: '',
+})
 
 function openDialog(params: DialogState) {
   dialogDisplay.value = true
   acceptParam.value = params
+}
+
+function submit() {
+  httpPost(acceptParam.value?.api as string, acceptParam.value?.model).then(
+    ({ code, data }) => {
+      messagePro(code, data as string)
+      if (code !== 200) return
+
+      if (acceptParam.value.getTableList) {
+        acceptParam.value.getTableList()
+      }
+
+      dialogDisplay.value = false
+    }
+  )
 }
 
 defineExpose({ dialogDisplay, openDialog })
@@ -19,92 +38,56 @@ defineExpose({ dialogDisplay, openDialog })
       {{ acceptParam?.title }}
     </template>
     <div class="p-4">
-      <form class="w-full" action="javascript:;">
+      <el-form label-position="top" class="w-full" action="javascript:;">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div class="mb-4">
-            <label for="title" class="block text-sm font-medium text-gray-700"
-              >标题</label
-            >
-            <input
+          <el-form-item label="标题" prop="title">
+            <el-input
               v-model="acceptParam!.model.title"
               :disabled="acceptParam?.disabled"
-              required
-              id="title"
-              name="title"
-              class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm"
+              class="shadow-sm"
               placeholder="Enter your title"
             />
-          </div>
-          <div class="mb-4">
-            <label for="title" class="block text-sm font-medium text-gray-700"
-              >分类</label
-            >
+          </el-form-item>
+          <el-form-item label="分类" prop="categoryId">
             <el-select
-              v-model="acceptParam!.model.categoryId"
+              v-model="acceptParam.model.categoryId"
               :disabled="acceptParam?.disabled"
-              required
+              class="shadow-sm"
               placeholder="请选择分类"
             >
               <el-option
-                v-for="(col, index) in acceptParam?.enumMap?.get('categoryName')"
+                v-for="(col, index) in acceptParam?.enumMap?.get(
+                  'categoryName'
+                )"
                 :key="index"
                 :label="col.label"
                 :value="col.value"
               />
             </el-select>
-          </div>
-          <div class="mb-4">
-            <label
-              for="description"
-              class="block text-sm font-medium text-gray-700"
-              >描述</label
-            >
-            <input
-              v-model="acceptParam!.model.description"
-              :disabled="acceptParam?.disabled"
-              required
-              id="description"
-              name="description"
-              class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm"
-              placeholder="Enter your description"
-            />
-          </div>
-          <div class="mb-4">
-            <label for="views" class="block text-sm font-medium text-gray-700"
-              >关注度</label
-            >
-            <input
+          </el-form-item>
+
+          <el-form-item label="观看量" prop="views">
+            <el-input
               v-model="acceptParam!.model.views"
               :disabled="acceptParam?.disabled"
-              id="views"
-              required
-              name="views"
-              class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm"
+              class="shadow-sm"
               placeholder="Enter your views"
             />
-          </div>
-          <div class="mb-4">
-            <label for="likes" class="block text-sm font-medium text-gray-700"
-              >点赞</label
-            >
-            <input
+          </el-form-item>
+          <el-form-item label="收藏量" prop="likes">
+            <el-input
               v-model="acceptParam!.model.likes"
+              class="shadow-sm"
               :disabled="acceptParam?.disabled"
-              id="likes"
-              required
-              name="likes"
-              class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm"
               placeholder="Enter your likes"
             />
-          </div>
-          <div class="mb-4">
-            <label for="userId" class="block text-sm font-medium text-gray-700"
-              >上传者</label
-            >
+          </el-form-item>
+
+          <el-form-item label="上传者" prop="userId">
             <el-select
               v-model="acceptParam!.model.userId"
+              class="shadow-sm"
               :disabled="acceptParam?.disabled"
-              required
               placeholder="请选择用户"
             >
               <el-option
@@ -114,34 +97,43 @@ defineExpose({ dialogDisplay, openDialog })
                 :value="col.value"
               />
             </el-select>
-          </div>
-          <div class="mb-4">
-            <label
-              for="createTime"
-              class="block text-sm font-medium text-gray-700"
-              >创建时间</label
-            >
-            <input
+          </el-form-item>
+
+          <el-form-item label="创建时间" prop="userId">
+            <el-date-picker
               v-model="acceptParam!.model.createTime"
+              class="shadow-sm"
+              type="datetime"
               :disabled="acceptParam?.disabled"
-              type="datetime-local"
-              id="createTime"
-              required
-              name="createTime"
-              class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary sm:text-sm"
-              placeholder="Enter your createTime"
+              value-format="YYYY-MM-DD HH:mm:ss"
+              date-format="YYYY/MM/DD ddd"
+              time-format="A hh:mm:ss"
+              placeholder="请选择日期"
             />
-          </div>
+          </el-form-item>
+          <el-form-item label="描述" prop="description">
+            <el-input
+              v-model="acceptParam!.model.description"
+              :disabled="acceptParam?.disabled"
+              type="textarea"
+              :rows="2"
+              class="shadow-sm"
+              placeholder="请输入"
+              clearable
+            />
+          </el-form-item>
         </div>
         <div class="flex w-auto justify-end">
           <button
+            v-if="acceptParam.title !== '查看'"
             type="submit"
+            @click="submit"
             class="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary/90 focus:outline-none focus:ring focus:ring-primary"
           >
-            Submit
+            确定
           </button>
         </div>
-      </form>
+      </el-form>
     </div>
   </vt-dialog>
 </template>

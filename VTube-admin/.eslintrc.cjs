@@ -18,7 +18,7 @@ module.exports = {
         "./src/auto-import/eslintrc-auto-import.json",
         "plugin:@typescript-eslint/recommended",
         "plugin:vue/vue3-essential",
-        "airbnb-base",
+        // "airbnb-base",
         'eslint-config-prettier',
         "prettier"
     ],

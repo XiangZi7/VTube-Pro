@@ -43,6 +43,11 @@ export const SideBarData = [
         router: '/download',
         count: 1,
       },
+      {
+        Title: '设置',
+        icon: 'ri:settings-line',
+        router: '/setting',
+      },
     ],
   },
 ]

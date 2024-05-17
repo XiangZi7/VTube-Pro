@@ -72,4 +72,5 @@ export interface TableProps {
 
 export interface TableRef {
   enumMap: Map<string, { [key: string]: any }[]>
+  getTableList?: () => void;
 }

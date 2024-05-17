@@ -7,15 +7,13 @@ import piniaPersistConfig from '@/comfig/piniaPersist.ts'
  */
 export const useMenuStore = defineStore({
   id: 'useMenuStore',
-  state: (): MenuState => {
-    return {
+  state: (): MenuState => ({
       isAside: false,
-    }
-  },
+    }),
   actions: {
     setIsAside(isAside: boolean) {
       this.isAside = isAside
     },
   },
-  persist: piniaPersistConfig('useMenuStore'),
+  persist: piniaPersistConfig('MenuStore'),
 })

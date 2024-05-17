@@ -32,7 +32,9 @@ const {
   props.dataCallBack,
   props.requestError
 )
-
+// 表格多选 Hooks
+const { selectionChange, selectedList, selectedListIds, isSelected } =
+  useSelection(props.rowKey)
 // 定义 emit 事件
 const emit = defineEmits<{
   search: []
@@ -51,9 +53,8 @@ const setEnumMap = async ({ prop, enum: enumValue }: TableColumn) => {
       data = await enumValue()
     }
 
-    if (data) {
-      enumMap.value.set(prop!, data)
-    }
+    if (!data) return
+    enumMap.value.set(prop!, data)
   }
 }
 // 字典操作
@@ -63,7 +64,7 @@ searchColumns.value.forEach(async (item) => {
   // 设置 enumMap
   await setEnumMap(item)
 })
-// // 注入 enumMap
+// 注入 enumMap
 provide('enumMap', enumMap)
 
 onMounted(() => {
@@ -82,6 +83,7 @@ const hreset = () => {
 
 defineExpose({
   enumMap,
+  getTableList,
 })
 </script>
 <template>
@@ -97,8 +99,18 @@ defineExpose({
       :search-col="searchCol"
     />
     <!-- 按钮区 -->
-    <slot name="btn" />
-    <el-table :data="tableData" :row-key="rowKey" class="!flex-1">
+    <slot
+      name="btn"
+      :selected-list="selectedList"
+      :selected-list-ids="selectedListIds"
+      :is-selected="isSelected"
+    />
+    <el-table
+      :data="tableData"
+      :row-key="rowKey"
+      @selection-change="selectionChange"
+      class="!flex-1"
+    >
       <slot />
       <template v-for="column in columns" :key="column.prop">
         <el-table-column
