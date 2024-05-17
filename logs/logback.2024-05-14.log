@@ -1,0 +1,57 @@
+13:51:08.422 logback [main] INFO  com.vtube.AdminApplication - Starting AdminApplication using Java 19.0.2 with PID 29176 (E:\VTube\VTube-java\vb-admin\target\classes started by Administrator in E:\VTube)
+13:51:08.424 logback [main] INFO  com.vtube.AdminApplication - The following 1 profile is active: "dev"
+13:51:09.340 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
+13:51:09.347 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+13:51:09.348 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+13:51:09.348 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+13:51:09.407 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:51:09.408 logback [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 955 ms
+13:51:10.144 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由START ##############
+13:51:10.144 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /test/**
+13:51:10.144 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /favicon.ico
+13:51:10.144 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-ui/**
+13:51:10.144 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-resources/**
+13:51:10.144 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /v3/**
+13:51:10.144 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /error
+13:51:10.144 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /default/**
+13:51:10.144 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /css/**
+13:51:10.144 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /js/**
+13:51:10.144 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /video/**
+13:51:10.144 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /dict/**
+13:51:10.144 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由END ##############
+13:51:10.546 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8085"]
+13:51:10.557 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8085 (http) with context path ''
+13:51:10.558 logback [main] INFO  com.vtube.AdminApplication - 
+---------------------------------------------------------
+	Application is running! Access address:
+	Local:		http://localhost:8085
+	External:	http://172.24.16.1:8085
+	管理员接口文档:	http://localhost:8085/swagger-ui/index.html#/
+---------------------------------------------------------
+
+13:51:10.564 logback [main] INFO  com.vtube.AdminApplication - Started AdminApplication in 2.397 seconds (process running for 2.999)
+14:55:03.395 logback [http-nio-8085-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+14:55:03.399 logback [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+14:55:03.422 logback [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 23 ms
+14:55:03.648 logback [http-nio-8085-exec-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+14:57:38.610 logback [http-nio-8085-exec-1] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000, version : 1.2.5, lastPacketReceivedIdleMillis : 79681
+14:59:33.068 logback [http-nio-8085-exec-5] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000, version : 1.2.5, lastPacketReceivedIdleMillis : 107561
+15:02:25.443 logback [http-nio-8085-exec-6] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000, version : 1.2.5, lastPacketReceivedIdleMillis : 93420
+15:03:59.844 logback [http-nio-8085-exec-9] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000, version : 1.2.5, lastPacketReceivedIdleMillis : 92279
+15:05:24.194 logback [http-nio-8085-exec-3] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000, version : 1.2.5, lastPacketReceivedIdleMillis : 75291
+15:08:59.965 logback [http-nio-8085-exec-9] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000, version : 1.2.5, lastPacketReceivedIdleMillis : 120504
+15:11:55.559 logback [http-nio-8085-exec-4] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000, version : 1.2.5, lastPacketReceivedIdleMillis : 110457
+15:20:50.920 logback [http-nio-8085-exec-5] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000, version : 1.2.5, lastPacketReceivedIdleMillis : 535350
+15:26:50.086 logback [http-nio-8085-exec-7] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000, version : 1.2.5, lastPacketReceivedIdleMillis : 359138
+15:31:00.178 logback [http-nio-8085-exec-1] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000, version : 1.2.5, lastPacketReceivedIdleMillis : 204081
+15:33:36.474 logback [http-nio-8085-exec-3] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000, version : 1.2.5, lastPacketReceivedIdleMillis : 153280
+15:35:25.183 logback [http-nio-8085-exec-6] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000, version : 1.2.5, lastPacketReceivedIdleMillis : 108692
+15:39:34.838 logback [http-nio-8085-exec-10] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000, version : 1.2.5, lastPacketReceivedIdleMillis : 213933
+16:45:06.353 logback [http-nio-8085-exec-5] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000, version : 1.2.5, lastPacketReceivedIdleMillis : 109691
+16:52:07.322 logback [http-nio-8085-exec-10] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000, version : 1.2.5, lastPacketReceivedIdleMillis : 369043
+16:55:05.362 logback [http-nio-8085-exec-4] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000, version : 1.2.5, lastPacketReceivedIdleMillis : 175276
+16:58:53.529 logback [http-nio-8085-exec-5] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000, version : 1.2.5, lastPacketReceivedIdleMillis : 228153
+17:08:01.199 logback [http-nio-8085-exec-9] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000, version : 1.2.5, lastPacketReceivedIdleMillis : 441662
+17:21:05.116 logback [http-nio-8085-exec-1] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000, version : 1.2.5, lastPacketReceivedIdleMillis : 783903
+17:25:54.238 logback [http-nio-8085-exec-5] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000, version : 1.2.5, lastPacketReceivedIdleMillis : 282023
+17:29:03.293 logback [http-nio-8085-exec-8] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000, version : 1.2.5, lastPacketReceivedIdleMillis : 171281
