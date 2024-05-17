@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.vtube.domain.Video;
 import com.vtube.mapper.VideoMapper;
 import com.vtube.model.ApiResult;
+import com.vtube.service.VideoService;
 import com.vtube.vo.Param.VideoVOParam;
 import com.vtube.vo.VideoVO;
 import io.swagger.v3.oas.annotations.Operation;
@@ -24,6 +25,8 @@ public class VideoController {
 
     @Resource
     private VideoMapper videoMapper;
+    @Resource
+    private VideoService videoService;
 
     @GetMapping("/list")
     @Operation(summary = "视频列表", description = "视频列表")
@@ -36,9 +39,16 @@ public class VideoController {
 
     @PostMapping("/add")
     @Operation(summary = "视频添加", description = "视频添加")
-    public ApiResult<?> add(@RequestBody Video video) {
-        videoMapper.insert(video);
+    public ApiResult<?> add(@RequestBody VideoVO video) {
+        videoService.addVideoData(video);
         return ApiResult.ok("新增成功");
+    }
+
+    @PostMapping("/edit")
+    @Operation(summary = "视频更新", description = "视频更新")
+    public ApiResult<?> edit(@RequestBody VideoVO video) {
+        videoService.updateVideoData(video);
+        return ApiResult.ok("视频更新成功");
     }
 
     @PostMapping("/deletes")

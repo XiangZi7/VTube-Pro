@@ -5,12 +5,12 @@
 <mapper namespace="com.vtube.mapper.VideoMapper">
 
     <resultMap id="BaseResultMap" type="com.vtube.domain.Video">
-            <id property="videoId" column="video_id" jdbcType="INTEGER"/>
-            <result property="title" column="title" jdbcType="VARCHAR"/>
-            <result property="description" column="description" jdbcType="VARCHAR"/>
-            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
-            <result property="videoPath" column="video_path" jdbcType="VARCHAR"/>
-            <result property="imagePath" column="image_path" jdbcType="VARCHAR"/>
+        <id property="videoId" column="video_id" jdbcType="INTEGER"/>
+        <result property="title" column="title" jdbcType="VARCHAR"/>
+        <result property="description" column="description" jdbcType="VARCHAR"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="videoPath" column="video_path" jdbcType="VARCHAR"/>
+        <result property="imagePath" column="image_path" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
@@ -46,6 +46,39 @@
         <if test="video.categoryId != null and video.categoryId != ''">
             AND c.category_id = #{video.categoryId}
         </if>
+        <if test="video.createTime != null">
+            AND DATE(v.create_time) = #{video.createTime}
+        </if>
         ORDER BY v.create_time DESC
     </select>
+
+    <!-- 添加视频及相关信息数据 -->
+    <insert id="addVideoData" parameterType="com.vtube.vo.VideoVO">
+        <!-- 插入视频数据 -->
+        INSERT INTO vt_video_data (video_id, user_id, views, likes)
+        VALUES (#{videoId}, #{userId}, #{views}, #{likes});
+    </insert>
+
+    <insert id="addVideoCategory" parameterType="com.vtube.vo.VideoVO">
+        <!-- 插入视频分类关联数据-->
+        INSERT INTO vt_video_category (video_id, category_id)
+        VALUES (#{videoId}, #{categoryId})
+    </insert>
+
+    <!-- 更新视频及相关信息数据 -->
+    <update id="updateVideoData" parameterType="com.vtube.vo.VideoVO">
+        <!-- 更新视频数据 -->
+        UPDATE vt_video_data
+        SET user_id = #{userId},
+        views = #{views},
+        likes = #{likes}
+        WHERE video_id = #{videoId};
+    </update>
+
+    <update id="updateVideoCategory" parameterType="com.vtube.vo.VideoVO">
+        <!-- 更新视频分类关联数据-->
+        UPDATE vt_video_category
+        SET category_id = #{categoryId}
+        WHERE video_id = #{videoId};
+    </update>
 </mapper>
