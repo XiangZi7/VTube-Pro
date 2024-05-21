@@ -1,8 +1,12 @@
 package com.vtube.vo;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.vtube.domain.VideoEpisode;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.Arrays;
+import java.util.List;
 
 @Data
 public class VideoVO {
@@ -19,4 +23,16 @@ public class VideoVO {
     private int likes;
     private String userName;
     private Integer userId;
+    private String tags;
+    private Integer type;
+    private List<String> tagsList;
+
+    private List<VideoEpisode> episodeList;
+
+
+    public void setTags(String tags) {
+        this.tags = tags;
+        this.tagsList = Arrays.asList(tags.split(","));
+    }
 }
+

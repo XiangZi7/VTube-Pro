@@ -5,17 +5,20 @@
 <mapper namespace="com.vtube.mapper.VideoMapper">
 
     <resultMap id="BaseResultMap" type="com.vtube.domain.Video">
-        <id property="videoId" column="video_id" jdbcType="INTEGER"/>
-        <result property="title" column="title" jdbcType="VARCHAR"/>
-        <result property="description" column="description" jdbcType="VARCHAR"/>
-        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
-        <result property="videoPath" column="video_path" jdbcType="VARCHAR"/>
-        <result property="imagePath" column="image_path" jdbcType="VARCHAR"/>
+            <id property="videoId" column="video_id" jdbcType="INTEGER"/>
+            <result property="title" column="title" jdbcType="VARCHAR"/>
+            <result property="description" column="description" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="videoPath" column="video_path" jdbcType="VARCHAR"/>
+            <result property="imagePath" column="image_path" jdbcType="VARCHAR"/>
+            <result property="tags" column="tags" jdbcType="VARCHAR"/>
+            <result property="type" column="type" jdbcType="OTHER"/>
     </resultMap>
 
     <sql id="Base_Column_List">
         video_id,title,description,
-        create_time,video_path,image_path
+        create_time,video_path,image_path,
+        tags,type
     </sql>
     <select id="VideoList" resultType="com.vtube.vo.VideoVO">
         SELECT
@@ -27,6 +30,8 @@
         v.image_path,
         vd.views,
         vd.likes,
+        v.tags,
+        v.type,
         u.username as userName,
         u.user_id as userId,
         c.category_id,
@@ -37,11 +42,21 @@
         LEFT JOIN vt_video_category vc ON v.video_id = vc.video_id
         LEFT JOIN vt_category c ON vc.category_id = c.category_id
         WHERE 1=1
+        <if test="video.tags != null and video.tags.size() > 0">
+            AND (
+            <foreach collection="video.tags" item="tag" separator=" OR " open="(" close=")">
+                FIND_IN_SET(#{tag}, tags) > 0
+            </foreach>
+            )
+        </if>
         <if test="video.title != null and video.title != ''">
             AND v.title LIKE concat('%', #{video.title}, '%')
         </if>
         <if test="video.userId != null and video.userId != ''">
             AND u.user_id = #{video.userId}
+        </if>
+        <if test="video.type != null and video.type != ''">
+            AND v.type = #{video.type}
         </if>
         <if test="video.categoryId != null and video.categoryId != ''">
             AND c.category_id = #{video.categoryId}

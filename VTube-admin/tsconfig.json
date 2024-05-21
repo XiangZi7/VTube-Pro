@@ -8,13 +8,13 @@
     "paths": { "@/*": ["src/*"] }, //路径映射,配合别名使用
 
     "types": [
-      "unplugin-vue-router/client",
       "element-plus/global"
     ],
     /* Bundler mode */
     "moduleResolution": "Bundler", // 使用 Bundler 的模块解析策略
     "allowImportingTsExtensions": true, //允许在模块导入语句中使用Typescript文件的扩展名（.ts）
     "allowJs": true, //允许使用js
+    "noImplicitAny": false,
     "resolveJsonModule": true, // 允许引入 JSON 文件
     "isolatedModules": true, // 要求所有文件都是 ES Module 模块。
     "noEmit": true,// 不输出文件,即编译后不会生成任何js文件

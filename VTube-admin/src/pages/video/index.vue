@@ -3,6 +3,7 @@ import { TableColumn, TableRef } from '@/interface/components/vt-table-v2.ts'
 import { Icon } from '@iconify/vue'
 import Dialog from './dialog.vue'
 import { VideoVO } from '@/interface/pages/video'
+const fileUrl = import.meta.env.VITE_API_MINIO
 
 const DialogRef = ref<InstanceType<typeof Dialog> | null>(null)
 const vtTable = ref<TableRef>()
@@ -10,9 +11,10 @@ const vtTable = ref<TableRef>()
 const tableColumn = ref<TableColumn[]>([
   { type: 'selection', fixed: 'left', width: 70 },
   { prop: 'videoId', label: 'id' },
+  { prop: 'imagePath', label: '封面', slotName: 'imagePath' },
   { prop: 'title', label: '标题', search: { el: 'input' } },
   {
-    prop: 'categoryName',
+    prop: 'categoryId',
     label: '分类',
     enum: 'category',
     search: { el: 'select', props: { filterable: true }, key: 'categoryId' },
@@ -23,9 +25,16 @@ const tableColumn = ref<TableColumn[]>([
     width: 200,
   },
   { prop: 'views', label: '关注度' },
+  {
+    prop: 'type',
+    label: '视频类型',
+    enum: 'video_type',
+    search: { el: 'select', props: { filterable: true } },
+  },
+  { prop: 'tags', label: '视频标签' },
   { prop: 'likes', label: '点赞' },
   {
-    prop: 'userName',
+    prop: 'userId',
     label: '上传者',
     enum: 'user',
     search: { el: 'select', props: { filterable: true }, key: 'userId' },
@@ -106,11 +115,19 @@ const batchDelete = async (id: number[] | string[]) => {
                   :disabled="!isSelected"
                   class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3"
                 >
-                  批量删除用户
+                  批量删除
                 </button>
               </template>
             </el-popconfirm>
           </div>
+        </template>
+        <template #imagePath="{ row }">
+          <el-image
+            class="rounded-xl"
+            :src="fileUrl + row.imagePath"
+            :preview-src-list="[fileUrl + row.imagePath]"
+            fit="fill"
+          />
         </template>
         <template #action="{ row }">
           <div class="space-x-2 flex text-xl justify-around">

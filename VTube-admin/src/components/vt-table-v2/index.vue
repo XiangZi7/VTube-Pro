@@ -118,8 +118,15 @@ defineExpose({
           :align="column.align ?? 'center'"
           :reserve-selection="column.type == 'selection'"
         >
-          <template v-if="column.slotName" #default="scope">
-            <slot :name="column.slotName" v-bind="scope" />
+          <template #default="scope">
+            <template v-if="column.enum">
+              {{ enumMap?.get(column.prop)[scope.row[column.prop] - 1]?.label }}
+            </template>
+            <slot
+              v-if="column.slotName"
+              :name="column.slotName"
+              v-bind="scope"
+            />
           </template>
         </el-table-column>
       </template>

@@ -6,8 +6,6 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.time.LocalDateTime;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 /**
@@ -38,7 +36,6 @@ public class Video implements Serializable {
     /**
      * 创建时间
      */
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @TableField(value = "create_time")
     private LocalDateTime createTime;
 
@@ -53,6 +50,18 @@ public class Video implements Serializable {
      */
     @TableField(value = "image_path")
     private String imagePath;
+
+    /**
+     * 视频标签
+     */
+    @TableField(value = "tags")
+    private String tags;
+
+    /**
+     * 视频类型
+     */
+    @TableField(value = "type")
+    private Integer type;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
@@ -74,7 +83,9 @@ public class Video implements Serializable {
             && (this.getDescription() == null ? other.getDescription() == null : this.getDescription().equals(other.getDescription()))
             && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()))
             && (this.getVideoPath() == null ? other.getVideoPath() == null : this.getVideoPath().equals(other.getVideoPath()))
-            && (this.getImagePath() == null ? other.getImagePath() == null : this.getImagePath().equals(other.getImagePath()));
+            && (this.getImagePath() == null ? other.getImagePath() == null : this.getImagePath().equals(other.getImagePath()))
+            && (this.getTags() == null ? other.getTags() == null : this.getTags().equals(other.getTags()))
+            && (this.getType() == null ? other.getType() == null : this.getType().equals(other.getType()));
     }
 
     @Override
@@ -87,6 +98,8 @@ public class Video implements Serializable {
         result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         result = prime * result + ((getVideoPath() == null) ? 0 : getVideoPath().hashCode());
         result = prime * result + ((getImagePath() == null) ? 0 : getImagePath().hashCode());
+        result = prime * result + ((getTags() == null) ? 0 : getTags().hashCode());
+        result = prime * result + ((getType() == null) ? 0 : getType().hashCode());
         return result;
     }
 
@@ -102,6 +115,8 @@ public class Video implements Serializable {
         sb.append(", createTime=").append(createTime);
         sb.append(", videoPath=").append(videoPath);
         sb.append(", imagePath=").append(imagePath);
+        sb.append(", tags=").append(tags);
+        sb.append(", type=").append(type);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

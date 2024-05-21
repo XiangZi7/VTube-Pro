@@ -6,11 +6,12 @@
   >
     <div
       :style="{ width: width + 'px' }"
-      class="bg-white border p-6 shadow-lg rounded-lg relative"
+      class="bg-white dark:bg-[var(--el-bg-color)] shadow-app p-6 shadow-lg rounded-lg relative"
       @click.stop
     >
       <div class="absolute right-5 top-2">
         <Icon
+          v-if="closeIcon"
           icon="material-symbols:close-rounded"
           class="text-xl cursor-pointer"
           @click="VModel = false"
@@ -18,7 +19,7 @@
       </div>
       <div
         v-if="isHeader"
-        class="dialog-header py-2 text-black whitespace-nowrap text-lg font-semibold leading-none tracking-tight"
+        class="dialog-header py-2 whitespace-nowrap text-lg font-semibold leading-none tracking-tight"
       >
         <slot name="header">Confirm Action</slot>
       </div>
@@ -51,6 +52,10 @@ defineProps({
   width: {
     type: [String, Number],
     default: 500,
+  },
+  closeIcon: {
+    type: Boolean,
+    default: true,
   },
 })
 const close = () => {

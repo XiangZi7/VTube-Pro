@@ -1,10 +1,14 @@
 package com.vtube.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.vtube.domain.Video;
+import com.vtube.domain.VideoEpisode;
+import com.vtube.mapper.VideoEpisodeMapper;
 import com.vtube.mapper.VideoMapper;
 import com.vtube.model.ApiResult;
+import com.vtube.service.VideoEpisodeService;
 import com.vtube.service.VideoService;
 import com.vtube.vo.Param.VideoVOParam;
 import com.vtube.vo.VideoVO;
@@ -27,6 +31,8 @@ public class VideoController {
     private VideoMapper videoMapper;
     @Resource
     private VideoService videoService;
+    @Resource
+    private VideoEpisodeService episodeService;
 
     @GetMapping("/list")
     @Operation(summary = "视频列表", description = "视频列表")
@@ -34,7 +40,23 @@ public class VideoController {
                              @RequestParam(name = "pageSize", defaultValue = "10") Long pageSize, VideoVOParam videoVOParam) {
         Page<Video> page = new Page<>(pageNum, pageSize);
         IPage<VideoVO> videoIPage = videoMapper.VideoList(page, videoVOParam);
+
+        videoIPage.getRecords().stream().forEach(item -> {
+            if (item.getTags() != null) {
+                item.setTags(item.getTags());
+            }
+        });
         return ApiResult.ok(videoIPage);
+    }
+
+    @PostMapping("/sublist")
+    @Operation(summary = "视频集数", description = "视频集数")
+    public ApiResult<?> sublist(@RequestBody VideoVO video) {
+        QueryWrapper<VideoEpisode> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("video_id",video.getVideoId());
+        queryWrapper.orderByAsc("episode_number");
+        List<VideoEpisode> list = episodeService.list(queryWrapper);
+        return ApiResult.ok(list);
     }
 
     @PostMapping("/add")

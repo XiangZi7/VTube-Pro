@@ -5,8 +5,8 @@ spring:
   #文件上传设置
   servlet:
     multipart:
-      max-file-size: 100MB
-      max-request-size: 100MB
+      max-file-size: 1000MB
+      max-request-size: 1000MB
       enabled: true
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
@@ -53,3 +53,9 @@ vtube:
       - /video/**
       # 字典
       - /dict/**
+      # 上传
+      - /uploadFile
+      - /downloadFile
+      - /buckets
+      - /createBucket
+      - /deleteBucket/**

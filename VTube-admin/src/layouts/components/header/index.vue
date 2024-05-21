@@ -27,7 +27,7 @@ const { isAside } = storeToRefs(menuStore)
           </template>
           <template #suffix>
             <div
-              class="text-gray-900 transition-all  dark:text-gray-50/50 text-xs"
+              class="text-gray-900/50 transition-all dark:text-gray-50/50 text-xs"
             >
               CTRL + K
             </div>

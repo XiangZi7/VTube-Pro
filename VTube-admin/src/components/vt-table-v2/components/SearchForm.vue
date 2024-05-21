@@ -2,7 +2,7 @@
   <el-form inline label-suffix=" :" class="p-2">
     <el-row :gutter="10">
       <template v-for="column in columns" :key="column.id">
-        <el-col :xs="10" :sm="8" :md="5" :lg="5" :xl="5" v-if="column.search">
+        <el-col :xs="10" :sm="8" :md="4" :lg="4" :xl="4" v-if="column.search">
           <el-form-item :label="column.label" class="w-full">
             <component
               class="w-full"

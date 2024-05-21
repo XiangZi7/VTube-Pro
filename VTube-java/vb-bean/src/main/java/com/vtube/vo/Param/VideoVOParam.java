@@ -1,15 +1,15 @@
 package com.vtube.vo.Param;
 
+import com.vtube.domain.VideoEpisode;
 import lombok.Data;
-import org.springframework.format.annotation.DateTimeFormat;
-
-import java.util.Date;
+import java.util.List;
 
 @Data
 public class VideoVOParam {
     private Integer userId;
     private Integer categoryId;
+    private Integer type;
     private String title;
-//    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private String createTime;
+    private List<String> tags;
 }
