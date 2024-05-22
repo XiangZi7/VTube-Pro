@@ -124,6 +124,7 @@ const batchDelete = async (id: number[] | string[]) => {
         <template #imagePath="{ row }">
           <el-image
             class="rounded-xl"
+            preview-teleported
             :src="fileUrl + row.imagePath"
             :preview-src-list="[fileUrl + row.imagePath]"
             fit="fill"

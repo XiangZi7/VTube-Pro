@@ -3,7 +3,7 @@ package com.vtube.mapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.vtube.domain.Video;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.vtube.vo.Param.VideoVOParam;
+import com.vtube.vo.Param.VideoParam;
 import com.vtube.vo.VideoVO;
 import org.apache.ibatis.annotations.Param;
 
@@ -14,7 +14,7 @@ import org.apache.ibatis.annotations.Param;
 * @Entity com.vtube.domain.Video
 */
 public interface VideoMapper extends BaseMapper<Video> {
-    IPage<VideoVO> VideoList(IPage<Video> page, @Param("video") VideoVOParam video);
+    IPage<VideoVO> VideoList(IPage<Video> page, @Param("video") VideoParam video);
 
     int addVideoData(VideoVO videoVO);
 

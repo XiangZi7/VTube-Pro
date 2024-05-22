@@ -32,7 +32,7 @@
         vd.likes,
         v.tags,
         v.type,
-        u.username as userName,
+        u.nick_name as nickName,
         u.user_id as userId,
         c.category_id,
         c.name as categoryName

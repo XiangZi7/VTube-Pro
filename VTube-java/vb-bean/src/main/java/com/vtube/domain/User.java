@@ -24,8 +24,20 @@ public class User implements Serializable {
     /**
      * 用户名
      */
-    @TableField(value = "username")
-    private String username;
+    @TableField(value = "user_name")
+    private String userName;
+
+    /**
+     * 用户真实姓名
+     */
+    @TableField(value = "real_name")
+    private String realName;
+
+    /**
+     * 用户昵称
+     */
+    @TableField(value = "nick_name")
+    private String nickName;
 
     /**
      * 密码
@@ -46,16 +58,22 @@ public class User implements Serializable {
     private String email;
 
     /**
+     * 用户头像
+     */
+    @TableField(value = "avatar_path")
+    private String avatarPath;
+
+    /**
      * 创建时间
      */
     @TableField(value = "create_time")
     private LocalDateTime createTime;
 
     /**
-     * 
+     * 性别
      */
-    @TableField(value = "avatar_path")
-    private String avatarPath;
+    @TableField(value = "sex")
+    private String sex;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
@@ -73,12 +91,15 @@ public class User implements Serializable {
         }
         User other = (User) that;
         return (this.getUserId() == null ? other.getUserId() == null : this.getUserId().equals(other.getUserId()))
-            && (this.getUsername() == null ? other.getUsername() == null : this.getUsername().equals(other.getUsername()))
+            && (this.getUserName() == null ? other.getUserName() == null : this.getUserName().equals(other.getUserName()))
+            && (this.getRealName() == null ? other.getRealName() == null : this.getRealName().equals(other.getRealName()))
+            && (this.getNickName() == null ? other.getNickName() == null : this.getNickName().equals(other.getNickName()))
             && (this.getPassword() == null ? other.getPassword() == null : this.getPassword().equals(other.getPassword()))
             && (this.getPhone() == null ? other.getPhone() == null : this.getPhone().equals(other.getPhone()))
             && (this.getEmail() == null ? other.getEmail() == null : this.getEmail().equals(other.getEmail()))
+            && (this.getAvatarPath() == null ? other.getAvatarPath() == null : this.getAvatarPath().equals(other.getAvatarPath()))
             && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()))
-            && (this.getAvatarPath() == null ? other.getAvatarPath() == null : this.getAvatarPath().equals(other.getAvatarPath()));
+            && (this.getSex() == null ? other.getSex() == null : this.getSex().equals(other.getSex()));
     }
 
     @Override
@@ -86,12 +107,15 @@ public class User implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((getUserId() == null) ? 0 : getUserId().hashCode());
-        result = prime * result + ((getUsername() == null) ? 0 : getUsername().hashCode());
+        result = prime * result + ((getUserName() == null) ? 0 : getUserName().hashCode());
+        result = prime * result + ((getRealName() == null) ? 0 : getRealName().hashCode());
+        result = prime * result + ((getNickName() == null) ? 0 : getNickName().hashCode());
         result = prime * result + ((getPassword() == null) ? 0 : getPassword().hashCode());
         result = prime * result + ((getPhone() == null) ? 0 : getPhone().hashCode());
         result = prime * result + ((getEmail() == null) ? 0 : getEmail().hashCode());
-        result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         result = prime * result + ((getAvatarPath() == null) ? 0 : getAvatarPath().hashCode());
+        result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
+        result = prime * result + ((getSex() == null) ? 0 : getSex().hashCode());
         return result;
     }
 
@@ -102,12 +126,15 @@ public class User implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", userId=").append(userId);
-        sb.append(", username=").append(username);
+        sb.append(", userName=").append(userName);
+        sb.append(", realName=").append(realName);
+        sb.append(", nickName=").append(nickName);
         sb.append(", password=").append(password);
         sb.append(", phone=").append(phone);
         sb.append(", email=").append(email);
-        sb.append(", createTime=").append(createTime);
         sb.append(", avatarPath=").append(avatarPath);
+        sb.append(", createTime=").append(createTime);
+        sb.append(", sex=").append(sex);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

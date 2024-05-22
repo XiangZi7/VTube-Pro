@@ -1,11 +1,10 @@
 package com.vtube.vo.Param;
 
-import com.vtube.domain.VideoEpisode;
 import lombok.Data;
 import java.util.List;
 
 @Data
-public class VideoVOParam {
+public class VideoParam {
     private Integer userId;
     private Integer categoryId;
     private Integer type;

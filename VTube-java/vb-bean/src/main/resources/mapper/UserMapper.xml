@@ -6,17 +6,34 @@
 
     <resultMap id="BaseResultMap" type="com.vtube.domain.User">
             <id property="userId" column="user_id" jdbcType="INTEGER"/>
-            <result property="username" column="username" jdbcType="VARCHAR"/>
+            <result property="userName" column="user_name" jdbcType="VARCHAR"/>
+            <result property="realName" column="real_name" jdbcType="VARCHAR"/>
+            <result property="nickName" column="nick_name" jdbcType="VARCHAR"/>
             <result property="password" column="password" jdbcType="VARCHAR"/>
             <result property="phone" column="phone" jdbcType="VARCHAR"/>
             <result property="email" column="email" jdbcType="VARCHAR"/>
-            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
             <result property="avatarPath" column="avatar_path" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="sex" column="sex" jdbcType="CHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        user_id,username,password,
-        phone,email,create_time,
-        avatar_path
+        user_id,user_name,real_name,
+        nick_name,password,phone,
+        email,avatar_path,create_time,
+        sex
     </sql>
+    <select id="adminLogin" resultType="com.vtube.vo.AdminLoginVO">
+        SELECT u.user_id,
+               u.nick_name,
+               u.phone,
+               u.email,
+               u.avatar_path
+        FROM vt_user u
+                 JOIN vt_user_role ur ON u.user_id = ur.user_id
+                 JOIN vt_role r ON ur.role_id = r.role_id
+        WHERE u.user_name = #{userName}
+          AND u.password = #{passWord}
+          AND r.name = 'Admin'
+    </select>
 </mapper>

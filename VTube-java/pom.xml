@@ -11,6 +11,7 @@
         <module>vb-admin</module>
         <module>vb-bean</module>
         <module>vb-common</module>
+        <module>vt-api</module>
     </modules>
 
     <properties>
@@ -38,7 +39,8 @@
         <ip2region.version>2.6.6</ip2region.version>
         <captcha.version>1.3.0</captcha.version>
         <knife4j.version>4.1.0</knife4j.version>
-        <satoken.version>1.37.0</satoken.version>
+        <satoken.version>1.38.0</satoken.version>
+        <satoken-redis.version>1.38.0</satoken-redis.version>
         <springdoc.version>2.1.0</springdoc.version>
         <tianai-captcha.version>1.4.1</tianai-captcha.version>
     </properties>
@@ -49,6 +51,11 @@
                 <groupId>cn.dev33</groupId>
                 <artifactId>sa-token-spring-boot3-starter</artifactId>
                 <version>${satoken.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.dev33</groupId>
+                <artifactId>sa-token-redis</artifactId>
+                <version>${satoken-redis.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>

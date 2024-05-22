@@ -1,9 +1,25 @@
 <script setup lang="ts">
 import { Icon } from '@iconify/vue'
 import Bread from '@/layouts/components/bread/index.vue'
+import router from '@/routers'
 
 const menuStore = useMenuStore()
+const userStore = useUserStore()
+
 const { isAside } = storeToRefs(menuStore)
+
+const dialogVisible = ref(false)
+
+const logout = () => {
+  httpPost('/logout').then(({ code, data }) => {
+    if (code == 200) {
+      userStore.setUserInfo({})
+      dialogVisible.value = false
+      router.replace('/login')
+    }
+    messagePro(code, data)
+  })
+}
 </script>
 
 <template>
@@ -59,7 +75,10 @@ const { isAside } = storeToRefs(menuStore)
                   </div>
                 </el-dropdown-item>
                 <el-dropdown-item divided>
-                  <div class="flex items-center gap-1">
+                  <div
+                    class="flex items-center gap-1"
+                    @click="dialogVisible = true"
+                  >
                     <Icon
                       icon="material-symbols:logout-rounded"
                       class="text-xl"
@@ -73,5 +92,14 @@ const { isAside } = storeToRefs(menuStore)
         </span>
       </div>
     </div>
+    <el-dialog v-model="dialogVisible" title="Tips" width="500">
+      <span>确定退出登录吗？</span>
+      <template #footer>
+        <div class="dialog-footer">
+          <el-button @click="dialogVisible = false">取消</el-button>
+          <el-button type="primary" @click="logout"> 确定 </el-button>
+        </div>
+      </template>
+    </el-dialog>
   </header>
 </template>

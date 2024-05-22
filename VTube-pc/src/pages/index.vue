@@ -2,18 +2,16 @@
 import { Icon } from '@iconify/vue'
 
 const state = reactive({
-  weeklyAnime: [
-    { title: '星期一', dramaSeries: [] },
-    { title: '星期二', dramaSeries: [] },
-    { title: '星期三', dramaSeries: [] },
-    { title: '星期四', dramaSeries: [] },
-    { title: '星期五', dramaSeries: [] },
-    { title: '星期六', dramaSeries: [] },
-    { title: '星期日', dramaSeries: [] },
-  ],
+  weeklyAnime: [],
   weekTabsIndex: 0,
 })
 const { weeklyAnime, weekTabsIndex } = toRefs(state)
+
+onMounted(() => {
+  httpGet('/weekly-anime').then(({ data }) => {
+    state.weeklyAnime = data
+  })
+})
 </script>
 
 <template>

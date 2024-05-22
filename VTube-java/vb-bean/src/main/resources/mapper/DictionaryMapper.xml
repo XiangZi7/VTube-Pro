@@ -6,27 +6,27 @@
 
     <resultMap id="BaseResultMap" type="com.vtube.domain.Dictionary">
             <id property="dictionaryId" column="dictionary_id" jdbcType="INTEGER"/>
-            <result property="type" column="type" jdbcType="VARCHAR"/>
             <result property="code" column="code" jdbcType="VARCHAR"/>
-            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="value" column="value" jdbcType="VARCHAR"/>
+            <result property="label" column="label" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        dictionary_id,type,code,
-        name
+        dictionary_id,code,value,
+        label
     </sql>
+
     <select id="selectDictData" resultType="com.vtube.vo.dictVO">
-        SELECT name as label, code as value
+        SELECT label, value
         from vt_dictionary
-        WHERE type = #{dict}
+        WHERE code = #{dict}
     </select>
 
     <select id="selectDictUserData" resultType="com.vtube.vo.dictVO">
-        SELECT username as label, user_id as value
+        SELECT nick_name as label, user_id as value
         from vt_user
-        where 1 = 1
-        <if test="keyword != null and keyword != ''">
-            and username LIKE concat('%',#{keyword},'%')
-        </if>
+    </select>
+    <select id="DictList" resultType="com.vtube.domain.Dictionary">
+        select * from vt_dictionary
     </select>
 </mapper>

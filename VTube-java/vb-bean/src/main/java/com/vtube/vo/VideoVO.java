@@ -21,7 +21,7 @@ public class VideoVO {
     private String imagePath;
     private int views;
     private int likes;
-    private String userName;
+    private String nickName;
     private Integer userId;
     private String tags;
     private Integer type;

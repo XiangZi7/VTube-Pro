@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vtube.mapper.VideoUpdateMapper">
+
+    <resultMap id="BaseResultMap" type="com.vtube.domain.VideoUpdate">
+            <id property="updateId" column="update_id" jdbcType="INTEGER"/>
+            <result property="weekDay" column="week_day" jdbcType="OTHER"/>
+            <result property="videoId" column="video_id" jdbcType="INTEGER"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        update_id,week_day,video_id,
+        update_time
+    </sql>
+
+    <!-- 查询一周内的番剧更新 -->
+    <select id="getWeeklyAnimeUpdates" resultType="com.vtube.vo.WeeklyAnimeUpdateVO">
+        SELECT
+            vu.video_id,
+            v.title,
+            v.image_path,
+            vu.week_day
+        FROM
+            vt_video v
+                INNER JOIN
+            vt_video_update vu ON vu.video_id = v.video_id
+        WHERE
+            vu.week_day IN ('1', '2', '3', '4', '5', '6', '7')
+    </select>
+</mapper>

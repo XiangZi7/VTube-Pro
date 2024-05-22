@@ -21,22 +21,22 @@ public class Dictionary implements Serializable {
     private Integer dictionaryId;
 
     /**
-     * 字典类型
-     */
-    @TableField(value = "type")
-    private String type;
-
-    /**
      * 字典编码
      */
     @TableField(value = "code")
     private String code;
 
     /**
+     * 字典值
+     */
+    @TableField(value = "value")
+    private String value;
+
+    /**
      * 字典名称
      */
-    @TableField(value = "name")
-    private String name;
+    @TableField(value = "label")
+    private String label;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
@@ -54,9 +54,9 @@ public class Dictionary implements Serializable {
         }
         Dictionary other = (Dictionary) that;
         return (this.getDictionaryId() == null ? other.getDictionaryId() == null : this.getDictionaryId().equals(other.getDictionaryId()))
-            && (this.getType() == null ? other.getType() == null : this.getType().equals(other.getType()))
             && (this.getCode() == null ? other.getCode() == null : this.getCode().equals(other.getCode()))
-            && (this.getName() == null ? other.getName() == null : this.getName().equals(other.getName()));
+            && (this.getValue() == null ? other.getValue() == null : this.getValue().equals(other.getValue()))
+            && (this.getLabel() == null ? other.getLabel() == null : this.getLabel().equals(other.getLabel()));
     }
 
     @Override
@@ -64,9 +64,9 @@ public class Dictionary implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((getDictionaryId() == null) ? 0 : getDictionaryId().hashCode());
-        result = prime * result + ((getType() == null) ? 0 : getType().hashCode());
         result = prime * result + ((getCode() == null) ? 0 : getCode().hashCode());
-        result = prime * result + ((getName() == null) ? 0 : getName().hashCode());
+        result = prime * result + ((getValue() == null) ? 0 : getValue().hashCode());
+        result = prime * result + ((getLabel() == null) ? 0 : getLabel().hashCode());
         return result;
     }
 
@@ -77,9 +77,9 @@ public class Dictionary implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", dictionaryId=").append(dictionaryId);
-        sb.append(", type=").append(type);
         sb.append(", code=").append(code);
-        sb.append(", name=").append(name);
+        sb.append(", value=").append(value);
+        sb.append(", label=").append(label);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

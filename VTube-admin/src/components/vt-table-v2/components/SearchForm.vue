@@ -24,18 +24,20 @@
         </el-col>
       </template>
       <div class="flex gap-2 ml-auto">
-        <button
+        <el-button
+          type="primary"
+          class="w-20 rounded-md px-3"
           @click="search"
-          class="inline-flex w-20 items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3"
         >
           搜索
-        </button>
-        <button
+        </el-button>
+        <el-button
+          type="danger"
           @click="reset"
-          class="inline-flex w-20 items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3"
+          class="w-20 rounded-md px-3"
         >
           重置
-        </button>
+        </el-button>
       </div>
     </el-row>
     <div></div>

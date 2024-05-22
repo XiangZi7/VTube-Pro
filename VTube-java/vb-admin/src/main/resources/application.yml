@@ -49,13 +49,5 @@ vtube:
       - /default/**
       - /css/**
       - /js/**
-      # 视频管理
-      - /video/**
-      # 字典
-      - /dict/**
-      # 上传
-      - /uploadFile
-      - /downloadFile
-      - /buckets
-      - /createBucket
-      - /deleteBucket/**
+      # 登录
+      - /login

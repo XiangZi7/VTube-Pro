@@ -29,14 +29,31 @@ const imgUpload = reactive({
 })
 // 图片上传前校验
 const beforUpload: UploadProps['beforeUpload'] = async (rawFile) => {
-  // 判断是否需要进行裁剪
-  imgUpload.isCropping = (await imgSize(rawFile)) as boolean
-  // 图片名称
-  imgUpload.imgName = rawFile.name
-  // 进入裁剪
-  imgCropping.imageUrl = URL.createObjectURL(rawFile)
-  imgUpload.dialogCropping = true
-  return false
+  // 获取图片尺寸
+  const image = new Image()
+  image.src = URL.createObjectURL(rawFile)
+
+  // 等待图片加载完成
+  await new Promise((resolve) => {
+    image.onload = () => resolve()
+  })
+
+  // 检查图片尺寸是否符合要求
+  if (image.width >= 960 && image.height >= 600) {
+    // 图片名称
+    imgUpload.imgName = rawFile.name
+    // 进入裁剪
+    imgCropping.imageUrl = URL.createObjectURL(rawFile)
+    imgUpload.dialogCropping = true
+    return false // 允许上传
+  } else {
+    // 图片尺寸不符合要求，给出提示
+    messagePro(
+      300,
+      `图片尺寸必须大于等于960 * 600,当前图片尺寸为:${image.width} * ${image.height}`
+    )
+    return true // 阻止上传
+  }
 }
 // 上传
 const updataImg = async (data: any) => {

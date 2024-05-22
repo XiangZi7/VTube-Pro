@@ -5,6 +5,7 @@ import axios, {
 } from 'axios'
 
 import NProgress from '@/comfig/nprogress'
+import { ApiResponse } from "@/interface/utils/http";
 
 export interface CustomAxiosRequestConfig extends InternalAxiosRequestConfig {
   noLoading?: boolean
@@ -12,7 +13,7 @@ export interface CustomAxiosRequestConfig extends InternalAxiosRequestConfig {
 
 // 创建axios实例并添加类型注解
 const instance: AxiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
+  baseURL: import.meta.env.VITE_APP_BASE_API,
   timeout: 10000,
   withCredentials: true,
 })
@@ -45,9 +46,14 @@ instance.interceptors.response.use(
 
 // 封装get方法
 // 函数以正确地使用泛型类型
-export const httpGet = <T>(url: string, params?: object): Promise<T> =>
-  instance.get(url, { params })
+export const httpGet = <T>(
+  url: string,
+  params?: object
+): Promise<ApiResponse<T>> => instance.get(url, { params })
 
 // 封装post方法
-export const httpPost = <T>(url: string, data?: object): Promise<T> =>
-  instance.post(url, data)
+export const httpPost = <T>(
+  url: string,
+  data?: object,
+  header?: object
+): Promise<ApiResponse<T>> => instance.post(url, data, header)

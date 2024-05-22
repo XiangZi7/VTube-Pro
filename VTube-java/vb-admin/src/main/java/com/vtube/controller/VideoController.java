@@ -5,18 +5,16 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.vtube.domain.Video;
 import com.vtube.domain.VideoEpisode;
-import com.vtube.mapper.VideoEpisodeMapper;
 import com.vtube.mapper.VideoMapper;
 import com.vtube.model.ApiResult;
 import com.vtube.service.VideoEpisodeService;
 import com.vtube.service.VideoService;
-import com.vtube.vo.Param.VideoVOParam;
+import com.vtube.vo.Param.VideoParam;
 import com.vtube.vo.VideoVO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import lombok.AllArgsConstructor;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -37,7 +35,7 @@ public class VideoController {
     @GetMapping("/list")
     @Operation(summary = "视频列表", description = "视频列表")
     public ApiResult<?> list(@RequestParam(name = "pageNum", defaultValue = "1") Long pageNum,
-                             @RequestParam(name = "pageSize", defaultValue = "10") Long pageSize, VideoVOParam videoVOParam) {
+                             @RequestParam(name = "pageSize", defaultValue = "10") Long pageSize, VideoParam videoVOParam) {
         Page<Video> page = new Page<>(pageNum, pageSize);
         IPage<VideoVO> videoIPage = videoMapper.VideoList(page, videoVOParam);
 

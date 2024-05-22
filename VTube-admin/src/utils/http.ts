@@ -3,9 +3,11 @@ import axios, {
   AxiosResponse,
   InternalAxiosRequestConfig,
 } from 'axios'
-
+import { StatusCode } from "@/enums/httpEnum";
 import NProgress from '@/comfig/nprogress'
 import { ApiResponse } from '@/interface/http'
+import router from "@/routers";
+
 
 export interface CustomAxiosRequestConfig extends InternalAxiosRequestConfig {
   noLoading?: boolean
@@ -21,6 +23,13 @@ const instance: AxiosInstance = axios.create({
 // 请求拦截器
 instance.interceptors.request.use(
   (config: CustomAxiosRequestConfig) => {
+    const userStore = useUserStore()
+
+    // token
+    const token = userStore.userInfo.token;
+    if (token != undefined && token != "") {
+      config.headers.Authorization = token;
+    }
     // 开启进度条
     NProgress.start()
     return config
@@ -31,10 +40,18 @@ instance.interceptors.request.use(
 // 响应拦截器
 instance.interceptors.response.use(
   (response: AxiosResponse) => {
+    const { data } = response;
+
     // 进度条结束
     NProgress.done()
-    // 返回完整的response对象，不仅是data部分
-    return response.data
+    // 返回 data部分
+    const userStore = useUserStore()
+    if (data.code == StatusCode.NOT_LOGIN) {
+      userStore.setUserInfo({})
+      router.replace("/login")
+      messagePro(data.code, "未登录");
+    }
+    return data
   },
   (error) => {
     // 响应错误时也结束进度条

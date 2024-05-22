@@ -28,9 +28,9 @@ export const staticRouter: RouteRecordRaw[] = [
         component: () => import('@/pages/dashboard/index.vue'),
       },
       {
-        path: '/home',
-        name: 'home',
-        component: () => import('@/pages/home/index.vue'),
+        path: '/dict',
+        name: 'dict',
+        component: () => import('@/pages/dict/index.vue'),
       },
       {
         path: '/video',
