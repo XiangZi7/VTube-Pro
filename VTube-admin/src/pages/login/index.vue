@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { FormInstance } from 'element-plus'
-
+import { user } from '@/interface/store/userStore'
 const router = useRouter()
 const userStore = useUserStore()
 const ruleFormRef = ref<FormInstance>()
@@ -26,12 +26,12 @@ const rules = ref({
 })
 
 const login = async () => {
-  await ruleFormRef.value.validate((valid) => {
+  await ruleFormRef.value?.validate((valid) => {
     if (!valid) return
-    
-    httpPost('/login', form.value).then(({ data, code, message }) => {
+
+    httpPost<user>('/login', form.value).then(({ data, code, message }) => {
       if (code !== 200) return messagePro(code, message)
-      messagePro(code, data.nickName)
+      messagePro(code, data.nickName as string)
       userStore.setUserInfo(data)
       router.push({
         path: '/dashboard',

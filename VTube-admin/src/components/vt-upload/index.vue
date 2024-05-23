@@ -29,31 +29,36 @@ const imgUpload = reactive({
 })
 // 图片上传前校验
 const beforUpload: UploadProps['beforeUpload'] = async (rawFile) => {
-  // 获取图片尺寸
-  const image = new Image()
-  image.src = URL.createObjectURL(rawFile)
+  // 图片名称
+  imgUpload.imgName = rawFile.name
+  // 进入裁剪
+  imgCropping.imageUrl = URL.createObjectURL(rawFile)
+  imgUpload.dialogCropping = true
+  // // 获取图片尺寸
+  // const image = new Image()
+  // image.src = URL.createObjectURL(rawFile)
 
-  // 等待图片加载完成
-  await new Promise((resolve) => {
-    image.onload = () => resolve()
-  })
+  // // 等待图片加载完成
+  // await new Promise((resolve) => {
+  //   image.onload = () => resolve()
+  // })
 
-  // 检查图片尺寸是否符合要求
-  if (image.width >= 960 && image.height >= 600) {
-    // 图片名称
-    imgUpload.imgName = rawFile.name
-    // 进入裁剪
-    imgCropping.imageUrl = URL.createObjectURL(rawFile)
-    imgUpload.dialogCropping = true
-    return false // 允许上传
-  } else {
-    // 图片尺寸不符合要求，给出提示
-    messagePro(
-      300,
-      `图片尺寸必须大于等于960 * 600,当前图片尺寸为:${image.width} * ${image.height}`
-    )
-    return true // 阻止上传
-  }
+  // // 检查图片尺寸是否符合要求
+  // if (image.width >= 960 && image.height >= 600) {
+  //   // 图片名称
+  //   imgUpload.imgName = rawFile.name
+  //   // 进入裁剪
+  //   imgCropping.imageUrl = URL.createObjectURL(rawFile)
+  //   imgUpload.dialogCropping = true
+  //   return false // 允许上传
+  // } else {
+  //   // 图片尺寸不符合要求，给出提示
+  //   messagePro(
+  //     300,
+  //     `图片尺寸必须大于等于960 * 600,当前图片尺寸为:${image.width} * ${image.height}`
+  //   )
+  //   return true // 阻止上传
+  // }
 }
 // 上传
 const updataImg = async (data: any) => {
@@ -80,9 +85,9 @@ const imgCropping = reactive({
   // 是否输出原图比例的截图
   full: false,
   // 默认生成截图框宽度
-  autoCropWidth: 298,
+  autoCropWidth: 170,
   // 默认生成截图框高度
-  autoCropHeight: 223.5,
+  autoCropHeight: 224,
   // 是否开启截图框宽高固定比例
   // fixed: true,
   // 截图框的宽高比例
@@ -195,7 +200,7 @@ onMounted(() => {
         </div>
         <div class="flex flex-col items-center justify-center gap-5">
           <h2>图片预览</h2>
-          <div class="w-[298px] h-[223.5px] overflow-hidden">
+          <div :style="previews.div" class="overflow-hidden">
             <el-image :style="previews.img" :src="previews.url" />
           </div>
         </div>

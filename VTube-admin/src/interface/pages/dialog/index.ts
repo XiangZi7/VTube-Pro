@@ -6,3 +6,12 @@ export interface DialogState<T = any> {
   api: string;
   getTableList?: () => void;
 }
+
+// 定义接口类型
+export interface Video {
+  title: string;
+  videoPath: string;
+  episodeNumber: number;
+  episodeId?: number;
+  videoId?: number;
+}

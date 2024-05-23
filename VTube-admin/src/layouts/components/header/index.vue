@@ -17,7 +17,7 @@ const logout = () => {
       dialogVisible.value = false
       router.replace('/login')
     }
-    messagePro(code, data)
+    messagePro(code, data as string)
   })
 }
 </script>

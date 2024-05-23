@@ -9,16 +9,16 @@
             <result property="title" column="title" jdbcType="VARCHAR"/>
             <result property="description" column="description" jdbcType="VARCHAR"/>
             <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
-            <result property="videoPath" column="video_path" jdbcType="VARCHAR"/>
             <result property="imagePath" column="image_path" jdbcType="VARCHAR"/>
             <result property="tags" column="tags" jdbcType="VARCHAR"/>
             <result property="type" column="type" jdbcType="OTHER"/>
+            <result property="uploader" column="uploader" jdbcType="OTHER"/>
     </resultMap>
 
     <sql id="Base_Column_List">
         video_id,title,description,
-        create_time,video_path,image_path,
-        tags,type
+        create_time,image_path,tags,
+        type,uploader
     </sql>
     <select id="VideoList" resultType="com.vtube.vo.VideoVO">
         SELECT
@@ -26,7 +26,6 @@
         v.title,
         v.description,
         v.create_time,
-        v.video_path,
         v.image_path,
         vd.views,
         vd.likes,
@@ -66,6 +65,23 @@
         </if>
         ORDER BY v.create_time DESC
     </select>
+    <select id="getVideoDetails" resultType="com.vtube.vo.PlayDetailsVO">
+        SELECT vt.video_id,
+               vt.title,
+               vt.description,
+               vt.create_time,
+               vt.tags,
+               vt.image_path,
+               vtd.views,
+               (vtd.likes / 100.0) * 5 AS likes
+        FROM vt_video AS vt
+                 JOIN
+             vt_video_data AS vtd
+             ON
+                 vt.video_id = vtd.video_id
+        where vt.video_id = #{videoId};
+    </select>
+
 
     <!-- 添加视频及相关信息数据 -->
     <insert id="addVideoData" parameterType="com.vtube.vo.VideoVO">

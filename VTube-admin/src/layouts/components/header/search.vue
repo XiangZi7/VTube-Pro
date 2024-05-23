@@ -5,7 +5,6 @@ interface RestaurantItem {
 }
 
 const state1 = ref('')
-const state2 = ref('')
 
 const restaurants = ref<RestaurantItem[]>([])
 const querySearch = (queryString: string, cb: any) => {
@@ -34,9 +33,6 @@ const loadAll = () => {
   ]
 }
 
-const handleSelect = (item: RestaurantItem) => {
-  console.log(item)
-}
 
 onMounted(() => {
   restaurants.value = loadAll()
@@ -50,7 +46,6 @@ onMounted(() => {
     clearable
     class="inline-input w-50"
     placeholder="Please Input"
-    @select="handleSelect"
   />
 </template>
 <style lang="scss" scoped></style>

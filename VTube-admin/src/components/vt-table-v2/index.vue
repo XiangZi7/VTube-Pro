@@ -108,6 +108,7 @@ defineExpose({
     <el-table
       :data="tableData"
       :row-key="rowKey"
+      show-overflow-tooltip
       @selection-change="selectionChange"
       class="!flex-1"
     >

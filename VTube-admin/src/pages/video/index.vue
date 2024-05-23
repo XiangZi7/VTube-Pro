@@ -66,25 +66,25 @@ const openDialog = (title: string, row: Partial<VideoVO> = {}) => {
   DialogRef.value?.openDialog(props)
 }
 // 删除
-const deletes = async (id: number) => {
-  const { code, data, message } = await httpPost('/video/deletes', [id])
+const deletes = async (id: number | (number | string)[]) => {
+  // 检查传入参数类型，统一处理为数组
+  const ids = Array.isArray(id) ? id : [id]
+
+  // 发出HTTP请求
+  const { code, data, message } = await httpPost('/video/deletes', ids)
+
+  // 弹出消息
   messagePro(code, data as string, message)
+
+  // 检查响应状态码
   if (code !== 200) return
 
+  // 更新表格
   if (vtTable.value?.getTableList) {
     vtTable.value.getTableList()
   }
 }
-// 批量删除
-const batchDelete = async (id: number[] | string[]) => {
-  const { code, data, message } = await httpPost('/video/deletes', id)
-  messagePro(code, data as string, message)
-  if (code !== 200) return
 
-  if (vtTable.value?.getTableList) {
-    vtTable.value.getTableList()
-  }
-}
 </script>
 <template>
   <div class="flex flex-col h-full">
@@ -100,15 +100,16 @@ const batchDelete = async (id: number[] | string[]) => {
       >
         <template #btn="{ isSelected, selectedListIds }">
           <div class="p-2 space-x-2">
-            <button
+            <el-button
               @click="openDialog('新增')"
+              type="primary"
               class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3"
             >
-              Add user
-            </button>
+              新增
+            </el-button>
             <el-popconfirm
               title="确定要批量删除这些数据？"
-              @confirm="batchDelete(selectedListIds)"
+              @confirm="deletes(selectedListIds)"
             >
               <template #reference>
                 <button

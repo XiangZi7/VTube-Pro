@@ -40,12 +40,6 @@ public class Video implements Serializable {
     private LocalDateTime createTime;
 
     /**
-     * 视频地址
-     */
-    @TableField(value = "video_path")
-    private String videoPath;
-
-    /**
      * 封面地址
      */
     @TableField(value = "image_path")
@@ -61,7 +55,13 @@ public class Video implements Serializable {
      * 视频类型
      */
     @TableField(value = "type")
-    private Integer type;
+    private Object type;
+
+    /**
+     * 上传者类型
+     */
+    @TableField(value = "uploader")
+    private Object uploader;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
@@ -82,10 +82,10 @@ public class Video implements Serializable {
             && (this.getTitle() == null ? other.getTitle() == null : this.getTitle().equals(other.getTitle()))
             && (this.getDescription() == null ? other.getDescription() == null : this.getDescription().equals(other.getDescription()))
             && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()))
-            && (this.getVideoPath() == null ? other.getVideoPath() == null : this.getVideoPath().equals(other.getVideoPath()))
             && (this.getImagePath() == null ? other.getImagePath() == null : this.getImagePath().equals(other.getImagePath()))
             && (this.getTags() == null ? other.getTags() == null : this.getTags().equals(other.getTags()))
-            && (this.getType() == null ? other.getType() == null : this.getType().equals(other.getType()));
+            && (this.getType() == null ? other.getType() == null : this.getType().equals(other.getType()))
+            && (this.getUploader() == null ? other.getUploader() == null : this.getUploader().equals(other.getUploader()));
     }
 
     @Override
@@ -96,10 +96,10 @@ public class Video implements Serializable {
         result = prime * result + ((getTitle() == null) ? 0 : getTitle().hashCode());
         result = prime * result + ((getDescription() == null) ? 0 : getDescription().hashCode());
         result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
-        result = prime * result + ((getVideoPath() == null) ? 0 : getVideoPath().hashCode());
         result = prime * result + ((getImagePath() == null) ? 0 : getImagePath().hashCode());
         result = prime * result + ((getTags() == null) ? 0 : getTags().hashCode());
         result = prime * result + ((getType() == null) ? 0 : getType().hashCode());
+        result = prime * result + ((getUploader() == null) ? 0 : getUploader().hashCode());
         return result;
     }
 
@@ -113,10 +113,10 @@ public class Video implements Serializable {
         sb.append(", title=").append(title);
         sb.append(", description=").append(description);
         sb.append(", createTime=").append(createTime);
-        sb.append(", videoPath=").append(videoPath);
         sb.append(", imagePath=").append(imagePath);
         sb.append(", tags=").append(tags);
         sb.append(", type=").append(type);
+        sb.append(", uploader=").append(uploader);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

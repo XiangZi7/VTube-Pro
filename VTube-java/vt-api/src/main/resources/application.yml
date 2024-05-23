@@ -52,3 +52,5 @@ vtube:
       # 登录
       - /login
       - /weekly-anime
+      # 播放的详情
+      - /play/**

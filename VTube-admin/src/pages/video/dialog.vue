@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { DialogState } from '@/interface/pages/dialog'
-
+import { Video } from "@/interface/pages/dialog";
 const dialogDisplay = ref(false)
-const episodeList = ref([])
+const episodeList = ref<Video[]>([])
 const acceptParam = ref<DialogState>({
   title: '',
   model: undefined,
@@ -40,9 +40,14 @@ function submit() {
 // tags
 const tagsVal = ref('')
 function creatTags() {
-  const tagsList = acceptParam.value.model.tags.split(',')
-  tagsList.push(tagsVal.value)
-  acceptParam.value.model.tags = tagsList.join()
+  if (acceptParam.value?.model?.tags) {
+    const tagsList = acceptParam.value?.model?.tags.split(',')
+    tagsList.push(tagsVal.value)
+    acceptParam.value.model.tags = tagsList.join()
+  } else {
+    acceptParam.value.model.tags = tagsVal.value
+  }
+  tagsVal.value = ""
 }
 defineExpose({ dialogDisplay, openDialog })
 </script>
@@ -123,6 +128,7 @@ defineExpose({ dialogDisplay, openDialog })
                   :disabled="acceptParam?.disabled"
                   class="shadow-sm"
                   placeholder="Enter your tags"
+                  @keyup.enter="creatTags"
                 />
                 <el-button
                   type="primary"
@@ -202,13 +208,13 @@ defineExpose({ dialogDisplay, openDialog })
         </div>
 
         <div class="flex w-auto justify-end">
-          <button
+          <el-button
             v-if="acceptParam.title !== '查看'"
             @click="submit"
             class="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary/90 focus:outline-none focus:ring focus:ring-primary"
           >
             确定
-          </button>
+          </el-button>
         </div>
       </el-form>
     </div>

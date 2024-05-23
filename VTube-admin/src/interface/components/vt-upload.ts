@@ -5,5 +5,6 @@ export type uploadType =
 
 export interface realTimeProps {
     img?: string;
-    url?: string
+    url?: string;
+    div?: string;
 }    

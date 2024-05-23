@@ -1,14 +1,27 @@
 <script setup lang="ts">
 import { Icon } from '@iconify/vue'
+import { indexState, weeklyAmime } from '@/interface/pages/index'
 
-const state = reactive({
+const fileUrl = import.meta.env.VITE_API_MINIO
+const router = useRouter()
+const state = reactive<indexState>({
   weeklyAnime: [],
   weekTabsIndex: 0,
 })
 const { weeklyAnime, weekTabsIndex } = toRefs(state)
 
+const weekDays = [
+  '星期一',
+  '星期二',
+  '星期三',
+  '星期四',
+  '星期五',
+  '星期六',
+  '星期日',
+]
+
 onMounted(() => {
-  httpGet('/weekly-anime').then(({ data }) => {
+  httpGet<weeklyAmime[][]>('/weekly-anime').then(({ data }) => {
     state.weeklyAnime = data
   })
 })
@@ -141,10 +154,10 @@ onMounted(() => {
           class="h-9 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground flex border-b border-gray-200 dark:border-gray-800"
         >
           <button
-            v-for="(item, index) in weeklyAnime"
-            :key="item.title"
+            v-for="(item, index) in weekDays"
+            :key="index"
             @click="weekTabsIndex = index"
-            class="inline-flex items-center justify-center whitespace-nowrap rounded-md mx-1 px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+            class="inline-flex items-center justify-center whitespace-nowrap rounded-md mx-1 px-3 py-1 text-sm font-medium ring-offset-background transition-all disabled:pointer-events-none disabled:opacity-50"
             :class="{
               'bg-white text-foreground bg-background text-foreground shadow':
                 weekTabsIndex == index,
@@ -154,40 +167,28 @@ onMounted(() => {
               'tab-transition-leave-to': weekTabsIndex < index,
             }"
           >
-            {{ item.title }}
+            {{ item }}
           </button>
         </div>
         <div
-          class="mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 py-6"
+          class="mt-2 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-6 py-6"
           style="animation-duration: 0s"
         >
-          <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <div
+            class="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer"
+            v-for="(item, index) in weeklyAnime[weekTabsIndex]"
+            :key="index"
+            @click="router.push(`/play/${item.videoId}`)"
+          >
             <img
-              src="https://generated.vusercontent.net/placeholder.svg"
+              :src="fileUrl + item.imagePath"
               alt="Anime Thumbnail"
-              width="400"
-              height="225"
-              class="w-full h-48 object-cover"
-              style="aspect-ratio: 400 / 225; object-fit: cover"
+              class="w-full h-[300px]"
             />
             <div class="p-4">
-              <h3 class="text-lg font-medium mb-2">Chainsaw Man</h3>
+              <h3 class="font-medium mb-2">{{ item.title }}</h3>
               <div class="flex items-center space-x-2 text-gray-500 mb-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="w-4 h-4"
-                >
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
+                <Icon icon="solar:calendar-mark-linear" />
                 <span>8:30 PM</span>
               </div>
               <div class="flex items-center space-x-2 text-gray-500">
@@ -197,9 +198,6 @@ onMounted(() => {
             </div>
           </div>
         </div>
-        <div
-          class="mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 py-6"
-        ></div>
       </div>
     </div>
   </section>

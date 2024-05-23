@@ -2,19 +2,21 @@
 import { ElNotification } from 'element-plus'
 import draggable from 'vuedraggable'
 import { Icon } from '@iconify/vue'
+import { Video } from "@/interface/pages/dialog";
+
 import axios from 'axios'
-const videoUrl = defineModel()
+const userStore = useUserStore()
+
+// token
+const token = userStore.userInfo.token
+const videoUrl = defineModel<Video[]>()
+
 defineProps({
   disabled: {
     type: Boolean,
     default: false,
   },
 })
-const state = reactive({
-  enabled: true,
-  drag: false,
-})
-const { fileList } = toRefs(state)
 
 // 视频上传成功提示
 function uploadSuccess() {
@@ -57,19 +59,20 @@ function handleHttpUpload(options) {
     url: import.meta.env.VITE_APP_BASE_API + '/uploadFile',
     method: 'post',
     data: formData,
-    headers: { 'Content-Type': 'multipart/form-data' },
+    headers: { 'Content-Type': 'multipart/form-data', Authorization: token },
     onUploadProgress: (progressEvent) => {
       uploadPercentage.value = Math.round(
-        (progressEvent.loaded / progressEvent.total) * 100
+        (progressEvent.loaded / progressEvent.total!) * 100
       )
     },
   })
     .then((res) => {
-      videoUrl.value.push({
+      videoUrl.value?.push({
         title: '',
         videoPath: res.data.data,
         episodeNumber: videoUrl.value.length + 1,
       })
+      console.log('🚀 => videoUrl.value:', videoUrl.value)
     })
     .finally(() => {
       uploading.value = false
@@ -79,7 +82,7 @@ function handleHttpUpload(options) {
 
 // 删除操作
 function deleteXJ(index) {
-  videoUrl.value.splice(index, 1)
+  videoUrl.value?.splice(index, 1)
 }
 </script>
 <template>
@@ -92,7 +95,6 @@ function deleteXJ(index) {
       :on-success="uploadSuccess"
       :on-error="uploadError"
       :http-request="handleHttpUpload"
-      :file-list="fileList"
       accept="video/*"
       :disabled="disabled"
     >
@@ -132,7 +134,6 @@ function deleteXJ(index) {
                   v-if="!disabled"
                   icon="solar:trash-bin-minimalistic-2-broken"
                   @click="deleteXJ(index)"
-                  class="cursor-pointer"
                 />
               </div>
             </div>

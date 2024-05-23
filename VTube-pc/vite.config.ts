@@ -1,11 +1,12 @@
-import {ConfigEnv, defineConfig, loadEnv, UserConfig} from 'vite'
+import { ConfigEnv, defineConfig, loadEnv, UserConfig } from 'vite'
 import path from 'path'
 import vue from '@vitejs/plugin-vue'
 import VueRouter from "unplugin-vue-router/vite";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
+
 // https://vitejs.dev/config/
-export default ({mode}: ConfigEnv): UserConfig => {
+export default ({ mode }: ConfigEnv): UserConfig => {
     const Env = loadEnv(mode, process.cwd());
     console.log(`当前：${Env.VITE_USER_NODE_ENV} 环境,API：${Env.VITE_APP_BASE_API}`);
     return defineConfig({
@@ -62,6 +63,14 @@ export default ({mode}: ConfigEnv): UserConfig => {
         },
         // 打包配置
         build: {
+            rollupOptions: {
+                // 静态资源分类打包
+                output: {
+                    chunkFileNames: 'static/js/[name]-[hash].js',
+                    entryFileNames: 'static/js/[name]-[hash].js',
+                    assetFileNames: 'static/[ext]/[name]-[hash].[ext]',
+                },
+            },
             target: "modules", // 设置最终构建的浏览器兼容目标。modules:支持原生 ES 模块的浏览器
             outDir: "dist", // 指定输出路径
             assetsDir: "assets", // 指定生成静态资源的存放路径

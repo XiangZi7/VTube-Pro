@@ -43,10 +43,17 @@
         <satoken-redis.version>1.38.0</satoken-redis.version>
         <springdoc.version>2.1.0</springdoc.version>
         <tianai-captcha.version>1.4.1</tianai-captcha.version>
+        <easyexcel.version>3.3.4</easyexcel.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <!-- 请使用最新版本 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>easyexcel</artifactId>
+                <version>${easyexcel.version}</version>
+            </dependency>
             <dependency>
                 <groupId>cn.dev33</groupId>
                 <artifactId>sa-token-spring-boot3-starter</artifactId>
