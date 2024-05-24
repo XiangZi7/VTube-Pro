@@ -3,11 +3,9 @@ import axios, {
   AxiosResponse,
   InternalAxiosRequestConfig,
 } from 'axios'
-import { StatusCode } from "@/enums/httpEnum";
 import NProgress from '@/comfig/nprogress'
 import { ApiResponse } from '@/interface/http'
-import router from "@/routers";
-
+import { checkStatusCode } from "@/api/checkStatusCode";
 
 export interface CustomAxiosRequestConfig extends InternalAxiosRequestConfig {
   noLoading?: boolean
@@ -45,12 +43,7 @@ instance.interceptors.response.use(
     // 进度条结束
     NProgress.done()
     // 返回 data部分
-    const userStore = useUserStore()
-    if (data.code == StatusCode.NOT_LOGIN) {
-      userStore.setUserInfo({})
-      router.replace("/login")
-      messagePro(data.code, "未登录");
-    }
+    checkStatusCode(data.code, data.message)
     return data
   },
   (error) => {

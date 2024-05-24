@@ -1,10 +1,13 @@
 package com.vtube.mapper;
 
+import com.vtube.domain.Menu;
 import com.vtube.domain.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.vtube.vo.Param.LoginParam;
 import com.vtube.vo.AdminLoginVO;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
 * @author Administrator
@@ -15,6 +18,8 @@ import org.apache.ibatis.annotations.Param;
 public interface UserMapper extends BaseMapper<User> {
     //管理员登录
     AdminLoginVO adminLogin(LoginParam loginParam);
+    // 查找用户的菜单、权限
+    List<Menu> ByUserIdFindMenu(Integer UserId);
 
 }
 

@@ -8,12 +8,12 @@ import java.io.Serializable;
 import lombok.Data;
 
 /**
- * 角色权限关联表
- * @TableName vt_role_permission
+ * 角色与菜单权限关联表
+ * @TableName vt_role_menu_permissions
  */
-@TableName(value ="vt_role_permission")
+@TableName(value ="vt_role_menu_permissions")
 @Data
-public class RolePermission implements Serializable {
+public class RoleMenuPermissions implements Serializable {
     /**
      * 角色ID
      */
@@ -21,10 +21,16 @@ public class RolePermission implements Serializable {
     private Integer roleId;
 
     /**
-     * 权限ID
+     * 菜单ID
      */
-    @TableField(value = "permission_id")
-    private Integer permissionId;
+    @TableField(value = "menu_id")
+    private Integer menuId;
+
+    /**
+     * 权限标识码
+     */
+    @TableField(value = "permission")
+    private String permission;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
@@ -40,9 +46,10 @@ public class RolePermission implements Serializable {
         if (getClass() != that.getClass()) {
             return false;
         }
-        RolePermission other = (RolePermission) that;
+        RoleMenuPermissions other = (RoleMenuPermissions) that;
         return (this.getRoleId() == null ? other.getRoleId() == null : this.getRoleId().equals(other.getRoleId()))
-            && (this.getPermissionId() == null ? other.getPermissionId() == null : this.getPermissionId().equals(other.getPermissionId()));
+            && (this.getMenuId() == null ? other.getMenuId() == null : this.getMenuId().equals(other.getMenuId()))
+            && (this.getPermission() == null ? other.getPermission() == null : this.getPermission().equals(other.getPermission()));
     }
 
     @Override
@@ -50,7 +57,8 @@ public class RolePermission implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((getRoleId() == null) ? 0 : getRoleId().hashCode());
-        result = prime * result + ((getPermissionId() == null) ? 0 : getPermissionId().hashCode());
+        result = prime * result + ((getMenuId() == null) ? 0 : getMenuId().hashCode());
+        result = prime * result + ((getPermission() == null) ? 0 : getPermission().hashCode());
         return result;
     }
 
@@ -61,7 +69,8 @@ public class RolePermission implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", roleId=").append(roleId);
-        sb.append(", permissionId=").append(permissionId);
+        sb.append(", menuId=").append(menuId);
+        sb.append(", permission=").append(permission);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

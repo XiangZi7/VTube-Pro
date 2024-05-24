@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vtube.mapper.MenuMapper">
+
+    <resultMap id="BaseResultMap" type="com.vtube.domain.Menu">
+            <id property="menuId" column="menu_id" jdbcType="INTEGER"/>
+            <result property="parentId" column="parent_id" jdbcType="INTEGER"/>
+            <result property="title" column="title" jdbcType="VARCHAR"/>
+            <result property="icon" column="icon" jdbcType="VARCHAR"/>
+            <result property="path" column="path" jdbcType="VARCHAR"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="component" column="component" jdbcType="VARCHAR"/>
+            <result property="orderNum" column="order_num" jdbcType="INTEGER"/>
+            <result property="visible" column="visible" jdbcType="TINYINT"/>
+            <result property="permission" column="permission" jdbcType="VARCHAR"/>
+            <result property="isKeepAlive" column="is_keep_alive" jdbcType="TINYINT"/>
+            <result property="redirect" column="redirect" jdbcType="VARCHAR"/>
+            <result property="isFull" column="is_full" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        menu_id,parent_id,title,
+        icon,path,name,
+        component,order_num,visible,
+        permission,is_keep_alive,redirect,
+        is_full
+    </sql>
+</mapper>

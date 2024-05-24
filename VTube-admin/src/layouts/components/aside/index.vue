@@ -9,51 +9,16 @@
       </span>
     </div>
     <ul class="mt-2">
-      <li
-        v-for="item in SideBarData"
-        :key="item.router"
-        class="mb-4"
-        @click="routs(item, $event)"
-      >
-        <div
-          class="cursor-pointer text-[var(--el-color-primary)] hover:bg-gray-200 dark:hover:bg-gray-400/20 dark:bg-white-800/10 dark:text-white flex items-center w-auto gap-2 rounded-md text-sm font-medium relative tap-highlight-transparent outline-none text-foreground no-underline p-3 hover:after:opacity-100 after:content-[''] after:inset-0 after:opacity-0 after:w-full after:h-full after:rounded-xl after:transition-background after:absolute hover:after:bg-foreground/10"
-        >
-          <Icon :icon="item.icon" class="w-5 h-5 mr-3" />
-          {{ item.Title }}
-        </div>
-        <template v-if="item.children">
-          <ul>
-            <li
-              v-for="children in item.children"
-              :key="children.router"
-              @click="routs(children, $event)"
-              class="ml-5 text-[var(--el-color-primary)] flex cursor-pointer dark:hover:bg-gray-400/20 dark:bg-white-800/10 hover:bg-gray-200 dark:text-white items-center w-auto gap-2 rounded-md text-sm font-medium relative tap-highlight-transparent outline-none text-foreground no-underline p-3 hover:after:opacity-100 after:content-[''] after:inset-0 after:opacity-0 after:w-full after:h-full after:rounded-xl after:transition-background after:absolute hover:after:bg-foreground/10"
-            >
-              <Icon :icon="children.icon" class="w-5 h-5 mr-3" />
-              {{ children.Title }}
-            </li>
-          </ul>
-        </template>
-      </li>
+      <MenuItem
+        v-for="item in menuStore.flatMenuListGet"
+        :key="item.meta.menuId"
+        :item-data="item"
+      />
     </ul>
   </aside>
 </template>
 <script setup lang="ts">
-import { Icon } from '@iconify/vue'
-import { SideBarData } from './data.ts'
-
-const router = useRouter()
+import MenuItem from './menu-item.vue'
 const menuStore = useMenuStore()
 const { isAside } = storeToRefs(menuStore)
-
-function routs(routers: string, event: Event) {
-  event.stopPropagation()
-  let routerObj = {
-    icon: routers.icon,
-    router: routers.router,
-    title: routers.Title,
-  }
-  menuStore.setBreadcrumbList(routerObj)
-  router.push(routers.router)
-}
 </script>

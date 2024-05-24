@@ -1,6 +1,5 @@
 import { defineStore } from 'pinia'
-import { MenuState } from '@/interface/store/menuStore.ts'
-import piniaPersistConfig from '@/comfig/piniaPersist.ts'
+import { MenuState, MenuItem } from '@/interface/store/menuStore.ts'
 import { bread } from "@/interface/store/menuStore";
 /**
  * 全局设置
@@ -8,11 +7,24 @@ import { bread } from "@/interface/store/menuStore";
 export const useMenuStore = defineStore({
   id: 'useMenuStore',
   state: (): MenuState => ({
-    isAside: false,
+    isAside: true,
     breadcrumbList: [
       { icon: 'ant-design:dashboard-outlined', title: "仪表盘", router: "/dashboard" }
-    ]
+    ],
+    authMenuList: []
   }),
+  getters: {
+    // // 按钮权限列表
+    // authButtonListGet: state => state.authButtonList,
+    // // 菜单权限列表 ==> 这里的菜单没有经过任何处理
+    authMenuListGet: state => state.authMenuList,
+    // // 菜单权限列表 ==> 左侧菜单栏渲染，需要剔除 isHide == true
+    showMenuListGet: state => buildTree(state.authMenuList),
+    // // 菜单权限列表 ==> 扁平化之后的一维数组菜单，主要用来添加动态路由
+    flatMenuListGet: state => buildTree(state.authMenuList),
+    // // 递归处理后的所有面包屑导航列表
+    // breadcrumbListGet: state => getAllBreadcrumbList(state.authMenuList)
+  },
   actions: {
     setIsAside(isAside: boolean) {
       this.isAside = isAside
@@ -33,7 +45,11 @@ export const useMenuStore = defineStore({
       if (index !== -1) {
         this.breadcrumbList.splice(index, 1);
       }
+    },
+    async getAuthMenuList() {
+      const { data } = await httpPost<MenuItem[]>("/permissions")
+      this.authMenuList = data
     }
   },
-  persist: piniaPersistConfig('MenuStore'),
+  // persist: piniaPersistConfig('MenuStore'),
 })

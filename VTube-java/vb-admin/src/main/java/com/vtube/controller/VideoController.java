@@ -1,5 +1,6 @@
 package com.vtube.controller;
 
+import cn.dev33.satoken.annotation.SaCheckRole;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -57,20 +58,21 @@ public class VideoController {
         return ApiResult.ok(list);
     }
 
+    @SaCheckRole("Super-Admin")
     @PostMapping("/add")
     @Operation(summary = "视频添加", description = "视频添加")
     public ApiResult<?> add(@RequestBody VideoVO video) {
         videoService.addVideoData(video);
         return ApiResult.ok("新增成功");
     }
-
+    @SaCheckRole("Super-Admin")
     @PostMapping("/edit")
     @Operation(summary = "视频更新", description = "视频更新")
     public ApiResult<?> edit(@RequestBody VideoVO video) {
         videoService.updateVideoData(video);
         return ApiResult.ok("视频更新成功");
     }
-
+    @SaCheckRole("Super-Admin")
     @PostMapping("/deletes")
     @Operation(summary = "视频删除", description = "视频删除")
     public ApiResult<?> deletes(@RequestBody List<Integer> ids) {

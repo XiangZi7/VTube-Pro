@@ -2,7 +2,7 @@
 import { ElNotification } from 'element-plus'
 import draggable from 'vuedraggable'
 import { Icon } from '@iconify/vue'
-import { Video } from "@/interface/pages/dialog";
+import { Video } from '@/interface/pages/dialog'
 
 import axios from 'axios'
 const userStore = useUserStore()
@@ -111,7 +111,7 @@ function deleteXJ(index) {
     />
     <el-scrollbar height="400px">
       <draggable
-        sort="true"
+        :sort="true"
         :list="videoUrl"
         item-key="id"
         :force-fallback="true"
@@ -123,6 +123,7 @@ function deleteXJ(index) {
                 {{ index + 1 }}
               </span>
               <Icon icon="solar:videocamera-record-bold" />
+              <!-- <Icon icon="ri:drag-move-2-fill" class="drag-move-item text-2xl"/> -->
               {{ element.name }}
               <el-input
                 v-model="videoUrl[index].title"
@@ -134,6 +135,7 @@ function deleteXJ(index) {
                   v-if="!disabled"
                   icon="solar:trash-bin-minimalistic-2-broken"
                   @click="deleteXJ(index)"
+                  class="cursor-pointer"
                 />
               </div>
             </div>

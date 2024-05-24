@@ -11,6 +11,7 @@ import com.vtube.vo.PlayDetailsVO;
 import com.vtube.vo.VideoVO;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -31,6 +32,7 @@ public class VideoServiceImpl extends ServiceImpl<VideoMapper, Video>
 
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public int addVideoData(VideoVO videoVO) {
         // 插入视频数据
         Video video = new Video();
@@ -62,6 +64,7 @@ public class VideoServiceImpl extends ServiceImpl<VideoMapper, Video>
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public int updateVideoData(VideoVO videoVO) {
         // 更新视频数据
         Video video = new Video();

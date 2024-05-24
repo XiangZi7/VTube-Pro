@@ -35,7 +35,6 @@ public class ApiResult<T> implements Serializable {
             return error();
         }
     }
-
     /**
      * 成功通知结果
      *

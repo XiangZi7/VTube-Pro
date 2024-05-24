@@ -34,6 +34,19 @@
                  JOIN vt_role r ON ur.role_id = r.role_id
         WHERE u.user_name = #{userName}
           AND u.password = #{passWord}
-          AND r.name = 'Admin'
+          AND r.role_id in (1,4);
+    </select>
+    <select id="ByUserIdFindMenu" resultType="com.vtube.domain.Menu">
+        SELECT m.*
+        FROM vt_user u
+                 JOIN
+             vt_user_role ur on u.user_id = ur.user_id
+                 JOIN
+             vt_role r on ur.role_id = r.role_id
+                 JOIN
+             vt_role_menu_permissions p on r.role_id = p.role_id
+                 JOIN
+             vt_menu m on p.menu_id = m.menu_id
+        WHERE u.user_id = #{UserId};
     </select>
 </mapper>

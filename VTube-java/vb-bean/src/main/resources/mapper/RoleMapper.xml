@@ -12,4 +12,10 @@
     <sql id="Base_Column_List">
         role_id,name
     </sql>
+    <select id="ByUserIdFindRoleName" resultType="java.lang.String">
+        SELECT r.`name`
+        FROM vt_role AS r
+                 LEFT JOIN vt_user_role AS ur ON r.role_id = ur.role_id
+        WHERE ur.user_id = #{userId}
+    </select>
 </mapper>

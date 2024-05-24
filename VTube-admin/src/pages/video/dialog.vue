@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { DialogState } from '@/interface/pages/dialog'
-import { Video } from "@/interface/pages/dialog";
+import { Video } from '@/interface/pages/dialog'
 const dialogDisplay = ref(false)
 const episodeList = ref<Video[]>([])
 const acceptParam = ref<DialogState>({
@@ -27,9 +27,8 @@ function submit() {
   Object.assign(acceptParam.value?.model, { episodeList: episodeList.value })
   httpPost(acceptParam.value?.api as string, acceptParam.value?.model).then(
     ({ code, data }) => {
-      messagePro(code, data as string)
       if (code !== 200) return
-
+      messagePro(code, data as string)
       // 重新获取表单数据
       acceptParam.value.getTableList()
       dialogDisplay.value = false
@@ -47,7 +46,7 @@ function creatTags() {
   } else {
     acceptParam.value.model.tags = tagsVal.value
   }
-  tagsVal.value = ""
+  tagsVal.value = ''
 }
 defineExpose({ dialogDisplay, openDialog })
 </script>
