@@ -1,0 +1,1314 @@
+08:40:13.323 logback [http-nio-8085-exec-1] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 422637
+08:40:13.323 logback [http-nio-8085-exec-5] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 422633
+08:47:36.386 logback [http-nio-8085-exec-8] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 443040
+08:47:36.387 logback [http-nio-8085-exec-6] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 443046
+08:51:59.790 logback [http-nio-8085-exec-1] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 237935
+08:51:59.790 logback [http-nio-8085-exec-5] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 237940
+08:54:52.684 logback [http-nio-8085-exec-6] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 172872
+08:54:52.684 logback [http-nio-8085-exec-9] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 172878
+09:01:13.326 logback [http-nio-8085-exec-7] WARN  o.apache.catalina.connector.Request - Creating the temporary upload location [C:\Users\Administrator\AppData\Local\Temp\tomcat.8085.5030993919833385671\work\Tomcat\localhost\ROOT] as it is required by the servlet [dispatcherServlet]
+09:01:13.347 logback [http-nio-8085-exec-7] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 380641
+09:01:13.347 logback [http-nio-8085-exec-7] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 380648
+09:02:15.773 logback [http-nio-8085-exec-2] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 62413
+09:05:10.505 logback [http-nio-8085-exec-6] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 174720
+09:07:13.451 logback [http-nio-8085-exec-7] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 122933
+09:07:13.451 logback [http-nio-8085-exec-8] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 122936
+09:09:10.641 logback [http-nio-8085-exec-3] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 115035
+09:09:10.641 logback [http-nio-8085-exec-7] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 117180
+09:10:16.844 logback [http-nio-8085-exec-1] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 66190
+09:10:16.844 logback [http-nio-8085-exec-6] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 66186
+09:16:03.875 logback [http-nio-8085-exec-3] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 269443
+09:16:03.875 logback [http-nio-8085-exec-5] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 269438
+09:19:58.170 logback [http-nio-8085-exec-7] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 126451
+09:19:58.170 logback [http-nio-8085-exec-4] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 126448
+09:24:28.498 logback [http-nio-8085-exec-3] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 227673
+09:24:28.498 logback [http-nio-8085-exec-7] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 227676
+09:27:16.410 logback [http-nio-8085-exec-5] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 167901
+09:27:16.410 logback [http-nio-8085-exec-9] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 167898
+09:35:24.309 logback [http-nio-8085-exec-2] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 441888
+09:35:24.310 logback [http-nio-8085-exec-2] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 441893
+09:45:13.847 logback [http-nio-8085-exec-8] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 589525
+09:45:13.847 logback [http-nio-8085-exec-9] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 589521
+09:52:25.283 logback [http-nio-8085-exec-1] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 396808
+09:52:25.283 logback [http-nio-8085-exec-5] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 396813
+10:01:59.686 logback [http-nio-8085-exec-6] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 574384
+10:01:59.687 logback [http-nio-8085-exec-10] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 574377
+10:08:49.718 logback [http-nio-8085-exec-7] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 410003
+10:08:49.718 logback [http-nio-8085-exec-3] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 409996
+10:17:16.422 logback [http-nio-8085-exec-2] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 457175
+10:17:16.422 logback [http-nio-8085-exec-4] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 457179
+10:35:44.238 logback [http-nio-8085-exec-6] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 1104768
+10:35:44.238 logback [http-nio-8085-exec-9] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 1104776
+10:39:51.635 logback [http-nio-8085-exec-2] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 247383
+10:39:51.639 logback [http-nio-8085-exec-7] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 247373
+10:42:16.676 logback [http-nio-8085-exec-10] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 80029
+10:42:16.676 logback [http-nio-8085-exec-9] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 80026
+10:55:43.030 logback [http-nio-8085-exec-6] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 805190
+10:55:43.031 logback [http-nio-8085-exec-6] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 805194
+11:00:47.937 logback [http-nio-8085-exec-9] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 304887
+11:01:49.637 logback [http-nio-8085-exec-4] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 61675
+11:01:49.645 logback [http-nio-8085-exec-3] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 61688
+11:05:43.982 logback [http-nio-8085-exec-7] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 234329
+11:05:43.982 logback [http-nio-8085-exec-5] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 234324
+11:07:01.015 logback [http-nio-8085-exec-9] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 62603
+11:07:01.015 logback [http-nio-8085-exec-7] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 62609
+11:08:57.878 logback [http-nio-8085-exec-2] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 85346
+11:08:57.878 logback [http-nio-8085-exec-1] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 85353
+11:13:15.191 logback [http-nio-8085-exec-6] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 242670
+11:13:15.191 logback [http-nio-8085-exec-10] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 257297
+11:16:08.271 logback [http-nio-8085-exec-8] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 76063
+11:16:08.273 logback [http-nio-8085-exec-8] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 173071
+11:21:24.423 logback [http-nio-8085-exec-6] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 314005
+11:26:20.697 logback [http-nio-8085-exec-4] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 296262
+11:26:20.697 logback [http-nio-8085-exec-8] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 296265
+11:31:27.850 logback [http-nio-8085-exec-3] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 307138
+11:31:27.851 logback [http-nio-8085-exec-3] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 307141
+11:32:37.001 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+11:32:37.003 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+11:32:40.593 logback [main] INFO  com.vtube.AdminApplication - Starting AdminApplication using Java 19.0.2 with PID 6508 (E:\VTube\VTube-java\vb-admin\target\classes started by Administrator in E:\VTube)
+11:32:40.595 logback [main] INFO  com.vtube.AdminApplication - The following 1 profile is active: "dev"
+11:32:41.451 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
+11:32:41.457 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+11:32:41.457 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+11:32:41.457 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+11:32:41.512 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+11:32:41.512 logback [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 888 ms
+11:32:42.396 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由START ##############
+11:32:42.396 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /test/**
+11:32:42.396 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /favicon.ico
+11:32:42.396 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-ui/**
+11:32:42.396 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-resources/**
+11:32:42.396 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /v3/**
+11:32:42.396 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /error
+11:32:42.396 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /default/**
+11:32:42.396 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /css/**
+11:32:42.396 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /js/**
+11:32:42.396 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /video/**
+11:32:42.396 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /dict/**
+11:32:42.396 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /uploadFile
+11:32:42.396 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /downloadFile
+11:32:42.396 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /buckets
+11:32:42.396 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /createBucket
+11:32:42.397 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /deleteBucket/**
+11:32:42.397 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由END ##############
+11:32:42.775 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8085"]
+11:32:42.788 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8085 (http) with context path ''
+11:32:42.789 logback [main] INFO  com.vtube.AdminApplication - 
+---------------------------------------------------------
+	Application is running! Access address:
+	Local:		http://localhost:8085
+	External:	http://172.26.80.1:8085
+	管理员接口文档:	http://localhost:8085/swagger-ui/index.html#/
+---------------------------------------------------------
+
+11:32:42.794 logback [main] INFO  com.vtube.AdminApplication - Started AdminApplication in 2.446 seconds (process running for 2.898)
+11:33:37.952 logback [http-nio-8085-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11:33:37.953 logback [http-nio-8085-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+11:33:37.954 logback [http-nio-8085-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+11:33:38.041 logback [http-nio-8085-exec-3] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+11:36:10.707 logback [http-nio-8085-exec-2] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 125579
+11:36:10.707 logback [http-nio-8085-exec-6] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 152478
+11:36:10.707 logback [http-nio-8085-exec-9] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 113991
+11:37:03.479 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+11:37:03.483 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+11:37:07.569 logback [main] INFO  com.vtube.AdminApplication - Starting AdminApplication using Java 19.0.2 with PID 8552 (E:\VTube\VTube-java\vb-admin\target\classes started by Administrator in E:\VTube)
+11:37:07.570 logback [main] INFO  com.vtube.AdminApplication - The following 1 profile is active: "dev"
+11:37:08.322 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
+11:37:08.327 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+11:37:08.328 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+11:37:08.328 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+11:37:08.386 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+11:37:08.386 logback [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 793 ms
+11:37:09.150 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由START ##############
+11:37:09.151 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /test/**
+11:37:09.151 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /favicon.ico
+11:37:09.151 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-ui/**
+11:37:09.151 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-resources/**
+11:37:09.151 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /v3/**
+11:37:09.151 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /error
+11:37:09.151 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /default/**
+11:37:09.151 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /css/**
+11:37:09.151 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /js/**
+11:37:09.151 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /video/**
+11:37:09.151 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /dict/**
+11:37:09.151 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /uploadFile
+11:37:09.151 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /downloadFile
+11:37:09.151 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /buckets
+11:37:09.151 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /createBucket
+11:37:09.151 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /deleteBucket/**
+11:37:09.151 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由END ##############
+11:37:09.505 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8085"]
+11:37:09.517 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8085 (http) with context path ''
+11:37:09.518 logback [main] INFO  com.vtube.AdminApplication - 
+---------------------------------------------------------
+	Application is running! Access address:
+	Local:		http://localhost:8085
+	External:	http://172.26.80.1:8085
+	管理员接口文档:	http://localhost:8085/swagger-ui/index.html#/
+---------------------------------------------------------
+
+11:37:09.524 logback [main] INFO  com.vtube.AdminApplication - Started AdminApplication in 2.17 seconds (process running for 2.559)
+11:37:15.028 logback [http-nio-8085-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11:37:15.028 logback [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+11:37:15.029 logback [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+11:37:15.148 logback [http-nio-8085-exec-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+11:39:07.970 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+11:39:07.972 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+11:39:09.652 logback [main] INFO  com.vtube.AdminApplication - Starting AdminApplication using Java 19.0.2 with PID 36280 (E:\VTube\VTube-java\vb-admin\target\classes started by Administrator in E:\VTube)
+11:39:09.653 logback [main] INFO  com.vtube.AdminApplication - The following 1 profile is active: "dev"
+11:39:10.434 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
+11:39:10.441 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+11:39:10.441 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+11:39:10.441 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+11:39:10.499 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+11:39:10.499 logback [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 820 ms
+11:39:11.283 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由START ##############
+11:39:11.283 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /test/**
+11:39:11.283 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /favicon.ico
+11:39:11.283 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-ui/**
+11:39:11.283 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-resources/**
+11:39:11.283 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /v3/**
+11:39:11.283 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /error
+11:39:11.283 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /default/**
+11:39:11.283 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /css/**
+11:39:11.283 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /js/**
+11:39:11.283 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /video/**
+11:39:11.283 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /dict/**
+11:39:11.283 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /uploadFile
+11:39:11.283 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /downloadFile
+11:39:11.283 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /buckets
+11:39:11.283 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /createBucket
+11:39:11.283 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /deleteBucket/**
+11:39:11.283 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由END ##############
+11:39:11.652 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8085"]
+11:39:11.663 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8085 (http) with context path ''
+11:39:11.664 logback [main] INFO  com.vtube.AdminApplication - 
+---------------------------------------------------------
+	Application is running! Access address:
+	Local:		http://localhost:8085
+	External:	http://172.26.80.1:8085
+	管理员接口文档:	http://localhost:8085/swagger-ui/index.html#/
+---------------------------------------------------------
+
+11:39:11.669 logback [main] INFO  com.vtube.AdminApplication - Started AdminApplication in 2.236 seconds (process running for 2.629)
+11:39:13.428 logback [http-nio-8085-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11:39:13.428 logback [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+11:39:13.429 logback [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+11:39:13.554 logback [http-nio-8085-exec-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+11:44:49.821 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+11:44:49.823 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+11:44:53.570 logback [main] INFO  com.vtube.AdminApplication - Starting AdminApplication using Java 19.0.2 with PID 13888 (E:\VTube\VTube-java\vb-admin\target\classes started by Administrator in E:\VTube)
+11:44:53.571 logback [main] INFO  com.vtube.AdminApplication - The following 1 profile is active: "dev"
+11:44:54.312 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
+11:44:54.317 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+11:44:54.317 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+11:44:54.317 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+11:44:54.368 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+11:44:54.368 logback [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 773 ms
+11:44:55.164 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由START ##############
+11:44:55.165 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /test/**
+11:44:55.165 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /favicon.ico
+11:44:55.165 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-ui/**
+11:44:55.165 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-resources/**
+11:44:55.165 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /v3/**
+11:44:55.165 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /error
+11:44:55.165 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /default/**
+11:44:55.165 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /css/**
+11:44:55.165 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /js/**
+11:44:55.165 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /video/**
+11:44:55.165 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /dict/**
+11:44:55.165 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /uploadFile
+11:44:55.165 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /downloadFile
+11:44:55.165 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /buckets
+11:44:55.165 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /createBucket
+11:44:55.165 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /deleteBucket/**
+11:44:55.165 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由END ##############
+11:44:55.562 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8085"]
+11:44:55.575 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8085 (http) with context path ''
+11:44:55.576 logback [main] INFO  com.vtube.AdminApplication - 
+---------------------------------------------------------
+	Application is running! Access address:
+	Local:		http://localhost:8085
+	External:	http://172.26.80.1:8085
+	管理员接口文档:	http://localhost:8085/swagger-ui/index.html#/
+---------------------------------------------------------
+
+11:44:55.582 logback [main] INFO  com.vtube.AdminApplication - Started AdminApplication in 2.227 seconds (process running for 2.61)
+11:51:36.834 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-0} closing ...
+11:51:40.065 logback [main] INFO  com.vtube.AdminApplication - Starting AdminApplication using Java 19.0.2 with PID 31776 (E:\VTube\VTube-java\vb-admin\target\classes started by Administrator in E:\VTube)
+11:51:40.066 logback [main] INFO  com.vtube.AdminApplication - The following 1 profile is active: "dev"
+11:51:40.874 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
+11:51:40.879 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+11:51:40.880 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+11:51:40.880 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+11:51:40.925 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+11:51:40.925 logback [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 836 ms
+11:51:41.765 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由START ##############
+11:51:41.765 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /test/**
+11:51:41.766 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /favicon.ico
+11:51:41.766 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-ui/**
+11:51:41.766 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-resources/**
+11:51:41.766 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /v3/**
+11:51:41.766 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /error
+11:51:41.766 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /default/**
+11:51:41.766 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /css/**
+11:51:41.766 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /js/**
+11:51:41.766 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /video/**
+11:51:41.766 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /dict/**
+11:51:41.766 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /uploadFile
+11:51:41.766 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /downloadFile
+11:51:41.766 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /buckets
+11:51:41.766 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /createBucket
+11:51:41.766 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /deleteBucket/**
+11:51:41.766 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由END ##############
+11:51:42.141 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8085"]
+11:51:42.152 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8085 (http) with context path ''
+11:51:42.153 logback [main] INFO  com.vtube.AdminApplication - 
+---------------------------------------------------------
+	Application is running! Access address:
+	Local:		http://localhost:8085
+	External:	http://172.26.80.1:8085
+	管理员接口文档:	http://localhost:8085/swagger-ui/index.html#/
+---------------------------------------------------------
+
+11:51:42.158 logback [main] INFO  com.vtube.AdminApplication - Started AdminApplication in 2.302 seconds (process running for 2.695)
+11:51:46.391 logback [http-nio-8085-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11:51:46.391 logback [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+11:51:46.392 logback [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+11:51:46.526 logback [http-nio-8085-exec-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+11:53:03.514 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+11:53:03.517 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+11:53:07.241 logback [main] INFO  com.vtube.AdminApplication - Starting AdminApplication using Java 19.0.2 with PID 40376 (E:\VTube\VTube-java\vb-admin\target\classes started by Administrator in E:\VTube)
+11:53:07.242 logback [main] INFO  com.vtube.AdminApplication - The following 1 profile is active: "dev"
+11:53:07.986 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
+11:53:07.991 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+11:53:07.991 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+11:53:07.991 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+11:53:08.040 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+11:53:08.041 logback [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 775 ms
+11:53:08.791 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由START ##############
+11:53:08.792 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /test/**
+11:53:08.792 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /favicon.ico
+11:53:08.792 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-ui/**
+11:53:08.792 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-resources/**
+11:53:08.792 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /v3/**
+11:53:08.792 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /error
+11:53:08.792 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /default/**
+11:53:08.792 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /css/**
+11:53:08.792 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /js/**
+11:53:08.792 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /video/**
+11:53:08.792 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /dict/**
+11:53:08.792 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /uploadFile
+11:53:08.792 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /downloadFile
+11:53:08.792 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /buckets
+11:53:08.792 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /createBucket
+11:53:08.792 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /deleteBucket/**
+11:53:08.792 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由END ##############
+11:53:09.226 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8085"]
+11:53:09.238 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8085 (http) with context path ''
+11:53:09.239 logback [main] INFO  com.vtube.AdminApplication - 
+---------------------------------------------------------
+	Application is running! Access address:
+	Local:		http://localhost:8085
+	External:	http://172.26.80.1:8085
+	管理员接口文档:	http://localhost:8085/swagger-ui/index.html#/
+---------------------------------------------------------
+
+11:53:09.246 logback [main] INFO  com.vtube.AdminApplication - Started AdminApplication in 2.216 seconds (process running for 2.607)
+11:53:13.078 logback [http-nio-8085-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11:53:13.078 logback [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+11:53:13.079 logback [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+11:53:13.197 logback [http-nio-8085-exec-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+11:53:13.362 logback [http-nio-8085-exec-1] ERROR c.v.e.GlobalExceptionHandler - 全局异常捕获，异常消息:Cannot invoke "String.split(String)" because "tags" is null
+11:53:13.363 logback [http-nio-8085-exec-1] INFO  c.v.e.GlobalExceptionHandler - =============== handlerException-START ===============
+11:53:13.363 logback [http-nio-8085-exec-1] INFO  c.v.e.GlobalExceptionHandler - 请求IP：127.0.0.1
+11:53:13.363 logback [http-nio-8085-exec-1] INFO  c.v.e.GlobalExceptionHandler - 请求地址：http://127.0.0.1:8085/video/list
+11:53:13.364 logback [http-nio-8085-exec-1] INFO  c.v.e.GlobalExceptionHandler - 请求方式：GET
+11:53:13.364 logback [http-nio-8085-exec-1] INFO  c.v.e.GlobalExceptionHandler - =============== 请求内容-END ===============
+11:53:13.419 logback [http-nio-8085-exec-4] ERROR c.v.e.GlobalExceptionHandler - 全局异常捕获，异常消息:Cannot invoke "String.split(String)" because "tags" is null
+11:53:13.420 logback [http-nio-8085-exec-4] INFO  c.v.e.GlobalExceptionHandler - =============== handlerException-START ===============
+11:53:13.420 logback [http-nio-8085-exec-4] INFO  c.v.e.GlobalExceptionHandler - 请求IP：127.0.0.1
+11:53:13.420 logback [http-nio-8085-exec-4] INFO  c.v.e.GlobalExceptionHandler - 请求地址：http://127.0.0.1:8085/video/list
+11:53:13.420 logback [http-nio-8085-exec-4] INFO  c.v.e.GlobalExceptionHandler - 请求方式：GET
+11:53:13.420 logback [http-nio-8085-exec-4] INFO  c.v.e.GlobalExceptionHandler - =============== 请求内容-END ===============
+11:53:40.039 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+11:53:40.042 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+11:53:43.758 logback [main] INFO  com.vtube.AdminApplication - Starting AdminApplication using Java 19.0.2 with PID 19540 (E:\VTube\VTube-java\vb-admin\target\classes started by Administrator in E:\VTube)
+11:53:43.759 logback [main] INFO  com.vtube.AdminApplication - The following 1 profile is active: "dev"
+11:53:44.531 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
+11:53:44.537 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+11:53:44.537 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+11:53:44.538 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+11:53:44.590 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+11:53:44.590 logback [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 807 ms
+11:53:45.356 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由START ##############
+11:53:45.357 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /test/**
+11:53:45.357 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /favicon.ico
+11:53:45.357 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-ui/**
+11:53:45.357 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-resources/**
+11:53:45.357 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /v3/**
+11:53:45.357 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /error
+11:53:45.357 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /default/**
+11:53:45.357 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /css/**
+11:53:45.357 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /js/**
+11:53:45.357 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /video/**
+11:53:45.357 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /dict/**
+11:53:45.358 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /uploadFile
+11:53:45.358 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /downloadFile
+11:53:45.358 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /buckets
+11:53:45.358 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /createBucket
+11:53:45.358 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /deleteBucket/**
+11:53:45.358 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由END ##############
+11:53:45.722 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8085"]
+11:53:45.734 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8085 (http) with context path ''
+11:53:45.735 logback [main] INFO  com.vtube.AdminApplication - 
+---------------------------------------------------------
+	Application is running! Access address:
+	Local:		http://localhost:8085
+	External:	http://172.26.80.1:8085
+	管理员接口文档:	http://localhost:8085/swagger-ui/index.html#/
+---------------------------------------------------------
+
+11:53:45.740 logback [main] INFO  com.vtube.AdminApplication - Started AdminApplication in 2.198 seconds (process running for 2.588)
+11:53:48.065 logback [http-nio-8085-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11:53:48.065 logback [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+11:53:48.067 logback [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+11:53:48.187 logback [http-nio-8085-exec-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+13:10:08.825 logback [http-nio-8085-exec-2] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 168466
+13:10:08.825 logback [http-nio-8085-exec-3] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 168476
+13:13:16.119 logback [http-nio-8085-exec-8] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 121987
+13:13:16.119 logback [http-nio-8085-exec-6] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 121993
+13:13:16.119 logback [http-nio-8085-exec-4] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 121987
+13:23:16.740 logback [http-nio-8085-exec-1] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 533732
+13:23:16.740 logback [http-nio-8085-exec-9] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 561187
+13:25:42.480 logback [http-nio-8085-exec-9] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 125112
+13:25:42.480 logback [http-nio-8085-exec-2] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 125108
+13:25:42.480 logback [http-nio-8085-exec-7] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 125118
+13:29:21.802 logback [http-nio-8085-exec-4] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 188230
+13:29:21.802 logback [http-nio-8085-exec-1] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 188238
+13:29:21.801 logback [http-nio-8085-exec-9] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 188233
+13:31:51.260 logback [http-nio-8085-exec-10] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 118042
+13:31:51.260 logback [http-nio-8085-exec-8] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 118049
+13:31:51.260 logback [http-nio-8085-exec-5] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 118045
+13:34:08.994 logback [http-nio-8085-exec-2] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 90756
+13:34:08.994 logback [http-nio-8085-exec-9] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 90760
+13:34:08.994 logback [http-nio-8085-exec-7] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 90760
+13:35:56.230 logback [http-nio-8085-exec-6] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 107220
+13:35:56.230 logback [http-nio-8085-exec-1] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 107222
+13:37:11.261 logback [http-nio-8085-exec-9] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 61855
+13:37:11.261 logback [http-nio-8085-exec-7] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 61859
+13:43:40.648 logback [http-nio-8085-exec-6] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 389378
+13:43:40.648 logback [http-nio-8085-exec-4] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 389382
+13:47:47.960 logback [http-nio-8085-exec-8] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 247298
+13:47:47.960 logback [http-nio-8085-exec-7] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 183175
+13:51:47.750 logback [http-nio-8085-exec-6] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 239772
+13:51:47.751 logback [http-nio-8085-exec-6] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 239775
+13:51:48.580 logback [http-nio-8085-exec-9] ERROR c.v.e.GlobalExceptionHandler - 全局异常捕获，异常消息:JSON parse error: Cannot invoke "String.split(String)" because "tags" is null
+13:51:48.580 logback [http-nio-8085-exec-9] INFO  c.v.e.GlobalExceptionHandler - =============== handlerException-START ===============
+13:51:48.580 logback [http-nio-8085-exec-9] INFO  c.v.e.GlobalExceptionHandler - 请求IP：127.0.0.1
+13:51:48.581 logback [http-nio-8085-exec-9] INFO  c.v.e.GlobalExceptionHandler - 请求地址：http://127.0.0.1:8085/video/edit
+13:51:48.581 logback [http-nio-8085-exec-9] INFO  c.v.e.GlobalExceptionHandler - 请求方式：POST
+13:51:48.581 logback [http-nio-8085-exec-9] INFO  c.v.e.GlobalExceptionHandler - =============== 请求内容-END ===============
+13:51:55.816 logback [http-nio-8085-exec-7] ERROR c.v.e.GlobalExceptionHandler - 全局异常捕获，异常消息:JSON parse error: Cannot invoke "String.split(String)" because "tags" is null
+13:51:55.817 logback [http-nio-8085-exec-7] INFO  c.v.e.GlobalExceptionHandler - =============== handlerException-START ===============
+13:51:55.817 logback [http-nio-8085-exec-7] INFO  c.v.e.GlobalExceptionHandler - 请求IP：127.0.0.1
+13:51:55.817 logback [http-nio-8085-exec-7] INFO  c.v.e.GlobalExceptionHandler - 请求地址：http://127.0.0.1:8085/video/edit
+13:51:55.817 logback [http-nio-8085-exec-7] INFO  c.v.e.GlobalExceptionHandler - 请求方式：POST
+13:51:55.817 logback [http-nio-8085-exec-7] INFO  c.v.e.GlobalExceptionHandler - =============== 请求内容-END ===============
+14:10:43.943 logback [http-nio-8085-exec-3] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 1136176
+14:12:46.085 logback [http-nio-8085-exec-9] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 122128
+14:12:46.085 logback [http-nio-8085-exec-7] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 102373
+14:13:55.825 logback [http-nio-8085-exec-2] ERROR c.v.e.GlobalExceptionHandler - 全局异常捕获，异常消息:JSON parse error: Cannot invoke "String.split(String)" because "tags" is null
+14:13:55.825 logback [http-nio-8085-exec-2] INFO  c.v.e.GlobalExceptionHandler - =============== handlerException-START ===============
+14:13:55.825 logback [http-nio-8085-exec-2] INFO  c.v.e.GlobalExceptionHandler - 请求IP：127.0.0.1
+14:13:55.825 logback [http-nio-8085-exec-2] INFO  c.v.e.GlobalExceptionHandler - 请求地址：http://127.0.0.1:8085/video/edit
+14:13:55.825 logback [http-nio-8085-exec-2] INFO  c.v.e.GlobalExceptionHandler - 请求方式：POST
+14:13:55.825 logback [http-nio-8085-exec-2] INFO  c.v.e.GlobalExceptionHandler - =============== 请求内容-END ===============
+14:14:04.090 logback [http-nio-8085-exec-8] ERROR c.v.e.GlobalExceptionHandler - 全局异常捕获，异常消息:JSON parse error: Cannot invoke "String.split(String)" because "tags" is null
+14:14:04.091 logback [http-nio-8085-exec-8] INFO  c.v.e.GlobalExceptionHandler - =============== handlerException-START ===============
+14:14:04.091 logback [http-nio-8085-exec-8] INFO  c.v.e.GlobalExceptionHandler - 请求IP：127.0.0.1
+14:14:04.091 logback [http-nio-8085-exec-8] INFO  c.v.e.GlobalExceptionHandler - 请求地址：http://127.0.0.1:8085/video/edit
+14:14:04.091 logback [http-nio-8085-exec-8] INFO  c.v.e.GlobalExceptionHandler - 请求方式：POST
+14:14:04.091 logback [http-nio-8085-exec-8] INFO  c.v.e.GlobalExceptionHandler - =============== 请求内容-END ===============
+14:15:06.021 logback [http-nio-8085-exec-1] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 81096
+14:15:06.021 logback [http-nio-8085-exec-5] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 81110
+14:15:06.021 logback [http-nio-8085-exec-2] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 81110
+14:16:49.271 logback [http-nio-8085-exec-4] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 97632
+14:16:49.272 logback [http-nio-8085-exec-4] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 97634
+14:16:49.272 logback [http-nio-8085-exec-4] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 97638
+14:18:11.249 logback [http-nio-8085-exec-5] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 60080
+14:18:11.249 logback [http-nio-8085-exec-10] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 62983
+14:20:30.437 logback [http-nio-8085-exec-8] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 118930
+14:20:30.437 logback [http-nio-8085-exec-5] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 118933
+14:20:30.437 logback [http-nio-8085-exec-10] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 118934
+14:22:00.507 logback [http-nio-8085-exec-6] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 90042
+14:22:00.507 logback [http-nio-8085-exec-8] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 90043
+14:24:15.043 logback [http-nio-8085-exec-5] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 85013
+14:24:15.044 logback [http-nio-8085-exec-10] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 85019
+14:24:15.044 logback [http-nio-8085-exec-8] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 85010
+14:28:40.813 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+14:28:40.815 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+14:28:44.654 logback [main] INFO  com.vtube.AdminApplication - Starting AdminApplication using Java 19.0.2 with PID 60444 (E:\VTube\VTube-java\vb-admin\target\classes started by Administrator in E:\VTube)
+14:28:44.655 logback [main] INFO  com.vtube.AdminApplication - The following 1 profile is active: "dev"
+14:28:45.495 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
+14:28:45.499 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+14:28:45.500 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+14:28:45.500 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+14:28:45.546 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:28:45.547 logback [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 869 ms
+14:28:46.311 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由START ##############
+14:28:46.311 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /test/**
+14:28:46.311 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /favicon.ico
+14:28:46.311 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-ui/**
+14:28:46.311 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-resources/**
+14:28:46.311 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /v3/**
+14:28:46.311 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /error
+14:28:46.311 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /default/**
+14:28:46.311 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /css/**
+14:28:46.311 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /js/**
+14:28:46.311 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /video/**
+14:28:46.311 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /dict/**
+14:28:46.311 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /uploadFile
+14:28:46.311 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /downloadFile
+14:28:46.312 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /buckets
+14:28:46.312 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /createBucket
+14:28:46.312 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /deleteBucket/**
+14:28:46.312 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由END ##############
+14:28:46.675 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8085"]
+14:28:46.686 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8085 (http) with context path ''
+14:28:46.687 logback [main] INFO  com.vtube.AdminApplication - 
+---------------------------------------------------------
+	Application is running! Access address:
+	Local:		http://localhost:8085
+	External:	http://172.26.80.1:8085
+	管理员接口文档:	http://localhost:8085/swagger-ui/index.html#/
+---------------------------------------------------------
+
+14:28:46.692 logback [main] INFO  com.vtube.AdminApplication - Started AdminApplication in 2.264 seconds (process running for 2.676)
+14:29:36.530 logback [http-nio-8085-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+14:29:36.530 logback [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+14:29:36.531 logback [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+14:29:36.742 logback [http-nio-8085-exec-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+14:31:39.372 logback [http-nio-8085-exec-4] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 122032
+14:46:45.581 logback [http-nio-8085-exec-9] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 819039
+14:46:45.581 logback [http-nio-8085-exec-4] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 778315
+14:46:45.581 logback [http-nio-8085-exec-8] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 819039
+14:49:37.988 logback [http-nio-8085-exec-1] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 73505
+14:49:37.988 logback [http-nio-8085-exec-1] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 73508
+14:49:37.989 logback [http-nio-8085-exec-1] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 73509
+15:06:54.069 logback [http-nio-8085-exec-8] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 911625
+15:06:54.069 logback [http-nio-8085-exec-5] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 911629
+15:06:54.069 logback [http-nio-8085-exec-3] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 911629
+15:08:44.375 logback [http-nio-8085-exec-1] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 110282
+15:08:44.375 logback [http-nio-8085-exec-5] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 110287
+15:09:33.426 logback [http-nio-8085-exec-7] WARN  o.apache.catalina.connector.Request - Creating the temporary upload location [C:\Users\Administrator\AppData\Local\Temp\tomcat.8085.8276906043237069984\work\Tomcat\localhost\ROOT] as it is required by the servlet [dispatcherServlet]
+15:09:47.467 logback [http-nio-8085-exec-9] ERROR c.v.e.GlobalExceptionHandler - 全局异常捕获，异常消息:Maximum upload size exceeded
+15:09:47.468 logback [http-nio-8085-exec-9] INFO  c.v.e.GlobalExceptionHandler - =============== handlerException-START ===============
+15:09:47.468 logback [http-nio-8085-exec-9] INFO  c.v.e.GlobalExceptionHandler - 请求IP：127.0.0.1
+15:09:47.468 logback [http-nio-8085-exec-9] INFO  c.v.e.GlobalExceptionHandler - 请求地址：http://127.0.0.1:8085/uploadFile
+15:09:47.469 logback [http-nio-8085-exec-9] INFO  c.v.e.GlobalExceptionHandler - 请求方式：POST
+15:09:47.469 logback [http-nio-8085-exec-9] INFO  c.v.e.GlobalExceptionHandler - =============== 请求内容-END ===============
+15:09:48.485 logback [http-nio-8085-exec-8] ERROR c.v.e.GlobalExceptionHandler - 全局异常捕获，异常消息:Maximum upload size exceeded
+15:09:48.486 logback [http-nio-8085-exec-8] INFO  c.v.e.GlobalExceptionHandler - =============== handlerException-START ===============
+15:09:48.486 logback [http-nio-8085-exec-8] INFO  c.v.e.GlobalExceptionHandler - 请求IP：127.0.0.1
+15:09:48.486 logback [http-nio-8085-exec-8] INFO  c.v.e.GlobalExceptionHandler - 请求地址：http://127.0.0.1:8085/uploadFile
+15:09:48.486 logback [http-nio-8085-exec-8] INFO  c.v.e.GlobalExceptionHandler - 请求方式：POST
+15:09:48.486 logback [http-nio-8085-exec-8] INFO  c.v.e.GlobalExceptionHandler - =============== 请求内容-END ===============
+15:09:49.495 logback [http-nio-8085-exec-5] ERROR c.v.e.GlobalExceptionHandler - 全局异常捕获，异常消息:Maximum upload size exceeded
+15:09:49.495 logback [http-nio-8085-exec-5] INFO  c.v.e.GlobalExceptionHandler - =============== handlerException-START ===============
+15:09:49.495 logback [http-nio-8085-exec-5] INFO  c.v.e.GlobalExceptionHandler - 请求IP：127.0.0.1
+15:09:49.495 logback [http-nio-8085-exec-5] INFO  c.v.e.GlobalExceptionHandler - 请求地址：http://127.0.0.1:8085/uploadFile
+15:09:49.495 logback [http-nio-8085-exec-5] INFO  c.v.e.GlobalExceptionHandler - 请求方式：POST
+15:09:49.495 logback [http-nio-8085-exec-5] INFO  c.v.e.GlobalExceptionHandler - =============== 请求内容-END ===============
+15:09:50.510 logback [http-nio-8085-exec-1] ERROR c.v.e.GlobalExceptionHandler - 全局异常捕获，异常消息:Maximum upload size exceeded
+15:09:50.510 logback [http-nio-8085-exec-1] INFO  c.v.e.GlobalExceptionHandler - =============== handlerException-START ===============
+15:09:50.510 logback [http-nio-8085-exec-1] INFO  c.v.e.GlobalExceptionHandler - 请求IP：127.0.0.1
+15:09:50.510 logback [http-nio-8085-exec-1] INFO  c.v.e.GlobalExceptionHandler - 请求地址：http://127.0.0.1:8085/uploadFile
+15:09:50.511 logback [http-nio-8085-exec-1] INFO  c.v.e.GlobalExceptionHandler - 请求方式：POST
+15:09:50.511 logback [http-nio-8085-exec-1] INFO  c.v.e.GlobalExceptionHandler - =============== 请求内容-END ===============
+15:09:51.522 logback [http-nio-8085-exec-10] ERROR c.v.e.GlobalExceptionHandler - 全局异常捕获，异常消息:Maximum upload size exceeded
+15:09:51.522 logback [http-nio-8085-exec-10] INFO  c.v.e.GlobalExceptionHandler - =============== handlerException-START ===============
+15:09:51.522 logback [http-nio-8085-exec-10] INFO  c.v.e.GlobalExceptionHandler - 请求IP：127.0.0.1
+15:09:51.522 logback [http-nio-8085-exec-10] INFO  c.v.e.GlobalExceptionHandler - 请求地址：http://127.0.0.1:8085/uploadFile
+15:09:51.523 logback [http-nio-8085-exec-10] INFO  c.v.e.GlobalExceptionHandler - 请求方式：POST
+15:09:51.523 logback [http-nio-8085-exec-10] INFO  c.v.e.GlobalExceptionHandler - =============== 请求内容-END ===============
+15:14:16.715 logback [http-nio-8085-exec-4] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 281945
+15:14:16.715 logback [http-nio-8085-exec-3] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 314742
+15:14:16.716 logback [http-nio-8085-exec-4] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 314743
+15:15:47.601 logback [http-nio-8085-exec-2] ERROR c.v.e.GlobalExceptionHandler - 全局异常捕获，异常消息:Maximum upload size exceeded
+15:15:47.601 logback [http-nio-8085-exec-2] INFO  c.v.e.GlobalExceptionHandler - =============== handlerException-START ===============
+15:15:47.602 logback [http-nio-8085-exec-2] INFO  c.v.e.GlobalExceptionHandler - 请求IP：127.0.0.1
+15:15:47.602 logback [http-nio-8085-exec-2] INFO  c.v.e.GlobalExceptionHandler - 请求地址：http://127.0.0.1:8085/uploadFile
+15:15:47.602 logback [http-nio-8085-exec-2] INFO  c.v.e.GlobalExceptionHandler - 请求方式：POST
+15:15:47.602 logback [http-nio-8085-exec-2] INFO  c.v.e.GlobalExceptionHandler - =============== 请求内容-END ===============
+15:15:48.610 logback [http-nio-8085-exec-7] ERROR c.v.e.GlobalExceptionHandler - 全局异常捕获，异常消息:Maximum upload size exceeded
+15:15:48.610 logback [http-nio-8085-exec-7] INFO  c.v.e.GlobalExceptionHandler - =============== handlerException-START ===============
+15:15:48.610 logback [http-nio-8085-exec-7] INFO  c.v.e.GlobalExceptionHandler - 请求IP：127.0.0.1
+15:15:48.610 logback [http-nio-8085-exec-7] INFO  c.v.e.GlobalExceptionHandler - 请求地址：http://127.0.0.1:8085/uploadFile
+15:15:48.610 logback [http-nio-8085-exec-7] INFO  c.v.e.GlobalExceptionHandler - 请求方式：POST
+15:15:48.610 logback [http-nio-8085-exec-7] INFO  c.v.e.GlobalExceptionHandler - =============== 请求内容-END ===============
+15:16:13.126 logback [http-nio-8085-exec-3] ERROR c.v.e.GlobalExceptionHandler - 全局异常捕获，异常消息:Maximum upload size exceeded
+15:16:13.126 logback [http-nio-8085-exec-3] INFO  c.v.e.GlobalExceptionHandler - =============== handlerException-START ===============
+15:16:13.126 logback [http-nio-8085-exec-3] INFO  c.v.e.GlobalExceptionHandler - 请求IP：127.0.0.1
+15:16:13.126 logback [http-nio-8085-exec-3] INFO  c.v.e.GlobalExceptionHandler - 请求地址：http://127.0.0.1:8085/uploadFile
+15:16:13.126 logback [http-nio-8085-exec-3] INFO  c.v.e.GlobalExceptionHandler - 请求方式：POST
+15:16:13.126 logback [http-nio-8085-exec-3] INFO  c.v.e.GlobalExceptionHandler - =============== 请求内容-END ===============
+15:16:14.135 logback [http-nio-8085-exec-10] ERROR c.v.e.GlobalExceptionHandler - 全局异常捕获，异常消息:Maximum upload size exceeded
+15:16:14.135 logback [http-nio-8085-exec-10] INFO  c.v.e.GlobalExceptionHandler - =============== handlerException-START ===============
+15:16:14.135 logback [http-nio-8085-exec-10] INFO  c.v.e.GlobalExceptionHandler - 请求IP：127.0.0.1
+15:16:14.135 logback [http-nio-8085-exec-10] INFO  c.v.e.GlobalExceptionHandler - 请求地址：http://127.0.0.1:8085/uploadFile
+15:16:14.135 logback [http-nio-8085-exec-10] INFO  c.v.e.GlobalExceptionHandler - 请求方式：POST
+15:16:14.136 logback [http-nio-8085-exec-10] INFO  c.v.e.GlobalExceptionHandler - =============== 请求内容-END ===============
+15:16:26.442 logback [http-nio-8085-exec-6] ERROR c.v.e.GlobalExceptionHandler - 全局异常捕获，异常消息:Maximum upload size exceeded
+15:16:26.442 logback [http-nio-8085-exec-6] INFO  c.v.e.GlobalExceptionHandler - =============== handlerException-START ===============
+15:16:26.442 logback [http-nio-8085-exec-6] INFO  c.v.e.GlobalExceptionHandler - 请求IP：127.0.0.1
+15:16:26.442 logback [http-nio-8085-exec-6] INFO  c.v.e.GlobalExceptionHandler - 请求地址：http://127.0.0.1:8085/uploadFile
+15:16:26.442 logback [http-nio-8085-exec-6] INFO  c.v.e.GlobalExceptionHandler - 请求方式：POST
+15:16:26.442 logback [http-nio-8085-exec-6] INFO  c.v.e.GlobalExceptionHandler - =============== 请求内容-END ===============
+15:16:27.450 logback [http-nio-8085-exec-4] ERROR c.v.e.GlobalExceptionHandler - 全局异常捕获，异常消息:Maximum upload size exceeded
+15:16:27.451 logback [http-nio-8085-exec-4] INFO  c.v.e.GlobalExceptionHandler - =============== handlerException-START ===============
+15:16:27.451 logback [http-nio-8085-exec-4] INFO  c.v.e.GlobalExceptionHandler - 请求IP：127.0.0.1
+15:16:27.451 logback [http-nio-8085-exec-4] INFO  c.v.e.GlobalExceptionHandler - 请求地址：http://127.0.0.1:8085/uploadFile
+15:16:27.451 logback [http-nio-8085-exec-4] INFO  c.v.e.GlobalExceptionHandler - 请求方式：POST
+15:16:27.451 logback [http-nio-8085-exec-4] INFO  c.v.e.GlobalExceptionHandler - =============== 请求内容-END ===============
+15:16:48.036 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+15:16:48.038 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+15:16:51.171 logback [main] INFO  com.vtube.AdminApplication - Starting AdminApplication using Java 19.0.2 with PID 76280 (E:\VTube\VTube-java\vb-admin\target\classes started by Administrator in E:\VTube)
+15:16:51.172 logback [main] INFO  com.vtube.AdminApplication - The following 1 profile is active: "dev"
+15:16:52.029 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
+15:16:52.036 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+15:16:52.037 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+15:16:52.037 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+15:16:52.095 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+15:16:52.095 logback [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 899 ms
+15:16:53.390 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由START ##############
+15:16:53.390 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /test/**
+15:16:53.391 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /favicon.ico
+15:16:53.391 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-ui/**
+15:16:53.391 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-resources/**
+15:16:53.391 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /v3/**
+15:16:53.391 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /error
+15:16:53.391 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /default/**
+15:16:53.391 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /css/**
+15:16:53.391 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /js/**
+15:16:53.391 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /video/**
+15:16:53.391 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /dict/**
+15:16:53.391 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /uploadFile
+15:16:53.391 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /downloadFile
+15:16:53.391 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /buckets
+15:16:53.391 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /createBucket
+15:16:53.391 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /deleteBucket/**
+15:16:53.391 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由END ##############
+15:16:54.000 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8085"]
+15:16:54.020 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8085 (http) with context path ''
+15:16:54.022 logback [main] INFO  com.vtube.AdminApplication - 
+---------------------------------------------------------
+	Application is running! Access address:
+	Local:		http://localhost:8085
+	External:	http://172.26.80.1:8085
+	管理员接口文档:	http://localhost:8085/swagger-ui/index.html#/
+---------------------------------------------------------
+
+15:16:54.031 logback [main] INFO  com.vtube.AdminApplication - Started AdminApplication in 3.076 seconds (process running for 3.466)
+15:17:00.339 logback [http-nio-8085-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:17:00.339 logback [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+15:17:00.341 logback [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+15:17:04.197 logback [http-nio-8085-exec-2] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+15:19:35.981 logback [http-nio-8085-exec-7] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 89641
+15:19:35.981 logback [http-nio-8085-exec-6] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 89589
+15:21:17.625 logback [http-nio-8085-exec-7] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 99923
+15:21:17.627 logback [http-nio-8085-exec-5] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 101635
+15:24:07.398 logback [http-nio-8085-exec-10] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 160679
+15:24:07.398 logback [http-nio-8085-exec-6] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 169745
+15:34:07.855 logback [http-nio-8085-exec-8] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 497012
+15:34:07.855 logback [http-nio-8085-exec-3] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 497012
+15:34:07.856 logback [http-nio-8085-exec-1] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 491092
+15:39:07.037 logback [http-nio-8085-exec-6] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 235181
+15:39:07.039 logback [http-nio-8085-exec-6] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 299164
+15:42:39.651 logback [http-nio-8085-exec-8] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 187112
+15:45:24.714 logback [http-nio-8085-exec-9] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 94977
+15:45:24.714 logback [http-nio-8085-exec-5] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 101543
+15:45:24.714 logback [http-nio-8085-exec-4] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 101543
+15:46:36.503 logback [http-nio-8085-exec-5] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 65485
+15:46:36.503 logback [http-nio-8085-exec-4] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 71763
+15:56:01.404 logback [http-nio-8085-exec-4] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 518163
+15:56:01.405 logback [http-nio-8085-exec-4] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 557012
+15:56:01.406 logback [http-nio-8085-exec-4] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 557014
+15:57:42.680 logback [http-nio-8085-exec-3] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 94233
+15:59:11.124 logback [http-nio-8085-exec-5] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 81231
+15:59:11.125 logback [http-nio-8085-exec-5] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 88423
+16:01:14.720 logback [http-nio-8085-exec-1] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 108651
+16:08:02.931 logback [http-nio-8085-exec-4] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 361744
+16:08:02.931 logback [http-nio-8085-exec-5] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 361749
+16:08:02.931 logback [http-nio-8085-exec-3] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 330123
+16:09:58.977 logback [http-nio-8085-exec-6] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 116024
+16:35:33.982 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+16:35:33.984 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+16:35:40.342 logback [main] INFO  com.vtube.AdminApplication - Starting AdminApplication using Java 19.0.2 with PID 15312 (E:\VTube\VTube-java\vb-admin\target\classes started by Administrator in E:\VTube)
+16:35:40.343 logback [main] INFO  com.vtube.AdminApplication - The following 1 profile is active: "dev"
+16:35:41.094 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
+16:35:41.099 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+16:35:41.100 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:35:41.100 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+16:35:41.148 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:35:41.148 logback [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 781 ms
+16:35:41.939 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由START ##############
+16:35:41.939 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /test/**
+16:35:41.939 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /favicon.ico
+16:35:41.940 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-ui/**
+16:35:41.940 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-resources/**
+16:35:41.940 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /v3/**
+16:35:41.940 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /error
+16:35:41.940 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /default/**
+16:35:41.940 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /css/**
+16:35:41.940 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /js/**
+16:35:41.940 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /video/**
+16:35:41.940 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /dict/**
+16:35:41.940 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /uploadFile
+16:35:41.940 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /downloadFile
+16:35:41.940 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /buckets
+16:35:41.940 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /createBucket
+16:35:41.940 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /deleteBucket/**
+16:35:41.940 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由END ##############
+16:35:42.293 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8085"]
+16:35:42.305 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8085 (http) with context path ''
+16:35:42.306 logback [main] INFO  com.vtube.AdminApplication - 
+---------------------------------------------------------
+	Application is running! Access address:
+	Local:		http://localhost:8085
+	External:	http://172.26.80.1:8085
+	管理员接口文档:	http://localhost:8085/swagger-ui/index.html#/
+---------------------------------------------------------
+
+16:35:42.311 logback [main] INFO  com.vtube.AdminApplication - Started AdminApplication in 2.209 seconds (process running for 2.674)
+16:35:47.461 logback [http-nio-8085-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:35:47.461 logback [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16:35:47.463 logback [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+16:35:47.553 logback [http-nio-8085-exec-3] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+16:39:45.418 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+16:39:45.422 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+16:39:49.531 logback [main] INFO  com.vtube.AdminApplication - Starting AdminApplication using Java 19.0.2 with PID 73780 (E:\VTube\VTube-java\vb-admin\target\classes started by Administrator in E:\VTube)
+16:39:49.533 logback [main] INFO  com.vtube.AdminApplication - The following 1 profile is active: "dev"
+16:39:50.303 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
+16:39:50.312 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+16:39:50.312 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:39:50.312 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+16:39:50.405 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:39:50.405 logback [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 849 ms
+16:39:51.164 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由START ##############
+16:39:51.165 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /test/**
+16:39:51.165 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /favicon.ico
+16:39:51.165 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-ui/**
+16:39:51.165 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-resources/**
+16:39:51.165 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /v3/**
+16:39:51.165 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /error
+16:39:51.165 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /default/**
+16:39:51.165 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /css/**
+16:39:51.165 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /js/**
+16:39:51.165 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /video/**
+16:39:51.165 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /dict/**
+16:39:51.165 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /uploadFile
+16:39:51.165 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /downloadFile
+16:39:51.165 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /buckets
+16:39:51.165 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /createBucket
+16:39:51.165 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /deleteBucket/**
+16:39:51.165 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由END ##############
+16:39:51.608 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8085"]
+16:39:51.620 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8085 (http) with context path ''
+16:39:51.621 logback [main] INFO  com.vtube.AdminApplication - 
+---------------------------------------------------------
+	Application is running! Access address:
+	Local:		http://localhost:8085
+	External:	http://172.26.80.1:8085
+	管理员接口文档:	http://localhost:8085/swagger-ui/index.html#/
+---------------------------------------------------------
+
+16:39:51.626 logback [main] INFO  com.vtube.AdminApplication - Started AdminApplication in 2.302 seconds (process running for 2.801)
+16:40:05.697 logback [http-nio-8085-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:40:05.697 logback [http-nio-8085-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16:40:05.698 logback [http-nio-8085-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+16:40:05.797 logback [http-nio-8085-exec-2] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+16:41:24.620 logback [http-nio-8085-exec-10] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 78636
+16:41:24.620 logback [http-nio-8085-exec-2] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 78650
+16:41:24.620 logback [http-nio-8085-exec-1] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 78649
+16:41:24.621 logback [http-nio-8085-exec-9] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 78635
+16:46:16.688 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+16:46:16.689 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+16:46:20.555 logback [main] INFO  com.vtube.AdminApplication - Starting AdminApplication using Java 19.0.2 with PID 42636 (E:\VTube\VTube-java\vb-admin\target\classes started by Administrator in E:\VTube)
+16:46:20.556 logback [main] INFO  com.vtube.AdminApplication - The following 1 profile is active: "dev"
+16:46:21.352 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
+16:46:21.358 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+16:46:21.358 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:46:21.359 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+16:46:21.408 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:46:21.408 logback [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 829 ms
+16:46:22.192 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由START ##############
+16:46:22.193 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /test/**
+16:46:22.193 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /favicon.ico
+16:46:22.193 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-ui/**
+16:46:22.193 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-resources/**
+16:46:22.193 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /v3/**
+16:46:22.193 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /error
+16:46:22.193 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /default/**
+16:46:22.193 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /css/**
+16:46:22.193 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /js/**
+16:46:22.193 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /video/**
+16:46:22.193 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /dict/**
+16:46:22.193 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /uploadFile
+16:46:22.193 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /downloadFile
+16:46:22.193 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /buckets
+16:46:22.193 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /createBucket
+16:46:22.193 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /deleteBucket/**
+16:46:22.193 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由END ##############
+16:46:22.565 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8085"]
+16:46:22.578 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8085 (http) with context path ''
+16:46:22.579 logback [main] INFO  com.vtube.AdminApplication - 
+---------------------------------------------------------
+	Application is running! Access address:
+	Local:		http://localhost:8085
+	External:	http://172.26.80.1:8085
+	管理员接口文档:	http://localhost:8085/swagger-ui/index.html#/
+---------------------------------------------------------
+
+16:46:22.584 logback [main] INFO  com.vtube.AdminApplication - Started AdminApplication in 2.242 seconds (process running for 2.684)
+16:46:31.237 logback [http-nio-8085-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:46:31.237 logback [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16:46:31.239 logback [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+16:46:31.834 logback [http-nio-8085-exec-3] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+16:53:51.068 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+16:53:51.074 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+16:53:55.747 logback [main] INFO  com.vtube.AdminApplication - Starting AdminApplication using Java 19.0.2 with PID 64660 (E:\VTube\VTube-java\vb-admin\target\classes started by Administrator in E:\VTube)
+16:53:55.749 logback [main] INFO  com.vtube.AdminApplication - The following 1 profile is active: "dev"
+16:53:56.845 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
+16:53:56.852 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+16:53:56.853 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:53:56.853 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+16:53:56.920 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:53:56.921 logback [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1132 ms
+16:53:58.051 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由START ##############
+16:53:58.051 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /test/**
+16:53:58.051 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /favicon.ico
+16:53:58.051 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-ui/**
+16:53:58.051 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-resources/**
+16:53:58.051 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /v3/**
+16:53:58.051 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /error
+16:53:58.051 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /default/**
+16:53:58.051 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /css/**
+16:53:58.051 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /js/**
+16:53:58.051 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /video/**
+16:53:58.051 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /dict/**
+16:53:58.051 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /uploadFile
+16:53:58.051 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /downloadFile
+16:53:58.051 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /buckets
+16:53:58.052 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /createBucket
+16:53:58.052 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /deleteBucket/**
+16:53:58.052 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由END ##############
+16:53:58.531 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8085"]
+16:53:58.547 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8085 (http) with context path ''
+16:53:58.549 logback [main] INFO  com.vtube.AdminApplication - 
+---------------------------------------------------------
+	Application is running! Access address:
+	Local:		http://localhost:8085
+	External:	http://172.26.80.1:8085
+	管理员接口文档:	http://localhost:8085/swagger-ui/index.html#/
+---------------------------------------------------------
+
+16:53:58.557 logback [main] INFO  com.vtube.AdminApplication - Started AdminApplication in 3.095 seconds (process running for 3.821)
+16:54:04.755 logback [http-nio-8085-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:54:04.755 logback [http-nio-8085-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16:54:04.757 logback [http-nio-8085-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+16:54:04.874 logback [http-nio-8085-exec-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+16:57:54.042 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+16:57:54.048 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+16:57:58.830 logback [main] INFO  com.vtube.AdminApplication - Starting AdminApplication using Java 19.0.2 with PID 20484 (E:\VTube\VTube-java\vb-admin\target\classes started by Administrator in E:\VTube)
+16:57:58.831 logback [main] INFO  com.vtube.AdminApplication - The following 1 profile is active: "dev"
+16:57:59.619 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
+16:57:59.624 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+16:57:59.625 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:57:59.625 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+16:57:59.673 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:57:59.673 logback [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 818 ms
+16:58:00.489 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由START ##############
+16:58:00.490 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /test/**
+16:58:00.490 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /favicon.ico
+16:58:00.490 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-ui/**
+16:58:00.490 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-resources/**
+16:58:00.490 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /v3/**
+16:58:00.490 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /error
+16:58:00.490 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /default/**
+16:58:00.490 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /css/**
+16:58:00.490 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /js/**
+16:58:00.490 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /video/**
+16:58:00.490 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /dict/**
+16:58:00.490 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /uploadFile
+16:58:00.490 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /downloadFile
+16:58:00.490 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /buckets
+16:58:00.490 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /createBucket
+16:58:00.490 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /deleteBucket/**
+16:58:00.490 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由END ##############
+16:58:00.856 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8085"]
+16:58:00.867 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8085 (http) with context path ''
+16:58:00.868 logback [main] INFO  com.vtube.AdminApplication - 
+---------------------------------------------------------
+	Application is running! Access address:
+	Local:		http://localhost:8085
+	External:	http://172.26.80.1:8085
+	管理员接口文档:	http://localhost:8085/swagger-ui/index.html#/
+---------------------------------------------------------
+
+16:58:00.873 logback [main] INFO  com.vtube.AdminApplication - Started AdminApplication in 2.259 seconds (process running for 2.661)
+16:58:56.094 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-0} closing ...
+16:58:59.724 logback [main] INFO  com.vtube.AdminApplication - Starting AdminApplication using Java 19.0.2 with PID 33380 (E:\VTube\VTube-java\vb-admin\target\classes started by Administrator in E:\VTube)
+16:58:59.725 logback [main] INFO  com.vtube.AdminApplication - The following 1 profile is active: "dev"
+16:59:00.499 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
+16:59:00.505 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+16:59:00.505 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:59:00.505 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+16:59:00.559 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:59:00.559 logback [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 808 ms
+16:59:01.348 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由START ##############
+16:59:01.348 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /test/**
+16:59:01.348 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /favicon.ico
+16:59:01.349 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-ui/**
+16:59:01.349 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-resources/**
+16:59:01.349 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /v3/**
+16:59:01.349 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /error
+16:59:01.349 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /default/**
+16:59:01.349 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /css/**
+16:59:01.349 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /js/**
+16:59:01.349 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /video/**
+16:59:01.349 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /dict/**
+16:59:01.349 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /uploadFile
+16:59:01.349 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /downloadFile
+16:59:01.349 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /buckets
+16:59:01.349 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /createBucket
+16:59:01.349 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /deleteBucket/**
+16:59:01.349 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由END ##############
+16:59:01.726 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8085"]
+16:59:01.737 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8085 (http) with context path ''
+16:59:01.738 logback [main] INFO  com.vtube.AdminApplication - 
+---------------------------------------------------------
+	Application is running! Access address:
+	Local:		http://localhost:8085
+	External:	http://172.26.80.1:8085
+	管理员接口文档:	http://localhost:8085/swagger-ui/index.html#/
+---------------------------------------------------------
+
+16:59:01.743 logback [main] INFO  com.vtube.AdminApplication - Started AdminApplication in 2.246 seconds (process running for 2.656)
+16:59:38.852 logback [http-nio-8085-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16:59:38.853 logback [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16:59:38.855 logback [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+16:59:38.984 logback [http-nio-8085-exec-3] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+17:00:17.124 logback [http-nio-8085-exec-10] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.vtube.controller.VideoController
+17:01:06.272 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+17:01:06.278 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+17:01:10.089 logback [main] INFO  com.vtube.AdminApplication - Starting AdminApplication using Java 19.0.2 with PID 71144 (E:\VTube\VTube-java\vb-admin\target\classes started by Administrator in E:\VTube)
+17:01:10.090 logback [main] INFO  com.vtube.AdminApplication - The following 1 profile is active: "dev"
+17:01:10.826 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
+17:01:10.831 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+17:01:10.832 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:01:10.832 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+17:01:10.888 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:01:10.889 logback [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 774 ms
+17:01:11.674 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由START ##############
+17:01:11.675 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /test/**
+17:01:11.675 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /favicon.ico
+17:01:11.675 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-ui/**
+17:01:11.675 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-resources/**
+17:01:11.675 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /v3/**
+17:01:11.675 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /error
+17:01:11.675 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /default/**
+17:01:11.675 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /css/**
+17:01:11.675 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /js/**
+17:01:11.675 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /video/**
+17:01:11.675 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /dict/**
+17:01:11.675 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /uploadFile
+17:01:11.675 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /downloadFile
+17:01:11.675 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /buckets
+17:01:11.675 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /createBucket
+17:01:11.676 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /deleteBucket/**
+17:01:11.676 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由END ##############
+17:01:12.035 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8085"]
+17:01:12.046 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8085 (http) with context path ''
+17:01:12.047 logback [main] INFO  com.vtube.AdminApplication - 
+---------------------------------------------------------
+	Application is running! Access address:
+	Local:		http://localhost:8085
+	External:	http://172.26.80.1:8085
+	管理员接口文档:	http://localhost:8085/swagger-ui/index.html#/
+---------------------------------------------------------
+
+17:01:12.052 logback [main] INFO  com.vtube.AdminApplication - Started AdminApplication in 2.174 seconds (process running for 2.597)
+17:01:21.753 logback [http-nio-8085-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+17:01:21.754 logback [http-nio-8085-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+17:01:21.755 logback [http-nio-8085-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+17:01:21.845 logback [http-nio-8085-exec-7] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+17:01:26.842 logback [http-nio-8085-exec-10] ERROR c.v.e.GlobalExceptionHandler - 全局异常捕获，异常消息:JSON parse error: Cannot deserialize value of type `java.lang.Integer` from Object value (token `JsonToken.START_OBJECT`)
+17:01:26.843 logback [http-nio-8085-exec-10] INFO  c.v.e.GlobalExceptionHandler - =============== handlerException-START ===============
+17:01:26.843 logback [http-nio-8085-exec-10] INFO  c.v.e.GlobalExceptionHandler - 请求IP：127.0.0.1
+17:01:26.844 logback [http-nio-8085-exec-10] INFO  c.v.e.GlobalExceptionHandler - 请求地址：http://127.0.0.1:8085/video/sublist
+17:01:26.844 logback [http-nio-8085-exec-10] INFO  c.v.e.GlobalExceptionHandler - 请求方式：POST
+17:01:26.844 logback [http-nio-8085-exec-10] INFO  c.v.e.GlobalExceptionHandler - =============== 请求内容-END ===============
+17:01:55.652 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+17:01:55.657 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+17:01:59.896 logback [main] INFO  com.vtube.AdminApplication - Starting AdminApplication using Java 19.0.2 with PID 22584 (E:\VTube\VTube-java\vb-admin\target\classes started by Administrator in E:\VTube)
+17:01:59.898 logback [main] INFO  com.vtube.AdminApplication - The following 1 profile is active: "dev"
+17:02:00.744 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
+17:02:00.750 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+17:02:00.751 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:02:00.751 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+17:02:00.810 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:02:00.810 logback [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 887 ms
+17:02:01.602 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由START ##############
+17:02:01.602 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /test/**
+17:02:01.602 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /favicon.ico
+17:02:01.602 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-ui/**
+17:02:01.602 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-resources/**
+17:02:01.602 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /v3/**
+17:02:01.603 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /error
+17:02:01.603 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /default/**
+17:02:01.603 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /css/**
+17:02:01.603 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /js/**
+17:02:01.603 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /video/**
+17:02:01.603 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /dict/**
+17:02:01.603 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /uploadFile
+17:02:01.603 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /downloadFile
+17:02:01.603 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /buckets
+17:02:01.603 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /createBucket
+17:02:01.603 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /deleteBucket/**
+17:02:01.603 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由END ##############
+17:02:02.066 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8085"]
+17:02:02.078 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8085 (http) with context path ''
+17:02:02.079 logback [main] INFO  com.vtube.AdminApplication - 
+---------------------------------------------------------
+	Application is running! Access address:
+	Local:		http://localhost:8085
+	External:	http://172.26.80.1:8085
+	管理员接口文档:	http://localhost:8085/swagger-ui/index.html#/
+---------------------------------------------------------
+
+17:02:02.084 logback [main] INFO  com.vtube.AdminApplication - Started AdminApplication in 2.404 seconds (process running for 2.889)
+17:02:09.334 logback [http-nio-8085-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+17:02:09.335 logback [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+17:02:09.337 logback [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+17:02:09.408 logback [http-nio-8085-exec-2] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.vtube.controller.VideoController
+17:02:09.553 logback [http-nio-8085-exec-2] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+17:02:33.567 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+17:02:33.569 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+17:02:37.542 logback [main] INFO  com.vtube.AdminApplication - Starting AdminApplication using Java 19.0.2 with PID 43920 (E:\VTube\VTube-java\vb-admin\target\classes started by Administrator in E:\VTube)
+17:02:37.543 logback [main] INFO  com.vtube.AdminApplication - The following 1 profile is active: "dev"
+17:02:38.290 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
+17:02:38.295 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+17:02:38.295 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:02:38.296 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+17:02:38.346 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:02:38.346 logback [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 779 ms
+17:02:39.310 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由START ##############
+17:02:39.310 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /test/**
+17:02:39.310 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /favicon.ico
+17:02:39.310 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-ui/**
+17:02:39.310 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-resources/**
+17:02:39.310 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /v3/**
+17:02:39.310 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /error
+17:02:39.310 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /default/**
+17:02:39.310 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /css/**
+17:02:39.310 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /js/**
+17:02:39.310 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /video/**
+17:02:39.310 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /dict/**
+17:02:39.310 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /uploadFile
+17:02:39.310 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /downloadFile
+17:02:39.310 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /buckets
+17:02:39.310 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /createBucket
+17:02:39.310 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /deleteBucket/**
+17:02:39.310 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由END ##############
+17:02:39.858 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8085"]
+17:02:39.875 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8085 (http) with context path ''
+17:02:39.876 logback [main] INFO  com.vtube.AdminApplication - 
+---------------------------------------------------------
+	Application is running! Access address:
+	Local:		http://localhost:8085
+	External:	http://172.26.80.1:8085
+	管理员接口文档:	http://localhost:8085/swagger-ui/index.html#/
+---------------------------------------------------------
+
+17:02:39.881 logback [main] INFO  com.vtube.AdminApplication - Started AdminApplication in 2.561 seconds (process running for 2.975)
+17:02:45.598 logback [http-nio-8085-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+17:02:45.598 logback [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+17:02:45.600 logback [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+17:02:45.737 logback [http-nio-8085-exec-1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+17:02:47.166 logback [http-nio-8085-exec-6] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.vtube.controller.VideoController
+17:03:18.984 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+17:03:18.992 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+17:03:22.411 logback [main] INFO  com.vtube.AdminApplication - Starting AdminApplication using Java 19.0.2 with PID 15256 (E:\VTube\VTube-java\vb-admin\target\classes started by Administrator in E:\VTube)
+17:03:22.412 logback [main] INFO  com.vtube.AdminApplication - The following 1 profile is active: "dev"
+17:03:23.163 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
+17:03:23.168 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+17:03:23.168 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:03:23.168 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+17:03:23.226 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:03:23.226 logback [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 790 ms
+17:03:23.994 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由START ##############
+17:03:23.994 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /test/**
+17:03:23.995 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /favicon.ico
+17:03:23.995 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-ui/**
+17:03:23.995 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-resources/**
+17:03:23.995 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /v3/**
+17:03:23.995 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /error
+17:03:23.995 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /default/**
+17:03:23.995 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /css/**
+17:03:23.995 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /js/**
+17:03:23.995 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /video/**
+17:03:23.995 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /dict/**
+17:03:23.995 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /uploadFile
+17:03:23.995 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /downloadFile
+17:03:23.995 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /buckets
+17:03:23.995 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /createBucket
+17:03:23.995 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /deleteBucket/**
+17:03:23.995 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由END ##############
+17:03:24.351 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8085"]
+17:03:24.364 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8085 (http) with context path ''
+17:03:24.365 logback [main] INFO  com.vtube.AdminApplication - 
+---------------------------------------------------------
+	Application is running! Access address:
+	Local:		http://localhost:8085
+	External:	http://172.26.80.1:8085
+	管理员接口文档:	http://localhost:8085/swagger-ui/index.html#/
+---------------------------------------------------------
+
+17:03:24.372 logback [main] INFO  com.vtube.AdminApplication - Started AdminApplication in 2.173 seconds (process running for 2.576)
+17:03:29.399 logback [http-nio-8085-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+17:03:29.399 logback [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+17:03:29.399 logback [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+17:03:29.448 logback [http-nio-8085-exec-2] ERROR c.v.e.GlobalExceptionHandler - 全局异常捕获，异常消息:JSON parse error: Cannot deserialize value of type `java.lang.Integer` from Object value (token `JsonToken.START_OBJECT`)
+17:03:29.448 logback [http-nio-8085-exec-2] INFO  c.v.e.GlobalExceptionHandler - =============== handlerException-START ===============
+17:03:29.449 logback [http-nio-8085-exec-2] INFO  c.v.e.GlobalExceptionHandler - 请求IP：127.0.0.1
+17:03:29.449 logback [http-nio-8085-exec-2] INFO  c.v.e.GlobalExceptionHandler - 请求地址：http://127.0.0.1:8085/video/sublist
+17:03:29.449 logback [http-nio-8085-exec-2] INFO  c.v.e.GlobalExceptionHandler - 请求方式：POST
+17:03:29.449 logback [http-nio-8085-exec-2] INFO  c.v.e.GlobalExceptionHandler - =============== 请求内容-END ===============
+17:05:05.521 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-0} closing ...
+17:05:09.451 logback [main] INFO  com.vtube.AdminApplication - Starting AdminApplication using Java 19.0.2 with PID 76476 (E:\VTube\VTube-java\vb-admin\target\classes started by Administrator in E:\VTube)
+17:05:09.452 logback [main] INFO  com.vtube.AdminApplication - The following 1 profile is active: "dev"
+17:05:10.308 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
+17:05:10.313 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+17:05:10.313 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:05:10.313 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+17:05:10.362 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:05:10.363 logback [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 886 ms
+17:05:11.241 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由START ##############
+17:05:11.242 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /test/**
+17:05:11.242 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /favicon.ico
+17:05:11.242 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-ui/**
+17:05:11.242 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-resources/**
+17:05:11.242 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /v3/**
+17:05:11.242 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /error
+17:05:11.242 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /default/**
+17:05:11.242 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /css/**
+17:05:11.242 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /js/**
+17:05:11.242 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /video/**
+17:05:11.242 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /dict/**
+17:05:11.242 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /uploadFile
+17:05:11.242 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /downloadFile
+17:05:11.242 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /buckets
+17:05:11.243 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /createBucket
+17:05:11.243 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /deleteBucket/**
+17:05:11.243 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由END ##############
+17:05:11.627 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8085"]
+17:05:11.639 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8085 (http) with context path ''
+17:05:11.640 logback [main] INFO  com.vtube.AdminApplication - 
+---------------------------------------------------------
+	Application is running! Access address:
+	Local:		http://localhost:8085
+	External:	http://172.26.80.1:8085
+	管理员接口文档:	http://localhost:8085/swagger-ui/index.html#/
+---------------------------------------------------------
+
+17:05:11.645 logback [main] INFO  com.vtube.AdminApplication - Started AdminApplication in 2.406 seconds (process running for 2.807)
+17:05:16.641 logback [http-nio-8085-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+17:05:16.642 logback [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+17:05:16.643 logback [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+17:05:16.679 logback [http-nio-8085-exec-2] WARN  o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.vtube.controller.VideoController
+17:05:16.681 logback [http-nio-8085-exec-2] ERROR c.v.e.GlobalExceptionHandler - 全局异常捕获，异常消息:Required request parameter 'videoId' for method parameter type Integer is not present
+17:05:16.681 logback [http-nio-8085-exec-2] INFO  c.v.e.GlobalExceptionHandler - =============== handlerException-START ===============
+17:05:16.681 logback [http-nio-8085-exec-2] INFO  c.v.e.GlobalExceptionHandler - 请求IP：127.0.0.1
+17:05:16.682 logback [http-nio-8085-exec-2] INFO  c.v.e.GlobalExceptionHandler - 请求地址：http://127.0.0.1:8085/video/sublist
+17:05:16.682 logback [http-nio-8085-exec-2] INFO  c.v.e.GlobalExceptionHandler - 请求方式：POST
+17:05:16.682 logback [http-nio-8085-exec-2] INFO  c.v.e.GlobalExceptionHandler - =============== 请求内容-END ===============
+17:09:32.550 logback [http-nio-8085-exec-10] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+17:10:27.148 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+17:10:27.159 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+17:10:31.050 logback [main] INFO  com.vtube.AdminApplication - Starting AdminApplication using Java 19.0.2 with PID 65308 (E:\VTube\VTube-java\vb-admin\target\classes started by Administrator in E:\VTube)
+17:10:31.052 logback [main] INFO  com.vtube.AdminApplication - The following 1 profile is active: "dev"
+17:10:31.893 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
+17:10:31.907 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+17:10:31.909 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:10:31.909 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+17:10:31.974 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:10:31.974 logback [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 898 ms
+17:10:32.731 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由START ##############
+17:10:32.731 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /test/**
+17:10:32.731 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /favicon.ico
+17:10:32.731 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-ui/**
+17:10:32.731 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-resources/**
+17:10:32.731 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /v3/**
+17:10:32.731 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /error
+17:10:32.731 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /default/**
+17:10:32.731 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /css/**
+17:10:32.731 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /js/**
+17:10:32.731 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /video/**
+17:10:32.731 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /dict/**
+17:10:32.731 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /uploadFile
+17:10:32.731 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /downloadFile
+17:10:32.731 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /buckets
+17:10:32.731 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /createBucket
+17:10:32.731 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /deleteBucket/**
+17:10:32.731 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由END ##############
+17:10:33.156 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8085"]
+17:10:33.166 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8085 (http) with context path ''
+17:10:33.167 logback [main] INFO  com.vtube.AdminApplication - 
+---------------------------------------------------------
+	Application is running! Access address:
+	Local:		http://localhost:8085
+	External:	http://172.26.80.1:8085
+	管理员接口文档:	http://localhost:8085/swagger-ui/index.html#/
+---------------------------------------------------------
+
+17:10:33.173 logback [main] INFO  com.vtube.AdminApplication - Started AdminApplication in 2.339 seconds (process running for 2.774)
+17:10:38.284 logback [http-nio-8085-exec-4] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+17:10:38.291 logback [http-nio-8085-exec-4] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+17:10:38.294 logback [http-nio-8085-exec-4] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+17:10:38.426 logback [http-nio-8085-exec-4] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+17:11:01.817 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+17:11:01.820 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+17:11:05.735 logback [main] INFO  com.vtube.AdminApplication - Starting AdminApplication using Java 19.0.2 with PID 76648 (E:\VTube\VTube-java\vb-admin\target\classes started by Administrator in E:\VTube)
+17:11:05.736 logback [main] INFO  com.vtube.AdminApplication - The following 1 profile is active: "dev"
+17:11:06.490 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
+17:11:06.496 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+17:11:06.497 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:11:06.497 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+17:11:06.551 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:11:06.551 logback [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 790 ms
+17:11:07.340 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由START ##############
+17:11:07.341 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /test/**
+17:11:07.341 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /favicon.ico
+17:11:07.341 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-ui/**
+17:11:07.341 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-resources/**
+17:11:07.341 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /v3/**
+17:11:07.341 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /error
+17:11:07.341 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /default/**
+17:11:07.341 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /css/**
+17:11:07.341 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /js/**
+17:11:07.341 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /video/**
+17:11:07.341 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /dict/**
+17:11:07.341 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /uploadFile
+17:11:07.341 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /downloadFile
+17:11:07.341 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /buckets
+17:11:07.341 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /createBucket
+17:11:07.341 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /deleteBucket/**
+17:11:07.341 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由END ##############
+17:11:07.698 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8085"]
+17:11:07.710 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8085 (http) with context path ''
+17:11:07.711 logback [main] INFO  com.vtube.AdminApplication - 
+---------------------------------------------------------
+	Application is running! Access address:
+	Local:		http://localhost:8085
+	External:	http://172.26.80.1:8085
+	管理员接口文档:	http://localhost:8085/swagger-ui/index.html#/
+---------------------------------------------------------
+
+17:11:07.716 logback [main] INFO  com.vtube.AdminApplication - Started AdminApplication in 2.203 seconds (process running for 2.645)
+17:11:12.076 logback [http-nio-8085-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+17:11:12.076 logback [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+17:11:12.077 logback [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+17:11:12.220 logback [http-nio-8085-exec-2] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+17:17:39.163 logback [http-nio-8085-exec-8] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 344501
+17:19:07.431 logback [http-nio-8085-exec-2] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 88248
+17:21:26.870 logback [http-nio-8085-exec-9] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 62971
+17:21:26.872 logback [http-nio-8085-exec-9] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 137421
+17:23:22.866 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+17:23:22.868 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+17:23:26.502 logback [main] INFO  com.vtube.AdminApplication - Starting AdminApplication using Java 19.0.2 with PID 21784 (E:\VTube\VTube-java\vb-admin\target\classes started by Administrator in E:\VTube)
+17:23:26.503 logback [main] INFO  com.vtube.AdminApplication - The following 1 profile is active: "dev"
+17:23:27.268 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
+17:23:27.273 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+17:23:27.274 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:23:27.274 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+17:23:27.324 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:23:27.324 logback [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 797 ms
+17:23:28.071 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由START ##############
+17:23:28.071 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /test/**
+17:23:28.071 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /favicon.ico
+17:23:28.071 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-ui/**
+17:23:28.071 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-resources/**
+17:23:28.071 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /v3/**
+17:23:28.071 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /error
+17:23:28.071 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /default/**
+17:23:28.071 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /css/**
+17:23:28.071 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /js/**
+17:23:28.071 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /video/**
+17:23:28.071 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /dict/**
+17:23:28.071 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /uploadFile
+17:23:28.071 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /downloadFile
+17:23:28.071 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /buckets
+17:23:28.071 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /createBucket
+17:23:28.071 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /deleteBucket/**
+17:23:28.071 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由END ##############
+17:23:28.420 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8085"]
+17:23:28.431 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8085 (http) with context path ''
+17:23:28.432 logback [main] INFO  com.vtube.AdminApplication - 
+---------------------------------------------------------
+	Application is running! Access address:
+	Local:		http://localhost:8085
+	External:	http://172.26.80.1:8085
+	管理员接口文档:	http://localhost:8085/swagger-ui/index.html#/
+---------------------------------------------------------
+
+17:23:28.438 logback [main] INFO  com.vtube.AdminApplication - Started AdminApplication in 2.169 seconds (process running for 2.636)
+17:23:34.770 logback [http-nio-8085-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+17:23:34.770 logback [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+17:23:34.771 logback [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+17:23:34.988 logback [http-nio-8085-exec-2] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+17:25:12.538 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+17:25:12.541 logback [SpringApplicationShutdownHook] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+17:25:17.187 logback [main] INFO  com.vtube.AdminApplication - Starting AdminApplication using Java 19.0.2 with PID 69156 (E:\VTube\VTube-java\vb-admin\target\classes started by Administrator in E:\VTube)
+17:25:17.189 logback [main] INFO  com.vtube.AdminApplication - The following 1 profile is active: "dev"
+17:25:18.367 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
+17:25:18.373 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+17:25:18.373 logback [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17:25:18.373 logback [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+17:25:18.424 logback [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:25:18.424 logback [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1207 ms
+17:25:19.326 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由START ##############
+17:25:19.326 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /test/**
+17:25:19.326 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /favicon.ico
+17:25:19.326 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-ui/**
+17:25:19.326 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /swagger-resources/**
+17:25:19.326 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /v3/**
+17:25:19.326 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /error
+17:25:19.326 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /default/**
+17:25:19.326 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /css/**
+17:25:19.326 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /js/**
+17:25:19.326 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /video/**
+17:25:19.326 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /dict/**
+17:25:19.326 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /uploadFile
+17:25:19.326 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /downloadFile
+17:25:19.326 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /buckets
+17:25:19.326 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /createBucket
+17:25:19.326 logback [main] INFO  com.vtube.comfig.SaTokenConfig - /deleteBucket/**
+17:25:19.326 logback [main] INFO  com.vtube.comfig.SaTokenConfig - ############# 放行路由END ##############
+17:25:19.687 logback [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8085"]
+17:25:19.699 logback [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8085 (http) with context path ''
+17:25:19.700 logback [main] INFO  com.vtube.AdminApplication - 
+---------------------------------------------------------
+	Application is running! Access address:
+	Local:		http://localhost:8085
+	External:	http://172.26.80.1:8085
+	管理员接口文档:	http://localhost:8085/swagger-ui/index.html#/
+---------------------------------------------------------
+
+17:25:19.705 logback [main] INFO  com.vtube.AdminApplication - Started AdminApplication in 2.83 seconds (process running for 3.367)
+17:25:22.673 logback [http-nio-8085-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+17:25:22.673 logback [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+17:25:22.674 logback [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+17:25:22.848 logback [http-nio-8085-exec-3] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+17:36:49.550 logback [http-nio-8085-exec-9] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 636490
+17:36:49.550 logback [http-nio-8085-exec-8] WARN  c.a.d.pool.DruidAbstractDataSource - discard long time none received connection. , jdbcUrl : jdbc:mysql://localhost:3306/vtube?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC&socketTimeout=60000&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true, version : 1.2.5, lastPacketReceivedIdleMillis : 606821

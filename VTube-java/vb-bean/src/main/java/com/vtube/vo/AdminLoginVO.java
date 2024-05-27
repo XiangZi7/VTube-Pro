@@ -10,4 +10,7 @@ public class AdminLoginVO {
     private String avatarPath;
     private String phone;
     private String token;
+    private String sex;
+    private String realName;
+    private String userName;
 }

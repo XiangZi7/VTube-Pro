@@ -81,6 +81,15 @@
                  vt.video_id = vtd.video_id
         where vt.video_id = #{videoId};
     </select>
+    <select id="weekList" resultType="com.vtube.vo.WeeklyAnimeUpdateVO">
+        SELECT v.video_id,
+               v.title,
+               v.image_path,
+               vu.week_day,
+               vu.update_id
+        FROM vt_video AS v
+                 LEFT JOIN vt_video_update AS vu ON v.video_id = vu.video_id
+    </select>
 
 
     <!-- 添加视频及相关信息数据 -->

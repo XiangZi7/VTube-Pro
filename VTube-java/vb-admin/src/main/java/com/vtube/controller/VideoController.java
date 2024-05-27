@@ -12,6 +12,7 @@ import com.vtube.service.VideoEpisodeService;
 import com.vtube.service.VideoService;
 import com.vtube.vo.Param.VideoParam;
 import com.vtube.vo.VideoVO;
+import com.vtube.vo.WeeklyAnimeUpdateVO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
@@ -35,8 +36,8 @@ public class VideoController {
 
     @GetMapping("/list")
     @Operation(summary = "视频列表", description = "视频列表")
-    public ApiResult<?> list(@RequestParam(name = "pageNum", defaultValue = "1") Long pageNum,
-                             @RequestParam(name = "pageSize", defaultValue = "10") Long pageSize, VideoParam videoVOParam) {
+    ApiResult list(@RequestParam(name = "pageNum", defaultValue = "1") Long pageNum,
+                   @RequestParam(name = "pageSize", defaultValue = "10") Long pageSize, VideoParam videoVOParam) {
         Page<Video> page = new Page<>(pageNum, pageSize);
         IPage<VideoVO> videoIPage = videoMapper.VideoList(page, videoVOParam);
 
@@ -50,9 +51,9 @@ public class VideoController {
 
     @PostMapping("/sublist")
     @Operation(summary = "视频集数", description = "视频集数")
-    public ApiResult<?> sublist(@RequestBody VideoVO video) {
+    ApiResult sublist(@RequestBody VideoVO video) {
         QueryWrapper<VideoEpisode> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("video_id",video.getVideoId());
+        queryWrapper.eq("video_id", video.getVideoId());
         queryWrapper.orderByAsc("episode_number");
         List<VideoEpisode> list = episodeService.list(queryWrapper);
         return ApiResult.ok(list);
@@ -61,22 +62,33 @@ public class VideoController {
     @SaCheckRole("Super-Admin")
     @PostMapping("/add")
     @Operation(summary = "视频添加", description = "视频添加")
-    public ApiResult<?> add(@RequestBody VideoVO video) {
+    ApiResult add(@RequestBody VideoVO video) {
         videoService.addVideoData(video);
         return ApiResult.ok("新增成功");
     }
+
     @SaCheckRole("Super-Admin")
     @PostMapping("/edit")
     @Operation(summary = "视频更新", description = "视频更新")
-    public ApiResult<?> edit(@RequestBody VideoVO video) {
+    ApiResult edit(@RequestBody VideoVO video) {
         videoService.updateVideoData(video);
         return ApiResult.ok("视频更新成功");
     }
+
     @SaCheckRole("Super-Admin")
     @PostMapping("/deletes")
     @Operation(summary = "视频删除", description = "视频删除")
-    public ApiResult<?> deletes(@RequestBody List<Integer> ids) {
+    ApiResult deletes(@RequestBody List<Integer> ids) {
         videoMapper.deleteBatchIds(ids);
         return ApiResult.ok("删除成功");
+    }
+
+    //    ************* 周更新 ***************
+    @Operation(summary = "周番列表", description = "周番列表")
+    @GetMapping("/weekList")
+    ApiResult weekList(@RequestParam(name = "pageNum", defaultValue = "1") Long pageNum,
+                       @RequestParam(name = "pageSize", defaultValue = "10") Long pageSize, WeeklyAnimeUpdateVO weeklyAnimeUpdateVO) {
+        Page<Video> page = new Page<>(pageNum, pageSize);
+        return ApiResult.ok(videoMapper.weekList(weeklyAnimeUpdateVO, page));
     }
 }

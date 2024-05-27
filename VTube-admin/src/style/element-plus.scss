@@ -4,7 +4,9 @@
 :root {
   --el-fill-color-blank: hsl(var(--nextui-default-400) / .2);
 }
-
+.el-menu{
+  border-right:none
+}
 .el-form-item {
   // margin: 0 5px !important;
   // padding: 20px;

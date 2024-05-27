@@ -2,11 +2,13 @@
 import { Icon } from '@iconify/vue'
 import Bread from '@/layouts/components/bread/index.vue'
 import router from '@/routers'
+const fileUrl = import.meta.env.VITE_API_MINIO
 
 const menuStore = useMenuStore()
 const userStore = useUserStore()
 
 const { isAside } = storeToRefs(menuStore)
+const { userInfo } = storeToRefs(userStore)
 
 const dialogVisible = ref(false)
 
@@ -56,11 +58,14 @@ const logout = () => {
           class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full"
         >
           <el-dropdown>
-            <el-image src="src/assets/logo.png" />
+            <el-image :src="fileUrl + userInfo.avatarPath" />
             <template #dropdown>
               <el-dropdown-menu>
                 <el-dropdown-item>
-                  <div class="flex items-center gap-1">
+                  <div
+                    class="flex items-center gap-1"
+                    @click="router.push('/info')"
+                  >
                     <Icon
                       icon="material-symbols-light:account-circle"
                       class="text-xl"

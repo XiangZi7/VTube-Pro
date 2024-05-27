@@ -16,3 +16,11 @@ export interface queryParamVO {
   title?: string
   userId?: number
 }
+
+export interface WeekVO {
+  videoId: number;
+  title: string;
+  imagePath: string;
+  weekDay: number;
+  updateId: number;
+}

@@ -7,25 +7,31 @@ import com.vtube.domain.VideoEpisode;
 import com.vtube.vo.Param.VideoParam;
 import com.vtube.vo.PlayDetailsVO;
 import com.vtube.vo.VideoVO;
+import com.vtube.vo.WeeklyAnimeUpdateVO;
 import org.apache.ibatis.annotations.Param;
 
 /**
-* @author Administrator
-* @description 针对表【vt_video(视频表)】的数据库操作Mapper
-* @createDate 2024-05-23 13:59:35
-* @Entity com.vtube.domain.Video
-*/
+ * @author Administrator
+ * @description 针对表【vt_video(视频表)】的数据库操作Mapper
+ * @createDate 2024-05-23 13:59:35
+ * @Entity com.vtube.domain.Video
+ */
 public interface VideoMapper extends BaseMapper<Video> {
     IPage<VideoVO> VideoList(IPage<Video> page, @Param("video") VideoParam video);
 
     int addVideoData(VideoVO videoVO);
 
     int updateVideoData(VideoVO videoVO);
+
     int addVideoCategory(VideoVO videoVO);
+
     int updateVideoCategory(VideoVO videoVO);
 
     // 获取视频详情
     PlayDetailsVO getVideoDetails(Integer videoId);
+
+    // 获取周番更新表
+    IPage<WeeklyAnimeUpdateVO> weekList(WeeklyAnimeUpdateVO video, IPage<Video> page);
 
 }
 

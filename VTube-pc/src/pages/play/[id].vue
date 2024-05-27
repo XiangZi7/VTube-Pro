@@ -36,7 +36,7 @@ onMounted(() => {
             <vt-play
               v-if="episodeList.length > 0"
               :title="details.title"
-              v-model="episodeList[playIndex].videoPath"
+              :url="episodeList[playIndex].videoPath"
               :cover="fileUrl + details.imagePath"
             />
           </div>
@@ -151,9 +151,9 @@ onMounted(() => {
             <el-scrollbar height="400px">
               <div
                 class="w-full p-2 flex items-center justify-between hover:bg-gray-400/50 rounded-lg"
-                v-for="item in episodeList"
+                v-for="(item, index) in episodeList"
                 :key="item.episodeNumber"
-                @click="playIndex = item.episodeNumber"
+                @click="playIndex = index"
               >
                 <div>{{ item.episodeNumber }}</div>
                 <div>{{ item.title }}</div>

@@ -49,6 +49,8 @@ const setEnumMap = async ({ prop, enum: enumValue }: TableColumn) => {
     if (enumValue && typeof enumValue === 'string') {
       const res = await httpGet(`/dict/${enumValue}`)
       data = res.data
+    } else if (Array.isArray(enumValue)) {
+      data = enumValue
     } else if (enumValue && typeof enumValue === 'function') {
       data = await enumValue()
     }

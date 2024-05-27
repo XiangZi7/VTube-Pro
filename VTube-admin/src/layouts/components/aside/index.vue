@@ -5,15 +5,20 @@
   >
     <div class="flex items-center w-auto justify-center">
       <span class="text-lg font-semibold">
-        <!--        <img src="@/assets/logo.png" class="object-cover w-24" />-->
+        <!-- <img src="@/assets/logo.png" class="object-cover w-24" /> -->
       </span>
     </div>
     <ul class="mt-2">
-      <MenuItem
-        v-for="item in menuStore.flatMenuListGet"
+      <template
+        v-for="item in menuStore.showMenuListGet"
         :key="item.meta.menuId"
-        :item-data="item"
-      />
+      >
+        <MenuItem
+          :item-data="item"
+          v-if="item.meta.visible"
+          :menuIndex="item.path"
+        />
+      </template>
     </ul>
   </aside>
 </template>

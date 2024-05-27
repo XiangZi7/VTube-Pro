@@ -2,7 +2,8 @@
 import { TableColumn, TableRef } from '@/interface/components/vt-table-v2.ts'
 import { Icon } from '@iconify/vue'
 import Dialog from './components/dialog.vue'
-import { VideoVO } from '@/interface/pages/video'
+import { WeekVO } from '@/interface/pages/video'
+import { weekDays } from '@/enums'
 const fileUrl = import.meta.env.VITE_API_MINIO
 
 const DialogRef = ref<InstanceType<typeof Dialog> | null>(null)
@@ -10,51 +11,20 @@ const vtTable = ref<TableRef>()
 
 const tableColumn = ref<TableColumn[]>([
   { type: 'selection', fixed: 'left', width: 70 },
-  { prop: 'videoId', label: 'id' },
+  { prop: 'updateId', label: 'id' },
   { prop: 'imagePath', label: '封面', slotName: 'imagePath' },
   { prop: 'title', label: '标题', search: { el: 'input' } },
   {
-    prop: 'categoryId',
-    label: '分类',
-    enum: 'category',
-    search: { el: 'select', props: { filterable: true }, key: 'categoryId' },
-  },
-  {
-    prop: 'description',
-    label: '描述',
-    width: 200,
-  },
-  { prop: 'views', label: '关注度' },
-  {
-    prop: 'type',
-    label: '视频类型',
-    enum: 'video_type',
-    search: { el: 'select', props: { filterable: true } },
-  },
-  { prop: 'tags', label: '视频标签' },
-  { prop: 'likes', label: '点赞' },
-  {
-    prop: 'userId',
-    label: '上传者',
-    enum: 'user',
-    search: { el: 'select', props: { filterable: true }, key: 'userId' },
-  },
-  {
-    prop: 'createTime',
-    label: '创建时间',
-    search: {
-      el: 'date-picker',
-      props: {
-        valueFormat: 'YYYY-MM-DD',
-        dateFormat: 'YYYY/MM/DD',
-      },
-    },
+    prop: 'weekDay',
+    label: '周',
+    enum: weekDays,
+    search: { el: 'select', props: { filterable: true }, key: 'weekDay' },
   },
   { prop: '', label: '操作', width: 150, fixed: 'right', slotName: 'action' },
 ])
 
 // 打开对话框
-const openDialog = (title: string, row: Partial<VideoVO> = {}) => {
+const openDialog = (title: string, row: Partial<WeekVO> = {}) => {
   const props = {
     title,
     model: row,
@@ -84,7 +54,6 @@ const deletes = async (id: number | (number | string)[]) => {
     vtTable.value.getTableList()
   }
 }
-
 </script>
 <template>
   <div class="flex flex-col h-full">
@@ -93,7 +62,7 @@ const deletes = async (id: number | (number | string)[]) => {
     >
       <vt-table-v2
         ref="vtTable"
-        api="/video/list"
+        api="/video/weekList"
         :columns="tableColumn"
         class="!flex-1"
         row-key="videoId"

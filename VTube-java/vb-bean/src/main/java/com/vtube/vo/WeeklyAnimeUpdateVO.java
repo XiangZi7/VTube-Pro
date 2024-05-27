@@ -8,4 +8,5 @@ public class WeeklyAnimeUpdateVO {
     private String title;
     private String imagePath;
     private Integer weekDay;
+    private Integer updateId;
 }
