@@ -6,7 +6,9 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.vtube.domain.Video;
 import com.vtube.domain.VideoEpisode;
+import com.vtube.domain.VideoUpdate;
 import com.vtube.mapper.VideoMapper;
+import com.vtube.mapper.VideoUpdateMapper;
 import com.vtube.model.ApiResult;
 import com.vtube.service.VideoEpisodeService;
 import com.vtube.service.VideoService;
@@ -33,6 +35,8 @@ public class VideoController {
     private VideoService videoService;
     @Resource
     private VideoEpisodeService episodeService;
+    @Resource
+    private VideoUpdateMapper videoUpdateMapper;
 
     @GetMapping("/list")
     @Operation(summary = "视频列表", description = "视频列表")
@@ -90,5 +94,36 @@ public class VideoController {
                        @RequestParam(name = "pageSize", defaultValue = "10") Long pageSize, WeeklyAnimeUpdateVO weeklyAnimeUpdateVO) {
         Page<Video> page = new Page<>(pageNum, pageSize);
         return ApiResult.ok(videoMapper.weekList(weeklyAnimeUpdateVO, page));
+    }
+
+    @PostMapping("/weekAdd")
+    @Operation(summary = "周番添加", description = "周番添加")
+    ApiResult weekAdd(@RequestBody VideoUpdate video) {
+        return ApiResult.ok(videoUpdateMapper.insert(video));
+    }
+
+    @PostMapping("/weekEdit")
+    @Operation(summary = "周番更新", description = "周番更新")
+    ApiResult weekEdit(@RequestBody VideoUpdate video) {
+        return ApiResult.ok(videoUpdateMapper.updateById(video));
+    }
+
+    @PostMapping("/weekDeletes")
+    @Operation(summary = "周番删除", description = "周番删除")
+    ApiResult weekDeletes(@RequestBody List<Integer> ids) {
+        return ApiResult.ok(videoUpdateMapper.deleteBatchIds(ids));
+    }
+    @GetMapping("/weekIsNullList")
+    @Operation(summary = "查出周番更新表没有的动漫", description = "查出周番更新表没有的动漫")
+    ApiResult weekIsNullList(@RequestParam(name = "pageNum", defaultValue = "1") Long pageNum,
+                   @RequestParam(name = "pageSize", defaultValue = "10") Long pageSize, VideoParam videoVOParam) {
+        Page<Video> page = new Page<>(pageNum, pageSize);
+        IPage<VideoVO> videoIPage = videoMapper.VideoByWeekIsNullList(page, videoVOParam);
+        videoIPage.getRecords().stream().forEach(item -> {
+            if (item.getTags() != null) {
+                item.setTags(item.getTags());
+            }
+        });
+        return ApiResult.ok(videoIPage);
     }
 }

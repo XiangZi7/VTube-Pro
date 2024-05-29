@@ -70,7 +70,7 @@ public class User implements Serializable {
     private LocalDateTime createTime;
 
     /**
-     * 性别
+     * M(男) or F(女)
      */
     @TableField(value = "sex")
     private String sex;

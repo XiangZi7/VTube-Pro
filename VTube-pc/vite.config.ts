@@ -26,7 +26,7 @@ export default ({ mode }: ConfigEnv): UserConfig => {
             }),
             vue(),
             AutoImport({
-                imports: ["vue", "vue-router"],
+                imports: ["vue", "vue-router", "pinia"],
                 dirs: ["src/utils/**", "src/stores/modules/**", "src/hooks/**"],
                 dts: "src/auto-import/imports.d.ts",
                 eslintrc: {

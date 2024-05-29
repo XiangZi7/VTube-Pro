@@ -7,8 +7,10 @@ const router = useRouter()
 const state = reactive<indexState>({
   weeklyAnime: [],
   weekTabsIndex: 0,
+  top10: [],
+  recommended: [],
 })
-const { weeklyAnime, weekTabsIndex } = toRefs(state)
+const { weeklyAnime, weekTabsIndex, top10, recommended } = toRefs(state)
 
 const weekDays = [
   '星期一',
@@ -21,53 +23,40 @@ const weekDays = [
 ]
 
 onMounted(() => {
-  httpGet<weeklyAmime[][]>('/weekly-anime').then(({ data }) => {
+  httpGet<weeklyAmime[][]>('/anime/weekly-anime').then(({ data }) => {
     state.weeklyAnime = data
+  })
+  httpGet<indexState>('/anime/hot').then(({ data }) => {
+    state.recommended = data.recommended
+    state.top10 = data.top10
   })
 })
 </script>
 
 <template>
-  <section class="bg-gray-900 text-white py-12 md:py-16 lg:py-20">
+  <section class="bg-gradient text-white py-12 md:py-16 lg:py-20">
     <div class="container mx-auto px-4 md:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="flex flex-col justify-center">
           <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            Discover the Best User-Generated Content
+            境界的彼方《约束之绊》
           </h1>
-          <p class="text-gray-300 mb-6">
-            Streamly is the platform where creators share their passions and
-            connect with audiences.
+          <p class="text-gray-300 mb-6 text-sm">
+            电视动画《境界的彼方》（境界の彼方）改编自由鸟居なごむ创作、鸭居知世担任插画的同名轻小说。故事描述了有特殊能力的异界士少女粟山未来与稀有存在的半妖神原秋人相遇以后发生的一系列不平凡的故事。
           </p>
           <div class="flex space-x-4">
-            <button
-              class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-6 py-3 rounded-md"
-            >
-              详情
-            </button>
-            <button
-              class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-6 py-3 rounded-md"
-            >
-              观看
-            </button>
+            <el-button type="primary"> 观看 </el-button>
           </div>
         </div>
         <div class="relative">
-          <img
+          <video
+            controls
             alt="Featured Video"
             class="rounded-lg object-cover aspect-video"
             height="450"
-            src="https://generated.vusercontent.net/placeholder.svg"
+            src="@/assets/境界的彼方《约束之绊》官方完整PV【 1080p】.mp4"
             width="800"
           />
-          <div
-            class="absolute bottom-4 left-4 bg-gray-900 bg-opacity-70 px-4 py-2 rounded-md"
-          >
-            <div class="flex items-center space-x-2">
-              <Icon icon="material-symbols:play-circle-outline" />
-              <span class="text-sm font-medium">Watch Now</span>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -78,68 +67,67 @@ onMounted(() => {
     >
       <div class="w-full md:col-span-4">
         <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
-          Recent Videos
+          Recommended Videos
         </h2>
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
-        >
-          <div class="bg-white rounded-lg shadow-md overflow-hidden">
-            <img
-              src="https://generated.vusercontent.net/placeholder.svg"
-              alt="Video Thumbnail"
-              width="400"
-              height="225"
-              class="w-full h-48 object-cover"
-              style="aspect-ratio: 400 / 225; object-fit: cover"
-            />
-            <div class="p-4">
-              <h3 class="text-lg font-medium mb-2">
-                Cooking with Grandma: Homemade Pasta
-              </h3>
-              <div class="flex items-center space-x-2 text-gray-500 mb-2">
-                <Icon icon="material-symbols:account-circle" />
-                <span>Grandma's Kitchen</span>
-              </div>
-              <div class="flex items-center space-x-2 text-gray-500">
-                <Icon icon="ph:eye-bold" />
-                <span>1.2K views</span>
+        <el-scrollbar>
+          <div class="flex space-x-6">
+            <div
+              class="bg-white rounded-lg shadow-md overflow-hidden flex-none w-52 cursor-pointer"
+              v-for="item in recommended"
+              :key="item.videoId"
+              @click="router.push(`/play/${item.videoId}`)"
+            >
+              <img
+                :src="fileUrl + item.imagePath"
+                :alt="item.title"
+                class="w-full h-auto max-h-[388px]"
+              />
+              <div class="p-4">
+                <h3 class="text-sm font-medium mb-2">
+                  {{ item.title }}
+                </h3>
+                <div class="flex items-center space-x-2 text-gray-500">
+                  <Icon icon="ph:eye-bold" />
+                  <span>{{ item.views }} views</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </el-scrollbar>
       </div>
       <div class="w-full md:col-span-1">
         <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
           Hot Videos
         </h2>
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-1 gap-6"
-        >
-          <div class="overflow-hidden flex items-center gap-2">
-            1
-            <img
-              alt="Video Thumbnail"
-              class="w-12 h-12 object-cover rounded"
-              height="60"
-              src="https://generated.vusercontent.net/placeholder.svg"
-              width="100"
-              style="aspect-ratio: 100 / 60; object-fit: cover"
-            />
-            <div class="text-sm">境界的彼方</div>
+        <el-scrollbar height="400px">
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-1 gap-6"
+          >
+            <div
+              class="overflow-hidden flex items-center gap-2 cursor-pointer"
+              v-for="(item, index) in top10"
+              :key="item.videoId"
+              @click="router.push(`/play/${item.videoId}`)"
+            >
+              {{ index + 1 }}
+              <img
+                :alt="item.title"
+                class="w-12 h-12 object-cover rounded"
+                height="60"
+                :src="fileUrl + item.imagePath"
+                width="100"
+                style="aspect-ratio: 100 / 60; object-fit: cover"
+              />
+              <div class="flex flex-col">
+                <div class="text-sm">{{ item.title }}</div>
+                <div class="text-sm flex items-center space-x-2 text-gray-500">
+                  <Icon icon="ph:eye-bold" />
+                  <span>{{ item.views }}</span>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="overflow-hidden flex items-center gap-2">
-            2
-            <img
-              alt="Video Thumbnail"
-              class="w-12 h-12 object-cover rounded"
-              height="60"
-              src="https://generated.vusercontent.net/placeholder.svg"
-              width="100"
-              style="aspect-ratio: 100 / 60; object-fit: cover"
-            />
-            <div class="text-sm">刀剑神域</div>
-          </div>
-        </div>
+        </el-scrollbar>
       </div>
     </div>
   </section>
@@ -171,7 +159,7 @@ onMounted(() => {
           </button>
         </div>
         <div
-          class="mt-2 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-6 py-6"
+          class="mt-2 grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 py-6"
           style="animation-duration: 0s"
         >
           <div
@@ -183,17 +171,13 @@ onMounted(() => {
             <img
               :src="fileUrl + item.imagePath"
               alt="Anime Thumbnail"
-              class="w-full h-[300px]"
+              class="w-full h-auto max-h-[388px]"
             />
             <div class="p-4">
-              <h3 class="font-medium mb-2">{{ item.title }}</h3>
-              <div class="flex items-center space-x-2 text-gray-500 mb-2">
-                <Icon icon="solar:calendar-mark-linear" />
-                <span>8:30 PM</span>
-              </div>
+              <h3 class="text-sm font-medium mb-2">{{ item.title }}</h3>
               <div class="flex items-center space-x-2 text-gray-500">
                 <Icon icon="ph:eye-bold" />
-                <span>900K views</span>
+                <span>{{ item.views }} views</span>
               </div>
             </div>
           </div>
@@ -202,3 +186,12 @@ onMounted(() => {
     </div>
   </section>
 </template>
+<style lang="scss" scoped>
+.bg-gradient {
+  background: linear-gradient(to right, #1f2937, rgba(31, 41, 55, 0.7)),
+    url('@/assets/bg2.png');
+  background-size: cover; /* 确保背景图片按比例缩放，并能完整显示 */
+  background-repeat: no-repeat; /* 禁止背景图片重复 */
+  background-position: center; /* 将背景图片放置在容器中央 */
+}
+</style>

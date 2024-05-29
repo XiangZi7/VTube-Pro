@@ -43,6 +43,7 @@ public class VideoServiceImpl extends ServiceImpl<VideoMapper, Video>
         video.setType(videoVO.getType());
         video.setImagePath(videoVO.getImagePath());
         video.setUploader("OFFICIAL");
+        video.setReleaseTime(videoVO.getReleaseTime());
         videoMapper.insert(video);
 
         // 插入集数信息
@@ -66,6 +67,7 @@ public class VideoServiceImpl extends ServiceImpl<VideoMapper, Video>
     @Override
     @Transactional(rollbackFor = Exception.class)
     public int updateVideoData(VideoVO videoVO) {
+        System.out.println("videoVO=>>" + videoVO);
         // 更新视频数据
         Video video = new Video();
         video.setVideoId(videoVO.getVideoId());
@@ -76,6 +78,7 @@ public class VideoServiceImpl extends ServiceImpl<VideoMapper, Video>
         video.setTags(videoVO.getTags());
         video.setType(videoVO.getType());
         video.setUploader("OFFICIAL");
+        video.setReleaseTime(videoVO.getReleaseTime());
         videoMapper.updateById(video);
         videoMapper.updateVideoData(videoVO);
         videoMapper.updateVideoCategory(videoVO);

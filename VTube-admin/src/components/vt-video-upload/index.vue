@@ -3,6 +3,7 @@ import { ElNotification } from 'element-plus'
 import draggable from 'vuedraggable'
 import { Icon } from '@iconify/vue'
 import { Video } from '@/interface/pages/dialog'
+import type { UploadRequestOptions } from 'element-plus'
 
 import axios from 'axios'
 const userStore = useUserStore()
@@ -51,7 +52,7 @@ function uploadError() {
 // 上传方法
 const uploadPercentage = ref(0)
 const uploading = ref(false)
-function handleHttpUpload(options) {
+function handleHttpUpload(options: UploadRequestOptions) {
   let formData = new FormData()
   formData.append('file', options.file)
   uploading.value = true
@@ -68,11 +69,10 @@ function handleHttpUpload(options) {
   })
     .then((res) => {
       videoUrl.value?.push({
-        title: '',
+        title: options.file.name.split('.').slice(0, -1).join('.'),
         videoPath: res.data.data,
         episodeNumber: videoUrl.value.length + 1,
       })
-      console.log('🚀 => videoUrl.value:', videoUrl.value)
     })
     .finally(() => {
       uploading.value = false
@@ -81,7 +81,7 @@ function handleHttpUpload(options) {
 }
 
 // 删除操作
-function deleteXJ(index) {
+function deleteXJ(index: number) {
   videoUrl.value?.splice(index, 1)
 }
 </script>

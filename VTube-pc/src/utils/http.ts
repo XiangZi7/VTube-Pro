@@ -21,6 +21,13 @@ const instance: AxiosInstance = axios.create({
 // 请求拦截器
 instance.interceptors.request.use(
   (config: CustomAxiosRequestConfig) => {
+    const userStore = useUserStore()
+
+    // token
+    const token = userStore.userInfo.token;
+    if (token != undefined && token != "") {
+      config.headers.Authorization = token;
+    }
     // 开启进度条
     NProgress.start()
     return config

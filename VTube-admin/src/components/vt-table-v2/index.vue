@@ -118,7 +118,6 @@ defineExpose({
       <template v-for="column in columns" :key="column.prop">
         <el-table-column
           v-bind="column"
-          :align="column.align ?? 'center'"
           :reserve-selection="column.type == 'selection'"
         >
           <template #default="scope">

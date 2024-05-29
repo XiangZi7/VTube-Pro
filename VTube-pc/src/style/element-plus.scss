@@ -1,0 +1,60 @@
+@import 'element-plus/theme-chalk/dark/css-vars.css';
+@import 'element-plus/dist/index.css';
+
+:root {
+  --el-fill-color-blank: hsl(var(--nextui-default-400) / .2);
+}
+.el-menu{
+  border-right:none
+}
+.el-form-item {
+  // margin: 0 5px !important;
+  // padding: 20px;
+  // background-color: ;
+}
+
+.el-table,
+.el-table__expanded-cell {
+  //padding: 20px !important;
+  background-color: transparent !important;
+}
+
+.el-table th {
+  background-color: transparent !important;
+  //border-bottom: 1px solid #5078fc !important;
+  //color: #fefefe !important;
+}
+
+.el-table tr {
+  background-color: transparent !important;
+}
+
+.el-table--enable-row-transition .el-table__body td,
+.el-table .cell {
+  background-color: transparent !important;
+  //color: rgba(255, 255, 255, 0.7) !important;
+  border: none !important;
+  //padding-left: 0 !important;
+  //padding-right: 0 !important;
+}
+
+.el-table th>.cell {
+  //color: rgba(254, 254, 254, 1) !important;
+  font-weight: 700 !important;
+}
+
+.el-table::before {
+  //去除底部白线
+  //left: 0 !important;
+  //bottom: 0 !important;
+  //width: 100%!important;
+  //height: 0px !important;
+}
+
+.el-form-item__label {
+  //color: white !important;
+}
+
+.el-ipt .el-input__wrapper {
+  border-radius: 50px;
+}

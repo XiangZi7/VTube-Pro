@@ -40,6 +40,17 @@ const tableColumn = ref<TableColumn[]>([
     search: { el: 'select', props: { filterable: true }, key: 'userId' },
   },
   {
+    prop: 'releaseTime',
+    label: '上映时间',
+    search: {
+      el: 'date-picker',
+      props: {
+        valueFormat: 'YYYY-MM-DD',
+        dateFormat: 'YYYY/MM/DD',
+      },
+    },
+  },
+  {
     prop: 'createTime',
     label: '创建时间',
     search: {
@@ -84,7 +95,6 @@ const deletes = async (id: number | (number | string)[]) => {
     vtTable.value.getTableList()
   }
 }
-
 </script>
 <template>
   <div class="flex flex-col h-full">
@@ -112,12 +122,13 @@ const deletes = async (id: number | (number | string)[]) => {
               @confirm="deletes(selectedListIds)"
             >
               <template #reference>
-                <button
+                <el-button
                   :disabled="!isSelected"
+                  type="danger"
                   class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3"
                 >
                   批量删除
-                </button>
+                </el-button>
               </template>
             </el-popconfirm>
           </div>

@@ -5,8 +5,13 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * 视频表
@@ -36,6 +41,7 @@ public class Video implements Serializable {
     /**
      * 创建时间
      */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @TableField(value = "create_time")
     private LocalDateTime createTime;
 
@@ -62,6 +68,13 @@ public class Video implements Serializable {
      */
     @TableField(value = "uploader")
     private Object uploader;
+
+    /**
+     * 上映时间
+     */
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
+    @TableField(value = "release_time")
+    private LocalDate releaseTime;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;

@@ -5,8 +5,10 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.vtube.domain.VideoEpisode;
 import lombok.Data;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 @Data
@@ -40,6 +42,8 @@ public class VideoVO {
     private String tags;
     @ExcelProperty("type")
     private Integer type;
+
+    private LocalDate releaseTime;
     private List<String> tagsList;
 
     private List<VideoEpisode> episodeList;

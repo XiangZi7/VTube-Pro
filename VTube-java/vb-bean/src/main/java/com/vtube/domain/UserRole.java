@@ -8,10 +8,10 @@ import java.io.Serializable;
 import lombok.Data;
 
 /**
- * 用户角色关联表
- * @TableName vt_user_role
+ * 管理员用户角色关联表
+ * @TableName vt_sys_user_role
  */
-@TableName(value ="vt_user_role")
+@TableName(value ="vt_sys_user_role")
 @Data
 public class UserRole implements Serializable {
     /**

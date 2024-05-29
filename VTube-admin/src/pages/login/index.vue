@@ -6,7 +6,7 @@ const userStore = useUserStore()
 const ruleFormRef = ref<FormInstance>()
 const form = ref({
   userName: '',
-  passWord: '',
+  password: '',
 })
 const rules = ref({
   userName: [
@@ -16,7 +16,7 @@ const rules = ref({
       trigger: 'change',
     },
   ],
-  passWord: [
+  password: [
     {
       required: true,
       message: '请输入密码',
@@ -31,7 +31,7 @@ const login = async () => {
 
     httpPost<user>('/login', form.value).then(({ data, code, message }) => {
       if (code !== 200) return messagePro(code, message)
-      messagePro(code, data.nickName as string)
+      messagePro(code, data.realName as string)
       userStore.setUserInfo(data)
       router.push({
         path: '/dashboard',
@@ -75,9 +75,9 @@ const login = async () => {
               </el-form-item>
             </div>
             <div class="space-y-2">
-              <el-form-item label="密码" prop="passWord">
+              <el-form-item label="密码" prop="password">
                 <el-input
-                  v-model="form.passWord"
+                  v-model="form.password"
                   placeholder="请输入"
                   @keyup.enter="login"
                   type="password"

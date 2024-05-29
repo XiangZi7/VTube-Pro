@@ -1,166 +1,305 @@
-<script setup lang="ts">
-import VtDialog from '@/components/vt-dialog/index.vue'
+<script setup>
+import { ElMessage } from 'element-plus'
 
-const dialogVisible = defineModel<boolean>()
-
-// tabs
-const currentTabsIndex = ref<string>('sign In')
-// Account
-const initialModel = ref({
-  email: '',
-  password: '',
-  username: '',
+const state = reactive({
+  list: [],
+  isCurrent: 'login',
+  showPopup: false,
+  loginForm: {},
 })
+const { isCurrent, loginForm } = toRefs(state)
 
-const validatorRules = {
-  username: [{ required: true, message: 'Username is required' }],
-  email: [{ required: true, message: 'Email is required' }],
-  password: [{ required: true, message: 'Password is required' }],
+const modelValue = defineModel()
+const userstore = useUserStore()
+
+function ckBtn(params) {
+  state.isCurrent = params
 }
 
-const {
-  model: formModel,
-  errors: formErrors,
-  validateForm,
-} = useFormValidation(initialModel.value, validatorRules)
+function isEmptyObject(obj) {
+  return Object.keys(obj).length === 0
+}
 
-const handleSubmit = () => {
-  validateForm()
+function handleSubmit(event, tpye) {
+  event.preventDefault() // 阻止默认提交行为
 
-  // eslint-disable-next-line no-restricted-syntax
-  for (const key in formErrors.value) {
-    if (formErrors.value[key]) {
-      // 根据需要处理表单有错误的情况
-      return
+  if (isEmptyObject(state.loginForm)) return ElMessage('请填写信息')
+  httpPost(tpye == 'sign-up' ? '/SignIn' : '/login', state.loginForm).then(
+    ({ data, code, message }) => {
+      if (code == 500) return ElMessage.error(message)
+      // 如果是注册直接提示，不添加数据
+      if (tpye == 'sign-up') {
+        state.isCurrent = 'login'
+        return ElMessage.success(data)
+      }
+      // 添加数据
+      userstore.setUserInfo(data)
+      // 关闭登录窗口
+      modelValue.value = false
     }
-  }
-
-  // 提交完成后重置表单
-  formModel.value = Object.keys(initialModel).reduce(
-    (acc, key) => {
-      acc[key] = ''
-      return acc
-    },
-    {} as Record<string, string>
   )
-}
-
-const switchTabs = (tab: string) => {
-  currentTabsIndex.value = tab
 }
 </script>
 <template>
-  <VtDialog v-model="dialogVisible" :is-header="false">
-    <template #content>
-      <div class="w-full max-w-md mx-auto">
-        <div
-          role="tablist"
-          class="h-9 items-center justify-center rounded-lg bg-gray-500/20 p-1 text-muted-foreground grid grid-cols-2 gap-2"
-          style="outline: none"
-        >
-          <button
-            @click="switchTabs('sign In')"
-            :class="{ 'bg-white text-black': currentTabsIndex == 'sign In' }"
-            class="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
-          >
-            Sign In
-          </button>
-          <button
-            @click="switchTabs('sign Up')"
-            :class="{ 'bg-white text-black': currentTabsIndex == 'sign Up' }"
-            class="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
-          >
-            Sign Up
-          </button>
+  <div
+    class="bg-black/5 fixed top-0 bottom-0 left-0 right-0 z-2000 w-full h-full flex items-center justify-center"
+  >
+    <div
+      class="fixed left-0 top-0 z-[1998] bg-black/15 w-full h-full"
+      :class="{ visible: modelValue }"
+      @click="modelValue = false"
+    ></div>
+    <div class="relative z-[10000]">
+      <div
+        class="container"
+        :class="{ 'right-panel-active': isCurrent !== 'login' }"
+      >
+        <div class="form-container sign-up-container">
+          <form @submit="handleSubmit($event, 'sign-up')">
+            <h1 class="text-black">注册账号</h1>
+            <input
+              v-model="loginForm.userName"
+              type="text"
+              placeholder="userName"
+            />
+            <input v-model="loginForm.phone"  placeholder="Phone" />
+            <input
+              v-model="loginForm.password"
+              type="password"
+              placeholder="Password"
+            />
+            <button type="submit">注册</button>
+          </form>
         </div>
-        <div
-          class="mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-          style="animation-duration: 0s"
-        >
-          <div
-            class="rounded-lg border bg-card text-card-foreground shadow-sm space-y-4"
-          >
-            <div class="flex flex-col space-y-1.5 p-6">
-              <h3
-                class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight"
-              >
-                {{ currentTabsIndex }}
-              </h3>
-              <p class="text-sm text-muted-foreground">
-                Enter your email and password to access your account.
-              </p>
+        <div class="form-container sign-in-container">
+          <form @submit="handleSubmit($event, 'login')">
+            <h1 class="font-bold text-black text-[40px]">登录</h1>
+            <input v-model="loginForm.userName" placeholder="UserName" />
+            <input
+              v-model="loginForm.password"
+              type="password"
+              placeholder="Password"
+            />
+            <a class="text-[#333] text-sm my-[15px] no-underline" href="#"
+              >忘记密码?</a
+            >
+            <button type="submit">登录</button>
+          </form>
+        </div>
+        <div class="overlay-container">
+          <div class="overlay">
+            <div class="overlay-panel overlay-left space-y-4">
+              <h1 class="font-bold">欢迎回来!</h1>
+              <p class="text-sm">为了与我们保持联系，请使用您的个人信息登录</p>
+              <button class="ghost" id="signIn" @click="ckBtn('login')">
+                登录
+              </button>
             </div>
-            <div class="p-6 space-y-4">
-              <div class="space-y-2" v-if="currentTabsIndex == 'sign Up'">
-                <label
-                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                  for="username"
-                >
-                  Name
-                </label>
-                <input
-                  class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                  placeholder="UserName"
-                  id="username"
-                  type="text"
-                  v-model="formModel.username"
-                />
-                <p class="text-red-500" v-if="formErrors.username">
-                  {{ formErrors.username }}
-                </p>
-              </div>
-              <div class="space-y-2">
-                <label
-                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                  for="email"
-                >
-                  Email
-                </label>
-                <input
-                  class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                  id="email"
-                  placeholder="name@example.com"
-                  type="email"
-                  v-model="formModel.email"
-                />
-                <p class="text-red-500" v-if="formErrors.email">
-                  {{ formErrors.email }}
-                </p>
-              </div>
-              <div class="space-y-2">
-                <label
-                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                  for="password"
-                >
-                  Password
-                </label>
-                <input
-                  class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                  id="password"
-                  placeholder="••••••••"
-                  type="password"
-                  v-model="formModel.password"
-                />
-                <p class="text-red-500" v-if="formErrors.password">
-                  {{ formErrors.password }}
-                </p>
-              </div>
-            </div>
-            <div class="flex items-center p-6">
-              <button
-                class="bg-black text-white inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full"
-                type="submit"
-                @click="handleSubmit"
-              >
-                Sign In
+            <div class="overlay-panel overlay-right space-y-4">
+              <h1 class="font-bold">欢迎!</h1>
+              <p class="text-sm">输入您的个人资料，与我们一起开始旅程</p>
+              <button class="ghost" id="signUp" @click="ckBtn('Sign')">
+                注册
               </button>
             </div>
           </div>
         </div>
-        <div
-          class="mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-        ></div>
       </div>
-    </template>
-  </VtDialog>
+    </div>
+  </div>
 </template>
+<style lang="scss" scoped>
+.popup-content {
+  position: relative;
+  z-index: 10000;
+}
+
+button {
+  border-radius: 20px;
+  border: 1px solid #ff4b2b;
+  background-color: #ff4b2b;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button:focus {
+  outline: none;
+}
+
+button.ghost {
+  background-color: transparent;
+  border-color: #ffffff;
+}
+
+form {
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 50px;
+  height: 100%;
+  text-align: center;
+}
+
+input {
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #000;
+}
+
+.container {
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow:
+    0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+  position: relative;
+  overflow: hidden;
+  width: 768px;
+  max-width: 100%;
+  min-height: 600px;
+}
+
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.sign-in-container {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.container.right-panel-active .sign-in-container {
+  transform: translateX(100%);
+}
+
+.sign-up-container {
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.container.right-panel-active .sign-up-container {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: show 0.6s;
+}
+
+@keyframes show {
+  0%,
+  49.99% {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 1;
+    z-index: 5;
+  }
+}
+
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+}
+
+.container.right-panel-active .overlay-container {
+  transform: translateX(-100%);
+}
+
+.overlay {
+  background: #ff416c;
+  background: -webkit-linear-gradient(to right, #ff4b2b, #ff416c);
+  background: linear-gradient(to right, #ff4b2b, #ff416c);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  color: #ffffff;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.container.right-panel-active .overlay {
+  transform: translateX(50%);
+}
+
+.overlay-panel {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.overlay-left {
+  transform: translateX(-20%);
+}
+
+.container.right-panel-active .overlay-left {
+  transform: translateX(0);
+}
+
+.overlay-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+.container.right-panel-active .overlay-right {
+  transform: translateX(20%);
+}
+
+.social-container {
+  margin: 20px 0;
+}
+
+.social-container a {
+  border: 1px solid #dddddd;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  height: 40px;
+  width: 40px;
+}
+</style>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { TableColumn, TableRef } from '@/interface/components/vt-table-v2.ts'
 import { Icon } from '@iconify/vue'
-import Dialog from './components/dialog.vue'
+import Dialog from './components/weekDialog.vue'
 import { WeekVO } from '@/interface/pages/video'
 import { weekDays } from '@/enums'
 const fileUrl = import.meta.env.VITE_API_MINIO
@@ -11,7 +11,7 @@ const vtTable = ref<TableRef>()
 
 const tableColumn = ref<TableColumn[]>([
   { type: 'selection', fixed: 'left', width: 70 },
-  { prop: 'updateId', label: 'id' },
+  // { prop: 'updateId', label: 'id' },
   { prop: 'imagePath', label: '封面', slotName: 'imagePath' },
   { prop: 'title', label: '标题', search: { el: 'input' } },
   {
@@ -30,7 +30,7 @@ const openDialog = (title: string, row: Partial<WeekVO> = {}) => {
     model: row,
     enumMap: vtTable.value?.enumMap,
     disabled: title === '查看',
-    api: title === '新增' ? '/video/add' : '/video/edit',
+    api: title === '新增' ? '/video/weekAdd' : '/video/weekEdit',
     getTableList: vtTable.value?.getTableList,
   }
   DialogRef.value?.openDialog(props)
@@ -41,7 +41,7 @@ const deletes = async (id: number | (number | string)[]) => {
   const ids = Array.isArray(id) ? id : [id]
 
   // 发出HTTP请求
-  const { code, data, message } = await httpPost('/video/deletes', ids)
+  const { code, data, message } = await httpPost('/video/weekDeletes', ids)
 
   // 弹出消息
   messagePro(code, data as string, message)
@@ -93,7 +93,7 @@ const deletes = async (id: number | (number | string)[]) => {
         </template>
         <template #imagePath="{ row }">
           <el-image
-            class="rounded-xl"
+            class="rounded-xl w-32 h-40"
             preview-teleported
             :src="fileUrl + row.imagePath"
             :preview-src-list="[fileUrl + row.imagePath]"

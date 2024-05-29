@@ -2,7 +2,8 @@
   --van-base-font: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Segoe UI, Arial, Roboto, "PingFang SC", "miui", "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
 }
 
-html, body {
+html,
+body {
   font-family: var(--van-base-font), ui-sans-serif;
 }
 
@@ -29,4 +30,36 @@ html, body {
 ::-webkit-scrollbar-track {
   background-color: rgb(246, 247, 248);
   border-radius: 10px;
+}
+
+
+/* fade-transform */
+.fade-transform-leave-active,
+.fade-transform-enter-active {
+  transition: all 0.2s;
+}
+
+.fade-transform-enter-from {
+  opacity: 0;
+  transition: all 0.2s;
+  transform: translateX(-30px);
+}
+
+.fade-transform-leave-to {
+  opacity: 0;
+  transition: all 0.2s;
+  transform: translateX(30px);
+}
+
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+.shadow-app {
+  --tw-shadow: 0 0 1px 0 rgba(0, 0, 0, .25), 0 4px 8px 0 rgba(0, 0, 0, .05), 0 16px 32px 0 rgba(0, 0, 0, .05);
+  --tw-shadow-colored: 0 0 1px 0 var(--tw-shadow-color), 0 4px 8px 0 var(--tw-shadow-color), 0 16px 32px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }

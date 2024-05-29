@@ -8,10 +8,10 @@ import java.io.Serializable;
 import lombok.Data;
 
 /**
- * 角色与菜单权限关联表
- * @TableName vt_role_menu_permissions
+ * 管理员角色与菜单权限关联表
+ * @TableName vt_sys_role_menu_permissions
  */
-@TableName(value ="vt_role_menu_permissions")
+@TableName(value ="vt_sys_role_menu_permissions")
 @Data
 public class RoleMenuPermissions implements Serializable {
     /**

@@ -15,11 +15,11 @@ function openDialog(params: DialogState) {
   dialogDisplay.value = true
   acceptParam.value = params
 
-  httpPost('/video/sublist', { videoId: acceptParam.value.model.videoId }).then(
-    ({ data }) => {
-      episodeList.value = data
-    }
-  )
+  httpPost<Video[]>('/video/sublist', {
+    videoId: acceptParam.value.model.videoId,
+  }).then(({ data }) => {
+    episodeList.value = data
+  })
 }
 
 // 提交表单
@@ -29,8 +29,11 @@ function submit() {
     ({ code, data }) => {
       if (code !== 200) return
       messagePro(code, data as string)
-      // 重新获取表单数据
-      acceptParam.value.getTableList()
+
+      if (acceptParam.value?.getTableList) {
+        // 重新获取表单数据
+        acceptParam.value.getTableList()
+      }
       dialogDisplay.value = false
     }
   )
@@ -173,6 +176,17 @@ defineExpose({ dialogDisplay, openDialog })
               </el-select>
             </el-form-item>
 
+            <el-form-item label="上映时间" prop="releaseTime">
+              <el-date-picker
+                v-model="acceptParam!.model.releaseTime"
+                class="shadow-sm"
+                type="date"
+                :disabled="acceptParam?.disabled"
+                value-format="YYYY-MM-DD"
+                date-format="YYYY/MM/DD"
+                placeholder="请选择日期"
+              />
+            </el-form-item>
             <el-form-item label="创建时间" prop="userId">
               <el-date-picker
                 v-model="acceptParam!.model.createTime"

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vtube.mapper.SysUserMapper">
+
+    <resultMap id="BaseResultMap" type="com.vtube.domain.SysUser">
+            <id property="userId" column="user_id" jdbcType="INTEGER"/>
+            <result property="userName" column="user_name" jdbcType="VARCHAR"/>
+            <result property="realName" column="real_name" jdbcType="VARCHAR"/>
+            <result property="password" column="password" jdbcType="VARCHAR"/>
+            <result property="phone" column="phone" jdbcType="VARCHAR"/>
+            <result property="email" column="email" jdbcType="VARCHAR"/>
+            <result property="isFrozen" column="is_frozen" jdbcType="OTHER"/>
+            <result property="isDeleted" column="is_deleted" jdbcType="TINYINT"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        user_id,user_name,real_name,
+        password,phone,email,
+        is_frozen,is_deleted,create_time
+    </sql>
+    <select id="adminLogin" resultType="com.vtube.vo.AdminLoginVO">
+        SELECT u.user_id,
+               u.real_name,
+               u.phone,
+               u.email,
+               u.avatar_path,
+               u.user_name
+        FROM vt_sys_user u
+                 JOIN vt_sys_user_role ur ON u.user_id = ur.user_id
+                 JOIN vt_sys_role r ON ur.role_id = r.role_id
+        WHERE u.user_name = #{userName}
+          AND u.password = #{password}
+          AND r.role_id in (1, 4);
+    </select>
+
+    <select id="ByUserIdFindMenu" resultType="com.vtube.domain.Menu">
+        SELECT m.*
+        FROM vt_sys_user u
+                 JOIN
+             vt_sys_user_role ur on u.user_id = ur.user_id
+                 JOIN
+             vt_sys_role r on ur.role_id = r.role_id
+                 JOIN
+             vt_sys_role_menu_permissions p on r.role_id = p.role_id
+                 JOIN
+             vt_menu m on p.menu_id = m.menu_id
+        WHERE u.user_id = #{UserId};
+    </select>
+</mapper>

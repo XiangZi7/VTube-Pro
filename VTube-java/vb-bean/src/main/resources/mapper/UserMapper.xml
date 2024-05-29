@@ -21,35 +21,24 @@
         user_id,user_name,real_name,
         nick_name,password,phone,
         email,avatar_path,create_time,
-        sex
+        sex,status
     </sql>
-    <select id="adminLogin" resultType="com.vtube.vo.AdminLoginVO">
-        SELECT u.user_id,
-               u.nick_name,
-               u.phone,
-               u.email,
-               u.avatar_path,
-               u.real_name,
-               u.user_name,
-               u.sex
-        FROM vt_user u
-                 JOIN vt_user_role ur ON u.user_id = ur.user_id
-                 JOIN vt_role r ON ur.role_id = r.role_id
-        WHERE u.user_name = #{userName}
-          AND u.password = #{passWord}
-          AND r.role_id in (1, 4);
+    <select id="userLogin" resultType="com.vtube.dto.UserLoginDTO">
+        select user_id,
+               user_name,
+               real_name,
+               nick_name,
+               phone,
+               email,
+               avatar_path,
+               create_time,
+               sex,
+               status
+        from vt_user
+        WHERE user_name = #{userName}
+          AND password = #{password}
+          and status = 1
     </select>
-    <select id="ByUserIdFindMenu" resultType="com.vtube.domain.Menu">
-        SELECT m.*
-        FROM vt_user u
-                 JOIN
-             vt_user_role ur on u.user_id = ur.user_id
-                 JOIN
-             vt_role r on ur.role_id = r.role_id
-                 JOIN
-             vt_role_menu_permissions p on r.role_id = p.role_id
-                 JOIN
-             vt_menu m on p.menu_id = m.menu_id
-        WHERE u.user_id = #{UserId};
-    </select>
+
+
 </mapper>

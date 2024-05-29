@@ -1,7 +1,10 @@
 package com.vtube.controller;
 
+import cn.dev33.satoken.stp.StpUtil;
+import com.vtube.domain.SysUser;
 import com.vtube.model.ApiResult;
 import com.vtube.service.MinioService;
+import com.vtube.vo.AdminLoginVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -32,8 +35,8 @@ public class FileController {
 
     @PostMapping("/uploadFile")
     public ApiResult<?> uploadFile(@RequestParam("file") MultipartFile file) throws Exception {
-
-        String file1 = minioService.uploadFile(file, 1);
+        AdminLoginVO admin = (AdminLoginVO) StpUtil.getSession().get("admin");
+        String file1 = minioService.uploadFile(file, admin.getUserId());
 
         return ApiResult.ok(file1);
     }

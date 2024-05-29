@@ -53,22 +53,6 @@ function save() {
                 </el-form-item>
               </div>
               <div class="space-y-2">
-                <el-form-item label="性别">
-                  <vt-select v-model="form.sex" dict="gender" />
-                </el-form-item>
-              </div>
-            </div>
-            <div class="grid grid-cols-2 gap-4">
-              <div class="space-y-2">
-                <el-form-item label="用户名称">
-                  <el-input
-                    v-model="form.nickName"
-                    placeholder="请输入"
-                    clearable
-                  />
-                </el-form-item>
-              </div>
-              <div class="space-y-2">
                 <el-form-item label="真实姓名">
                   <el-input
                     v-model="form.realName"

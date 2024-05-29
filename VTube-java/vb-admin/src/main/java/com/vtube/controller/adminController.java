@@ -1,7 +1,9 @@
 package com.vtube.controller;
 
+import com.vtube.domain.SysUser;
 import com.vtube.domain.User;
 import com.vtube.model.ApiResult;
+import com.vtube.service.SysUserService;
 import com.vtube.service.UserService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
@@ -18,10 +20,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class adminController {
 
     @Autowired
-    private UserService userService;
+    private SysUserService sysUserService;
 
     @PostMapping("/edit")
-    ApiResult edit(@RequestBody User user) {
-        return ApiResult.ok(userService.updateById(user));
+    ApiResult edit(@RequestBody SysUser user) {
+        return ApiResult.ok(sysUserService.updateById(user));
     }
 }

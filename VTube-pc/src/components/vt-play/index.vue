@@ -25,8 +25,7 @@ const type = ref('video/mp4')
  * @param {string} link
  * @returns {string} 处理过的URL
  */
-// 函数用于判断链接并返回最终URL
-function processUrl(link: string) {
+function processUrl(link: string): string {
   if (link.endsWith('.m3u8')) {
     type.value = 'm3u8'
     return link

@@ -23,14 +23,14 @@ public class playController {
 
     @PostMapping("/details")
     @Operation(summary = "视频详情", description = "视频详情")
-    public ApiResult<?> details(@RequestBody JSONObject jsonObject) {
+    ApiResult details(@RequestBody JSONObject jsonObject) {
         String videoId = jsonObject.getStr("videoId");
         return ApiResult.ok(videoService.Details(Integer.valueOf(videoId)));
     }
 
     @PostMapping("/episode")
     @Operation(summary = "视频集数", description = "视频集数")
-    public ApiResult<?> episode(@RequestBody JSONObject jsonObject) {
+    ApiResult episode(@RequestBody JSONObject jsonObject) {
         String videoId = jsonObject.getStr("videoId");
         return ApiResult.ok(videoService.Episode(Integer.valueOf(videoId)));
     }

@@ -51,6 +51,8 @@ vtube:
       - /js/**
       # 登录
       - /login
-      - /weekly-anime
+      - /SignIn
       # 播放的详情
       - /play/**
+      - /anime/**
+      - /Projector/**

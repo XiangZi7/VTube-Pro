@@ -9,5 +9,5 @@ public class LoginParam {
     private String userName;
 
     @NotBlank(message = "密码不能为空")
-    private String passWord;
+    private String password;
 }
