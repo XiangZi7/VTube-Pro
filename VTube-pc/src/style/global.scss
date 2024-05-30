@@ -1,10 +1,6 @@
-:root {
-  --van-base-font: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Segoe UI, Arial, Roboto, "PingFang SC", "miui", "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
-}
-
 html,
 body {
-  font-family: var(--van-base-font), ui-sans-serif;
+  font-family: 'hanyi', sans-serif !important;
 }
 
 .tab-transition-enter-active,

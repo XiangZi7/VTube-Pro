@@ -14,8 +14,7 @@
     "lint": "eslint src --fix --ext .ts,.tsx,.js,.jsx --max-warnings 0",
     "prettier-format": "prettier --config .prettierrc.cjs \"src/**/*.{js,ts,vue}\" --write",
     "build:dev": "vue-tsc --noEmit && vite build --mode development",
-    "build:pro": "vue-tsc --noEmit && vite build --mode production",
-    "commit": "git add -A && git-cz && git push"
+    "build:pro": "vue-tsc --noEmit && vite build --mode production"
   },
   "dependencies": {
     "@types/nprogress": "^0.2.3",
@@ -26,6 +25,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.1.1",
+    "@iconify/json": "^2.2.214",
     "@iconify/vue": "^4.1.2",
     "@types/eslint": "^8.56.10",
     "@types/node": "^20.12.7",
@@ -51,6 +51,7 @@
     "typescript": "^5.4.5",
     "typescript-eslint": "^7.7.1",
     "unplugin-auto-import": "^0.17.5",
+    "unplugin-icons": "^0.19.0",
     "unplugin-vue-components": "^0.26.0",
     "unplugin-vue-router": "^0.8.6",
     "vite": "^5.2.0",

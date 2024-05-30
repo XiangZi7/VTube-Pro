@@ -46,7 +46,7 @@
                  JOIN
              vt_sys_role_menu_permissions p on r.role_id = p.role_id
                  JOIN
-             vt_menu m on p.menu_id = m.menu_id
+             vt_sys_menu m on p.menu_id = m.menu_id
         WHERE u.user_id = #{UserId};
     </select>
 </mapper>

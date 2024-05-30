@@ -2,6 +2,7 @@ package com.vtube.service.impl;
 
 import cn.dev33.satoken.stp.StpUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.vtube.domain.User;
 import com.vtube.dto.UserLoginDTO;
@@ -10,6 +11,7 @@ import com.vtube.service.UserService;
 import com.vtube.mapper.UserMapper;
 import com.vtube.vo.AdminLoginVO;
 import com.vtube.vo.Param.LoginParam;
+import com.vtube.vo.Param.PassWordParam;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -50,8 +52,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         QueryWrapper<User> wrapper = new QueryWrapper<>();
         wrapper.eq("phone", user.getPhone());
 
-        System.out.println("user=>>" + user);
-
         User one = userMapper.selectOne(wrapper);
         if (one == null) {
             user.setCreateTime(LocalDateTime.now());
@@ -59,6 +59,33 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
             return ApiResult.ok("注册成功");
         }
         return ApiResult.error("电话号码也被注册");
+    }
+
+    @Override
+    public ApiResult ChangePwd(PassWordParam PassWord) {
+        UserLoginDTO user = (UserLoginDTO) StpUtil.getSession().get("user");
+
+        // 构建查询条件
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("user_id", user.getUserId());
+        // 添加旧密码校验条件
+        queryWrapper.eq("password", PassWord.getOldPassWord());
+
+        // 查询是否有匹配的用户
+        User existingUser = userMapper.selectOne(queryWrapper);
+        if (existingUser == null) {
+            return ApiResult.error("旧密码错误");
+        }
+
+        UpdateWrapper<User> updateWrapper = new UpdateWrapper<>();
+        updateWrapper.eq("user_id", user.getUserId());
+        // 只需要更新密码字段
+        User updatedUser = new User();
+        updatedUser.setPassword(PassWord.getNewPassWord());
+
+        // 更新用户密码
+        userMapper.update(updatedUser, updateWrapper);
+        return ApiResult.ok("修改密码成功");
     }
 }
 

@@ -40,5 +40,29 @@
           and status = 1
     </select>
 
+    <select id="userList" resultType="com.vtube.domain.User">
+        SELECT * FROM vt_user
+        WHERE 1=1
+        <if test="user.userName != null and user.userName != ''">
+            AND user_name LIKE CONCAT('%', #{user.userName}, '%')
+        </if>
+        <if test="user.realName != null and user.realName != ''">
+            AND real_name LIKE CONCAT('%', #{user.realName}, '%')
+        </if>
+        <if test="user.nickName != null and user.nickName != ''">
+            AND nick_name LIKE CONCAT('%', #{user.nickName}, '%')
+        </if>
+        <if test="user.phone != null and user.phone != ''">
+            AND phone LIKE CONCAT('%', #{user.phone}, '%')
+        </if>
+        <if test="user.email != null and user.email != ''">
+            AND email LIKE CONCAT('%', #{user.email}, '%')
+        </if>
+        <if test="user.sex != null and user.sex != ''">
+            AND sex = #{user.sex}
+        </if>
+        ORDER BY create_time DESC
+    </select>
+
 
 </mapper>

@@ -4,6 +4,8 @@ import vue from '@vitejs/plugin-vue'
 import VueRouter from "unplugin-vue-router/vite";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
+import IconsResolver from 'unplugin-icons/resolver' // 集成图标集
+import Icons from 'unplugin-icons/vite'
 
 // https://vitejs.dev/config/
 export default ({ mode }: ConfigEnv): UserConfig => {
@@ -37,7 +39,16 @@ export default ({ mode }: ConfigEnv): UserConfig => {
             Components({
                 dirs: ["src/components"],
                 dts: "src/auto-import/components.d.ts",
+                resolvers: [
+                    // 集成图标集
+                    IconsResolver({
+                        prefix: 'icon' // 私有前缀
+                    })
+                ]
             }),
+            Icons({
+                autoInstall: true // 自动安装所需图标集
+            })
         ],
         base: "./", // 在生产中服务时的基本公共路径
         publicDir: "public",  // 静态资源服务的文件夹, 默认"public"

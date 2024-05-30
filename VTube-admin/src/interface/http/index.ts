@@ -7,9 +7,12 @@ export interface ApiResponse<T> {
 
 // 定义分页信息类型
 export interface Pagination<T = any> {
-  total: number
-  size: number
-  current: number
-  pages: number
-  records: T
+  total: number;
+  size: number;
+  current: number;
+  pages: number;
+  records: T;
+  list: T;
+  pageSize: number;
+  pageNum: number;
 }

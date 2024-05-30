@@ -5,15 +5,13 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
-import java.util.List;
-
 import lombok.Data;
 
 /**
  * 菜单表
- * @TableName vt_menu
+ * @TableName vt_sys_menu
  */
-@TableName(value ="vt_menu")
+@TableName(value ="vt_sys_menu")
 @Data
 public class Menu implements Serializable {
     /**
@@ -27,6 +25,12 @@ public class Menu implements Serializable {
      */
     @TableField(value = "parent_id")
     private Integer parentId;
+
+    /**
+     * 类型   0：目录   1：菜单   2：按钮
+     */
+    @TableField(value = "type")
+    private Integer type;
 
     /**
      * 菜单标题
@@ -111,6 +115,7 @@ public class Menu implements Serializable {
         Menu other = (Menu) that;
         return (this.getMenuId() == null ? other.getMenuId() == null : this.getMenuId().equals(other.getMenuId()))
             && (this.getParentId() == null ? other.getParentId() == null : this.getParentId().equals(other.getParentId()))
+            && (this.getType() == null ? other.getType() == null : this.getType().equals(other.getType()))
             && (this.getTitle() == null ? other.getTitle() == null : this.getTitle().equals(other.getTitle()))
             && (this.getIcon() == null ? other.getIcon() == null : this.getIcon().equals(other.getIcon()))
             && (this.getPath() == null ? other.getPath() == null : this.getPath().equals(other.getPath()))
@@ -130,6 +135,7 @@ public class Menu implements Serializable {
         int result = 1;
         result = prime * result + ((getMenuId() == null) ? 0 : getMenuId().hashCode());
         result = prime * result + ((getParentId() == null) ? 0 : getParentId().hashCode());
+        result = prime * result + ((getType() == null) ? 0 : getType().hashCode());
         result = prime * result + ((getTitle() == null) ? 0 : getTitle().hashCode());
         result = prime * result + ((getIcon() == null) ? 0 : getIcon().hashCode());
         result = prime * result + ((getPath() == null) ? 0 : getPath().hashCode());
@@ -152,6 +158,7 @@ public class Menu implements Serializable {
         sb.append("Hash = ").append(hashCode());
         sb.append(", menuId=").append(menuId);
         sb.append(", parentId=").append(parentId);
+        sb.append(", type=").append(type);
         sb.append(", title=").append(title);
         sb.append(", icon=").append(icon);
         sb.append(", path=").append(path);

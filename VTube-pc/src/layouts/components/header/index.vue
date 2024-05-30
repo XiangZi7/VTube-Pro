@@ -56,7 +56,7 @@ function logout() {
                 <el-dropdown-item>
                   <div
                     class="flex items-center gap-1"
-                    @click="router.push('/users/profile')"
+                    @click="router.push('/users')"
                   >
                     <Icon
                       icon="material-symbols-light:account-circle"

@@ -2,6 +2,8 @@ package com.vtube.service;
 
 import com.vtube.domain.RoleMenuPermissions;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.vtube.model.ApiResult;
+import com.vtube.vo.Param.assignParams;
 
 /**
 * @author Administrator
@@ -9,5 +11,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 * @createDate 2024-05-29 13:31:25
 */
 public interface RoleMenuPermissionsService extends IService<RoleMenuPermissions> {
-
+    ApiResult assign(assignParams params);
 }

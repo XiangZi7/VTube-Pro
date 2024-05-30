@@ -5,7 +5,7 @@ import weekPopup from './weekPopup.vue'
 const dialogDisplay = ref(false)
 const acceptParam = ref<DialogState>({
   title: '',
-  model: undefined,
+  model: {},
   disabled: false,
   api: '',
 })
@@ -42,24 +42,24 @@ defineExpose({ dialogDisplay, openDialog })
 <template>
   <el-dialog class="!rounded-lg" v-model="dialogDisplay">
     <template #header>
-      {{ acceptParam?.title }}
+      {{ acceptParam.title }}
     </template>
     <div class="p-4">
       <el-form class="w-full" action="javascript:;" label-width="auto">
         <div class="flex flex-col gap-5">
-          <el-form-item label="选择番剧" v-if="acceptParam?.title == '新增'">
+          <el-form-item label="选择番剧" v-if="acceptParam.title == '新增'">
             <weekPopup @callback="callback" />
           </el-form-item>
           <el-form-item label="封面" prop="imagePath">
             <vt-upload
-              v-model="acceptParam!.model.imagePath"
+              v-model="acceptParam.model.imagePath"
               :disabled="true"
               class="shadow-sm"
             />
           </el-form-item>
           <el-form-item label="标题" prop="title">
             <el-input
-              v-model="acceptParam!.model.title"
+              v-model="acceptParam.model.title"
               :disabled="true"
               class="shadow-sm"
               placeholder="Enter your title"
@@ -68,12 +68,12 @@ defineExpose({ dialogDisplay, openDialog })
           <el-form-item label="周" prop="weekDay">
             <el-select
               v-model="acceptParam.model.weekDay"
-              :disabled="acceptParam?.disabled"
+              :disabled="acceptParam.disabled"
               class="shadow-sm"
               placeholder="请选择分类"
             >
               <el-option
-                v-for="(col, index) in acceptParam?.enumMap?.get('weekDay')"
+                v-for="(col, index) in acceptParam.enumMap?.get('weekDay')"
                 :key="index"
                 :label="col.label"
                 :value="col.value"

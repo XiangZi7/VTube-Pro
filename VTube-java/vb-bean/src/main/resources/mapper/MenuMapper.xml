@@ -7,6 +7,7 @@
     <resultMap id="BaseResultMap" type="com.vtube.domain.Menu">
             <id property="menuId" column="menu_id" jdbcType="INTEGER"/>
             <result property="parentId" column="parent_id" jdbcType="INTEGER"/>
+            <result property="type" column="type" jdbcType="INTEGER"/>
             <result property="title" column="title" jdbcType="VARCHAR"/>
             <result property="icon" column="icon" jdbcType="VARCHAR"/>
             <result property="path" column="path" jdbcType="VARCHAR"/>
@@ -21,10 +22,10 @@
     </resultMap>
 
     <sql id="Base_Column_List">
-        menu_id,parent_id,title,
-        icon,path,name,
-        component,order_num,visible,
-        permission,is_keep_alive,redirect,
-        is_full
+        menu_id,parent_id,type,
+        title,icon,path,
+        name,component,order_num,
+        visible,permission,is_keep_alive,
+        redirect,is_full
     </sql>
 </mapper>

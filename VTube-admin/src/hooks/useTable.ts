@@ -63,10 +63,9 @@ export const useTable = (
       })
 
       dataCallBack && (data = dataCallBack(data))
-
       state.tableData = isPageable ? data.records : data
       if (isPageable) {
-        const { current: pageNum, size: pageSize, total } = data
+        const { pageNum, pageSize, total } = data
         updatePageable({ pageNum, pageSize, total })
       }
     } catch (error) {

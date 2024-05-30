@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { DialogState } from '@/interface/pages/dialog'
 import { Video } from '@/interface/pages/dialog'
+import { VideoVO } from '@/interface/pages/video'
 const dialogDisplay = ref(false)
 const episodeList = ref<Video[]>([])
-const acceptParam = ref<DialogState>({
+const acceptParam = ref<DialogState<VideoVO>>({
   title: '',
-  model: undefined,
+  model: {},
   disabled: false,
   api: '',
 })
@@ -69,15 +70,15 @@ defineExpose({ dialogDisplay, openDialog })
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-2/3">
             <el-form-item label="封面" prop="imagePath">
               <vt-upload
-                v-model="acceptParam!.model.imagePath"
-                :disabled="acceptParam?.disabled"
+                v-model="acceptParam.model.imagePath"
+                :disabled="acceptParam.disabled"
                 class="shadow-sm"
               />
             </el-form-item>
             <el-form-item label="标题" prop="title">
               <el-input
-                v-model="acceptParam!.model.title"
-                :disabled="acceptParam?.disabled"
+                v-model="acceptParam.model.title"
+                :disabled="acceptParam.disabled"
                 class="shadow-sm"
                 placeholder="Enter your title"
               />
@@ -85,14 +86,12 @@ defineExpose({ dialogDisplay, openDialog })
             <el-form-item label="分类" prop="categoryId">
               <el-select
                 v-model="acceptParam.model.categoryId"
-                :disabled="acceptParam?.disabled"
+                :disabled="acceptParam.disabled"
                 class="shadow-sm"
                 placeholder="请选择分类"
               >
                 <el-option
-                  v-for="(col, index) in acceptParam?.enumMap?.get(
-                    'categoryId'
-                  )"
+                  v-for="(col, index) in acceptParam.enumMap?.get('categoryId')"
                   :key="index"
                   :label="col.label"
                   :value="col.value"
@@ -102,8 +101,8 @@ defineExpose({ dialogDisplay, openDialog })
 
             <el-form-item label="关注度" prop="views">
               <el-input
-                v-model="acceptParam!.model.views"
-                :disabled="acceptParam?.disabled"
+                v-model="acceptParam.model.views"
+                :disabled="acceptParam.disabled"
                 class="shadow-sm"
                 placeholder="Enter your views"
               />
@@ -111,12 +110,12 @@ defineExpose({ dialogDisplay, openDialog })
             <el-form-item label="视频类型" prop="type">
               <el-select
                 v-model="acceptParam.model.type"
-                :disabled="acceptParam?.disabled"
+                :disabled="acceptParam.disabled"
                 class="shadow-sm"
                 placeholder="请选择分类"
               >
                 <el-option
-                  v-for="(col, index) in acceptParam?.enumMap?.get('type')"
+                  v-for="(col, index) in acceptParam.enumMap?.get('type')"
                   :key="index"
                   :label="col.label"
                   :value="col.value"
@@ -127,7 +126,7 @@ defineExpose({ dialogDisplay, openDialog })
               <div class="flex gap-2">
                 <el-input
                   v-model="tagsVal"
-                  :disabled="acceptParam?.disabled"
+                  :disabled="acceptParam.disabled"
                   class="shadow-sm"
                   placeholder="Enter your tags"
                   @keyup.enter="creatTags"
@@ -135,17 +134,17 @@ defineExpose({ dialogDisplay, openDialog })
                 <el-button
                   type="primary"
                   @click="creatTags"
-                  :disabled="acceptParam?.disabled"
+                  :disabled="acceptParam.disabled"
                   >添加</el-button
                 >
               </div>
               <div
                 class="flex gap-2 flex-wrap pt-2"
-                v-if="acceptParam!.model.tags"
+                v-if="acceptParam.model.tags"
               >
                 <el-tag
                   type="success"
-                  v-for="(item, index) in acceptParam!.model.tags.split(',')"
+                  v-for="(item, index) in acceptParam.model.tags.split(',')"
                   :key="index"
                   >{{ item }}</el-tag
                 >
@@ -153,22 +152,22 @@ defineExpose({ dialogDisplay, openDialog })
             </el-form-item>
             <el-form-item label="点赞" prop="likes">
               <el-input
-                v-model="acceptParam!.model.likes"
+                v-model="acceptParam.model.likes"
                 class="shadow-sm"
-                :disabled="acceptParam?.disabled"
+                :disabled="acceptParam.disabled"
                 placeholder="Enter your likes"
               />
             </el-form-item>
 
             <el-form-item label="上传者" prop="userId">
               <el-select
-                v-model="acceptParam!.model.userId"
+                v-model="acceptParam.model.userId"
                 class="shadow-sm"
-                :disabled="acceptParam?.disabled"
+                :disabled="acceptParam.disabled"
                 placeholder="请选择用户"
               >
                 <el-option
-                  v-for="(col, index) in acceptParam?.enumMap?.get('userId')"
+                  v-for="(col, index) in acceptParam.enumMap?.get('userId')"
                   :key="index"
                   :label="col.label"
                   :value="col.value"
@@ -178,10 +177,10 @@ defineExpose({ dialogDisplay, openDialog })
 
             <el-form-item label="上映时间" prop="releaseTime">
               <el-date-picker
-                v-model="acceptParam!.model.releaseTime"
+                v-model="acceptParam.model.releaseTime"
                 class="shadow-sm"
                 type="date"
-                :disabled="acceptParam?.disabled"
+                :disabled="acceptParam.disabled"
                 value-format="YYYY-MM-DD"
                 date-format="YYYY/MM/DD"
                 placeholder="请选择日期"
@@ -189,10 +188,10 @@ defineExpose({ dialogDisplay, openDialog })
             </el-form-item>
             <el-form-item label="创建时间" prop="userId">
               <el-date-picker
-                v-model="acceptParam!.model.createTime"
+                v-model="acceptParam.model.createTime"
                 class="shadow-sm"
                 type="datetime"
-                :disabled="acceptParam?.disabled"
+                :disabled="acceptParam.disabled"
                 value-format="YYYY-MM-DD HH:mm:ss"
                 date-format="YYYY/MM/DD ddd"
                 time-format="A hh:mm:ss"
@@ -201,8 +200,8 @@ defineExpose({ dialogDisplay, openDialog })
             </el-form-item>
             <el-form-item label="描述" prop="description">
               <el-input
-                v-model="acceptParam!.model.description"
-                :disabled="acceptParam?.disabled"
+                v-model="acceptParam.model.description"
+                :disabled="acceptParam.disabled"
                 type="textarea"
                 :rows="2"
                 class="shadow-sm"
@@ -214,7 +213,7 @@ defineExpose({ dialogDisplay, openDialog })
           <div class="w-1/3">
             <h2>视频集数</h2>
             <vt-video-upload
-              :disabled="acceptParam?.disabled"
+              :disabled="acceptParam.disabled"
               v-model="episodeList"
             />
           </div>

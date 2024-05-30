@@ -7,6 +7,7 @@ export interface EnumProps {
   tagType?: string; // 当 tag 为 true 时，此选择会指定 tag 显示类型
   children?: EnumProps[]; // 为树形选择时，可以通过 children 属性指定子选项
   [key: string]: any;
+  dataCallback?: (data: any) => any; // 返回数据的回调函数，可以对数据进行处理 ==> 非必传
 }
 export type SearchType =
   | "input"

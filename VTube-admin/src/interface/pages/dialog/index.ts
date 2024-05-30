@@ -1,9 +1,9 @@
 export interface DialogState<T = any> {
   enumMap?: Map<string, { [key: string]: any }[]>;
   title: string
-  model: T
+  model: Partial<T>;
   disabled: boolean;
-  api: string;
+  api?: string;
   getTableList?: () => void;
 }
 

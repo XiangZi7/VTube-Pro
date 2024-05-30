@@ -4,6 +4,7 @@ import com.vtube.domain.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.vtube.model.ApiResult;
 import com.vtube.vo.Param.LoginParam;
+import com.vtube.vo.Param.PassWordParam;
 
 /**
 * @author Administrator
@@ -15,5 +16,7 @@ public interface UserService extends IService<User> {
  ApiResult Login(LoginParam loginParam);
 
  ApiResult SignIn(User user);
+
+ ApiResult ChangePwd(PassWordParam passWordParam);
 
 }
