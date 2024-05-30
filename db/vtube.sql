@@ -11,7 +11,7 @@
  Target Server Version : 80100
  File Encoding         : 65001
 
- Date: 29/05/2024 16:56:36
+ Date: 30/05/2024 17:44:51
 */
 
 SET NAMES utf8mb4;
@@ -95,8 +95,8 @@ CREATE TABLE `vt_dictionary`  (
 -- ----------------------------
 -- Records of vt_dictionary
 -- ----------------------------
-INSERT INTO `vt_dictionary` VALUES (1, 'gender', '1', 'Male');
-INSERT INTO `vt_dictionary` VALUES (2, 'gender', '2', 'Female');
+INSERT INTO `vt_dictionary` VALUES (1, 'gender', 'M', '男');
+INSERT INTO `vt_dictionary` VALUES (2, 'gender', 'F', '女');
 INSERT INTO `vt_dictionary` VALUES (3, 'status', 'A', 'Active');
 INSERT INTO `vt_dictionary` VALUES (4, 'status', 'I', 'Inactive');
 INSERT INTO `vt_dictionary` VALUES (5, 'role', '1', 'Admin');
@@ -263,12 +263,13 @@ CREATE TABLE `vt_like`  (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for vt_menu
+-- Table structure for vt_sys_menu
 -- ----------------------------
-DROP TABLE IF EXISTS `vt_menu`;
-CREATE TABLE `vt_menu`  (
+DROP TABLE IF EXISTS `vt_sys_menu`;
+CREATE TABLE `vt_sys_menu`  (
   `menu_id` int NOT NULL AUTO_INCREMENT COMMENT '主键ID，自增',
   `parent_id` int NULL DEFAULT NULL COMMENT '父菜单ID，顶级菜单为NULL',
+  `type` int NULL DEFAULT NULL COMMENT '类型   0：目录   1：菜单   2：按钮',
   `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '菜单标题',
   `icon` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '菜单图标',
   `path` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '菜单路由路径',
@@ -281,18 +282,21 @@ CREATE TABLE `vt_menu`  (
   `redirect` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '路由重定向地址',
   `is_full` tinyint(1) NULL DEFAULT NULL COMMENT '是否全屏',
   PRIMARY KEY (`menu_id`) USING BTREE COMMENT '主键'
-) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '菜单表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '菜单表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of vt_menu
+-- Records of vt_sys_menu
 -- ----------------------------
-INSERT INTO `vt_menu` VALUES (1, NULL, '仪表盘', 'ant-design:dashboard-outlined', '/dashboard', 'dashboard', 'dashboard/index', 0, 1, NULL, 1, NULL, 0);
-INSERT INTO `vt_menu` VALUES (2, NULL, '视频管理', 'material-symbols:settings-video-camera-outline-rounded', '/video', 'video', NULL, 0, 1, NULL, NULL, '/video/list', 0);
-INSERT INTO `vt_menu` VALUES (3, 2, '视频列表', 'lucide:film', '/video/list', 'list', 'video/index', 0, 1, NULL, 1, NULL, 0);
-INSERT INTO `vt_menu` VALUES (4, NULL, '系统管理', 'tdesign:system-3', '/system', 'system', NULL, 0, 1, NULL, NULL, '/system/setting', 0);
-INSERT INTO `vt_menu` VALUES (5, 4, '设置', 'ri:settings-line', '/system/setting', 'setting', 'setting/index', 0, 1, NULL, 1, NULL, 0);
-INSERT INTO `vt_menu` VALUES (7, NULL, '个人信息', NULL, '/info', NULL, 'info/index', 0, 0, NULL, 0, NULL, 0);
-INSERT INTO `vt_menu` VALUES (10, 2, '周番更新管理', 'material-symbols:alarm-outline-rounded', '/video/week', 'week', 'video/week', 0, 1, NULL, 1, NULL, 0);
+INSERT INTO `vt_sys_menu` VALUES (1, NULL, 0, '仪表盘', 'ant-design:dashboard-outlined', '/dashboard', 'dashboard', 'dashboard/index', 0, 1, NULL, 1, NULL, 0);
+INSERT INTO `vt_sys_menu` VALUES (2, NULL, 0, '视频管理', 'material-symbols:settings-video-camera-outline-rounded', '/video', 'video', NULL, 0, 1, NULL, NULL, '/video/list', 0);
+INSERT INTO `vt_sys_menu` VALUES (3, 2, 1, '视频列表', 'lucide:film', '/video/list', 'list', 'video/videoList/index', 0, 1, NULL, 1, NULL, 0);
+INSERT INTO `vt_sys_menu` VALUES (4, NULL, 0, '系统管理', 'tdesign:system-3', '/system', 'system', NULL, 0, 1, NULL, NULL, '/system/setting', 0);
+INSERT INTO `vt_sys_menu` VALUES (5, 4, 1, '设置', 'ri:settings-line', '/system/setting', 'setting', 'system/setting/index', 4, 1, NULL, 1, NULL, 0);
+INSERT INTO `vt_sys_menu` VALUES (7, NULL, 0, '个人信息', NULL, '/info', NULL, 'info/index', 0, 0, NULL, 0, NULL, 0);
+INSERT INTO `vt_sys_menu` VALUES (10, 2, 1, '周番更新管理', 'material-symbols:alarm-outline-rounded', '/video/week', 'week', 'video/week/index', 0, 1, NULL, 1, NULL, 0);
+INSERT INTO `vt_sys_menu` VALUES (11, 4, 1, '菜单管理', 'ep:menu', '/system/menu', NULL, 'system/menu/index', 2, 1, NULL, 1, NULL, 0);
+INSERT INTO `vt_sys_menu` VALUES (12, 4, 1, '用户管理', 'mingcute:user-4-fill', '/system/user', NULL, 'system/user/index', 1, 1, NULL, 1, NULL, 0);
+INSERT INTO `vt_sys_menu` VALUES (13, 4, 1, '角色管理', 'ic:baseline-person-add', '/system/role', NULL, 'system/role/index', 2, 1, NULL, 1, NULL, 0);
 
 -- ----------------------------
 -- Table structure for vt_sys_role
@@ -302,7 +306,7 @@ CREATE TABLE `vt_sys_role`  (
   `role_id` int NOT NULL AUTO_INCREMENT COMMENT '角色ID',
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '角色名称',
   PRIMARY KEY (`role_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '管理员角色表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '管理员角色表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of vt_sys_role
@@ -322,7 +326,7 @@ CREATE TABLE `vt_sys_role_menu_permissions`  (
   `permission` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '权限标识码',
   PRIMARY KEY (`role_id`, `menu_id`) USING BTREE COMMENT '复合主键',
   INDEX `fk_role_menu_menu_id`(`menu_id` ASC) USING BTREE,
-  CONSTRAINT `fk_role_menu_menu_id` FOREIGN KEY (`menu_id`) REFERENCES `vt_menu` (`menu_id`) ON DELETE CASCADE ON UPDATE RESTRICT,
+  CONSTRAINT `fk_role_menu_menu_id` FOREIGN KEY (`menu_id`) REFERENCES `vt_sys_menu` (`menu_id`) ON DELETE CASCADE ON UPDATE RESTRICT,
   CONSTRAINT `fk_role_menu_role_id` FOREIGN KEY (`role_id`) REFERENCES `vt_sys_role` (`role_id`) ON DELETE CASCADE ON UPDATE RESTRICT
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '管理员角色与菜单权限关联表' ROW_FORMAT = Dynamic;
 
@@ -336,10 +340,14 @@ INSERT INTO `vt_sys_role_menu_permissions` VALUES (1, 4, NULL);
 INSERT INTO `vt_sys_role_menu_permissions` VALUES (1, 5, NULL);
 INSERT INTO `vt_sys_role_menu_permissions` VALUES (1, 7, NULL);
 INSERT INTO `vt_sys_role_menu_permissions` VALUES (1, 10, NULL);
+INSERT INTO `vt_sys_role_menu_permissions` VALUES (1, 11, NULL);
+INSERT INTO `vt_sys_role_menu_permissions` VALUES (1, 12, NULL);
+INSERT INTO `vt_sys_role_menu_permissions` VALUES (1, 13, NULL);
 INSERT INTO `vt_sys_role_menu_permissions` VALUES (2, 1, NULL);
 INSERT INTO `vt_sys_role_menu_permissions` VALUES (2, 5, NULL);
+INSERT INTO `vt_sys_role_menu_permissions` VALUES (2, 7, NULL);
+INSERT INTO `vt_sys_role_menu_permissions` VALUES (3, 5, NULL);
 INSERT INTO `vt_sys_role_menu_permissions` VALUES (4, 1, NULL);
-INSERT INTO `vt_sys_role_menu_permissions` VALUES (4, 5, NULL);
 
 -- ----------------------------
 -- Table structure for vt_sys_user
@@ -406,7 +414,7 @@ CREATE TABLE `vt_user`  (
 -- ----------------------------
 -- Records of vt_user
 -- ----------------------------
-INSERT INTO `vt_user` VALUES (1, 'user', '栗山未来', '眼镜娘', '123456', '1234567890', 'user1@example.com', '74057bedb712511430b280f1243ef5a0.png', '2022-01-01 12:00:00', 'M', 1);
+INSERT INTO `vt_user` VALUES (1, 'user', '栗山未来', '眼镜娘', '21', '1234567890', 'user1@example.com', '74057bedb712511430b280f1243ef5a0.png', '2024-05-30 09:49:57', 'M', 1);
 INSERT INTO `vt_user` VALUES (2, '郭震南', 'Tang Ka Keung', 'Tang Ka Keung', 'I7N5nnAlBx', '199-4555-3066', 'zguo@mail.com', 'DrEDjGx21w', '2004-11-17 18:27:22', 'M', 1);
 INSERT INTO `vt_user` VALUES (3, '罗嘉伦', 'Deborah Romero', 'Deborah Romero', 'gqC0PGwgek', '(20) 4866 5660', 'jialulu3@outlook.com', '7qjA45JNKi', '2021-07-27 10:23:47', 'M', 1);
 INSERT INTO `vt_user` VALUES (4, '魏杰宏', 'Ng Sau Man', 'Ng Sau Man', 'W98vO2N15B', '(161) 923 4351', 'wjieh9@gmail.com', 'ZKqATISbOS', '2007-12-31 20:33:41', 'M', 1);
