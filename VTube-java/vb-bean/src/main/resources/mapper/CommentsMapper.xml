@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vtube.mapper.CommentsMapper">
+
+    <resultMap id="BaseResultMap" type="com.vtube.domain.Comments">
+            <id property="commentId" column="comment_id" jdbcType="INTEGER"/>
+            <result property="videoId" column="video_id" jdbcType="INTEGER"/>
+            <result property="forumId" column="forum_id" jdbcType="INTEGER"/>
+            <result property="content" column="content" jdbcType="VARCHAR"/>
+            <result property="userId" column="user_id" jdbcType="INTEGER"/>
+            <result property="targetId" column="target_id" jdbcType="INTEGER"/>
+            <result property="targetType" column="target_type" jdbcType="INTEGER"/>
+            <result property="parentId" column="parent_id" jdbcType="INTEGER"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="status" column="status" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        comment_id,video_id,forum_id,
+        content,user_id,target_id,
+        target_type,parent_id,create_time,
+        status
+    </sql>
+    <!-- 查询顶级评论 -->
+    <select id="getTopLevelComments" resultType="com.vtube.dto.CommentDTO">
+        SELECT c.comment_id,
+               c.content,
+               u.nick_name,
+               c.user_id,
+               u.avatar_path,
+               c.parent_id,
+               c.create_time,
+               c.status
+        FROM vt_comments c
+                 LEFT JOIN vt_user u ON u.user_id = c.user_id
+        WHERE c.target_type = #{targetType}
+          AND c.parent_id IS NULL
+          and c.video_id = #{videoId}
+        ORDER BY c.create_time DESC
+    </select>
+    <!-- 查询子评论 -->
+    <select id="getChildComments" resultType="com.vtube.dto.CommentDTO">
+        SELECT
+        c.comment_id,
+        c.content,
+        u.nick_name,
+        c.user_id,
+        u.avatar_path,
+        c.parent_id,
+        c.create_time,
+        c.status
+        FROM vt_comments c
+        LEFT JOIN vt_user u ON u.user_id = c.user_id
+        WHERE c.parent_id IN
+        <foreach item="item" collection="parentIds" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+</mapper>

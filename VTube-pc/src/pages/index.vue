@@ -61,18 +61,18 @@ onMounted(() => {
       </div>
     </div>
   </section>
-  <section class="bg-gray-100 py-12 md:py-16 lg:py-20">
+  <section class="py-12 md:py-16 lg:py-20">
     <div
       class="container mx-auto px-4 md:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-5 gap-8"
     >
       <div class="w-full md:col-span-4">
         <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
-          Recommended Videos
+          热门推荐
         </h2>
         <el-scrollbar>
           <div class="flex space-x-6">
             <div
-              class="bg-white rounded-lg shadow-md overflow-hidden flex-none w-52 cursor-pointer"
+              class="rounded-lg shadow-md overflow-hidden flex-none w-52 cursor-pointer"
               v-for="item in recommended"
               :key="item.videoId"
               @click="router.push(`/play/${item.videoId}`)"
@@ -83,22 +83,16 @@ onMounted(() => {
                 class="w-full h-auto max-h-[388px]"
               />
               <div class="p-4">
-                <h3 class="text-sm font-medium mb-2">
+                <h3 class="text-sm font-medium mb-2 text-center line-clamp-2">
                   {{ item.title }}
                 </h3>
-                <div class="flex items-center space-x-2 text-gray-500">
-                  <Icon icon="ph:eye-bold" />
-                  <span>{{ item.views }} views</span>
-                </div>
               </div>
             </div>
           </div>
         </el-scrollbar>
       </div>
       <div class="w-full md:col-span-1">
-        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
-          Hot Videos
-        </h2>
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">排行榜</h2>
         <el-scrollbar height="400px">
           <div
             class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-1 gap-6"
@@ -113,13 +107,11 @@ onMounted(() => {
               <img
                 :alt="item.title"
                 class="w-12 h-12 object-cover rounded"
-                height="60"
                 :src="fileUrl + item.imagePath"
-                width="100"
-                style="aspect-ratio: 100 / 60; object-fit: cover"
+                style="aspect-ratio: 48 / 48; object-fit: cover"
               />
               <div class="flex flex-col">
-                <div class="text-sm">{{ item.title }}</div>
+                <div class="text-sm line-clamp-2">{{ item.title }}</div>
                 <div class="text-sm flex items-center space-x-2 text-gray-500">
                   <Icon icon="ph:eye-bold" />
                   <span>{{ item.views }}</span>
@@ -131,11 +123,9 @@ onMounted(() => {
       </div>
     </div>
   </section>
-  <section class="bg-gray-100 py-12 md:py-16 lg:py-20">
+  <section class="py-12 md:py-16 lg:py-20">
     <div class="container mx-auto px-4 md:px-6 lg:px-8">
-      <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
-        Weekly Anime
-      </h2>
+      <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">周番表</h2>
       <div class="w-full">
         <div
           role="tablist"
@@ -147,7 +137,7 @@ onMounted(() => {
             @click="weekTabsIndex = index"
             class="inline-flex items-center justify-center whitespace-nowrap rounded-md mx-1 px-3 py-1 text-sm font-medium ring-offset-background transition-all disabled:pointer-events-none disabled:opacity-50"
             :class="{
-              'bg-white text-foreground bg-background text-foreground shadow':
+              ' bg-white dark:bg-gray-500/50 text-foreground bg-background text-foreground shadow':
                 weekTabsIndex == index,
               'tab-transition-enter-active': weekTabsIndex > index,
               'tab-transition-leave-active': weekTabsIndex < index,
@@ -163,7 +153,7 @@ onMounted(() => {
           style="animation-duration: 0s"
         >
           <div
-            class="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer"
+            class=" rounded-lg shadow-md overflow-hidden cursor-pointer"
             v-for="(item, index) in weeklyAnime[weekTabsIndex]"
             :key="index"
             @click="router.push(`/play/${item.videoId}`)"
@@ -174,11 +164,7 @@ onMounted(() => {
               class="w-full h-auto max-h-[388px]"
             />
             <div class="p-4">
-              <h3 class="text-sm font-medium mb-2">{{ item.title }}</h3>
-              <div class="flex items-center space-x-2 text-gray-500">
-                <Icon icon="ph:eye-bold" />
-                <span>{{ item.views }} views</span>
-              </div>
+              <h3 class="text-sm text-center font-medium mb-2 line-clamp-2">{{ item.title }}</h3>
             </div>
           </div>
         </div>

@@ -56,7 +56,7 @@ function logout() {
                 <el-dropdown-item>
                   <div
                     class="flex items-center gap-1"
-                    @click="router.push('/users')"
+                    @click="router.push('/forum/profile')"
                   >
                     <Icon
                       icon="material-symbols-light:account-circle"
@@ -66,7 +66,10 @@ function logout() {
                   </div>
                 </el-dropdown-item>
                 <el-dropdown-item>
-                  <div class="flex items-center gap-1">
+                  <div
+                    class="flex items-center gap-1"
+                    @click="router.push('/forum/setting')"
+                  >
                     <Icon icon="solar:settings-outline" class="text-xl" />
                     设置
                   </div>

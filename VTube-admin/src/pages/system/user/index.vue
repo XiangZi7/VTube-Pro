@@ -10,7 +10,7 @@ const vtTable = ref<TableRef>()
 
 const tableColumn = ref<TableColumn[]>([
   { type: 'selection', fixed: 'left', width: 70 },
-  { prop: 'videoId', label: 'id' },
+  { prop: 'userId', label: 'id' },
   { prop: 'avatarPath', label: '头像', slotName: 'imagePath' },
   { prop: 'userName', label: '用户名', search: { el: 'input' } },
   { prop: 'realName', label: '真实姓名', search: { el: 'input' } },
@@ -21,7 +21,12 @@ const tableColumn = ref<TableColumn[]>([
     enum: 'gender',
     search: { el: 'select', props: { filterable: true } },
   },
-
+  {
+    prop: 'status',
+    label: '用户状态',
+    search: { el: 'select' },
+    slotName: 'status',
+  },
   { prop: 'phone', label: '电话号码', search: { el: 'input' } },
   { prop: 'email', label: '电子邮箱', search: { el: 'input' } },
   {
@@ -68,6 +73,22 @@ const deletes = async (id: number | (number | string)[]) => {
   if (vtTable.value?.getTableList) {
     vtTable.value.getTableList()
   }
+}
+
+// 重置用户密码
+function resetPwd(userId: string) {
+  httpPost('/user/reset', { userId }).then(({ code, data, message }) => {
+    // 弹出消息
+    messagePro(code, data as string, message)
+
+    // 检查响应状态码
+    if (code !== 200) return
+
+    // 更新表格
+    if (vtTable.value?.getTableList) {
+      vtTable.value.getTableList()
+    }
+  })
 }
 </script>
 <template>
@@ -116,6 +137,15 @@ const deletes = async (id: number | (number | string)[]) => {
             fit="fill"
           />
         </template>
+        <template #status="{ row }">
+          <el-switch
+            v-model="row.status"
+            style="--el-switch-on-color: #13ce66"
+            disabled
+            active-value="1"
+            inactive-value="0"
+          />
+        </template>
         <template #action="{ row }">
           <div class="space-x-2 flex text-xl justify-around">
             <Icon
@@ -129,8 +159,19 @@ const deletes = async (id: number | (number | string)[]) => {
               @click="openDialog('编辑', row)"
             />
             <el-popconfirm
-              :title="`确定要删除《${row.title}?》`"
-              @confirm="deletes(row.videoId)"
+              :title="`确定要重置《${row.realName}?》的密码？`"
+              @confirm="resetPwd(row.userId)"
+            >
+              <template #reference>
+                <Icon
+                  icon="material-symbols-light:lock-reset"
+                  class="cursor-pointer"
+                />
+              </template>
+            </el-popconfirm>
+            <el-popconfirm
+              :title="`确定要删除《${row.realName}?》`"
+              @confirm="deletes(row.userId)"
             >
               <template #reference>
                 <Icon icon="mdi:trash-can-outline" class="cursor-pointer" />

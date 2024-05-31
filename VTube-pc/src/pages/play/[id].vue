@@ -4,13 +4,17 @@ import { PlayState, VideoDetails, Episode } from '@/interface/pages/play'
 const fileUrl = import.meta.env.VITE_API_MINIO
 
 const route = useRoute()
+const userStore = useUserStore()
 const state = reactive<PlayState>({
   activeNames: ['1'],
   details: {},
   episodeList: [],
   playIndex: 0,
+  comText: '', // 用户的评论文本
+  comments: [],
 })
-const { activeNames, details, episodeList, playIndex } = toRefs(state)
+const { activeNames, details, episodeList, playIndex, comText, comments } =
+  toRefs(state)
 
 onMounted(() => {
   httpPost<VideoDetails>('/play/details', { videoId: route.params.id }).then(
@@ -21,6 +25,11 @@ onMounted(() => {
   httpPost<Episode[]>('/play/episode', { videoId: route.params.id }).then(
     ({ data }) => {
       state.episodeList = data
+    }
+  )
+  httpGet('/comments', { videoId: route.params.id, targetType: 0 }).then(
+    ({ data }) => {
+      console.log('🚀 => res:', data)
     }
   )
 })
@@ -41,23 +50,33 @@ onMounted(() => {
             />
           </div>
           <div class="py-2 grid gap-2">
-            <div class="flex gap-2 items-center">
-              <div class="flex gap-2 items-center">
+            <div class="flex items-center h-full">
+              <div class="flex gap-2 items-center h-full">
                 <img
                   :src="fileUrl + details.imagePath"
                   class="rounded-xl w-auto h-[200px]"
                 />
-                <div class="flex flex-col justify-between">
-                  <div class="text-sm w-full gap-2 flex flex-col">
+                <div class="flex flex-col justify-around h-full">
+                  <div class="text-sm w-full gap-3 flex flex-col">
                     <div class="font-semibold">{{ details.title }}</div>
-                    <el-rate v-model="details.likes" allow-half disabled />
-                    <div class="text-xs text-gray-500 dark:text-gray-400">
-                      {{ details.views }} views
+                    <el-rate v-model="details.make" allow-half disabled />
+                    <div class="flex items-center gap-2 text-xs">
+                      <icon-mdi:calendar-multiselect />
+                      {{ details.releaseTime }}
                     </div>
+                    <div class="text-xs text-gray-500 dark:text-gray-400">
+                      <div class="flex gap-2 items-center">
+                        <icon-ic:sharp-remove-red-eye />
+                        {{ details.views }}
+                      </div>
+                    </div>
+                    <p
+                      :title="details.description"
+                      class="text-xs line-clamp-3"
+                    >
+                      {{ details.description }}
+                    </p>
                   </div>
-                  <p :title="details.description" class="text-xs line-clamp-3">
-                    {{ details.description }}
-                  </p>
                 </div>
               </div>
               <div class="ml-auto flex items-center gap-2">
@@ -76,6 +95,27 @@ onMounted(() => {
         </div>
         <div class="grid gap-6">
           <h2 class="font-semibold text-xl">110 Comments</h2>
+          <div class="flex items-center gap-2">
+            <template v-if="userStore.userInfo.token && userStore.userInfo">
+              <el-avatar :src="fileUrl + userStore.userInfo.avatarPath" />
+            </template>
+            <span
+              v-else
+              class="relative flex shrink-0 overflow-hidden rounded-full w-10 h-10 border"
+            >
+              <span
+                class="flex h-full w-full items-center justify-center rounded-full bg-muted"
+                >AC</span
+              >
+            </span>
+            <el-input
+              v-model="comText"
+              type="textarea"
+              :rows="2"
+              placeholder="你也想来一发吗？"
+              clearable
+            />
+          </div>
           <div class="text-sm flex items-start gap-4">
             <span
               class="relative flex shrink-0 overflow-hidden rounded-full w-10 h-10 border"

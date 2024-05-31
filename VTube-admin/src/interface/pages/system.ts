@@ -21,3 +21,16 @@ export interface Role {
     roleId: number;
     name: string
 }
+// -------------用户管理----------------
+export interface User {
+    userId: number;          // 用户ID
+    userName: string;        // 用户名
+    realName?: string;       // 用户真实姓名
+    nickName?: string;       // 用户昵称
+    phone?: string;          // 手机号
+    email?: string;          // 邮箱
+    avatarPath?: string;     // 用户头像
+    createTime?: string;     // 创建时间
+    sex?: string;            // M(男) or F(女)
+    status?: string;         // 状态 1 正常 0 无效
+}

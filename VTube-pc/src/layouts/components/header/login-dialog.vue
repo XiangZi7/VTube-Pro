@@ -62,7 +62,7 @@ function handleSubmit(event, tpye) {
               type="text"
               placeholder="userName"
             />
-            <input v-model="loginForm.phone"  placeholder="Phone" />
+            <input v-model="loginForm.phone" placeholder="Phone" />
             <input
               v-model="loginForm.password"
               type="password"

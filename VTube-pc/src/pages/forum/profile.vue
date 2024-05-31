@@ -23,7 +23,7 @@ function changePassWord() {
 }
 </script>
 <template>
-  <main class="flex h-[calc(100%-64px)] flex-col gap-4 p-4 md:gap-8 md:p-6">
+  <main class="flex flex-1 h-[calc(100%-64px)] flex-col gap-4 p-4 md:gap-8 md:p-6">
     <div
       class="block w-full h-full flex-1 box-border overflow-x-hidden duration-300 ease-in-out dark:text-neutral-200"
     >

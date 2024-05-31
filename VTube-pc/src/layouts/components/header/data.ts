@@ -5,5 +5,5 @@ export const data = [
   { title: '剧场动画', icon: 'mdi:theater', router: '/theatre' },
   { title: '剧集', icon: 'ri:movie-2-line', router: '/series' },
   { title: '电影', icon: 'jam:movie', router: '/movie' },
-  { title: '论坛', icon: 'healthicons:forum-outline', router: '/forum' },
+  { title: '论坛', icon: 'material-symbols:forum-outline-rounded', router: '/forum' },
 ]

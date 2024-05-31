@@ -83,6 +83,12 @@ const hreset = () => {
   emit('reset')
 }
 
+// 查找table表单有字典的数据
+const findDictData = (prop: string, value: string) => {
+  if (!prop || !value) return '-'
+  return enumMap.value?.get(prop)?.find((item) => item.value == value)?.label
+}
+
 defineExpose({
   enumMap,
   getTableList,
@@ -122,7 +128,9 @@ defineExpose({
         >
           <template #default="scope">
             <template v-if="column.enum">
-              {{ enumMap?.get(column.prop)[scope.row[column.prop] - 1]?.label }}
+              {{
+                findDictData(column.prop || '', scope.row[column.prop || ''])
+              }}
             </template>
             <slot
               v-if="column.slotName"

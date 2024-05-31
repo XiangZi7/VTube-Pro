@@ -2,7 +2,7 @@
 import Meun from './components/meun.vue'
 import { ProjectorDto } from '@/interface/pages/projector'
 const fileUrl = import.meta.env.VITE_API_MINIO
-
+const router = useRouter()
 const {
   tableData,
   handleSizeChange,
@@ -22,7 +22,7 @@ onMounted(() => {
   <section class="h-full w-full flex gap-8 px-4 md:px-6 py-8">
     <div class="h-auto w-auto">
       <div
-        class="flex flex-col p-5 bg-white rounded-lg min-w-[265px] shadow-app"
+        class="flex flex-col p-5 border border-gray-500/50 border-dashed rounded-lg min-w-[265px] shadow-app"
       >
         <h2 class="text-2xl font-bold">过滤</h2>
         <Meun :search="search" :search-param="searchParam" :reset="reset" />
@@ -36,17 +36,16 @@ onMounted(() => {
           <div
             v-for="item in tableData"
             :key="item.videoId"
-            class="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:-translate-y-2"
+            class="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:-translate-y-2 dark:border dark:border-dashed dark:border-gray-500/50 cursor-pointer"
+            @click="router.push(`/play/${item.videoId}`)"
           >
             <img
               :src="fileUrl + item.imagePath"
               :alt="item.title"
               class="rounded-lg h-auto object-cover w-full aspect-[3/4] group-hover:opacity-90 transition-opacity duration-300 ease-in-out"
             />
-            <div class="p-4 space-y-2">
-              <h3
-                class="text-sm text-ellipsis h-[45px] font-semibold line-clamp-2"
-              >
+            <div class="p-4 space-y-2 text-center">
+              <h3 class="text-sm text-ellipsis font-semibold line-clamp-1">
                 {{ item.title }}
               </h3>
               <p

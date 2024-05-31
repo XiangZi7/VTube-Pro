@@ -3,10 +3,15 @@
 
 :root {
   --el-fill-color-blank: hsl(var(--nextui-default-400) / .2);
+  --el-fill-color-blank: transparent;
+  --el-collapse-header-bg-color: transparent;
+  --el-collapse-content-bg-color: transparent;
 }
-.el-menu{
-  border-right:none
+
+.el-menu {
+  border-right: none
 }
+
 .el-form-item {
   // margin: 0 5px !important;
   // padding: 20px;

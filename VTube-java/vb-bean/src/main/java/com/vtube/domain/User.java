@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
@@ -68,6 +69,7 @@ public class User implements Serializable {
     /**
      * 创建时间
      */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @TableField(value = "create_time")
     private LocalDateTime createTime;
 
@@ -76,6 +78,12 @@ public class User implements Serializable {
      */
     @TableField(value = "sex")
     private String sex;
+
+    /**
+     * 状态 1 正常 0 无效
+     */
+    @TableField(value = "status")
+    private String status;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;

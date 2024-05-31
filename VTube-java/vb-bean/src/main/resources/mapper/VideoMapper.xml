@@ -73,8 +73,9 @@
                vt.create_time,
                vt.tags,
                vt.image_path,
+               vt.release_time,
                vtd.views,
-               (vtd.likes / 100.0) * 5 AS likes
+               LEAST((COALESCE(vtd.likes, 0) / 1000) * 5, 5) AS make
         FROM vt_video AS vt
                  JOIN
              vt_video_data AS vtd

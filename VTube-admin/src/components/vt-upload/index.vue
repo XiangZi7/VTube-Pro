@@ -19,9 +19,10 @@ defineProps({
 const imgUpload = reactive({
   // 是否展示裁剪
   dialogCropping: false,
-  isCropping: false, // 判断是否已经截图
+  // 判断是否已经截图
+  isCropping: false,
   // 图片
-  imageUrl: '',
+  img: '',
   // 图片格式
   imgBmp: 'image/*',
   // 图片名称
@@ -32,7 +33,7 @@ const beforUpload: UploadProps['beforeUpload'] = async (rawFile) => {
   // 图片名称
   imgUpload.imgName = rawFile.name
   // 进入裁剪
-  imgCropping.imageUrl = URL.createObjectURL(rawFile)
+  imgCropping.img = URL.createObjectURL(rawFile)
   imgUpload.dialogCropping = true
   // // 获取图片尺寸
   // const image = new Image()
@@ -48,7 +49,7 @@ const beforUpload: UploadProps['beforeUpload'] = async (rawFile) => {
   //   // 图片名称
   //   imgUpload.imgName = rawFile.name
   //   // 进入裁剪
-  //   imgCropping.imageUrl = URL.createObjectURL(rawFile)
+  //   imgCropping.img = URL.createObjectURL(rawFile)
   //   imgUpload.dialogCropping = true
   //   return false // 允许上传
   // } else {
@@ -65,7 +66,7 @@ const updataImg = async (data: any) => {
   // 如果未截图,打开裁剪
   if (imgUpload.isCropping) {
     // 图片预览
-    imgUpload.imageUrl = URL.createObjectURL(data.file)
+    imgUpload.img = URL.createObjectURL(data.file)
     imgUpload.dialogCropping = false
     imgUpload.isCropping = false
     // 图片信息
@@ -75,23 +76,23 @@ const updataImg = async (data: any) => {
 
 /** 图片裁剪 */
 const imgCropping = reactive({
-  imageUrl: '',
+  img: '',
   // 裁剪生成图片的格式
   outputType: 'png',
   // 是否默认生成截图框
   autoCrop: true,
   // 上传图片按照原始比例渲染
-  //   original: true,
+  // original: true,
   // 是否输出原图比例的截图
-  full: false,
+  // full: false,
   // 默认生成截图框宽度
-  autoCropWidth: 170,
+  // autoCropWidth: 170,
   // 默认生成截图框高度
-  autoCropHeight: 224,
+  // autoCropHeight: 224,
   // 是否开启截图框宽高固定比例
-  // fixed: true,
+  fixed: true,
   // 截图框的宽高比例
-  // fixedNumber: [1, 1],
+  fixedNumber: [3, 4],
   // 截图框是否被限制在图片里面
   centerBox: true,
 })
@@ -110,7 +111,7 @@ const handleCropping = async (roleRefs: any, type: boolean) => {
         'Content-Type': 'multipart/form-data',
       }).then(({ data, code }) => {
         if (code !== 200) return
-        // imgUpload.imageUrl = data as string
+        // imgUpload.img = data as string
         VModel.value = data as string
         imgUpload.dialogCropping = false
         // 图片信息
@@ -118,14 +119,14 @@ const handleCropping = async (roleRefs: any, type: boolean) => {
       })
     })
   } else {
-    imgUpload.imageUrl = ''
+    imgUpload.img = ''
     imgUpload.dialogCropping = false
   }
 }
 
 // 清除图片
 const clearImg = () => {
-  imgUpload.imageUrl = ''
+  imgUpload.img = ''
   emit('img-upload')
 }
 // 实时预览
@@ -136,7 +137,7 @@ function realTime(data: realTimeProps) {
 
 onMounted(() => {
   // 图片地址传递
-  imgUpload.imageUrl = VModel.value as string
+  imgUpload.img = VModel.value as string
 })
 </script>
 <template>
@@ -187,14 +188,9 @@ onMounted(() => {
       <div class="flex justify-around w-full overflow-hidden">
         <div class="h-[298px] w-[298px]">
           <vueCropper
+            class="w-full h-full"
             ref="cropper"
-            :img="imgCropping.imageUrl"
-            :outputType="imgCropping.outputType"
-            :autoCrop="imgCropping.autoCrop"
-            :autoCropWidth="imgCropping.autoCropWidth"
-            :autoCropHeight="imgCropping.autoCropHeight"
-            :centerBox="imgCropping.centerBox"
-            :full="imgCropping.full"
+            v-bind="imgCropping"
             @realTime="realTime"
           />
         </div>

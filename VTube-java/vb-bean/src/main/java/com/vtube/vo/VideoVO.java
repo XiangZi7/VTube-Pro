@@ -7,6 +7,7 @@ import lombok.Data;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -51,7 +52,11 @@ public class VideoVO {
 
     public void setTags(String tags) {
         this.tags = tags;
-        this.tagsList = Arrays.asList(tags.split(","));
+        if (tags != null && !tags.isEmpty()) {
+            this.tagsList = Arrays.asList(tags.split(","));
+        } else {
+            this.tagsList = new ArrayList<>(); // 保证 tagsList 不为 null
+        }
     }
 }
 

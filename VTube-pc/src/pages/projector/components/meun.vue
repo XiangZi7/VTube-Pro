@@ -50,8 +50,18 @@ withDefaults(defineProps<searchProps>(), {
       </el-collapse-item>
     </el-collapse>
     <div class="space-x-2 my-5">
-      <el-button type="primary" @click="search">起飞</el-button>
-      <el-button type="primary" @click="reset">重置</el-button>
+      <el-button type="primary" @click="search">
+        <div class="flex gap-1 items-center">
+          <icon-material-symbols:flight-takeoff />
+          起飞
+        </div>
+      </el-button>
+      <el-button type="primary" @click="reset">
+        <div class="flex gap-1 items-center">
+          <icon-system-uicons:reset />
+          重置
+        </div>
+      </el-button>
     </div>
   </div>
 </template>

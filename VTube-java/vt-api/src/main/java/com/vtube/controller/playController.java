@@ -2,15 +2,13 @@ package com.vtube.controller;
 
 import cn.hutool.json.JSONObject;
 import com.vtube.model.ApiResult;
+import com.vtube.service.CommentsService;
 import com.vtube.service.VideoService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @AllArgsConstructor
@@ -20,6 +18,9 @@ public class playController {
 
     @Resource
     private VideoService videoService;
+
+    @Resource
+    private CommentsService commentsService;
 
     @PostMapping("/details")
     @Operation(summary = "视频详情", description = "视频详情")
@@ -33,5 +34,12 @@ public class playController {
     ApiResult episode(@RequestBody JSONObject jsonObject) {
         String videoId = jsonObject.getStr("videoId");
         return ApiResult.ok(videoService.Episode(Integer.valueOf(videoId)));
+    }
+    @GetMapping("/comments")
+    @Operation(summary = "评论数据", description = "评论数据")
+    ApiResult comments(@RequestParam(name = "pageNum", defaultValue = "1") Long pageNum,
+                       @RequestParam(name = "pageSize", defaultValue = "10") Long pageSize) {
+
+        return ApiResult.ok();
     }
 }

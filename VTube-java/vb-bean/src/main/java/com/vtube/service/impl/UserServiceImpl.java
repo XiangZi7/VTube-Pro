@@ -9,7 +9,6 @@ import com.vtube.dto.UserLoginDTO;
 import com.vtube.model.ApiResult;
 import com.vtube.service.UserService;
 import com.vtube.mapper.UserMapper;
-import com.vtube.vo.AdminLoginVO;
 import com.vtube.vo.Param.LoginParam;
 import com.vtube.vo.Param.PassWordParam;
 import jakarta.annotation.Resource;
@@ -17,7 +16,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 /**
  * @author Administrator
@@ -86,6 +84,16 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         // 更新用户密码
         userMapper.update(updatedUser, updateWrapper);
         return ApiResult.ok("修改密码成功");
+    }
+
+    @Override
+    public ApiResult resetPassword(Integer userId) {
+        User user = this.getById(userId);
+        if (user == null) {
+            return ApiResult.error("用户不存在"); // 用户不存在
+        }
+        user.setPassword("000000");
+        return ApiResult.ok(this.updateById(user));
     }
 }
 

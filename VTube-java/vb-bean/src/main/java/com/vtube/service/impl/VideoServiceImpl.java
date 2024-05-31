@@ -67,7 +67,6 @@ public class VideoServiceImpl extends ServiceImpl<VideoMapper, Video>
     @Override
     @Transactional(rollbackFor = Exception.class)
     public int updateVideoData(VideoVO videoVO) {
-        System.out.println("videoVO=>>" + videoVO);
         // 更新视频数据
         Video video = new Video();
         video.setVideoId(videoVO.getVideoId());

@@ -19,4 +19,6 @@ public interface UserService extends IService<User> {
 
  ApiResult ChangePwd(PassWordParam passWordParam);
 
+ // 重置用户密码为000000
+ ApiResult resetPassword(Integer userId);
 }
