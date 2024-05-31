@@ -11,7 +11,7 @@
  Target Server Version : 80100
  File Encoding         : 65001
 
- Date: 30/05/2024 17:44:51
+ Date: 31/05/2024 17:35:31
 */
 
 SET NAMES utf8mb4;
@@ -60,25 +60,32 @@ INSERT INTO `vt_category` VALUES (4, NULL, '剧场', '2022-01-04 14:45:00');
 INSERT INTO `vt_category` VALUES (5, NULL, 'VLog', '2022-01-05 20:30:00');
 
 -- ----------------------------
--- Table structure for vt_comment
+-- Table structure for vt_comments
 -- ----------------------------
-DROP TABLE IF EXISTS `vt_comment`;
-CREATE TABLE `vt_comment`  (
-  `comment_id` int NOT NULL AUTO_INCREMENT COMMENT '评论ID',
-  `content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '评论内容',
+DROP TABLE IF EXISTS `vt_comments`;
+CREATE TABLE `vt_comments`  (
+  `comment_id` int NOT NULL AUTO_INCREMENT COMMENT '评论ID，自增主键',
   `video_id` int NULL DEFAULT NULL COMMENT '视频ID',
-  `user_id` int NULL DEFAULT NULL COMMENT '用户ID',
-  `create_time` datetime NULL DEFAULT NULL COMMENT '创建时间',
+  `forum_id` int NULL DEFAULT NULL COMMENT '论坛ID',
+  `content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '评论内容',
+  `user_id` int NOT NULL COMMENT '评论者用户ID，外键关联vt_user表',
+  `target_id` int NULL DEFAULT NULL COMMENT '被评论对象ID（如视频、论坛ID等）',
+  `target_type` int NOT NULL COMMENT '被评论对象类型（0视频、1论坛）',
+  `parent_id` int NULL DEFAULT NULL COMMENT '父评论ID（为空表示是顶级评论，非空表示是回复某个评论）',
+  `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `status` tinyint NULL DEFAULT 1 COMMENT '状态，1 表示有效，0 表示无效',
   PRIMARY KEY (`comment_id`) USING BTREE,
-  INDEX `user_id`(`user_id` ASC) USING BTREE,
-  INDEX `vt_comment_ibfk_1`(`video_id` ASC) USING BTREE,
-  CONSTRAINT `vt_comment_ibfk_1` FOREIGN KEY (`video_id`) REFERENCES `vt_video` (`video_id`) ON DELETE CASCADE ON UPDATE RESTRICT,
-  CONSTRAINT `vt_comment_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `vt_user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '评论表' ROW_FORMAT = Dynamic;
+  INDEX `idx_user`(`user_id` ASC) USING BTREE,
+  INDEX `idx_target`(`target_id` ASC, `target_type` ASC) USING BTREE,
+  CONSTRAINT `vt_comments_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `vt_user` (`user_id`) ON DELETE CASCADE ON UPDATE RESTRICT
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '评论表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of vt_comment
+-- Records of vt_comments
 -- ----------------------------
+INSERT INTO `vt_comments` VALUES (1, 1, NULL, 'test', 1, NULL, 0, NULL, '2024-05-31 16:39:45', 1);
+INSERT INTO `vt_comments` VALUES (2, 1, NULL, 'test2', 2, 1, 0, 1, '2024-05-31 16:40:29', 1);
+INSERT INTO `vt_comments` VALUES (3, 1, NULL, 'test3', 3, 2, 0, 1, '2024-05-31 17:19:59', 1);
 
 -- ----------------------------
 -- Table structure for vt_dictionary
@@ -140,7 +147,7 @@ CREATE TABLE `vt_files`  (
   PRIMARY KEY (`file_id`) USING BTREE,
   INDEX `fk_user_id`(`user_id` ASC) USING BTREE,
   CONSTRAINT `fk_user_id` FOREIGN KEY (`user_id`) REFERENCES `vt_user` (`user_id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 126 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '上传文件信息表，存储每个用户上传的文件信息' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 134 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '上传文件信息表，存储每个用户上传的文件信息' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of vt_files
@@ -220,6 +227,14 @@ INSERT INTO `vt_files` VALUES (122, 1, 'testvidio.mp4', '1ce4e94d92e508bcf7310ec
 INSERT INTO `vt_files` VALUES (123, 1, 'testvidio.mp4', 'e9932ddeb94c78b46aab4bbaf4c38eef.mp4', 35.4417, 'mp4', '2024-05-28 13:43:03');
 INSERT INTO `vt_files` VALUES (124, 1, '680376763f8b43939d48ab3a55884bd8.png', '55d4b1a8dd6c6b3c0c37d6244a5418e0.png', 1.70933, 'png', '2024-05-29 13:47:08');
 INSERT INTO `vt_files` VALUES (125, 1, '680376763f8b43939d48ab3a55884bd8.png', '51a1472dfb8b49afb66ac88ed1262a4f.png', 1.70933, 'png', '2024-05-29 16:52:01');
+INSERT INTO `vt_files` VALUES (126, 1, '2e8e5727a20343559e7a6baef1671165.png', 'b50063094fce589bded9aa43b2d0fdf0.png', 0.0432844, 'png', '2024-05-31 10:18:18');
+INSERT INTO `vt_files` VALUES (127, 1, '680376763f8b43939d48ab3a55884bd8.png', 'eb3985a1c54a7871fa71e32397913748.png', 1.70933, 'png', '2024-05-31 10:18:28');
+INSERT INTO `vt_files` VALUES (128, 1, '1.png', '88df5120eb0620fc075523df5feed279.png', 0.744174, 'png', '2024-05-31 14:56:02');
+INSERT INTO `vt_files` VALUES (129, 1, 'img-h0IQDgggCbBspIW85aiaMZqM.png', 'e7aaa6bc74b3ae54973813c53a177f49.png', 0.165964, 'png', '2024-05-31 15:13:10');
+INSERT INTO `vt_files` VALUES (130, 1, 'img-ILLpTzLFIOeXnLcoenWrTBDT.png', 'a71ead3966efb4f8c47866316abba597.png', 0.159039, 'png', '2024-05-31 15:22:23');
+INSERT INTO `vt_files` VALUES (131, 1, 'img-yoNovLCrCXTgHR0S5IJ7w6t5.png', 'ad12fed3a082947c463bc6cad4d9c425.png', 0.139744, 'png', '2024-05-31 15:22:36');
+INSERT INTO `vt_files` VALUES (132, 1, '1.png', 'fac643130e0edf6b3c45c99dd3bcacf7.png', 0.14308, 'png', '2024-05-31 15:23:08');
+INSERT INTO `vt_files` VALUES (133, 1, '2.png', 'b6950c05f2cd427ddfb60b8de0243c4e.png', 0.117241, 'png', '2024-05-31 15:23:40');
 
 -- ----------------------------
 -- Table structure for vt_follow
@@ -416,7 +431,7 @@ CREATE TABLE `vt_user`  (
 -- ----------------------------
 INSERT INTO `vt_user` VALUES (1, 'user', '栗山未来', '眼镜娘', '21', '1234567890', 'user1@example.com', '74057bedb712511430b280f1243ef5a0.png', '2024-05-30 09:49:57', 'M', 1);
 INSERT INTO `vt_user` VALUES (2, '郭震南', 'Tang Ka Keung', 'Tang Ka Keung', 'I7N5nnAlBx', '199-4555-3066', 'zguo@mail.com', 'DrEDjGx21w', '2004-11-17 18:27:22', 'M', 1);
-INSERT INTO `vt_user` VALUES (3, '罗嘉伦', 'Deborah Romero', 'Deborah Romero', 'gqC0PGwgek', '(20) 4866 5660', 'jialulu3@outlook.com', '7qjA45JNKi', '2021-07-27 10:23:47', 'M', 1);
+INSERT INTO `vt_user` VALUES (3, '罗嘉伦', 'Deborah Romero', 'Deborah Romero', '000000', '(20) 4866 5660', 'jialulu3@outlook.com', '7qjA45JNKi', '2021-07-27 10:23:47', 'M', 1);
 INSERT INTO `vt_user` VALUES (4, '魏杰宏', 'Ng Sau Man', 'Ng Sau Man', 'W98vO2N15B', '(161) 923 4351', 'wjieh9@gmail.com', 'ZKqATISbOS', '2007-12-31 20:33:41', 'M', 1);
 INSERT INTO `vt_user` VALUES (5, '大塚樹', 'Yam Kwok Kuen', 'Yam Kwok Kuen', 'XhTzo8nfIv', '718-679-9348', 'otsukait90@yahoo.com', 'OErol2D6MJ', '2006-10-26 11:05:33', 'M', 1);
 INSERT INTO `vt_user` VALUES (6, '夏杰宏', 'Frederick Ramos', 'Frederick Ramos', 'fzPrIdydPQ', '74-527-7415', 'jiehong71@outlook.com', 'D1a5VHpgIj', '2020-12-13 08:09:15', 'M', 1);
@@ -425,7 +440,6 @@ INSERT INTO `vt_user` VALUES (8, '段子韬', 'Choi Tak Wah', 'Choi Tak Wah', 'C
 INSERT INTO `vt_user` VALUES (9, '中村美羽', 'Han Ka Ming', 'Han Ka Ming', 'V9WJ59Zdww', '(116) 863 7372', 'nakamiu@gmail.com', 'AsatoOLbGz', '2002-01-03 17:26:12', 'F', 1);
 INSERT INTO `vt_user` VALUES (10, '刘云熙', 'Lam Suk Yee', 'Lam Suk Yee', 'O6EL5VYSV7', '5807 600489', 'liuy@mail.com', 'ZV8lc2oD33', '2012-07-08 20:22:43', 'M', 1);
 INSERT INTO `vt_user` VALUES (11, '木村和真', 'Danielle Cooper', 'Danielle Cooper', 'JLysDbhVEd', '161-9762-5471', 'kazumak517@gmail.com', '9qsm1VKbN2', '2000-08-16 20:45:37', 'M', 1);
-INSERT INTO `vt_user` VALUES (12, '馮俊宇', 'Ng Wing Sze', 'Ng Wing Sze', '3OablmvwCA', '7366 771002', 'cyfung@gmail.com', 'VcnSlqvypT', '2021-09-10 02:36:37', 'M', 1);
 INSERT INTO `vt_user` VALUES (13, '吳力申', 'Mak Sze Kwan', 'Mak Sze Kwan', 'or9b35vRyg', '769-492-9721', 'likng4@outlook.com', 'AxdQSvuviK', '2009-04-07 13:58:36', 'M', 1);
 INSERT INTO `vt_user` VALUES (14, '張榮發', 'Ricky Green', 'Ricky Green', 'K6V7ccQpvX', '163-8280-3659', 'wingfat19@gmail.com', 'LXBT4H8TCt', '2005-12-03 10:19:21', 'M', 1);
 INSERT INTO `vt_user` VALUES (15, '阎震南', 'Ichikawa Aoshi', 'Ichikawa Aoshi', 'iWsqyStbay', '21-3372-8737', 'zhenya93@outlook.com', 'kWb676Qn6x', '2010-02-04 16:49:33', 'M', 1);
@@ -457,7 +471,6 @@ INSERT INTO `vt_user` VALUES (40, '陈璐', 'Tam Ling Ling', 'Tam Ling Ling', 'j
 INSERT INTO `vt_user` VALUES (41, '高田明菜', 'Watanabe Aoi', 'Watanabe Aoi', 'U54esDaLOz', '(1865) 22 6225', 'takada111@gmail.com', '21QM3H0mo3', '2009-11-24 10:05:09', 'F', 1);
 INSERT INTO `vt_user` VALUES (42, '原健太', 'Sheh Siu Wai', 'Sheh Siu Wai', 'ztUkz6mMBy', '90-1025-3743', 'harakenta@icloud.com', 'jaX2rSs6Yi', '2012-12-02 06:58:01', 'M', 1);
 INSERT INTO `vt_user` VALUES (43, '羅家輝', 'Wei Xiuying', 'Wei Xiuying', 'c7yKIcibtM', '614-865-2594', 'kafai1007@icloud.com', 'iIX77x6GE3', '2021-06-10 15:36:32', 'M', 1);
-INSERT INTO `vt_user` VALUES (44, '佐藤翼', 'Tsang Wai Yee', 'Tsang Wai Yee', '9bPPaL8HZm', '5129 753011', 'satotsubasa@icloud.com', '7d2Pp3eTvs', '2021-12-25 05:57:19', 'M', 1);
 INSERT INTO `vt_user` VALUES (45, '井上彩乃', 'Yuen Chi Ming', 'Yuen Chi Ming', 'yKOwVJPWVd', '755-335-3915', 'inoueayano@outlook.com', 'TOGUhc6zTK', '2007-03-04 04:44:10', 'F', 1);
 INSERT INTO `vt_user` VALUES (46, '今井葉月', 'Yuen Sum Wing', 'Yuen Sum Wing', 'KOGP15WF2W', '838-541-8426', 'hazukiimai@mail.com', 'foffRiEWmo', '2020-12-28 04:18:25', 'F', 1);
 INSERT INTO `vt_user` VALUES (47, '向頴璇', 'Aoki Hikaru', 'Aoki Hikaru', 'Aex32jyGdz', '52-918-2078', 'heungws@outlook.com', 'ymVC72xVKx', '2006-11-15 12:00:27', 'F', 1);
@@ -465,7 +478,7 @@ INSERT INTO `vt_user` VALUES (48, '江安琪', 'Ono Sara', 'Ono Sara', 'ynPcXW7s
 INSERT INTO `vt_user` VALUES (49, '毛詠詩', 'Kinoshita Ryota', 'Kinoshita Ryota', 'ZSy6T76Oy0', '769-192-7285', 'mowingsze@outlook.com', 'vqECzLasLI', '2017-08-15 04:38:09', 'F', 1);
 INSERT INTO `vt_user` VALUES (50, '呂志遠', 'Au Hok Yau', 'Au Hok Yau', 'T8O0bAjYFc', '90-2528-3089', 'cylu7@icloud.com', 'dUBwrP9tt6', '2004-12-30 07:39:56', 'M', 1);
 INSERT INTO `vt_user` VALUES (51, '斎藤光莉', 'Yu Yunxi', 'Yu Yunxi', 'ZKdU9xTgJ1', '212-316-8110', 'saito70@mail.com', 'msjsbJK1wY', '2011-08-27 22:34:38', 'F', 1);
-INSERT INTO `vt_user` VALUES (54, 'user', NULL, NULL, '123412', '1234567890221', NULL, NULL, '2024-05-29 16:15:32', NULL, 1);
+INSERT INTO `vt_user` VALUES (54, 'user', NULL, NULL, '123412', '1234567890221', NULL, '88df5120eb0620fc075523df5feed279.png', '2024-05-31 09:44:06', 'F', 1);
 INSERT INTO `vt_user` VALUES (55, 'user1', NULL, NULL, '123456', '123465', NULL, NULL, '2024-05-29 16:16:16', NULL, 1);
 
 -- ----------------------------
@@ -492,21 +505,19 @@ CREATE TABLE `vt_video`  (
 -- ----------------------------
 -- Records of vt_video
 -- ----------------------------
-INSERT INTO `vt_video` VALUES (1, '妖精的秘密', 'You cannot save people, you can just love them. After comparing data, the window shows the                    ', '2010-02-12 08:11:55', 'ff9c5cb665ac9fd8a2c4d4aa14a90aa8.jpg', '冒险,动漫,轻松', NULL, 'OFFICIAL', NULL);
+INSERT INTO `vt_video` VALUES (1, '妖精的秘密', 'You cannot save people, you can just love them. After comparing data, the window shows the                    ', '2010-02-12 08:11:55', 'ff9c5cb665ac9fd8a2c4d4aa14a90aa8.jpg', '冒险,动漫,轻松', NULL, 'OFFICIAL', '2024-05-21');
 INSERT INTO `vt_video` VALUES (2, '橘子星球', 'It provides strong authentication and secure encrypted communications between two hosts, known                ', '2005-10-14 00:29:10', 'fe716b099bd4855114dff8e2b8a2d1c2.png', '冒险,动漫,治愈,热血', NULL, 'OFFICIAL', NULL);
-INSERT INTO `vt_video` VALUES (3, '天使之泪', 'With its well-designed Graphical User Interface(GUI), Navicat lets you quickly and easily create,             ', '2020-12-14 06:12:37', '06e3c391980fa0797cfe357fb69693cb.png', NULL, NULL, 'USER', NULL);
-INSERT INTO `vt_video` VALUES (4, '魔法少女萌音', 'Secure SHell (SSH) is a program to log in into another computer over a network, execute commands              ', '2015-07-15 00:30:20', 'klYXIfjsfd', NULL, NULL, 'OFFICIAL', NULL);
+INSERT INTO `vt_video` VALUES (3, '天使之泪', 'With its well-designed Graphical User Interface(GUI), Navicat lets you quickly and easily create,             ', '2020-12-14 06:12:37', 'a71ead3966efb4f8c47866316abba597.png', NULL, NULL, 'OFFICIAL', NULL);
+INSERT INTO `vt_video` VALUES (4, '魔法少女萌音', 'Secure SHell (SSH) is a program to log in into another computer over a network, execute commands              ', '2015-07-15 00:30:20', 'fac643130e0edf6b3c45c99dd3bcacf7.png', NULL, NULL, 'OFFICIAL', NULL);
 INSERT INTO `vt_video` VALUES (5, '银魂之歌', 'The past has no power over the present moment. It can also manage cloud databases such as Amazon              ', '2002-08-10 05:50:29', 'fDvIXSBldp', NULL, NULL, 'USER', NULL);
 INSERT INTO `vt_video` VALUES (6, '银河传说', 'All the Navicat Cloud objects are located under different projects. You can share the project                 ', '2009-09-11 09:55:03', 'jF6cNaUYno', NULL, NULL, 'USER', NULL);
-INSERT INTO `vt_video` VALUES (7, '彩虹岛屿', 'Remember that failure is an event, not a person. I destroy my enemies when I make them my friends.            ', '2008-12-03 21:30:38', 'KeNDYAN0IW', NULL, NULL, 'USER', NULL);
-INSERT INTO `vt_video` VALUES (8, '幻想花园', 'Import Wizard allows you to import data to tables/collections from CSV, TXT, XML, DBF and more.               ', '2007-03-15 18:45:22', 'bwcbz08btH', NULL, NULL, 'USER', NULL);
+INSERT INTO `vt_video` VALUES (7, '彩虹岛屿', 'Remember that failure is an event, not a person. I destroy my enemies when I make them my friends.            ', '2008-12-03 21:30:38', 'b6950c05f2cd427ddfb60b8de0243c4e.png', NULL, NULL, 'OFFICIAL', NULL);
+INSERT INTO `vt_video` VALUES (8, '幻想花园', 'Import Wizard allows you to import data to tables/collections from CSV, TXT, XML, DBF and more.               ', '2007-03-15 18:45:22', 'e7aaa6bc74b3ae54973813c53a177f49.png', NULL, NULL, 'OFFICIAL', NULL);
 INSERT INTO `vt_video` VALUES (9, '奇幻之旅', 'If opportunity doesn’t knock, build a door. What you get by achieving your goals is not as                  ', '2005-11-25 12:13:27', '8u7GStkyQt', NULL, NULL, 'USER', NULL);
 INSERT INTO `vt_video` VALUES (10, '课怕喵', 'Monitored servers include MySQL, MariaDB and SQL Server, and compatible with cloud databases                  ', '2003-09-21 22:32:13', 'Wb6uZpQ6PM', NULL, NULL, 'USER', NULL);
-INSERT INTO `vt_video` VALUES (12, '幻想花园', 'I destroy my enemies when I make them my friends. Navicat is a multi-connections Database Administration      ', '2015-10-01 05:30:48', 'W83qhjcbGq', NULL, NULL, 'USER', NULL);
 INSERT INTO `vt_video` VALUES (13, '天香斗牛', 'Navicat Monitor is a safe, simple and agentless remote server monitoring tool that is packed                  ', '2009-03-19 23:26:11', 'gWodbMRrn8', NULL, NULL, 'USER', NULL);
 INSERT INTO `vt_video` VALUES (14, '星际之心', 'In a Telnet session, all communications, including username and password, are transmitted in                  ', '2004-09-02 03:22:45', 'NzYtpXks3s', NULL, NULL, 'USER', NULL);
 INSERT INTO `vt_video` VALUES (15, '魔法学院', 'Navicat provides a wide range advanced features, such as compelling code editing capabilities,                ', '2020-11-15 18:14:38', 'c5e41696b550fa5cd4d4b2ca2d6fe68c.png', NULL, NULL, 'USER', NULL);
-INSERT INTO `vt_video` VALUES (16, '魔法少女萌音', 'In the Objects tab, you can use the List List, Detail Detail and ER Diagram ER Diagram buttons                ', '2018-07-10 15:38:50', 'zDEFRCRaQX', NULL, NULL, 'USER', NULL);
 INSERT INTO `vt_video` VALUES (17, '机械之心', 'Navicat Data Modeler is a powerful and cost-effective database design tool which helps you                    ', '2008-10-06 17:45:59', 'Cx1hn1cygJ', NULL, NULL, 'USER', NULL);
 INSERT INTO `vt_video` VALUES (18, '天使之梦', 'Navicat Cloud provides a cloud service for synchronizing connections, queries, model files                    ', '2002-03-20 20:08:44', 'ZaZEjfmSqE', NULL, NULL, 'USER', NULL);
 INSERT INTO `vt_video` VALUES (19, '琉璃的境界', 'Champions keep playing until they get it right. It collects process metrics such as CPU load,                 ', '2018-07-03 23:36:46', 'tRN0dTKVbM', NULL, NULL, 'USER', NULL);
@@ -515,7 +526,7 @@ INSERT INTO `vt_video` VALUES (21, '琉璃的境界', 'Optimism is the one quali
 INSERT INTO `vt_video` VALUES (22, '天使之泪', 'I may not have gone where I intended to go, but I think I have ended up where I needed to be.                 ', '2016-08-13 07:02:59', 'JX5YXoslXl', NULL, NULL, 'USER', NULL);
 INSERT INTO `vt_video` VALUES (23, '梦幻乐园', 'If opportunity doesn’t knock, build a door. What you get by achieving your goals is not as                  ', '2013-04-04 19:33:38', 'hKd9AnOXv7', NULL, NULL, 'USER', NULL);
 INSERT INTO `vt_video` VALUES (24, '星河航行', 'To successfully establish a new connection to local/remote server - no matter via SSL, SSH                    ', '2000-11-09 22:09:53', 'OW8eA9Q79q', NULL, NULL, 'USER', NULL);
-INSERT INTO `vt_video` VALUES (25, '航海王之歌', 'To successfully establish a new connection to local/remote server - no matter via SSL or SSH,                 ', '2021-03-29 15:30:44', '1f5336210c7d876e28bd9746b4ff15fb.jpg', NULL, NULL, 'USER', NULL);
+INSERT INTO `vt_video` VALUES (25, '航海王之歌', 'To successfully establish a new connection to local/remote server - no matter via SSL or SSH,                 ', '2021-03-29 15:30:44', 'ad12fed3a082947c463bc6cad4d9c425.png', NULL, NULL, 'OFFICIAL', NULL);
 INSERT INTO `vt_video` VALUES (26, '幻想乐园', 'You can select any connections, objects or projects, and then select the corresponding buttons                ', '2014-08-16 07:40:08', 'ILn2tXcrXn', NULL, NULL, 'USER', NULL);
 INSERT INTO `vt_video` VALUES (27, '星空漫步', 'Navicat 15 has added support for the system-wide dark mode. To open a query using an external                 ', '2015-03-30 01:39:51', 'kzsh27j3Q5', NULL, NULL, 'USER', NULL);
 INSERT INTO `vt_video` VALUES (28, '黑暗之光', 'A comfort zone is a beautiful place, but nothing ever grows there. Remember that failure is                   ', '2005-01-11 18:22:54', 'V5q5NxDzDo', NULL, NULL, 'USER', NULL);
@@ -523,16 +534,13 @@ INSERT INTO `vt_video` VALUES (29, '星之旅程', 'Navicat Cloud could not conn
 INSERT INTO `vt_video` VALUES (30, '银魂之歌', 'There is no way to happiness. Happiness is the way. A comfort zone is a beautiful place, but                  ', '2012-06-27 21:24:32', 'zMFXHJm7mw', '热血,动漫', '1', 'USER', NULL);
 INSERT INTO `vt_video` VALUES (31, '彩虹之桥', 'I may not have gone where I intended to go, but I think I have ended up where I needed to be.                 ', '2016-06-23 19:15:24', 'yue1dtsUzf', '热血,动漫,治愈', '2', 'USER', NULL);
 INSERT INTO `vt_video` VALUES (33, '机械之心', 'Navicat Monitor can be installed on any local computer or virtual machine and does not require                ', '2009-08-07 03:42:15', '1VZSo5GuNh', NULL, NULL, 'USER', NULL);
-INSERT INTO `vt_video` VALUES (34, '幻想花园', 'If your Internet Service Provider (ISP) does not provide direct access to its server, Secure                  ', '2001-07-03 04:11:01', 'mtJ2GGAidA', NULL, NULL, 'USER', NULL);
 INSERT INTO `vt_video` VALUES (35, '幻想乐园', 'The first step is as good as half over. I will greet this day with love in my heart.                          ', '2004-05-25 08:33:57', '5e5yjd5vNP', NULL, NULL, 'USER', NULL);
 INSERT INTO `vt_video` VALUES (36, '奇幻森林之歌', 'The past has no power over the present moment. Anyone who has ever made anything of importance                ', '2007-04-10 06:16:50', 'TojYzK8SuM', NULL, NULL, 'USER', NULL);
 INSERT INTO `vt_video` VALUES (37, '星空漫步', 'If you wait, all that happens is you get older. Genius is an infinite capacity for taking pains.              ', '2015-12-29 07:46:34', 'FHTwfaILCq', NULL, NULL, 'USER', NULL);
 INSERT INTO `vt_video` VALUES (38, '天香斗牛', 'If it scares you, it might be a good thing to try. Such sessions are also susceptible to session              ', '2016-10-24 08:18:31', 'uHyhVPZWhZ', NULL, NULL, 'USER', NULL);
 INSERT INTO `vt_video` VALUES (39, '境界的彼方', 'Navicat authorizes you to make connection to remote servers running on different platforms                    ', '2008-04-06 05:59:38', 'zTDijpQJ2C', NULL, NULL, 'USER', NULL);
-INSERT INTO `vt_video` VALUES (40, '彩虹岛屿', 'A man’s best friends are his ten fingers. Champions keep playing until they get it right.                   ', '2013-03-30 22:34:40', 'QkKqLRou10', NULL, NULL, 'USER', NULL);
 INSERT INTO `vt_video` VALUES (42, '星际之心', 'Monitored servers include MySQL, MariaDB and SQL Server, and compatible with cloud databases                  ', '2024-04-18 12:12:56', 'e220bb0b2c21631a47970ae4797aeb90.jpg', '热血,动漫,治愈', '2', 'USER', NULL);
 INSERT INTO `vt_video` VALUES (43, '原子能少女', 'I destroy my enemies when I make them my friends. What you get by achieving your goals is not                 ', '2010-09-27 17:24:27', '02An06j6yi', NULL, NULL, 'USER', NULL);
-INSERT INTO `vt_video` VALUES (44, '魔法少女萌音', 'I destroy my enemies when I make them my friends. The Navigation pane employs tree structure                  ', '2006-10-17 18:15:56', 'YptuDTdBJI', NULL, NULL, 'USER', NULL);
 INSERT INTO `vt_video` VALUES (45, '星之旅程', 'Navicat authorizes you to make connection to remote servers running on different platforms                    ', '2003-11-04 07:49:31', 'xRbRBYKyaS', NULL, NULL, 'USER', NULL);
 INSERT INTO `vt_video` VALUES (46, '神秘宝藏', 'A query is used to extract data from the database in a readable format according to the user\'s request.       ', '2016-08-16 09:25:12', 'L6ffNMzLGm', NULL, NULL, 'USER', NULL);
 INSERT INTO `vt_video` VALUES (47, '课怕喵', 'Such sessions are also susceptible to session hijacking, where a malicious user takes over                    ', '2020-05-31 19:24:02', '31db1d2fe932524b72957e13a838ae3a.png', NULL, NULL, 'USER', NULL);
@@ -571,19 +579,16 @@ INSERT INTO `vt_video_category` VALUES (20, 1);
 INSERT INTO `vt_video_category` VALUES (22, 1);
 INSERT INTO `vt_video_category` VALUES (27, 1);
 INSERT INTO `vt_video_category` VALUES (35, 1);
-INSERT INTO `vt_video_category` VALUES (40, 1);
 INSERT INTO `vt_video_category` VALUES (73, 1);
 INSERT INTO `vt_video_category` VALUES (77, 1);
 INSERT INTO `vt_video_category` VALUES (5, 2);
 INSERT INTO `vt_video_category` VALUES (18, 2);
 INSERT INTO `vt_video_category` VALUES (21, 2);
 INSERT INTO `vt_video_category` VALUES (33, 2);
-INSERT INTO `vt_video_category` VALUES (34, 2);
 INSERT INTO `vt_video_category` VALUES (46, 2);
 INSERT INTO `vt_video_category` VALUES (47, 2);
 INSERT INTO `vt_video_category` VALUES (48, 2);
 INSERT INTO `vt_video_category` VALUES (1, 3);
-INSERT INTO `vt_video_category` VALUES (12, 3);
 INSERT INTO `vt_video_category` VALUES (25, 3);
 INSERT INTO `vt_video_category` VALUES (28, 3);
 INSERT INTO `vt_video_category` VALUES (29, 3);
@@ -592,7 +597,6 @@ INSERT INTO `vt_video_category` VALUES (36, 3);
 INSERT INTO `vt_video_category` VALUES (45, 3);
 INSERT INTO `vt_video_category` VALUES (50, 3);
 INSERT INTO `vt_video_category` VALUES (9, 4);
-INSERT INTO `vt_video_category` VALUES (16, 4);
 INSERT INTO `vt_video_category` VALUES (23, 4);
 INSERT INTO `vt_video_category` VALUES (24, 4);
 INSERT INTO `vt_video_category` VALUES (31, 4);
@@ -605,7 +609,6 @@ INSERT INTO `vt_video_category` VALUES (38, 5);
 INSERT INTO `vt_video_category` VALUES (39, 5);
 INSERT INTO `vt_video_category` VALUES (42, 5);
 INSERT INTO `vt_video_category` VALUES (43, 5);
-INSERT INTO `vt_video_category` VALUES (44, 5);
 INSERT INTO `vt_video_category` VALUES (49, 5);
 
 -- ----------------------------
@@ -691,8 +694,6 @@ INSERT INTO `vt_video_update` VALUES (7, '2', 8, NULL);
 INSERT INTO `vt_video_update` VALUES (9, '1', 73, '2024-05-23 09:38:53');
 INSERT INTO `vt_video_update` VALUES (10, '2', 77, NULL);
 INSERT INTO `vt_video_update` VALUES (11, '2', 10, NULL);
-INSERT INTO `vt_video_update` VALUES (12, '2', 12, NULL);
-INSERT INTO `vt_video_update` VALUES (13, '2', 16, NULL);
 INSERT INTO `vt_video_update` VALUES (14, '2', 13, NULL);
 INSERT INTO `vt_video_update` VALUES (15, '2', 25, NULL);
 INSERT INTO `vt_video_update` VALUES (16, '2', 26, NULL);
