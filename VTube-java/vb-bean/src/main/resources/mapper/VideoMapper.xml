@@ -224,6 +224,25 @@
         </if>
     </select>
 
+    <select id="VideoManagementList" resultType="com.vtube.dto.VideoSummaryDTO">
+        SELECT
+            v.video_id AS videoId,
+            v.title,
+            v.image_path AS imagePath,
+            v.create_time AS createTime,
+            vd.views,
+            vd.likes
+        FROM
+            vt_video v
+                INNER JOIN
+            vt_video_data vd ON v.video_id = vd.video_id
+        WHERE
+            vd.user_id = #{userId}
+        <if test="title != null and title != ''">
+            AND v.title LIKE CONCAT('%', #{title}, '%')
+        </if>
+    </select>
+
 
     <!-- 添加视频及相关信息数据 -->
     <insert id="addVideoData" parameterType="com.vtube.vo.VideoVO">

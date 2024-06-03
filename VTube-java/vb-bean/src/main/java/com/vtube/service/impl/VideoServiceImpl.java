@@ -3,10 +3,14 @@ package com.vtube.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.vtube.domain.Video;
+import com.vtube.domain.VideoCategory;
 import com.vtube.domain.VideoEpisode;
 import com.vtube.mapper.VideoEpisodeMapper;
+import com.vtube.service.CategoryService;
+import com.vtube.service.VideoCategoryService;
 import com.vtube.service.VideoService;
 import com.vtube.mapper.VideoMapper;
+import com.vtube.vo.Param.VideoUpdateParams;
 import com.vtube.vo.PlayDetailsVO;
 import com.vtube.vo.VideoVO;
 import jakarta.annotation.Resource;
@@ -29,6 +33,9 @@ public class VideoServiceImpl extends ServiceImpl<VideoMapper, Video>
 
     @Resource
     private VideoEpisodeMapper episodeMapper;
+
+    @Resource
+    private VideoCategoryService categoryService;
 
 
     @Override
@@ -111,6 +118,44 @@ public class VideoServiceImpl extends ServiceImpl<VideoMapper, Video>
         wrapper.orderByAsc("episode_number");
         List<VideoEpisode> videoEpisodes = episodeMapper.selectList(wrapper);
         return videoEpisodes;
+    }
+
+    @Transactional
+    public void addVideo(VideoUpdateParams video) {
+        // 插入视频记录
+        videoMapper.insert(video.getVideo());
+
+        // 插入视频分类记录
+        VideoCategory videoCategory = new VideoCategory();
+        videoCategory.setVideoId(video.getVideo().getVideoId());
+        videoCategory.setCategoryId(video.getCategoryId());
+        categoryService.save(videoCategory);
+
+        // 插入选集数据
+        for (VideoEpisode episode : video.getEpisodeList()) {
+            episode.setVideoId(video.getVideo().getVideoId()); // 设置视频ID
+            episodeMapper.insert(episode);
+        }
+    }
+    @Transactional
+    public void updateVideo(VideoUpdateParams video) {
+        // 更新视频记录
+        videoMapper.updateById(video.getVideo());
+
+        // 更新视频分类记录
+        VideoCategory videoCategory = new VideoCategory();
+        videoCategory.setVideoId(video.getVideo().getVideoId());
+        videoCategory.setCategoryId(video.getCategoryId());
+        categoryService.updateById(videoCategory);
+
+        // 删除旧的选集数据
+        episodeMapper.delete(new QueryWrapper<VideoEpisode>().eq("video_id", video.getVideo().getVideoId()));
+
+        // 插入新的选集数据
+        for (VideoEpisode episode : video.getEpisodeList()) {
+            episode.setVideoId(video.getVideo().getVideoId()); // 设置视频ID
+            episodeMapper.insert(episode);
+        }
     }
 }
 

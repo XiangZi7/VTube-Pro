@@ -25,16 +25,6 @@ export const data = [
         router: "/forum/bookmarks"
     },
     {
-        title: "个人信息",
-        icon: "material-symbols:account-circle-full",
-        router: "/forum/profile"
-    },
-    {
-        title: "设置",
-        icon: "ci:settings-future",
-        router: "/forum/setting"
-    },
-    {
         title: "更多",
         icon: "streamline:interface-add-1-expand-cross-buttons-button-more-remove-plus-add",
         router: "/forum/more"

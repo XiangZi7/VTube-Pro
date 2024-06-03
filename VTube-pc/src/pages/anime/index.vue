@@ -1,140 +1,184 @@
+<script setup lang="ts">
+import { Icon } from '@iconify/vue'
+import { indexState, weeklyAmime } from '@/interface/pages/index'
+
+const fileUrl = import.meta.env.VITE_API_MINIO
+const router = useRouter()
+const state = reactive<indexState>({
+  weeklyAnime: [],
+  weekTabsIndex: 0,
+  top10: [],
+  recommended: [],
+})
+const { weeklyAnime, weekTabsIndex, top10, recommended } = toRefs(state)
+
+const weekDays = [
+  '星期一',
+  '星期二',
+  '星期三',
+  '星期四',
+  '星期五',
+  '星期六',
+  '星期日',
+]
+
+onMounted(() => {
+  httpGet<weeklyAmime[][]>('/anime/weekly-anime').then(({ data }) => {
+    state.weeklyAnime = data
+  })
+  httpGet<indexState>('/anime/hot').then(({ data }) => {
+    state.recommended = data.recommended
+    state.top10 = data.top10
+  })
+})
+</script>
+
 <template>
-  <div class="flex flex-col min-h-[100dvh]">
-    <main class="flex flex-col items-center justify-center">
-      <section
-        class="w-full flex items-center justify-center py-12 md:py-24 lg:py-32 xl:py-48"
-      >
-        <div class="container px-4 md:px-6">
-          <div class="flex flex-col items-center space-y-4 text-center">
-            <div class="space-y-2">
-              <h1
-                class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none"
-              >
-                Elevate Your Broadcast
-              </h1>
-              <p
-                class="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400"
-              >
-                Discover a powerful platform for live streaming, on-demand
-                content, and seamless multi-device experiences.
-              </p>
-            </div>
-            <div class="space-x-4">
-              <a
-                class="inline-flex h-9 items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
-                href="#"
-              >
-                Get Started
-              </a>
-            </div>
+  <section class="bg-gradient text-white py-12 md:py-16 lg:py-20">
+    <div class="container mx-auto px-4 md:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="flex flex-col justify-center">
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+            境界的彼方《约束之绊》
+          </h1>
+          <p class="text-gray-300 mb-6 text-sm">
+            电视动画《境界的彼方》（境界の彼方）改编自由鸟居なごむ创作、鸭居知世担任插画的同名轻小说。故事描述了有特殊能力的异界士少女粟山未来与稀有存在的半妖神原秋人相遇以后发生的一系列不平凡的故事。
+          </p>
+          <div class="flex space-x-4">
+            <el-button type="primary"> 观看 </el-button>
           </div>
         </div>
-      </section>
-      <section
-        class="w-full flex items-center justify-center py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800"
-      >
-        <div class="container px-4 md:px-6">
-          <div
-            class="grid items-center gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px]"
-          >
-            <img
-              src="https://generated.vusercontent.net/placeholder.svg"
-              alt="Live Streaming"
-              class="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
-              width="550"
-              height="310"
-            />
-            <div class="flex flex-col justify-center space-y-4">
-              <div class="space-y-2">
-                <div
-                  class="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800"
-                >
-                  Live Streaming
-                </div>
-                <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  Captivate Your Audience in Real-Time
-                </h2>
-                <p
-                  class="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400"
-                >
-                  Engage your viewers with high-quality, low-latency live
-                  streams that work seamlessly across devices.
-                </p>
+        <div class="relative">
+          <video
+            controls
+            alt="Featured Video"
+            class="rounded-lg object-cover aspect-video"
+            height="450"
+            src="@/assets/境界的彼方《约束之绊》官方完整PV【 1080p】.mp4"
+            width="800"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-12 md:py-16 lg:py-20">
+    <div
+      class="container mx-auto px-4 md:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-5 gap-8"
+    >
+      <div class="w-full md:col-span-4">
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
+          热门推荐
+        </h2>
+        <el-scrollbar>
+          <div class="flex space-x-6">
+            <div
+              class="rounded-lg shadow-md overflow-hidden flex-none w-52 cursor-pointer"
+              v-for="item in recommended"
+              :key="item.videoId"
+              @click="router.push(`/play/${item.videoId}`)"
+            >
+              <img
+                :src="fileUrl + item.imagePath"
+                :alt="item.title"
+                class="w-full h-auto max-h-[388px]"
+              />
+              <div class="p-4">
+                <h3 class="text-sm font-medium mb-2 text-center line-clamp-2">
+                  {{ item.title }}
+                </h3>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      <section
-        class="w-full py-12 flex items-center justify-center md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800"
-      >
-        <div class="container px-4 md:px-6">
+        </el-scrollbar>
+      </div>
+      <div class="w-full md:col-span-1">
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">排行榜</h2>
+        <el-scrollbar height="400px">
           <div
-            class="grid items-center gap-6 lg:grid-cols-[500px_1fr] lg:gap-12 xl:grid-cols-[550px_1fr]"
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-1 gap-6"
           >
-            <img
-              src="https://generated.vusercontent.net/placeholder.svg"
-              alt="On-Demand Content"
-              class="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
-              width="550"
-              height="310"
-            />
-            <div class="flex flex-col justify-center space-y-4">
-              <div class="space-y-2">
-                <div
-                  class="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800"
-                >
-                  On-Demand
+            <div
+              class="overflow-hidden flex items-center gap-2 cursor-pointer"
+              v-for="(item, index) in top10"
+              :key="item.videoId"
+              @click="router.push(`/play/${item.videoId}`)"
+            >
+              {{ index + 1 }}
+              <img
+                :alt="item.title"
+                class="w-12 h-12 object-cover rounded"
+                :src="fileUrl + item.imagePath"
+                style="aspect-ratio: 48 / 48; object-fit: cover"
+              />
+              <div class="flex flex-col">
+                <div class="text-sm line-clamp-2">{{ item.title }}</div>
+                <div class="text-sm flex items-center space-x-2 text-gray-500">
+                  <Icon icon="ph:eye-bold" />
+                  <span>{{ item.views }}</span>
                 </div>
-                <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  Access Your Favorite Content Anytime
-                </h2>
-                <p
-                  class="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400"
-                >
-                  Explore our library of on-demand videos and watch your
-                  preferred content at your convenience.
-                </p>
               </div>
             </div>
           </div>
+        </el-scrollbar>
+      </div>
+    </div>
+  </section>
+  <section class="py-12 md:py-16 lg:py-20">
+    <div class="container mx-auto px-4 md:px-6 lg:px-8">
+      <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">周番表</h2>
+      <div class="w-full">
+        <div
+          class="h-9 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground flex border-b border-gray-200 dark:border-gray-800"
+        >
+          <button
+            v-for="(item, index) in weekDays"
+            :key="index"
+            @click="weekTabsIndex = index"
+            class="inline-flex items-center justify-center whitespace-nowrap rounded-md mx-1 px-3 py-1 text-sm font-medium ring-offset-background transition-all disabled:pointer-events-none disabled:opacity-50"
+            :class="{
+              ' bg-white dark:bg-gray-500/50 text-foreground bg-background text-foreground shadow':
+                weekTabsIndex == index,
+              'tab-transition-enter-active': weekTabsIndex > index,
+              'tab-transition-leave-active': weekTabsIndex < index,
+              'tab-transition-enter': weekTabsIndex > index,
+              'tab-transition-leave-to': weekTabsIndex < index,
+            }"
+          >
+            {{ item }}
+          </button>
         </div>
-      </section>
-      <section
-        class="w-full py-12 flex items-center justify-center md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800"
-      >
-        <div class="container px-4 md:px-6">
+        <div
+          class="mt-2 grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 py-6"
+          style="animation-duration: 0s"
+        >
           <div
-            class="grid items-center gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px]"
+            class="rounded-lg shadow-md overflow-hidden cursor-pointer"
+            v-for="(item, index) in weeklyAnime[weekTabsIndex]"
+            :key="index"
+            @click="router.push(`/play/${item.videoId}`)"
           >
             <img
-              src="https://generated.vusercontent.net/placeholder.svg"
-              alt="Multi-Device Support"
-              class="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
-              width="550"
-              height="310"
+              :src="fileUrl + item.imagePath"
+              alt="Anime Thumbnail"
+              class="w-full h-auto max-h-[388px]"
             />
-            <div class="flex flex-col justify-center space-y-4">
-              <div class="space-y-2">
-                <div
-                  class="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800"
-                >
-                  Multi-Device
-                </div>
-                <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  Seamless Viewing Across Devices
-                </h2>
-                <p
-                  class="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400"
-                >
-                  Enjoy your favorite content on any device, from your TV to
-                  your smartphone, with a consistent and intuitive experience.
-                </p>
-              </div>
+            <div class="p-4">
+              <h3 class="text-sm text-center font-medium mb-2 line-clamp-2">
+                {{ item.title }}
+              </h3>
             </div>
           </div>
         </div>
-      </section>
-    </main>
-  </div>
+      </div>
+    </div>
+  </section>
 </template>
+<style lang="scss" scoped>
+.bg-gradient {
+  background: linear-gradient(to right, #1f2937, rgba(31, 41, 55, 0.7)),
+    url('@/assets/bg2.png');
+  background-size: cover; /* 确保背景图片按比例缩放，并能完整显示 */
+  background-repeat: no-repeat; /* 禁止背景图片重复 */
+  background-position: center; /* 将背景图片放置在容器中央 */
+}
+</style>

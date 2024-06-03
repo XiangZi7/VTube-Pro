@@ -55,7 +55,7 @@ function handleSubmit(event, tpye) {
         :class="{ 'right-panel-active': isCurrent !== 'login' }"
       >
         <div class="form-container sign-up-container">
-          <form @submit="handleSubmit($event, 'sign-up')">
+          <form @submit="handleSubmit($event, 'sign-up')" class="z-99999">
             <h1 class="text-black">注册账号</h1>
             <input
               v-model="loginForm.userName"
@@ -181,6 +181,7 @@ input {
   top: 0;
   height: 100%;
   transition: all 0.6s ease-in-out;
+  z-index: 999999999;
 }
 
 .sign-in-container {

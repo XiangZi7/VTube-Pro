@@ -25,8 +25,5 @@ onMounted(() => {
   <el-select-v2
     v-model="VModel"
     :options="dictData"
-    placeholder="Please select"
-    size="large"
-    style="width: 240px"
   />
 </template>

@@ -9,11 +9,12 @@
             <result property="parentId" column="parent_id" jdbcType="INTEGER"/>
             <result property="name" column="name" jdbcType="VARCHAR"/>
             <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="description" column="description" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
         category_id,parent_id,name,
-        create_time
+        create_time,description
     </sql>
     <select id="categoryDict" resultType="com.vtube.vo.dictVO">
         SELECT category_id as value,name as label FROM vt_category

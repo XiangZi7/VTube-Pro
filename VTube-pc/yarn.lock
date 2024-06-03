@@ -2997,6 +2997,11 @@ slash@^3.0.0:
   resolved "https://registry.npmmirror.com/slash/-/slash-3.0.0.tgz"
   integrity sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==
 
+sortablejs@1.14.0:
+  version "1.14.0"
+  resolved "https://registry.npmmirror.com/sortablejs/-/sortablejs-1.14.0.tgz#6d2e17ccbdb25f464734df621d4f35d4ab35b3d8"
+  integrity sha512-pBXvQCs5/33fdN1/39pPL0NZF20LeRbLQ5jtnheIPN9JQAaufGjKdWduZn4U7wCtVuzKhmRkI0DFYHYRbB2H1w==
+
 "source-map-js@>=0.6.2 <2.0.0", source-map-js@^1.2.0:
   version "1.2.0"
   resolved "https://registry.npmmirror.com/source-map-js/-/source-map-js-1.2.0.tgz"
@@ -3444,6 +3449,11 @@ vite@^5.2.0:
   optionalDependencies:
     fsevents "~2.3.3"
 
+vue-cropper@1.1.3:
+  version "1.1.3"
+  resolved "https://registry.npmmirror.com/vue-cropper/-/vue-cropper-1.1.3.tgz#0664fc115138ee60afcbb4f72419f116ef68c19b"
+  integrity sha512-U1vBk/9M9Chp6iDWaDhC32SX7c5ndJrIzYgXndJH7wjejdriE0bzJsh6waQz9CRM94savFAw8FK1Q3r+I71Xgw==
+
 vue-demi@*, vue-demi@>=0.14.5, vue-demi@>=0.14.7:
   version "0.14.7"
   resolved "https://registry.npmmirror.com/vue-demi/-/vue-demi-0.14.7.tgz"
@@ -3516,6 +3526,13 @@ vue@^3.4.21:
     "@vue/runtime-dom" "3.4.25"
     "@vue/server-renderer" "3.4.25"
     "@vue/shared" "3.4.25"
+
+vuedraggable@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.npmmirror.com/vuedraggable/-/vuedraggable-4.1.0.tgz#edece68adb8a4d9e06accff9dfc9040e66852270"
+  integrity sha512-FU5HCWBmsf20GpP3eudURW3WdWTKIbEIQxh9/8GE806hydR9qZqRRxRE3RjqX7PkuLuMQG/A7n3cfj9rCEchww==
+  dependencies:
+    sortablejs "1.14.0"
 
 webpack-sources@^3.2.3:
   version "3.2.3"

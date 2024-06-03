@@ -20,4 +20,6 @@ export interface PlayState {
     details: VideoDetails;
     episodeList: Episode[];
     playIndex: number;
+    comText: string;
+    comments: []
 }

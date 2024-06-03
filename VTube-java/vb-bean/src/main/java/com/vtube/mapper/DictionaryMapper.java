@@ -12,7 +12,7 @@ import java.util.List;
 /**
 * @author Administrator
 * @description 针对表【vt_dictionary(字典表)】的数据库操作Mapper
-* @createDate 2024-05-22 10:24:24
+* @createDate 2024-06-03 14:09:36
 * @Entity com.vtube.domain.Dictionary
 */
 public interface DictionaryMapper extends BaseMapper<Dictionary> {
@@ -21,7 +21,6 @@ public interface DictionaryMapper extends BaseMapper<Dictionary> {
     List<dictVO> selectDictUserData();
 
     IPage<Dictionary> DictList(IPage<Dictionary> page, @Param("dict") DictParam dict);
-
 
 }
 

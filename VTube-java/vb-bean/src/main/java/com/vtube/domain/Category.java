@@ -39,6 +39,12 @@ public class Category implements Serializable {
     @TableField(value = "create_time")
     private LocalDateTime createTime;
 
+    /**
+     * 分类描述
+     */
+    @TableField(value = "description")
+    private String description;
+
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
 
@@ -57,7 +63,8 @@ public class Category implements Serializable {
         return (this.getCategoryId() == null ? other.getCategoryId() == null : this.getCategoryId().equals(other.getCategoryId()))
             && (this.getParentId() == null ? other.getParentId() == null : this.getParentId().equals(other.getParentId()))
             && (this.getName() == null ? other.getName() == null : this.getName().equals(other.getName()))
-            && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()));
+            && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()))
+            && (this.getDescription() == null ? other.getDescription() == null : this.getDescription().equals(other.getDescription()));
     }
 
     @Override
@@ -68,6 +75,7 @@ public class Category implements Serializable {
         result = prime * result + ((getParentId() == null) ? 0 : getParentId().hashCode());
         result = prime * result + ((getName() == null) ? 0 : getName().hashCode());
         result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
+        result = prime * result + ((getDescription() == null) ? 0 : getDescription().hashCode());
         return result;
     }
 
@@ -81,6 +89,7 @@ public class Category implements Serializable {
         sb.append(", parentId=").append(parentId);
         sb.append(", name=").append(name);
         sb.append(", createTime=").append(createTime);
+        sb.append(", description=").append(description);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

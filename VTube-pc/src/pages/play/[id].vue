@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Icon } from '@iconify/vue'
 import { PlayState, VideoDetails, Episode } from '@/interface/pages/play'
+import { Pagination } from '@/interface/utils/http'
 const fileUrl = import.meta.env.VITE_API_MINIO
 
 const route = useRoute()
@@ -27,12 +28,17 @@ onMounted(() => {
       state.episodeList = data
     }
   )
-  httpGet('/comments', { videoId: route.params.id, targetType: 0 }).then(
-    ({ data }) => {
-      console.log('🚀 => res:', data)
-    }
-  )
+  httpGet<Pagination>('/comments', {
+    videoId: route.params.id,
+    targetType: 0,
+  }).then(({ data }) => {
+    state.comments = data.records
+  })
 })
+
+function timeAgos(date: string) {
+  return timeAgo(date)
+}
 </script>
 <template>
   <div
@@ -108,78 +114,33 @@ onMounted(() => {
                 >AC</span
               >
             </span>
-            <el-input
-              v-model="comText"
-              type="textarea"
-              :rows="2"
-              placeholder="你也想来一发吗？"
-              clearable
-            />
-          </div>
-          <div class="text-sm flex items-start gap-4">
-            <span
-              class="relative flex shrink-0 overflow-hidden rounded-full w-10 h-10 border"
-            >
-              <span
-                class="flex h-full w-full items-center justify-center rounded-full bg-muted"
-                >AC</span
-              >
-            </span>
-            <div class="grid gap-1.5">
-              <div class="flex items-center gap-2">
-                <div class="font-semibold">@iamwillpursell</div>
-                <div class="text-gray-500 text-xs dark:text-gray-400">
-                  5 months ago
-                </div>
-              </div>
-              <div>
-                I really love the ecosystem Vercel is creating. The way each
-                component can be added and modified with ease really makes these
-                tools attractive.
-              </div>
+            <div class="flex items-center flex-1 gap-1">
+              <el-input
+                class="w-auto"
+                v-model="comText"
+                type="textarea"
+                :rows="2"
+                placeholder="你也想来一发吗？"
+                clearable
+              />
+              <el-button type="primary">评论</el-button>
             </div>
           </div>
-          <div class="text-sm flex items-start gap-4">
-            <span
-              class="relative flex shrink-0 overflow-hidden rounded-full w-10 h-10 border"
-            >
-              <span
-                class="flex h-full w-full items-center justify-center rounded-full bg-muted"
-                >AC</span
-              >
-            </span>
+          <div
+            class="text-sm flex items-start gap-4"
+            v-for="(item, index) in comments"
+            :key="index"
+          >
+            <el-avatar :src="fileUrl + item.avatarPath" />
             <div class="grid gap-1.5">
               <div class="flex items-center gap-2">
-                <div class="font-semibold">@HackSoft</div>
+                <div class="font-semibold">{{ item.nickName }}</div>
                 <div class="text-gray-500 text-xs dark:text-gray-400">
-                  2 months ago
+                  {{ timeAgos(item.createTime) }}
                 </div>
               </div>
               <div>
-                We are more than excited to leverage all the new stuff, building
-                better products for our clients ✨
-              </div>
-            </div>
-          </div>
-          <div class="text-sm flex items-start gap-4">
-            <span
-              class="relative flex shrink-0 overflow-hidden rounded-full w-10 h-10 border"
-            >
-              <span
-                class="flex h-full w-full items-center justify-center rounded-full bg-muted"
-                >AC</span
-              >
-            </span>
-            <div class="grid gap-1.5">
-              <div class="flex items-center gap-2">
-                <div class="font-semibold">@greed7513</div>
-                <div class="text-gray-500 text-xs dark:text-gray-400">
-                  6 days ago
-                </div>
-              </div>
-              <div>
-                does anyone know which monospace are they using when showing
-                code?
+                {{ item.content }}
               </div>
             </div>
           </div>

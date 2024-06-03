@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import MingcuteSearchLine from '~icons/mingcute/search-line'
 import { Icon } from '@iconify/vue'
-import { data } from './data.ts'
+import { data, UploadData } from './data.ts'
 import LoginDialog from './login-dialog.vue'
 const fileUrl = import.meta.env.VITE_API_MINIO
 
@@ -8,6 +9,7 @@ const isLogin = ref(false)
 const userStore = useUserStore()
 const { userInfo } = storeToRefs(userStore)
 
+const searchKeyWord = ref('')
 const router = useRouter()
 
 const toLogin = () => {
@@ -48,6 +50,34 @@ function logout() {
         </router-link>
       </nav>
       <div class="flex items-center space-x-4">
+        <el-input
+          :prefix-icon="MingcuteSearchLine"
+          v-model="searchKeyWord"
+          placeholder="搜索视频、用户"
+          clearable
+        />
+        <el-dropdown>
+          <icon-uil:upload class="text-xl cursor-pointer text-white" />
+          <template #dropdown>
+            <el-dropdown-menu>
+              <el-dropdown-item>
+                <div class="space-x-4 flex">
+                  <div
+                    class="flex gap-1 items-center py-1 px-2 rounded-lg hover:bg-gray-500/50"
+                    v-for="item in UploadData"
+                    :key="item.router"
+                  >
+                    <component :is="Icon" :icon="item.icon" />
+                    {{ item.title }}
+                  </div>
+                </div>
+              </el-dropdown-item>
+            </el-dropdown-menu>
+          </template>
+        </el-dropdown>
+        <icon-material-symbols:notifications-active-outline
+          class="text-3xl cursor-pointer"
+        />
         <div v-if="userInfo && userInfo.token">
           <el-dropdown>
             <el-avatar :src="fileUrl + userInfo.avatarPath" />
@@ -56,7 +86,7 @@ function logout() {
                 <el-dropdown-item>
                   <div
                     class="flex items-center gap-1"
-                    @click="router.push('/forum/profile')"
+                    @click="router.push('/user')"
                   >
                     <Icon
                       icon="material-symbols-light:account-circle"
@@ -68,7 +98,7 @@ function logout() {
                 <el-dropdown-item>
                   <div
                     class="flex items-center gap-1"
-                    @click="router.push('/forum/setting')"
+                    @click="router.push('/user/setting')"
                   >
                     <Icon icon="solar:settings-outline" class="text-xl" />
                     设置

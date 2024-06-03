@@ -1,9 +1,13 @@
 <script setup lang="ts">
 import { Icon } from '@iconify/vue'
+import { password } from '@/interface/pages/forum'
 const rules = {}
 const userStore = useUserStore()
 const form = ref(userStore.userInfo)
-const PassWord = ref({})
+const PassWord = ref<password>({
+  oldPassWord: '',
+  newPassWord: '',
+})
 
 function save() {
   httpPost('/user/edit', form.value).then(({ data, code }) => {
@@ -16,14 +20,15 @@ function save() {
 function changePassWord() {
   httpPost('/user/changePwd', PassWord.value).then(
     ({ code, data, message }) => {
-      console.log('🚀 => data:', data)
-      messagePro(code, data, message)
+      messagePro(code, data as string, message)
     }
   )
 }
 </script>
 <template>
-  <main class="flex flex-1 h-[calc(100%-64px)] flex-col gap-4 p-4 md:gap-8 md:p-6">
+  <main
+    class="flex flex-1 h-[calc(100%-64px)] flex-col gap-4 p-4 md:gap-8 md:p-6"
+  >
     <div
       class="block w-full h-full flex-1 box-border overflow-x-hidden duration-300 ease-in-out dark:text-neutral-200"
     >

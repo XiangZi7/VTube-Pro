@@ -52,7 +52,7 @@ function submit() {
 defineExpose({ dialogDisplay, openDialog })
 </script>
 <template>
-  <el-dialog class="!rounded-lg" v-model="dialogDisplay" @close="">
+  <el-dialog class="!rounded-lg" v-model="dialogDisplay">
     <template #header>
       {{ acceptParam?.title }}
     </template>

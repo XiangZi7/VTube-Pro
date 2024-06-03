@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.vtube.domain.VideoEpisode;
 import com.vtube.dto.ProjectorDTO;
 import com.vtube.dto.VideoDTO;
+import com.vtube.dto.VideoSummaryDTO;
 import com.vtube.vo.Param.VideoParam;
 import com.vtube.vo.PlayDetailsVO;
 import com.vtube.vo.VideoVO;
@@ -36,6 +37,7 @@ public interface VideoMapper extends BaseMapper<Video> {
 
     // 获取周番更新表
     IPage<WeeklyAnimeUpdateVO> weekList(@Param("video") WeeklyAnimeUpdateVO video, IPage<Video> page);
+
     // 查出周番更新表没有的动漫
     IPage<VideoVO> VideoByWeekIsNullList(IPage<Video> page, @Param("video") VideoParam video);
 
@@ -47,6 +49,10 @@ public interface VideoMapper extends BaseMapper<Video> {
 
     // PC番组计划
     IPage<ProjectorDTO> ProjectorList(IPage<Video> page, @Param("video") ProjectorDTO video);
+
+    // 根据用户ID查询视频信息
+    IPage<VideoSummaryDTO> VideoManagementList(IPage<VideoSummaryDTO> page, @Param("userId") Integer userId, @Param("title") String title);
+
 
 }
 
