@@ -5,6 +5,7 @@ import com.vtube.domain.Video;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.vtube.domain.VideoEpisode;
 import com.vtube.dto.ProjectorDTO;
+import com.vtube.dto.UpLoadVideoDTO;
 import com.vtube.dto.VideoDTO;
 import com.vtube.dto.VideoSummaryDTO;
 import com.vtube.vo.Param.VideoParam;
@@ -52,8 +53,8 @@ public interface VideoMapper extends BaseMapper<Video> {
 
     // 根据用户ID查询视频信息
     IPage<VideoSummaryDTO> VideoManagementList(IPage<VideoSummaryDTO> page, @Param("userId") Integer userId, @Param("title") String title);
-
-
+    // 根据用户ID和视频ID查询视频信息
+    UpLoadVideoDTO selectVideosByUserAndVideoId(@Param("userId") Integer userId, @Param("videoId") Integer videoId);
 }
 
 

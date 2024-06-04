@@ -1,13 +1,19 @@
 package com.vtube.service.impl;
 
+import cn.dev33.satoken.stp.StpUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.vtube.domain.Video;
 import com.vtube.domain.VideoCategory;
+import com.vtube.domain.VideoData;
 import com.vtube.domain.VideoEpisode;
+import com.vtube.dto.UpLoadVideoDTO;
+import com.vtube.dto.UserLoginDTO;
 import com.vtube.mapper.VideoEpisodeMapper;
+import com.vtube.model.ApiResult;
 import com.vtube.service.CategoryService;
 import com.vtube.service.VideoCategoryService;
+import com.vtube.service.VideoDataService;
 import com.vtube.service.VideoService;
 import com.vtube.mapper.VideoMapper;
 import com.vtube.vo.Param.VideoUpdateParams;
@@ -17,6 +23,7 @@ import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -36,6 +43,9 @@ public class VideoServiceImpl extends ServiceImpl<VideoMapper, Video>
 
     @Resource
     private VideoCategoryService categoryService;
+
+    @Resource
+    private VideoDataService videoDataService;
 
 
     @Override
@@ -120,9 +130,28 @@ public class VideoServiceImpl extends ServiceImpl<VideoMapper, Video>
         return videoEpisodes;
     }
 
+    @Override
+    public ApiResult queryByVideoId(Integer videoId) {
+        UserLoginDTO user = (UserLoginDTO) StpUtil.getSession().get("user");
+//       // 获取稿件的基础信息
+        UpLoadVideoDTO upLoadVideoDTO = videoMapper.selectVideosByUserAndVideoId(user.getUserId(), videoId);
+        // 获取稿件的视频信息
+        QueryWrapper<VideoEpisode> wrapper = new QueryWrapper<>();
+        wrapper.eq("video_Id", videoId);
+        List<VideoEpisode> episodes = episodeMapper.selectList(wrapper);
+        // 封装数据返回给前端
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("video", upLoadVideoDTO);
+        map.put("episodes", episodes);
+        return ApiResult.ok(map);
+    }
+
     @Transactional
     public void addVideo(VideoUpdateParams video) {
+        UserLoginDTO user = (UserLoginDTO) StpUtil.getSession().get("user");
         // 插入视频记录
+        // 初始化视频状态是审核状态
+        video.getVideo().setReviewStatus("1");
         videoMapper.insert(video.getVideo());
 
         // 插入视频分类记录
@@ -130,6 +159,11 @@ public class VideoServiceImpl extends ServiceImpl<VideoMapper, Video>
         videoCategory.setVideoId(video.getVideo().getVideoId());
         videoCategory.setCategoryId(video.getCategoryId());
         categoryService.save(videoCategory);
+        // 插入视频数据记录
+        VideoData videoData = new VideoData();
+        videoData.setVideoId(video.getVideo().getVideoId());
+        videoData.setUserId(user.getUserId());
+        videoDataService.save(videoData);
 
         // 插入选集数据
         for (VideoEpisode episode : video.getEpisodeList()) {
@@ -137,6 +171,7 @@ public class VideoServiceImpl extends ServiceImpl<VideoMapper, Video>
             episodeMapper.insert(episode);
         }
     }
+
     @Transactional
     public void updateVideo(VideoUpdateParams video) {
         // 更新视频记录

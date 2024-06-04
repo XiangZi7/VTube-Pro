@@ -59,9 +59,9 @@ public class UserUpLoadController {
         return ApiResult.ok(videoService.updateById(video));
     }
     @PostMapping("/queryByVideoId")
-    @Operation(summary = "根据Id查找稿件", description = "根据Id查找稿件")
+    @Operation(summary = "根据视频Id查找稿件", description = "根据视频Id查找稿件")
     ApiResult queryByVideoId(@RequestBody JSONObject jsonObject) {
         String videoId = jsonObject.getStr("videoId");
-        return ApiResult.ok(videoService.getById(videoId));
+        return videoService.queryByVideoId(Integer.valueOf(videoId));
     }
 }

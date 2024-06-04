@@ -63,9 +63,10 @@ function logout() {
               <el-dropdown-item>
                 <div class="space-x-4 flex">
                   <div
-                    class="flex gap-1 items-center py-1 px-2 rounded-lg hover:bg-gray-500/50"
+                    class="flex gap-1 items-center py-1 px-2 rounded-lg"
                     v-for="item in UploadData"
                     :key="item.router"
+                    @click="router.push(item.router)"
                   >
                     <component :is="Icon" :icon="item.icon" />
                     {{ item.title }}

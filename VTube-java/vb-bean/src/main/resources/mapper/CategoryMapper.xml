@@ -17,6 +17,6 @@
         create_time,description
     </sql>
     <select id="categoryDict" resultType="com.vtube.vo.dictVO">
-        SELECT category_id as value,name as label FROM vt_category
+        SELECT category_id as value,name as label,parent_id FROM vt_category
     </select>
 </mapper>

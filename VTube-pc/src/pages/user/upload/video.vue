@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import type { FormInstance } from 'element-plus'
 const route = useRoute()
+const router = useRouter()
 const ruleFormRef = ref<FormInstance>()
 const model = ref({})
 const episodeList = ref([])
+// 表格规则
 const rules = {
   imagePath: [
     {
@@ -48,34 +50,57 @@ const rules = {
     },
   ],
 }
-
+// tagsList
+const tagsList = ref([])
+// 分类数据
+const categoryList = ref([])
 onMounted(() => {
-  console.log('🚀 => route:', route.query.type == 'edit')
   if (route.query.type == 'edit') {
     httpPost('/manuscript/queryByVideoId', {
       videoId: route.query.videoId,
     }).then(({ data }) => {
-      // console.log(res)
-      model.value = data
+      model.value = data.video
+      episodeList.value = data.episodes
+      tagsList.value = data.video.tags.split(',') || ''
     })
   }
+  httpGet('/dict/category').then(({ data }) => {
+    categoryList.value = buildSelectMenu(data)
+  })
 })
 
 async function addVideo() {
   await ruleFormRef.value?.validate((valid) => {
     if (!valid) return
 
+    // 封装数据
     const videoPayload = {
       video: model.value,
       categoryId: model.value.categoryId,
       episodeList: episodeList.value,
     }
 
-    httpPost('/manuscript/addVideo', videoPayload).then(({ code, data }) => {
+    // 发送接口
+    httpPost(
+      `/manuscript/${route.query.type == 'edit' ? 'editVideo' : 'addVideo'}`,
+      videoPayload
+    ).then(({ code, data }) => {
       if (code !== 200) return
       messagePro(code, data as string)
+      router.push('/user/upload-manager/article')
     })
   })
+}
+
+const tagsInput = ref('')
+function addTags() {
+  if (tagsList.value.length == 10) return messagePro(300, '已超过规定标签数量')
+  tagsList.value.push(tagsInput.value)
+  tagsInput.value = ''
+  model.value.tags = tagsList.value.join()
+}
+const handleClose = (tag: string) => {
+  tagsList.value.splice(tagsList.value.indexOf(tag), 1)
 }
 </script>
 <template>
@@ -107,16 +132,37 @@ async function addVideo() {
               <vt-select v-model="model.type" dict="video_type" />
             </el-form-item>
             <el-form-item label="分区" prop="categoryId">
-              <el-input
+              <el-tree-select
                 v-model="model.categoryId"
+                :data="categoryList"
                 placeholder="请选择分区"
-                clearable
               />
             </el-form-item>
             <el-form-item label="标签" prop="tags">
-              <el-input v-model="model.tags" placeholder="请输入标签" clearable>
-                <template #suffix> 还能输入10个标签 </template>
+              <el-input
+                @keyup.enter="addTags"
+                v-model="tagsInput"
+                placeholder="请输入标签"
+                clearable
+              >
+                <template #suffix>
+                  还能输入{{ 10 - tagsList.length }}个标签
+                </template>
               </el-input>
+              <template v-if="model.tags">
+                <div class="space-x-2">
+                  <el-tag
+                    class="mt-2"
+                    closable
+                    @close="handleClose(tag)"
+                    type="success"
+                    v-for="item in tagsList"
+                    :key="item"
+                  >
+                    {{ item }}
+                  </el-tag>
+                </div>
+              </template>
             </el-form-item>
             <el-form-item label="简介" prop="description">
               <el-input

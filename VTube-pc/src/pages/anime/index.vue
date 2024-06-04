@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Icon } from '@iconify/vue'
 import { indexState, weeklyAmime } from '@/interface/pages/index'
-
+import { weekDays } from '@/enums'
 const fileUrl = import.meta.env.VITE_API_MINIO
 const router = useRouter()
 const state = reactive<indexState>({
@@ -11,16 +11,6 @@ const state = reactive<indexState>({
   recommended: [],
 })
 const { weeklyAnime, weekTabsIndex, top10, recommended } = toRefs(state)
-
-const weekDays = [
-  '星期一',
-  '星期二',
-  '星期三',
-  '星期四',
-  '星期五',
-  '星期六',
-  '星期日',
-]
 
 onMounted(() => {
   httpGet<weeklyAmime[][]>('/anime/weekly-anime').then(({ data }) => {

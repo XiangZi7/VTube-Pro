@@ -8,6 +8,6 @@ export const data = [
 ]
 
 export const UploadData = [
-  { title: '视频投稿', icon: 'fluent:video-clip-24-regular', router: '/upload/video' },
+  { title: '视频投稿', icon: 'fluent:video-clip-24-regular', router: '/user/upload/video' },
   { title: '论坛发表', icon: 'mdi-light:forum', router: '/forum' },
 ]

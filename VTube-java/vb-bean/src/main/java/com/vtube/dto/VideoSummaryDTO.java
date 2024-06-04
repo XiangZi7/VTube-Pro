@@ -10,4 +10,5 @@ public class VideoSummaryDTO {
     private String createTime;
     private Integer views;
     private Integer likes;
+    private Integer reviewStatus;
 }

@@ -231,7 +231,8 @@
             v.image_path AS imagePath,
             v.create_time AS createTime,
             vd.views,
-            vd.likes
+            vd.likes,
+            v.review_status
         FROM
             vt_video v
                 INNER JOIN
@@ -241,8 +242,24 @@
         <if test="title != null and title != ''">
             AND v.title LIKE CONCAT('%', #{title}, '%')
         </if>
+        order by v.create_time DESC
     </select>
 
+    <select id="selectVideosByUserAndVideoId" resultType="com.vtube.dto.UpLoadVideoDTO">
+        SELECT v.video_id,
+               v.title,
+               v.description,
+               v.image_path,
+               v.tags,
+               v.type,
+               VVC.category_id
+        FROM vt_video v
+                 LEFT JOIN
+             vt_video_data vd ON v.video_id = vd.video_id
+                 LEFT JOIN vt_video_category vvc on v.video_id = vvc.video_id
+        WHERE vd.user_id = #{userId}
+          and v.video_id = #{videoId}
+    </select>
 
     <!-- 添加视频及相关信息数据 -->
     <insert id="addVideoData" parameterType="com.vtube.vo.VideoVO">

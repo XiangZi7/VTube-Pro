@@ -56,13 +56,3 @@ function toggle(router: RouterMenu, event: Event) {
     </transition>
   </li>
 </template>
-<style scoped>
-.collapse-enter-active,
-.collapse-leave-active {
-  transition: all 0.3s ease;
-}
-.collapse-enter, .collapse-leave-to /* .collapse-leave-active in <2.1.8 */ {
-  height: 0;
-  opacity: 0;
-}
-</style>

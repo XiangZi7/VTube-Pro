@@ -76,6 +76,12 @@ public class Video implements Serializable {
     @TableField(value = "release_time")
     private LocalDate releaseTime;
 
+    /**
+     * 视频状态
+     */
+    @TableField(value = "review_status")
+    private String reviewStatus;
+
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
 
