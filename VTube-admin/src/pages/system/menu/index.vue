@@ -3,17 +3,22 @@ import { TableColumn, TableRef } from '@/interface/components/vt-table-v2.ts'
 import { Icon } from '@iconify/vue'
 import Dialog from './components/dialog.vue'
 import { Menu } from '@/interface/pages/system'
-
+import { menuType } from '@/enums'
 const DialogRef = ref<InstanceType<typeof Dialog> | null>(null)
 const vtTable = ref<TableRef>()
 
 const tableColumn = ref<TableColumn[]>([
   { type: 'selection', fixed: 'left', width: 70 },
   { prop: 'title', label: '标题', search: { el: 'input' } },
+  {
+    prop: 'type',
+    label: '类型',
+    slotName: 'type',
+  },
   { prop: 'icon', label: 'icon', slotName: 'icon' },
   { prop: 'path', label: '路径' },
   { prop: 'component', label: '组件' },
-  { prop: 'permission', label: '权限' },
+  // { prop: 'permission', label: '权限' },
   { prop: '', label: '操作', width: 150, fixed: 'right', slotName: 'action' },
 ])
 
@@ -92,7 +97,12 @@ const dataCallback = (data: any) => {
           </div>
         </template>
         <template #icon="{ row }">
-          <Icon :icon="row.icon" class="text-2xl" />
+          <Icon :icon="row.icon" class="text-xl"/>
+        </template>
+        <template #type="{ row }">
+          <el-tag :type="menuType[row.type].type">{{
+            menuType[row.type].label
+          }}</el-tag>
         </template>
         <template #action="{ row }">
           <div class="space-x-2 flex text-xl justify-around">

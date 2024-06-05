@@ -1,6 +1,7 @@
 package com.vtube.service.impl;
 
 import cn.dev33.satoken.stp.StpUtil;
+import com.baomidou.mybatisplus.core.batch.MybatisBatch;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.vtube.domain.Video;
@@ -175,6 +176,7 @@ public class VideoServiceImpl extends ServiceImpl<VideoMapper, Video>
     @Transactional
     public void updateVideo(VideoUpdateParams video) {
         // 更新视频记录
+        video.getVideo().setReviewStatus("1");
         videoMapper.updateById(video.getVideo());
 
         // 更新视频分类记录

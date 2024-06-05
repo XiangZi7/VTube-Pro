@@ -41,6 +41,7 @@ public class VideoVO {
     private Integer userId;
     @ExcelProperty("tags")
     private String tags;
+    private String remark;
     @ExcelProperty("type")
     private Integer type;
 

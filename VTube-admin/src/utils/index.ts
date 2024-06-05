@@ -6,6 +6,8 @@ export function buildTree(arr: MenuItem[]): RouterMenu[] {
     const map: { [key: number]: RouterMenu } = {};
 
     arr.forEach(item => {
+        // 过滤掉按钮
+        if (item.type == 2) return
         map[item.menuId] = {
             path: item.path,
             component: item.component,
@@ -14,13 +16,14 @@ export function buildTree(arr: MenuItem[]): RouterMenu[] {
             meta: {
                 icon: item.icon,
                 title: item.title,
-                keepAlive: item.isKeepAlive,
+                isKeepAlive: item.isKeepAlive,
                 isFull: item.isFull,
                 menuId: item.menuId,
                 orderNum: item.orderNum,
                 parentId: item.parentId,
                 permission: item.permission,
                 visible: item.visible,
+                type: item.type
             },
             children: []
         };

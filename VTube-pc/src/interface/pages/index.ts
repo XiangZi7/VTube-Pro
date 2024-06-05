@@ -19,6 +19,16 @@ export interface VideoDTO {
     title: string;
     createTime: Date;
     imagePath: string;
+    nickName: string;
+    avatarPath: string;
     views: number;
     likes: number;
 }
+
+// 定义状态类型
+export interface HomeState {
+    LatestUpdate: VideoDTO[];
+    hot: VideoDTO[];
+}
+
+

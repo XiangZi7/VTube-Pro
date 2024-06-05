@@ -27,6 +27,7 @@ export interface MenuItem {
   redirect: string | null;
   title: string;
   visible: number;
+  type: number
 }
 
 
@@ -46,5 +47,6 @@ export interface RouterMenu {
     menuId: number;
     permission: string | null;
     isKeepAlive: number | null;
+    type: number
   }
 }

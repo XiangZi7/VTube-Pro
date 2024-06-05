@@ -6,6 +6,7 @@ import axios, {
 
 import NProgress from '@/comfig/nprogress'
 import { ApiResponse } from "@/interface/utils/http";
+import { checkStatusCode } from "@/api/checkStatusCode";
 
 export interface CustomAxiosRequestConfig extends InternalAxiosRequestConfig {
   noLoading?: boolean
@@ -38,14 +39,18 @@ instance.interceptors.request.use(
 // 响应拦截器
 instance.interceptors.response.use(
   (response: AxiosResponse) => {
+    const { data } = response;
+
     // 进度条结束
     NProgress.done()
+    checkStatusCode(data.code, data.message)
     // 返回完整的response对象，不仅是data部分
-    return response.data
+    return data
   },
   (error) => {
     // 响应错误时也结束进度条
     NProgress.done()
+
     // 继续 reject 错误，这样调用 http 请求的代码就能捕获到异常
     return Promise.reject(error)
   }

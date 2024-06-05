@@ -7,29 +7,29 @@ export const data = [
     },
     {
         title: "内容管理",
-        icon: "material-symbols:account-circle-full",
+        icon: "material-symbols:content-paste",
         router: "/user/upload-manager",
         children: [
             {
                 title: "稿件管理",
-                icon: "material-symbols:account-circle-full",
+                icon: "mdi-light:content-paste",
                 router: "/user/upload-manager/article",
             },
         ]
     },
     {
         title: "投稿",
-        icon: "material-symbols:account-circle-full",
+        icon: "tdesign:undertake-delivery",
         router: "/user/upload/video",
         children: [
             {
                 title: "视频投稿",
-                icon: "material-symbols:account-circle-full",
+                icon: "ph:film-strip",
                 router: "/user/upload/video",
             },
             {
                 title: "论坛发表",
-                icon: "material-symbols:account-circle-full",
+                icon: "material-symbols:post-add",
                 router: "/user/upload/video",
             },
         ]

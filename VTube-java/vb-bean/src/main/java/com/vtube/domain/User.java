@@ -85,6 +85,12 @@ public class User implements Serializable {
     @TableField(value = "status")
     private String status;
 
+    /**
+     * 多租户下的租户ID
+     */
+    @TableField("tenant_id")
+    private Long tenantId;
+
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
 

@@ -34,9 +34,9 @@ public class UserUpLoadController {
     @Operation(summary = "上传视频稿件", description = "上传视频稿件")
     ApiResult VideoManagementList(@RequestParam(name = "pageNum", defaultValue = "1") Long pageNum,
                                   @RequestParam(name = "pageSize", defaultValue = "10") Long pageSize, String title) {
-        UserLoginDTO user = (UserLoginDTO) StpUtil.getSession().get("user");
+        int userId = StpUtil.getLoginIdAsInt();
         Page<VideoSummaryDTO> page = new Page<>(pageNum, pageSize);
-        return ApiResult.ok(videoMapper.VideoManagementList(page, user.getUserId(), title));
+        return ApiResult.ok(videoMapper.VideoManagementList(page, userId, title));
     }
 
     @PostMapping("/addVideo")
@@ -58,6 +58,7 @@ public class UserUpLoadController {
     ApiResult deleteVideo(@RequestBody Video video) {
         return ApiResult.ok(videoService.updateById(video));
     }
+
     @PostMapping("/queryByVideoId")
     @Operation(summary = "根据视频Id查找稿件", description = "根据视频Id查找稿件")
     ApiResult queryByVideoId(@RequestBody JSONObject jsonObject) {

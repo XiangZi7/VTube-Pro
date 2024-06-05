@@ -35,11 +35,5 @@ public class playController {
         String videoId = jsonObject.getStr("videoId");
         return ApiResult.ok(videoService.Episode(Integer.valueOf(videoId)));
     }
-    @GetMapping("/comments")
-    @Operation(summary = "评论数据", description = "评论数据")
-    ApiResult comments(@RequestParam(name = "pageNum", defaultValue = "1") Long pageNum,
-                       @RequestParam(name = "pageSize", defaultValue = "10") Long pageSize) {
 
-        return ApiResult.ok();
-    }
 }

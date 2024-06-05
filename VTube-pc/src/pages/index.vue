@@ -1,5 +1,23 @@
 <script setup lang="ts">
+import { HomeState, VideoDTO } from '@/interface/pages'
+import { Pagination } from '@/interface/utils/http'
+const fileUrl = import.meta.env.VITE_API_MINIO
 const router = useRouter()
+
+const state = reactive<HomeState>({
+  LatestUpdate: [],
+  hot: [],
+})
+const { hot, LatestUpdate } = toRefs(state)
+
+onMounted(() => {
+  httpGet<VideoDTO[]>('/video/LatestUpdate').then(({ data }) => {
+    state.LatestUpdate = data
+  })
+  httpGet<Pagination<VideoDTO[]>>('/video/hot').then(({ data }) => {
+    state.hot = data.records
+  })
+})
 </script>
 <template>
   <div class="flex flex-col">
@@ -40,227 +58,35 @@ const router = useRouter()
           <div
             class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
           >
-            <div class="bg-[#1d1e22] rounded-lg overflow-hidden">
+            <div
+              class="bg-[#1d1e22] rounded-lg overflow-hidden"
+              v-for="item in LatestUpdate"
+              :key="item.videoId"
+            >
               <img
-                src="https://generated.vusercontent.net/placeholder.svg"
+                :src="fileUrl + item.imagePath"
                 width="400"
                 height="225"
-                alt="Thumbnail 1"
+                :alt="item.title"
                 class="w-full h-40 object-cover"
                 style="aspect-ratio: 400 / 225; object-fit: cover"
               />
               <div class="p-4">
                 <h3 class="text-white font-bold line-clamp-2 mb-2">
-                  Video Title 1
+                  {{ item.title }}
                 </h3>
                 <div class="flex items-center gap-2 text-gray-400 text-sm">
                   <img
-                    src="https://generated.vusercontent.net/placeholder.svg"
+                    :src="fileUrl + item.avatarPath"
                     width="24"
                     height="24"
                     alt="Creator Avatar"
                     class="rounded-full"
                     style="aspect-ratio: 24 / 24; object-fit: cover"
                   />
-                  <span>Creator Name 1</span>
+                  <span>{{ item.nickName }}</span>
                   <span>•</span>
-                  <span>1.2M views</span>
-                </div>
-              </div>
-            </div>
-            <div class="bg-[#1d1e22] rounded-lg overflow-hidden">
-              <img
-                src="https://generated.vusercontent.net/placeholder.svg"
-                width="400"
-                height="225"
-                alt="Thumbnail 2"
-                class="w-full h-40 object-cover"
-                style="aspect-ratio: 400 / 225; object-fit: cover"
-              />
-              <div class="p-4">
-                <h3 class="text-white font-bold line-clamp-2 mb-2">
-                  Video Title 2
-                </h3>
-                <div class="flex items-center gap-2 text-gray-400 text-sm">
-                  <img
-                    src="https://generated.vusercontent.net/placeholder.svg"
-                    width="24"
-                    height="24"
-                    alt="Creator Avatar"
-                    class="rounded-full"
-                    style="aspect-ratio: 24 / 24; object-fit: cover"
-                  />
-                  <span>Creator Name 2</span>
-                  <span>•</span>
-                  <span>1.2M views</span>
-                </div>
-              </div>
-            </div>
-            <div class="bg-[#1d1e22] rounded-lg overflow-hidden">
-              <img
-                src="https://generated.vusercontent.net/placeholder.svg"
-                width="400"
-                height="225"
-                alt="Thumbnail 3"
-                class="w-full h-40 object-cover"
-                style="aspect-ratio: 400 / 225; object-fit: cover"
-              />
-              <div class="p-4">
-                <h3 class="text-white font-bold line-clamp-2 mb-2">
-                  Video Title 3
-                </h3>
-                <div class="flex items-center gap-2 text-gray-400 text-sm">
-                  <img
-                    src="https://generated.vusercontent.net/placeholder.svg"
-                    width="24"
-                    height="24"
-                    alt="Creator Avatar"
-                    class="rounded-full"
-                    style="aspect-ratio: 24 / 24; object-fit: cover"
-                  />
-                  <span>Creator Name 3</span>
-                  <span>•</span>
-                  <span>1.2M views</span>
-                </div>
-              </div>
-            </div>
-            <div class="bg-[#1d1e22] rounded-lg overflow-hidden">
-              <img
-                src="https://generated.vusercontent.net/placeholder.svg"
-                width="400"
-                height="225"
-                alt="Thumbnail 4"
-                class="w-full h-40 object-cover"
-                style="aspect-ratio: 400 / 225; object-fit: cover"
-              />
-              <div class="p-4">
-                <h3 class="text-white font-bold line-clamp-2 mb-2">
-                  Video Title 4
-                </h3>
-                <div class="flex items-center gap-2 text-gray-400 text-sm">
-                  <img
-                    src="https://generated.vusercontent.net/placeholder.svg"
-                    width="24"
-                    height="24"
-                    alt="Creator Avatar"
-                    class="rounded-full"
-                    style="aspect-ratio: 24 / 24; object-fit: cover"
-                  />
-                  <span>Creator Name 4</span>
-                  <span>•</span>
-                  <span>1.2M views</span>
-                </div>
-              </div>
-            </div>
-            <div class="bg-[#1d1e22] rounded-lg overflow-hidden">
-              <img
-                src="https://generated.vusercontent.net/placeholder.svg"
-                width="400"
-                height="225"
-                alt="Thumbnail 5"
-                class="w-full h-40 object-cover"
-                style="aspect-ratio: 400 / 225; object-fit: cover"
-              />
-              <div class="p-4">
-                <h3 class="text-white font-bold line-clamp-2 mb-2">
-                  Video Title 5
-                </h3>
-                <div class="flex items-center gap-2 text-gray-400 text-sm">
-                  <img
-                    src="https://generated.vusercontent.net/placeholder.svg"
-                    width="24"
-                    height="24"
-                    alt="Creator Avatar"
-                    class="rounded-full"
-                    style="aspect-ratio: 24 / 24; object-fit: cover"
-                  />
-                  <span>Creator Name 5</span>
-                  <span>•</span>
-                  <span>1.2M views</span>
-                </div>
-              </div>
-            </div>
-            <div class="bg-[#1d1e22] rounded-lg overflow-hidden">
-              <img
-                src="https://generated.vusercontent.net/placeholder.svg"
-                width="400"
-                height="225"
-                alt="Thumbnail 6"
-                class="w-full h-40 object-cover"
-                style="aspect-ratio: 400 / 225; object-fit: cover"
-              />
-              <div class="p-4">
-                <h3 class="text-white font-bold line-clamp-2 mb-2">
-                  Video Title 6
-                </h3>
-                <div class="flex items-center gap-2 text-gray-400 text-sm">
-                  <img
-                    src="https://generated.vusercontent.net/placeholder.svg"
-                    width="24"
-                    height="24"
-                    alt="Creator Avatar"
-                    class="rounded-full"
-                    style="aspect-ratio: 24 / 24; object-fit: cover"
-                  />
-                  <span>Creator Name 6</span>
-                  <span>•</span>
-                  <span>1.2M views</span>
-                </div>
-              </div>
-            </div>
-            <div class="bg-[#1d1e22] rounded-lg overflow-hidden">
-              <img
-                src="https://generated.vusercontent.net/placeholder.svg"
-                width="400"
-                height="225"
-                alt="Thumbnail 7"
-                class="w-full h-40 object-cover"
-                style="aspect-ratio: 400 / 225; object-fit: cover"
-              />
-              <div class="p-4">
-                <h3 class="text-white font-bold line-clamp-2 mb-2">
-                  Video Title 7
-                </h3>
-                <div class="flex items-center gap-2 text-gray-400 text-sm">
-                  <img
-                    src="https://generated.vusercontent.net/placeholder.svg"
-                    width="24"
-                    height="24"
-                    alt="Creator Avatar"
-                    class="rounded-full"
-                    style="aspect-ratio: 24 / 24; object-fit: cover"
-                  />
-                  <span>Creator Name 7</span>
-                  <span>•</span>
-                  <span>1.2M views</span>
-                </div>
-              </div>
-            </div>
-            <div class="bg-[#1d1e22] rounded-lg overflow-hidden">
-              <img
-                src="https://generated.vusercontent.net/placeholder.svg"
-                width="400"
-                height="225"
-                alt="Thumbnail 8"
-                class="w-full h-40 object-cover"
-                style="aspect-ratio: 400 / 225; object-fit: cover"
-              />
-              <div class="p-4">
-                <h3 class="text-white font-bold line-clamp-2 mb-2">
-                  Video Title 8
-                </h3>
-                <div class="flex items-center gap-2 text-gray-400 text-sm">
-                  <img
-                    src="https://generated.vusercontent.net/placeholder.svg"
-                    width="24"
-                    height="24"
-                    alt="Creator Avatar"
-                    class="rounded-full"
-                    style="aspect-ratio: 24 / 24; object-fit: cover"
-                  />
-                  <span>Creator Name 8</span>
-                  <span>•</span>
-                  <span>1.2M views</span>
+                  <span>{{ item.views }} views</span>
                 </div>
               </div>
             </div>
@@ -275,227 +101,32 @@ const router = useRouter()
           <div
             class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
           >
-            <div class="bg-[#2b2c30] rounded-lg overflow-hidden">
+            <div
+              class="bg-[#2b2c30] rounded-lg overflow-hidden"
+              v-for="item in hot"
+              :key="item.videoId"
+            >
               <img
-                src="https://generated.vusercontent.net/placeholder.svg"
-                width="400"
-                height="225"
-                alt="Thumbnail 1"
+                :src="fileUrl + item.imagePath"
+                :alt="item.title"
                 class="w-full h-40 object-cover"
-                style="aspect-ratio: 400 / 225; object-fit: cover"
               />
               <div class="p-4">
                 <h3 class="text-white font-bold line-clamp-2 mb-2">
-                  Video Title 1
+                  {{ item.title }}
                 </h3>
                 <div class="flex items-center gap-2 text-gray-400 text-sm">
                   <img
-                    src="https://generated.vusercontent.net/placeholder.svg"
+                    :src="fileUrl + item.avatarPath"
                     width="24"
                     height="24"
                     alt="Creator Avatar"
                     class="rounded-full"
                     style="aspect-ratio: 24 / 24; object-fit: cover"
                   />
-                  <span>Creator Name 1</span>
+                  <span>{{ item.nickName }}</span>
                   <span>•</span>
-                  <span>1.2M views</span>
-                </div>
-              </div>
-            </div>
-            <div class="bg-[#2b2c30] rounded-lg overflow-hidden">
-              <img
-                src="https://generated.vusercontent.net/placeholder.svg"
-                width="400"
-                height="225"
-                alt="Thumbnail 2"
-                class="w-full h-40 object-cover"
-                style="aspect-ratio: 400 / 225; object-fit: cover"
-              />
-              <div class="p-4">
-                <h3 class="text-white font-bold line-clamp-2 mb-2">
-                  Video Title 2
-                </h3>
-                <div class="flex items-center gap-2 text-gray-400 text-sm">
-                  <img
-                    src="https://generated.vusercontent.net/placeholder.svg"
-                    width="24"
-                    height="24"
-                    alt="Creator Avatar"
-                    class="rounded-full"
-                    style="aspect-ratio: 24 / 24; object-fit: cover"
-                  />
-                  <span>Creator Name 2</span>
-                  <span>•</span>
-                  <span>1.2M views</span>
-                </div>
-              </div>
-            </div>
-            <div class="bg-[#2b2c30] rounded-lg overflow-hidden">
-              <img
-                src="https://generated.vusercontent.net/placeholder.svg"
-                width="400"
-                height="225"
-                alt="Thumbnail 3"
-                class="w-full h-40 object-cover"
-                style="aspect-ratio: 400 / 225; object-fit: cover"
-              />
-              <div class="p-4">
-                <h3 class="text-white font-bold line-clamp-2 mb-2">
-                  Video Title 3
-                </h3>
-                <div class="flex items-center gap-2 text-gray-400 text-sm">
-                  <img
-                    src="https://generated.vusercontent.net/placeholder.svg"
-                    width="24"
-                    height="24"
-                    alt="Creator Avatar"
-                    class="rounded-full"
-                    style="aspect-ratio: 24 / 24; object-fit: cover"
-                  />
-                  <span>Creator Name 3</span>
-                  <span>•</span>
-                  <span>1.2M views</span>
-                </div>
-              </div>
-            </div>
-            <div class="bg-[#2b2c30] rounded-lg overflow-hidden">
-              <img
-                src="https://generated.vusercontent.net/placeholder.svg"
-                width="400"
-                height="225"
-                alt="Thumbnail 4"
-                class="w-full h-40 object-cover"
-                style="aspect-ratio: 400 / 225; object-fit: cover"
-              />
-              <div class="p-4">
-                <h3 class="text-white font-bold line-clamp-2 mb-2">
-                  Video Title 4
-                </h3>
-                <div class="flex items-center gap-2 text-gray-400 text-sm">
-                  <img
-                    src="https://generated.vusercontent.net/placeholder.svg"
-                    width="24"
-                    height="24"
-                    alt="Creator Avatar"
-                    class="rounded-full"
-                    style="aspect-ratio: 24 / 24; object-fit: cover"
-                  />
-                  <span>Creator Name 4</span>
-                  <span>•</span>
-                  <span>1.2M views</span>
-                </div>
-              </div>
-            </div>
-            <div class="bg-[#2b2c30] rounded-lg overflow-hidden">
-              <img
-                src="https://generated.vusercontent.net/placeholder.svg"
-                width="400"
-                height="225"
-                alt="Thumbnail 5"
-                class="w-full h-40 object-cover"
-                style="aspect-ratio: 400 / 225; object-fit: cover"
-              />
-              <div class="p-4">
-                <h3 class="text-white font-bold line-clamp-2 mb-2">
-                  Video Title 5
-                </h3>
-                <div class="flex items-center gap-2 text-gray-400 text-sm">
-                  <img
-                    src="https://generated.vusercontent.net/placeholder.svg"
-                    width="24"
-                    height="24"
-                    alt="Creator Avatar"
-                    class="rounded-full"
-                    style="aspect-ratio: 24 / 24; object-fit: cover"
-                  />
-                  <span>Creator Name 5</span>
-                  <span>•</span>
-                  <span>1.2M views</span>
-                </div>
-              </div>
-            </div>
-            <div class="bg-[#2b2c30] rounded-lg overflow-hidden">
-              <img
-                src="https://generated.vusercontent.net/placeholder.svg"
-                width="400"
-                height="225"
-                alt="Thumbnail 6"
-                class="w-full h-40 object-cover"
-                style="aspect-ratio: 400 / 225; object-fit: cover"
-              />
-              <div class="p-4">
-                <h3 class="text-white font-bold line-clamp-2 mb-2">
-                  Video Title 6
-                </h3>
-                <div class="flex items-center gap-2 text-gray-400 text-sm">
-                  <img
-                    src="https://generated.vusercontent.net/placeholder.svg"
-                    width="24"
-                    height="24"
-                    alt="Creator Avatar"
-                    class="rounded-full"
-                    style="aspect-ratio: 24 / 24; object-fit: cover"
-                  />
-                  <span>Creator Name 6</span>
-                  <span>•</span>
-                  <span>1.2M views</span>
-                </div>
-              </div>
-            </div>
-            <div class="bg-[#2b2c30] rounded-lg overflow-hidden">
-              <img
-                src="https://generated.vusercontent.net/placeholder.svg"
-                width="400"
-                height="225"
-                alt="Thumbnail 7"
-                class="w-full h-40 object-cover"
-                style="aspect-ratio: 400 / 225; object-fit: cover"
-              />
-              <div class="p-4">
-                <h3 class="text-white font-bold line-clamp-2 mb-2">
-                  Video Title 7
-                </h3>
-                <div class="flex items-center gap-2 text-gray-400 text-sm">
-                  <img
-                    src="https://generated.vusercontent.net/placeholder.svg"
-                    width="24"
-                    height="24"
-                    alt="Creator Avatar"
-                    class="rounded-full"
-                    style="aspect-ratio: 24 / 24; object-fit: cover"
-                  />
-                  <span>Creator Name 7</span>
-                  <span>•</span>
-                  <span>1.2M views</span>
-                </div>
-              </div>
-            </div>
-            <div class="bg-[#2b2c30] rounded-lg overflow-hidden">
-              <img
-                src="https://generated.vusercontent.net/placeholder.svg"
-                width="400"
-                height="225"
-                alt="Thumbnail 8"
-                class="w-full h-40 object-cover"
-                style="aspect-ratio: 400 / 225; object-fit: cover"
-              />
-              <div class="p-4">
-                <h3 class="text-white font-bold line-clamp-2 mb-2">
-                  Video Title 8
-                </h3>
-                <div class="flex items-center gap-2 text-gray-400 text-sm">
-                  <img
-                    src="https://generated.vusercontent.net/placeholder.svg"
-                    width="24"
-                    height="24"
-                    alt="Creator Avatar"
-                    class="rounded-full"
-                    style="aspect-ratio: 24 / 24; object-fit: cover"
-                  />
-                  <span>Creator Name 8</span>
-                  <span>•</span>
-                  <span>1.2M views</span>
+                  <span>{{ item.views }} views</span>
                 </div>
               </div>
             </div>

@@ -20,7 +20,7 @@ import java.util.Map;
 
 @RestController
 @AllArgsConstructor
-@Tag(name = "动漫首页")
+@Tag(name = "新番放送")
 @RequestMapping("/anime")
 public class AnimeController {
 

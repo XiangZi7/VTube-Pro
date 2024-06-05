@@ -10,6 +10,8 @@ public class VideoDTO {
     private String title;
     private Date createTime;
     private String imagePath;
+    private String nickName;
+    private String avatarPath;
     private int views;
     private int likes;
 }

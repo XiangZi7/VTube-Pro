@@ -29,7 +29,7 @@
         <hutool.version>5.8.15</hutool.version>
         <poi.version>5.2.3</poi.version>
         <fastjson.version>1.2.83</fastjson.version>
-        <mybatis-plus.version>3.5.3.1</mybatis-plus.version>
+        <mybatis-plus.version>3.5.6</mybatis-plus.version>
         <redisson.version>3.19.3</redisson.version>
         <transmittable-thread-local.version>2.14.2</transmittable-thread-local.version>
         <minio.version>8.4.1</minio.version>
@@ -96,7 +96,7 @@
             </dependency>
             <dependency>
                 <groupId>com.baomidou</groupId>
-                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
                 <version>${mybatis-plus.version}</version>
             </dependency>
             <dependency>

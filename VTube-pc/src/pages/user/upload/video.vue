@@ -50,8 +50,7 @@ const rules = {
     },
   ],
 }
-// tagsList
-const tagsList = ref([])
+
 // 分类数据
 const categoryList = ref([])
 onMounted(() => {
@@ -61,7 +60,7 @@ onMounted(() => {
     }).then(({ data }) => {
       model.value = data.video
       episodeList.value = data.episodes
-      tagsList.value = data.video.tags.split(',') || ''
+      tagsList.value = data.video.tags ? data.video.tags.split(',') : []
     })
   }
   httpGet('/dict/category').then(({ data }) => {
@@ -92,7 +91,10 @@ async function addVideo() {
   })
 }
 
+// tags
 const tagsInput = ref('')
+// tagsList
+const tagsList = ref([])
 function addTags() {
   if (tagsList.value.length == 10) return messagePro(300, '已超过规定标签数量')
   tagsList.value.push(tagsInput.value)
@@ -104,7 +106,7 @@ const handleClose = (tag: string) => {
 }
 </script>
 <template>
-  <div class="py-12 px-4 sm:px-6 lg:px-8 w-full flex">
+  <div class="py-12 px-4 sm:px-6 lg:px-8 w-full flex container mx-auto">
     <div class="w-2/3">
       <div class="space-y-6">
         <div

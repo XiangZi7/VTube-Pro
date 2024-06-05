@@ -82,6 +82,12 @@ public class Video implements Serializable {
     @TableField(value = "review_status")
     private String reviewStatus;
 
+    /**
+     * 备注
+     */
+    @TableField(value = "remark")
+    private String remark;
+
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
 

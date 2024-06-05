@@ -17,7 +17,15 @@ spring:
 
 #打开Mybatis plus select信息
 mybatis-plus:
-#  configuration:
+  configuration:
+    map-underscore-to-camel-case: true  #开启驼峰命名
+    cache-enabled: false #开启二级缓存
+    type-enums-package: com.vtube.enums  #通用枚举开启
+  global-config:
+    db-config:
+      logic-delete-field: deleted # 全局逻辑删除字段名
+      logic-delete-value: 1 # 逻辑已删除值
+      logic-not-delete-value: 0 # 逻辑未删除值
 #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 # Sa-Token 配置

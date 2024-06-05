@@ -13,7 +13,7 @@ export interface Menu {
     isKeepAlive: number;   // 当前路由是否缓存 0：否 1：是
     redirect: string;   // 路由重定向地址
     isFull: number;   // 是否全屏
-    type: number;   // 类型   0：目录   1：菜单   2：按钮
+    type: string;   // 类型   0：目录   1：菜单   2：按钮
 }
 
 // -------------角色管理----------------

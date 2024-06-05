@@ -11,4 +11,5 @@ public class VideoSummaryDTO {
     private Integer views;
     private Integer likes;
     private Integer reviewStatus;
+    private String remark;
 }

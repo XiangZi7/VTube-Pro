@@ -1,7 +1,6 @@
 package com.vtube.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.vtube.domain.Video;
 import com.vtube.dto.CommentDTO;
 import com.vtube.model.ApiResult;
 import com.vtube.service.CommentsService;

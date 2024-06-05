@@ -42,65 +42,66 @@ function handleSubmit(event, tpye) {
 </script>
 <template>
   <div
-    class="bg-black/5 fixed top-0 bottom-0 left-0 right-0 z-2000 w-full h-full flex items-center justify-center"
+    v-if="modelValue"
+    class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-50"
+    @click="modelValue = false"
   >
-    <div
-      class="fixed left-0 top-0 z-[1998] bg-black/15 w-full h-full"
-      :class="{ visible: modelValue }"
-      @click="modelValue = false"
-    ></div>
-    <div class="relative z-[10000]">
-      <div
-        class="container"
-        :class="{ 'right-panel-active': isCurrent !== 'login' }"
-      >
-        <div class="form-container sign-up-container">
-          <form @submit="handleSubmit($event, 'sign-up')" class="z-99999">
-            <h1 class="text-black">注册账号</h1>
-            <input
-              v-model="loginForm.userName"
-              type="text"
-              placeholder="userName"
-            />
-            <input v-model="loginForm.phone" placeholder="Phone" />
-            <input
-              v-model="loginForm.password"
-              type="password"
-              placeholder="Password"
-            />
-            <button type="submit">注册</button>
-          </form>
-        </div>
-        <div class="form-container sign-in-container">
-          <form @submit="handleSubmit($event, 'login')">
-            <h1 class="font-bold text-black text-[40px]">登录</h1>
-            <input v-model="loginForm.userName" placeholder="UserName" />
-            <input
-              v-model="loginForm.password"
-              type="password"
-              placeholder="Password"
-            />
-            <a class="text-[#333] text-sm my-[15px] no-underline" href="#"
-              >忘记密码?</a
-            >
-            <button type="submit">登录</button>
-          </form>
-        </div>
-        <div class="overlay-container">
-          <div class="overlay">
-            <div class="overlay-panel overlay-left space-y-4">
-              <h1 class="font-bold">欢迎回来!</h1>
-              <p class="text-sm">为了与我们保持联系，请使用您的个人信息登录</p>
-              <button class="ghost" id="signIn" @click="ckBtn('login')">
-                登录
-              </button>
-            </div>
-            <div class="overlay-panel overlay-right space-y-4">
-              <h1 class="font-bold">欢迎!</h1>
-              <p class="text-sm">输入您的个人资料，与我们一起开始旅程</p>
-              <button class="ghost" id="signUp" @click="ckBtn('Sign')">
-                注册
-              </button>
+    <div class="rounded-lg shadow-lg max-w-4xl" @click.stop>
+      <div class="relative z-[10000]">
+        <div
+          class="container"
+          :class="{ 'right-panel-active': isCurrent !== 'login' }"
+        >
+          <div class="form-container sign-up-container">
+            <form @submit="handleSubmit($event, 'sign-up')">
+              <h1 class="text-black">注册账号</h1>
+              <input
+                v-model="loginForm.userName"
+                type="text"
+                placeholder="userName"
+              />
+              <input v-model="loginForm.phone" placeholder="Phone" />
+              <input
+                v-model="loginForm.password"
+                type="password"
+                placeholder="Password"
+              />
+              <button type="submit">注册</button>
+            </form>
+          </div>
+          <div class="form-container sign-in-container">
+            <form @submit="handleSubmit($event, 'login')">
+              <h1 class="font-bold text-black text-[40px]">登录</h1>
+              <input v-model="loginForm.userName" placeholder="UserName" />
+              <input
+                v-model="loginForm.password"
+                type="password"
+                placeholder="Password"
+              />
+              <a class="text-[#333] text-sm my-[15px] no-underline" href="#"
+                >忘记密码?</a
+              >
+              <button type="submit">登录</button>
+            </form>
+          </div>
+          <div class="overlay-container">
+            <div class="overlay">
+              <div class="overlay-panel overlay-left space-y-4">
+                <h1 class="font-bold">欢迎回来!</h1>
+                <p class="text-sm">
+                  为了与我们保持联系，请使用您的个人信息登录
+                </p>
+                <button class="ghost" id="signIn" @click="ckBtn('login')">
+                  登录
+                </button>
+              </div>
+              <div class="overlay-panel overlay-right space-y-4">
+                <h1 class="font-bold">欢迎!</h1>
+                <p class="text-sm">输入您的个人资料，与我们一起开始旅程</p>
+                <button class="ghost" id="signUp" @click="ckBtn('Sign')">
+                  注册
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -181,7 +182,6 @@ input {
   top: 0;
   height: 100%;
   transition: all 0.6s ease-in-out;
-  z-index: 999999999;
 }
 
 .sign-in-container {

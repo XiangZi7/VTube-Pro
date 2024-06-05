@@ -13,6 +13,7 @@ import com.vtube.vo.PlayDetailsVO;
 import com.vtube.vo.VideoVO;
 import com.vtube.vo.WeeklyAnimeUpdateVO;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
@@ -23,7 +24,11 @@ import java.util.List;
  * @Entity com.vtube.domain.Video
  */
 public interface VideoMapper extends BaseMapper<Video> {
+    // 视频列表
     IPage<VideoVO> VideoList(IPage<Video> page, @Param("video") VideoParam video);
+
+    // 视频审核
+    IPage<VideoVO> VideoAuditingList(IPage<Video> page, @Param("video") VideoParam video);
 
     int addVideoData(VideoVO videoVO);
 
@@ -53,8 +58,18 @@ public interface VideoMapper extends BaseMapper<Video> {
 
     // 根据用户ID查询视频信息
     IPage<VideoSummaryDTO> VideoManagementList(IPage<VideoSummaryDTO> page, @Param("userId") Integer userId, @Param("title") String title);
+
     // 根据用户ID和视频ID查询视频信息
     UpLoadVideoDTO selectVideosByUserAndVideoId(@Param("userId") Integer userId, @Param("videoId") Integer videoId);
+
+    // 首页的最新8个视频
+    @Select("SELECT v.*,vd.views,vd.likes,vu.nick_name,vu.avatar_path FROM vt_video v JOIN vt_video_data vd ON v.video_id = vd.video_id join vt_user vu on vu.user_id = vd.user_id ORDER BY v.create_time DESC LIMIT 8")
+    List<VideoDTO> selectLatestVideos8();
+
+    // 播放量最高的视频
+    @Select("SELECT v.*,vd.views,vd.likes,vu.nick_name,vu.avatar_path FROM vt_video v JOIN vt_video_data vd ON v.video_id = vd.video_id join vt_user vu on vu.user_id = vd.user_id ORDER BY vd.views DESC")
+    IPage<VideoDTO> selectTopPlayedVideos(IPage<VideoDTO> page);
+
 }
 
 

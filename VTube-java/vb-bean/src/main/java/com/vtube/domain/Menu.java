@@ -30,7 +30,7 @@ public class Menu implements Serializable {
      * 类型   0：目录   1：菜单   2：按钮
      */
     @TableField(value = "type")
-    private Integer type;
+    private String type;
 
     /**
      * 菜单标题

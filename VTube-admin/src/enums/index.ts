@@ -7,3 +7,9 @@ export const weekDays = [
     { label: "星期六", value: 6 },
     { label: "星期日", value: 7 }
 ];
+
+export const menuType = [
+    { label: "目录", value: '0', type: 'success' },
+    { label: "菜单", value: '1', type: 'warning' },
+    { label: "按钮", value: '2', type: 'danger' },
+]

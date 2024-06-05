@@ -13,7 +13,6 @@ onMounted(() => {
   })
 })
 
-
 function edit(row: any) {
   router.push(`/user/upload/video?type=edit&videoId=${row.videoId}`)
 }
@@ -46,14 +45,22 @@ function edit(row: any) {
                   <span> {{ item.likes }} </span>
                 </div>
                 <div class="flex items-center gap-1">
-                  <el-tag :type="videoStatus[item.reviewStatus].type">{{
-                    videoStatus[item.reviewStatus].label
-                  }}</el-tag>
+                  <el-tag :type="videoStatus[item.reviewStatus].type">
+                    <p
+                      :title="item.remark"
+                      :class="
+                        item.reviewStatus == '3'
+                          ? 'cursor-help'
+                          : 'cursor-default'
+                      "
+                    >
+                      {{ videoStatus[item.reviewStatus].label }}
+                    </p>
+                  </el-tag>
                 </div>
               </div>
             </div>
           </div>
-
           <div class="mt-4 md:mt-0">
             <el-button type="primary" @click="edit(item)">编辑</el-button>
           </div>
