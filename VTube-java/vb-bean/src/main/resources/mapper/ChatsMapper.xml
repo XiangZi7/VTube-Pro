@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vtube.mapper.ChatsMapper">
+
+    <resultMap id="BaseResultMap" type="com.vtube.domain.Chats">
+            <id property="chatId" column="chat_id" jdbcType="INTEGER"/>
+            <result property="participantOne" column="participant_one" jdbcType="INTEGER"/>
+            <result property="participantTwo" column="participant_two" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        chat_id,participant_one,participant_two
+    </sql>
+    <select id="getChatId" resultType="java.lang.String">
+        SELECT chat_id
+        FROM vt_chats
+        WHERE (participant_one = #{fromUser} AND participant_two = #{toUser})
+           OR (participant_one = #{toUser} AND participant_two = #{fromUser})
+    </select>
+</mapper>

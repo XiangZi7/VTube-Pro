@@ -4,10 +4,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.vtube.domain.Video;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.vtube.domain.VideoEpisode;
-import com.vtube.dto.ProjectorDTO;
-import com.vtube.dto.UpLoadVideoDTO;
-import com.vtube.dto.VideoDTO;
-import com.vtube.dto.VideoSummaryDTO;
+import com.vtube.dto.*;
 import com.vtube.vo.Param.VideoParam;
 import com.vtube.vo.PlayDetailsVO;
 import com.vtube.vo.VideoVO;
@@ -40,6 +37,8 @@ public interface VideoMapper extends BaseMapper<Video> {
 
     // 获取视频详情
     PlayDetailsVO getVideoDetails(Integer videoId);
+    // 获取视频详情2
+    VideoDesDTO getVideoDetails2(Integer videoId);
 
     // 获取周番更新表
     IPage<WeeklyAnimeUpdateVO> weekList(@Param("video") WeeklyAnimeUpdateVO video, IPage<Video> page);

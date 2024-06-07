@@ -60,3 +60,4 @@ vtube:
       - /Projector/**
       # 评论
       - /comments
+      - /ws/**

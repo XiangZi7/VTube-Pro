@@ -29,6 +29,7 @@ export interface VideoDTO {
 export interface HomeState {
     LatestUpdate: VideoDTO[];
     hot: VideoDTO[];
+    page: number
 }
 
 

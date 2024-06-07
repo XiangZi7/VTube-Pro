@@ -91,6 +91,12 @@ public class User implements Serializable {
     @TableField("tenant_id")
     private Long tenantId;
 
+    /**
+     * 个性签名
+     */
+    @TableField("signature")
+    private String signature;
+
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
 

@@ -19,6 +19,7 @@ public class ApiApplication implements ApplicationListener<WebServerInitializedE
     public static void main(String[] args) {
         SpringApplication.run(ApiApplication.class, args);
     }
+
     @SneakyThrows
     @Override
     public void onApplicationEvent(WebServerInitializedEvent event) {
@@ -31,6 +32,8 @@ public class ApiApplication implements ApplicationListener<WebServerInitializedE
         if (contextPath == null) {
             contextPath = "";
         }
+
+
 
         log.info("\n---------------------------------------------------------\n" +
                 "\tApplication is running! Access address:\n" +

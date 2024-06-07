@@ -66,6 +66,7 @@
         </if>
         ORDER BY v.create_time DESC
     </select>
+
     <select id="getVideoDetails" resultType="com.vtube.vo.PlayDetailsVO">
         SELECT vt.video_id,
                vt.title,
@@ -81,6 +82,28 @@
              vt_video_data AS vtd
              ON
                  vt.video_id = vtd.video_id
+        where vt.video_id = #{videoId};
+    </select>
+
+    <select id="getVideoDetails2" resultType="com.vtube.dto.VideoDesDTO">
+        SELECT vt.video_id,
+               vt.title,
+               vt.description,
+               vt.create_time,
+               vt.image_path,
+               vt.tags,
+               vu.nick_name,
+               vu.user_id,
+               vu.avatar_path,
+               vu.signature,
+               vt.create_time,
+               vtd.views,
+               vtd.likes,
+               LEAST((COALESCE(vtd.likes, 0) / 1000) * 5, 5) AS make
+        FROM vt_video vt
+                 JOIN vt_video_data vtd ON vt.video_id = vtd.video_id
+                 join vt_user vu on vu.user_id = vtd.user_id
+
         where vt.video_id = #{videoId};
     </select>
 

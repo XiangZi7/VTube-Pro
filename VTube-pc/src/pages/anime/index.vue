@@ -67,7 +67,7 @@ onMounted(() => {
               :key="item.videoId"
               @click="router.push(`/play/${item.videoId}`)"
             >
-              <img
+              <el-image
                 :src="fileUrl + item.imagePath"
                 :alt="item.title"
                 class="w-full h-auto max-h-[388px]"

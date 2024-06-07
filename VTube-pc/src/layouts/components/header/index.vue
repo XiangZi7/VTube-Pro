@@ -78,6 +78,7 @@ function logout() {
         </el-dropdown>
         <icon-material-symbols:notifications-active-outline
           class="text-3xl cursor-pointer"
+          @click="router.push('/chat/mid')"
         />
         <div v-if="userInfo && userInfo.token">
           <el-dropdown>
