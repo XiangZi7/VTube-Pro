@@ -11,7 +11,7 @@
  Target Server Version : 80100
  File Encoding         : 65001
 
- Date: 07/06/2024 17:32:05
+ Date: 12/06/2024 13:16:58
 */
 
 SET NAMES utf8mb4;
@@ -88,8 +88,10 @@ CREATE TABLE `vt_chats`  (
 -- ----------------------------
 -- Records of vt_chats
 -- ----------------------------
-INSERT INTO `vt_chats` VALUES ('1_1', 1, 1);
-INSERT INTO `vt_chats` VALUES ('4_1', 4, 1);
+INSERT INTO `vt_chats` VALUES ('1', 7, 1);
+INSERT INTO `vt_chats` VALUES ('2', 1, 4);
+INSERT INTO `vt_chats` VALUES ('3eb648d13ed2481baf7235e0c75c6e38', 1, 2);
+INSERT INTO `vt_chats` VALUES ('924b91fdb9c54f19a6f3f3bcbb51106c', 1, 1);
 
 -- ----------------------------
 -- Table structure for vt_comments
@@ -360,21 +362,25 @@ CREATE TABLE `vt_messages`  (
   PRIMARY KEY (`message_id`) USING BTREE,
   INDEX `vt_messages_ibfk_1`(`chat_id` ASC) USING BTREE,
   INDEX `vt_messages_ibfk_2`(`sender_id` ASC) USING BTREE,
-  CONSTRAINT `vt_messages_ibfk_2` FOREIGN KEY (`sender_id`) REFERENCES `vt_user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `vt_messages_ibfk_1` FOREIGN KEY (`chat_id`) REFERENCES `vt_chats` (`chat_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 51 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '消息表' ROW_FORMAT = Dynamic;
+  CONSTRAINT `vt_messages_ibfk_1` FOREIGN KEY (`chat_id`) REFERENCES `vt_chats` (`chat_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `vt_messages_ibfk_2` FOREIGN KEY (`sender_id`) REFERENCES `vt_user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB AUTO_INCREMENT = 90 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '消息表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of vt_messages
 -- ----------------------------
-INSERT INTO `vt_messages` VALUES (43, '1_1', 1, '你好\n', '2024-06-07 13:40:13');
-INSERT INTO `vt_messages` VALUES (44, '4_1', 4, '你好啊\n', '2024-06-07 13:41:46');
-INSERT INTO `vt_messages` VALUES (45, '4_1', 1, '嘿嘿嘿\n', '2024-06-07 13:43:23');
-INSERT INTO `vt_messages` VALUES (46, '4_1', 4, '你好啊\n', '2024-06-07 13:43:28');
-INSERT INTO `vt_messages` VALUES (47, '4_1', 1, '你好\n', '2024-06-07 13:45:32');
-INSERT INTO `vt_messages` VALUES (48, '4_1', 1, '你好呀\n', '2024-06-07 13:45:45');
-INSERT INTO `vt_messages` VALUES (49, '4_1', 4, '嗯嗯 你好\n', '2024-06-07 13:47:42');
-INSERT INTO `vt_messages` VALUES (50, '4_1', 1, '你好啊\n', '2024-06-07 15:04:46');
+INSERT INTO `vt_messages` VALUES (78, '1', 7, '哈喽\n', '2024-06-11 15:10:03');
+INSERT INTO `vt_messages` VALUES (79, '1', 1, '哈喽\n', '2024-06-11 15:10:16');
+INSERT INTO `vt_messages` VALUES (80, '1', 1, '你好啊\n', '2024-06-11 15:43:00');
+INSERT INTO `vt_messages` VALUES (81, '1', 7, '嘿嘿嘿\n', '2024-06-11 15:43:08');
+INSERT INTO `vt_messages` VALUES (82, '1', 1, '大苏打\n', '2024-06-11 15:43:13');
+INSERT INTO `vt_messages` VALUES (83, '1', 1, '哈桑\n', '2024-06-11 15:46:37');
+INSERT INTO `vt_messages` VALUES (84, '1', 7, '的撒\n', '2024-06-11 15:46:40');
+INSERT INTO `vt_messages` VALUES (85, '1', 1, '阿松大\n', '2024-06-11 15:46:42');
+INSERT INTO `vt_messages` VALUES (86, '2', 1, '我是测试1', '2024-06-11 17:32:30');
+INSERT INTO `vt_messages` VALUES (87, '2', 4, '我是测试2', '2024-06-11 17:32:36');
+INSERT INTO `vt_messages` VALUES (88, '924b91fdb9c54f19a6f3f3bcbb51106c', 1, '你好呀\n', '2024-06-12 11:01:44');
+INSERT INTO `vt_messages` VALUES (89, '3eb648d13ed2481baf7235e0c75c6e38', 1, '你好啊\n', '2024-06-12 11:01:57');
 
 -- ----------------------------
 -- Table structure for vt_sys_menu
@@ -536,10 +542,10 @@ CREATE TABLE `vt_user`  (
 INSERT INTO `vt_user` VALUES (1, 'user', '栗山未来', '眼镜娘', '21', '1234567890', 'user1@example.com', '74057bedb712511430b280f1243ef5a0.png', '2024-06-06 13:27:54', 'M', 1, NULL, '哈喽呀O(∩_∩)O');
 INSERT INTO `vt_user` VALUES (2, '郭震南', 'Tang Ka Keung', 'Tang Ka Keung', 'I7N5nnAlBx', '199-4555-3066', 'zguo@mail.com', 'DrEDjGx21w', '2004-11-17 18:27:22', 'M', 1, NULL, NULL);
 INSERT INTO `vt_user` VALUES (3, '罗嘉伦', 'Deborah Romero', 'Deborah Romero', '000000', '(20) 4866 5660', 'jialulu3@outlook.com', '7qjA45JNKi', '2021-07-27 10:23:47', 'M', 1, NULL, NULL);
-INSERT INTO `vt_user` VALUES (4, '魏杰宏', 'Ng Sau Man', 'Ng Sau Man', 'W98vO2N15B', '(161) 923 4351', 'wjieh9@gmail.com', 'ZKqATISbOS', '2007-12-31 20:33:41', 'M', 1, NULL, NULL);
+INSERT INTO `vt_user` VALUES (4, '魏杰宏', 'Ng Sau Man', 'Ng Sau Man', 'W98vO2N15B', '(161) 923 4351', 'wjieh9@gmail.com', '88df5120eb0620fc075523df5feed279.png', '2024-06-12 09:09:18', 'M', 1, NULL, NULL);
 INSERT INTO `vt_user` VALUES (5, '大塚樹', 'Yam Kwok Kuen', 'Yam Kwok Kuen', 'XhTzo8nfIv', '718-679-9348', 'otsukait90@yahoo.com', 'OErol2D6MJ', '2006-10-26 11:05:33', 'M', 1, NULL, NULL);
 INSERT INTO `vt_user` VALUES (6, '夏杰宏', 'Frederick Ramos', 'Frederick Ramos', 'fzPrIdydPQ', '74-527-7415', 'jiehong71@outlook.com', 'D1a5VHpgIj', '2020-12-13 08:09:15', 'M', 1, NULL, NULL);
-INSERT INTO `vt_user` VALUES (7, '中野陽太', 'Tang Xiaoming', 'Tang Xiaoming', 'NSjuyp0fWG', '90-3237-7838', 'yotnakano@hotmail.com', 'qNNvEYWMRA', '2010-07-01 01:13:26', 'M', 1, NULL, NULL);
+INSERT INTO `vt_user` VALUES (7, '中野陽太', 'Tang Xiaoming', 'Tang Xiaoming', 'NSjuyp0fWG', '90-3237-7838', 'yotnakano@hotmail.com', '88df5120eb0620fc075523df5feed279.png', '2024-06-12 09:09:25', 'M', 1, NULL, NULL);
 INSERT INTO `vt_user` VALUES (8, '段子韬', 'Choi Tak Wah', 'Choi Tak Wah', 'CgTdSn8hvh', '(161) 369 9532', 'duanzi@outlook.com', 'owVFaXgqsn', '2018-09-25 03:06:04', 'M', 1, NULL, NULL);
 INSERT INTO `vt_user` VALUES (9, '中村美羽', 'Han Ka Ming', 'Han Ka Ming', 'V9WJ59Zdww', '(116) 863 7372', 'nakamiu@gmail.com', 'AsatoOLbGz', '2002-01-03 17:26:12', 'F', 1, NULL, NULL);
 INSERT INTO `vt_user` VALUES (10, '刘云熙', 'Lam Suk Yee', 'Lam Suk Yee', 'O6EL5VYSV7', '5807 600489', 'liuy@mail.com', 'ZV8lc2oD33', '2012-07-08 20:22:43', 'M', 1, NULL, NULL);
