@@ -14,6 +14,14 @@ VTube 是一个类似于B站的在线视频分享平台，致力于为用户提�
 - VTube-Pc: 60%
 - VTube-Uni-App: 0%
 
+## 项目部分截图
+### VTube-admin
+![img.png](images/img.png)
+### VTube-pc
+![img_1.png](images/img_1.png)
+![img_2.png](images/img_2.png)
+![img_3.png](images/img_3.png)
+
 ## 部署与开发环境设置
 
 ### 前提条件

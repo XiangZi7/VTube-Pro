@@ -19,6 +19,15 @@ VTube-PC 作为 VTube 项目的 PC 端应用，主要用于用户在PC上浏览�
 - vite5
 - .....
 
+## 项目截图
+![img.png](../images/pc_img%20(1).png)
+![img_2.png](../images/pc_img%20(2).png)
+![img_3.png](../images/pc_img%20(3).png)
+![img_4.png](../images/pc_img%20(4).png)
+![img_5.png](../images/pc_img%20(5).png)
+![img_6.png](../images/pc_img%20(6).png)
+![img_7.png](../images/pc_img%20(7).png)
+![img_8.png](../images/pc_img%20(8).png)
 ## 功能模块
 
 ### 视频浏览

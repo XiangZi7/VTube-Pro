@@ -20,6 +20,13 @@ VTube-Admin 作为 VTube 项目的管理后台，使用现代化的前端框架�
 - tailwindcss
 - vite5
 
+## 项目截图
+![图片描述](../images/admin_img%20(1).png)
+![图片描述](../images/admin_img%20(5).png)
+![图片描述](../images/admin_img%20(6).png)
+![图片描述](../images/admin_img%20(7).png)
+![图片描述](../images/admin_img%20(8).png)
+![图片描述](../images/admin_img%20(9).png)
 ## 功能模块
 
 ### 视频管理
