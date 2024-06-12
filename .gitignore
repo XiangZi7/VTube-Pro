@@ -4,4 +4,5 @@
 .vscode
 
 logs/**
+logs
 yarn.lock
