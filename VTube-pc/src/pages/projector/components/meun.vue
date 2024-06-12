@@ -14,7 +14,7 @@ withDefaults(defineProps<searchProps>(), {
 })
 </script>
 <template>
-  <div class="w-full h-full overflow-hidden">
+  <div class="w-full h-full overflow-hidden ">
     <el-collapse v-model="activeNames">
       <el-collapse-item title="标题" name="1">
         <div class="space-y-4">

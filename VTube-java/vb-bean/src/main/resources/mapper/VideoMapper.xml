@@ -184,6 +184,7 @@
         FROM vt_video vv
                  JOIN
              vt_video_data vvd ON vv.video_id = vvd.video_id
+        where vv.uploader = 'OFFICIAL'
         ORDER BY vvd.views DESC
         LIMIT 10;
     </select>
@@ -200,6 +201,7 @@
             vt_video vv
                 JOIN
             vt_video_data vvd ON vv.video_id = vvd.video_id
+        where vv.uploader = 'OFFICIAL'
         ORDER BY
             vvd.views DESC,
             vvd.likes DESC,

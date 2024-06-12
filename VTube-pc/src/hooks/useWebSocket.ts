@@ -27,12 +27,13 @@ export function useWebSocket(url: string, options: WebSocketOptions = {}) {
         ws.value.onopen = () => {
             isConnected.value = true;
             console.log('WebSocket 已连接');
-            startHeartbeat(); // 开始心跳检测
+            startHeartbeat(); // 开始心跳检测 
         };
 
-        ws.value.onmessage = (event) => {
-            messages.value.push({ position: "left", content: event.data });
-            console.log('收到 WebSocket 消息:', event.data);
+        ws.value.onmessage = ({ data }) => {
+            if (!data) return
+            messages.value.push({ position: "left", content: data });
+            console.log('收到 WebSocket 消息:', data);
         };
 
         ws.value.onclose = () => {
@@ -82,6 +83,15 @@ export function useWebSocket(url: string, options: WebSocketOptions = {}) {
         messages.value.push({ position: "right", content: message })
     }
 
+    // 添加文字数据
+    const addMessages = (message: message | message[]) => {
+        messages.value = messages.value.concat(message)
+    }
+    // 清空文字数据
+    const clearMessage = () => {
+        messages.value = []
+    }
+
     // 断开连接的方法
     const disconnect = () => {
         if (ws.value) {
@@ -106,6 +116,8 @@ export function useWebSocket(url: string, options: WebSocketOptions = {}) {
         disconnect,
         messages,
         sendMessage,
-        addMessage
+        addMessage,
+        addMessages,
+        clearMessage
     };
 }

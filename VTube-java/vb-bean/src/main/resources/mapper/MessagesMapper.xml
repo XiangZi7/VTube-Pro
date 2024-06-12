@@ -16,4 +16,41 @@
         message_id,chat_id,sender_id,
         content,timestamp
     </sql>
+    <select id="getChatSessionsByUserId" resultType="com.vtube.dto.ChatSessionDTO">
+        SELECT
+            CASE
+                WHEN c.participant_one = #{userId} THEN u2.user_id
+                WHEN c.participant_two = #{userId} THEN u1.user_id
+                END AS userId,
+            CASE
+                WHEN c.participant_one = #{userId} THEN u2.nick_name
+                WHEN c.participant_two = #{userId} THEN u1.nick_name
+                END AS nickName,
+            CASE
+                WHEN c.participant_one = #{userId} THEN u2.avatar_path
+                WHEN c.participant_two = #{userId} THEN u1.avatar_path
+                END AS avatarPath,
+            m.content AS lastMessage,
+            m.timestamp AS lastMessageTime,
+            c.chat_id AS chatId
+        FROM
+            vt_chats c
+                INNER JOIN vt_user u1 ON c.participant_one = u1.user_id
+                INNER JOIN vt_user u2 ON c.participant_two = u2.user_id
+                INNER JOIN (
+                SELECT
+                    chat_id,
+                    MAX(timestamp) AS lastTimestamp
+                FROM
+                    vt_messages
+                GROUP BY
+                    chat_id
+            ) lm ON c.chat_id = lm.chat_id
+                INNER JOIN vt_messages m ON lm.chat_id = m.chat_id AND lm.lastTimestamp = m.timestamp
+        WHERE
+            c.participant_one = #{userId}
+           OR c.participant_two = #{userId}
+        ORDER BY
+            m.timestamp DESC;
+    </select>
 </mapper>

@@ -62,11 +62,11 @@ public interface VideoMapper extends BaseMapper<Video> {
     UpLoadVideoDTO selectVideosByUserAndVideoId(@Param("userId") Integer userId, @Param("videoId") Integer videoId);
 
     // 首页的最新8个视频
-    @Select("SELECT v.*,vd.views,vd.likes,vu.nick_name,vu.avatar_path FROM vt_video v JOIN vt_video_data vd ON v.video_id = vd.video_id join vt_user vu on vu.user_id = vd.user_id ORDER BY v.create_time DESC LIMIT 8")
+    @Select("SELECT v.*,vd.views,vd.likes,vu.nick_name,vu.avatar_path FROM vt_video v JOIN vt_video_data vd ON v.video_id = vd.video_id join vt_user vu on vu.user_id = vd.user_id where v.uploader = 'USER' ORDER BY v.create_time DESC LIMIT 8")
     List<VideoDTO> selectLatestVideos8();
 
     // 播放量最高的视频
-    @Select("SELECT v.*,vd.views,vd.likes,vu.nick_name,vu.avatar_path FROM vt_video v JOIN vt_video_data vd ON v.video_id = vd.video_id join vt_user vu on vu.user_id = vd.user_id ORDER BY vd.views DESC")
+    @Select("SELECT v.*,vd.views,vd.likes,vu.nick_name,vu.avatar_path FROM vt_video v JOIN vt_video_data vd ON v.video_id = vd.video_id join vt_user vu on vu.user_id = vd.user_id where v.uploader = 'USER' ORDER BY vd.views DESC")
     IPage<VideoDTO> selectTopPlayedVideos(IPage<VideoDTO> page);
 
 }

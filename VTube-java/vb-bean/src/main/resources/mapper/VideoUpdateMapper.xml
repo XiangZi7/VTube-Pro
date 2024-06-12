@@ -27,6 +27,6 @@
                  INNER JOIN
              vt_video_update vu ON vu.video_id = v.video_id
                  left join vt_video_data vvd on v.video_id = vvd.video_id
-        WHERE vu.week_day IN ('1', '2', '3', '4', '5', '6', '7')
+        WHERE vu.week_day IN ('1', '2', '3', '4', '5', '6', '7') and v.uploader = 'OFFICIAL'
     </select>
 </mapper>

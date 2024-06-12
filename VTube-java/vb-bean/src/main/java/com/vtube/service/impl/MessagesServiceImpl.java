@@ -9,6 +9,8 @@ import com.vtube.mapper.MessagesMapper;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 /**
 * @author Administrator
@@ -25,6 +27,11 @@ public class MessagesServiceImpl extends ServiceImpl<MessagesMapper, Messages>
     public IPage<Messages> getMessagesByChatId(String chatId, int pageNum, int pageSize) {
         Page<Messages> page = new Page<>(pageNum, pageSize);
         return messageMapper.selectMessagesByChatId(page, chatId);
+    }
+
+    @Override
+    public List<Messages> getMessagesByChatId(String chatId) {
+        return this.lambdaQuery().eq(Messages::getChatId, chatId).list();
     }
 }
 

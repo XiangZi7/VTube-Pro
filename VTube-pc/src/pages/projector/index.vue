@@ -20,9 +20,9 @@ onMounted(() => {
 </script>
 <template>
   <section class="h-full w-full flex gap-8 px-4 md:px-6 py-8">
-    <div class="h-auto w-auto">
+    <div class="h-auto w-auto hidden flex-col md:flex max-w-[265px]">
       <div
-        class="flex flex-col p-5 border border-gray-500/50 border-dashed rounded-lg min-w-[265px] shadow-app"
+        class="flex flex-col p-5 dark:border border-gray-500/50 dark:border-dashed rounded-lg min-w-[265px] shadow-app bg-white"
       >
         <h2 class="text-2xl font-bold">过滤</h2>
         <Meun :search="search" :search-param="searchParam" :reset="reset" />
@@ -32,14 +32,14 @@ onMounted(() => {
       <div
         class="block w-full h-full flex-1 box-border overflow-x-hidden duration-300 ease-in-out dark:text-neutral-200"
       >
-        <div class="grid md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-8">
+        <div class="grid grid-cols-2  md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 gap-8">
           <div
             v-for="item in tableData"
             :key="item.videoId"
             class="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:-translate-y-2 dark:border dark:border-dashed dark:border-gray-500/50 cursor-pointer"
             @click="router.push(`/play/${item.videoId}`)"
           >
-            <img
+            <el-image
               :src="fileUrl + item.imagePath"
               :alt="item.title"
               class="rounded-lg h-auto object-cover w-full aspect-[3/4] group-hover:opacity-90 transition-opacity duration-300 ease-in-out"

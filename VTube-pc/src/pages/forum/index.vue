@@ -1,3 +1,7 @@
+<script lang="ts" setup>
+const fileUrl = import.meta.env.VITE_API_MINIO
+const userStore = useUserStore()
+</script>
 <template>
   <div
     class="flex-1 border-x border-gray-200 dark:border-dashed dark:md:border-gray-500/50"
@@ -31,12 +35,17 @@
     </header>
     <div class="flex flex-col gap-4 p-4">
       <div class="flex gap-4">
+        <!-- 登录用户信息 -->
+        <template v-if="userStore.userInfo.token && userStore.userInfo">
+          <el-avatar :src="fileUrl + userStore.userInfo.avatarPath" />
+        </template>
         <span
-          class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full"
+          v-else
+          class="relative flex shrink-0 overflow-hidden rounded-full w-10 h-10 border"
         >
           <span
             class="flex h-full w-full items-center justify-center rounded-full bg-muted"
-            >JD</span
+            >AC</span
           >
         </span>
         <textarea
@@ -153,27 +162,24 @@
             <path d="M3 10h18"></path>
           </svg>
         </button>
-        <button
+        <el-button
+          type="primary"
           class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 ml-auto"
         >
-          Tweet
-        </button>
+          <div class="items-center flex gap-2">
+            <icon-cil:send />
+            发表
+          </div>
+        </el-button>
       </div>
       <div class="flex flex-col gap-4">
         <div
           class="rounded-lg border bg-card text-card-foreground shadow-sm dark:border-dashed dark:md:border-gray-500/40"
           data-v0-t="card"
         >
-          <div class="flex-col space-y-1.5 p-6 flex gap-2">
-            <span
-              class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full"
-            >
-              <span
-                class="flex h-full w-full items-center justify-center rounded-full bg-muted"
-                >JD</span
-              >
-            </span>
-            <div>
+          <div class="space-y-1.5 px-6 pt-6 flex gap-2 items-center">
+            <el-avatar :src="fileUrl + userStore.userInfo.avatarPath" />
+            <div> 
               <h3 class="font-bold">John Doe</h3>
               <p class="text-sm text-gray-500">@johndoe · 2h</p>
             </div>

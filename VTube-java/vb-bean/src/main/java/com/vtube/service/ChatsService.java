@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.vtube.domain.Messages;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @author Administrator
@@ -13,4 +14,5 @@ import java.util.List;
  * @createDate 2024-06-06 16:41:27
  */
 public interface ChatsService extends IService<Chats> {
+    Optional<Chats> getChatById(String chatId);
 }

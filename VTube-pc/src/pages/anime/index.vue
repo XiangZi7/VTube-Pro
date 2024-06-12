@@ -70,7 +70,7 @@ onMounted(() => {
               <el-image
                 :src="fileUrl + item.imagePath"
                 :alt="item.title"
-                class="w-full h-auto max-h-[388px]"
+                class="w-full h-[280px]"
               />
               <div class="p-4">
                 <h3 class="text-sm font-medium mb-2 text-center line-clamp-2">
@@ -147,10 +147,9 @@ onMounted(() => {
             :key="index"
             @click="router.push(`/play/${item.videoId}`)"
           >
-            <img
+            <el-image
               :src="fileUrl + item.imagePath"
-              alt="Anime Thumbnail"
-              class="w-full h-auto max-h-[388px]"
+              class="w-full h-[280px]"
             />
             <div class="p-4">
               <h3 class="text-sm text-center font-medium mb-2 line-clamp-2">

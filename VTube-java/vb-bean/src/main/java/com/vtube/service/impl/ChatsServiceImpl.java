@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @author Administrator
@@ -45,6 +46,11 @@ public class ChatsServiceImpl extends ServiceImpl<ChatsMapper, Chats>
         QueryWrapper<Messages> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("chat_id", chatId);
         return messagesMapper.selectList(queryWrapper);
+    }
+
+    @Override
+    public Optional<Chats> getChatById(String chatId) {
+        return Optional.empty();
     }
 }
 
