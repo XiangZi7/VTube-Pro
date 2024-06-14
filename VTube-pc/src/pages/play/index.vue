@@ -13,31 +13,72 @@ const state = reactive<PlayState>({
   playIndex: 0,
   comText: '', // 用户的评论文本
   comments: [],
+  episodeListV1: [],
+  ExternalIndex: 0,
+  ExternalIndex2: 0,
 })
-const { activeNames, details, episodeList, playIndex, comText, comments } =
-  toRefs(state)
+const {
+  activeNames,
+  details,
+  episodeList,
+  playIndex,
+  comText,
+  comments,
+  episodeListV1,
+  ExternalIndex,
+  ExternalIndex2,
+} = toRefs(state)
 
 onMounted(() => {
-  httpPost<VideoDetails>('/play/details', { videoId: route.params.id }).then(
+  const type = route.query.type
+  if (type == 'v1') {
+    getExternalData()
+  } else {
+    getLocalhostData()
+  }
+})
+
+// 本地API
+function getLocalhostData() {
+  httpPost<VideoDetails>('/play/details', { videoId: route.query.id }).then(
     ({ data }) => {
       state.details = data
     }
   )
-  httpPost<Episode[]>('/play/episode', { videoId: route.params.id }).then(
+  httpPost<Episode[]>('/play/episode', { videoId: route.query.id }).then(
     ({ data }) => {
       state.episodeList = data
     }
   )
   httpGet<Pagination>('/comments', {
-    videoId: route.params.id,
+    videoId: route.query.id,
     targetType: 0,
   }).then(({ data }) => {
     state.comments = data.records
   })
-})
+}
+
+// 外部API
+function getExternalData() {
+  httpGet(`/detail?id=${route.query.id}`).then(({ data }) => {
+    state.details = data
+  })
+  httpGet(`/getVideoPlays?id=${route.query.id}`).then(({ data }) => {
+    state.episodeListV1 = data
+  })
+}
 
 function timeAgos(date: string) {
   return timeAgo(date)
+}
+
+function changeEP(index: string | number) {
+  state.ExternalIndex2 = index
+  httpGet(`/getVideoPlays?id=${route.query.id}&ep=${index + 1}`).then(
+    ({ data }) => {
+      state.episodeListV1 = data
+    }
+  )
 }
 </script>
 <template>
@@ -49,38 +90,73 @@ function timeAgos(date: string) {
         <div class="grid gap-2">
           <div class="rounded-xl overflow-hidden border aspect-video">
             <vt-play
-              v-if="episodeList.length > 0"
+              v-if="
+                episodeList.length > 0 || episodeListV1.videoPlays?.length > 0
+              "
               :title="details.title"
-              :url="episodeList[playIndex].videoPath"
-              :cover="fileUrl + details.imagePath"
+              :url="
+                episodeList[playIndex]?.videoPath
+                  ? episodeList[playIndex]?.videoPath
+                  : episodeListV1.videoPlays[ExternalIndex].playData
+              "
+              :cover="
+                details.imagePath
+                  ? fileUrl + details.imagePath
+                  : details.imageUrl
+              "
             />
           </div>
           <div class="py-2 grid gap-2">
-            <div class="flex items-center h-full">
+            <div class="flex items-center h-[214px]">
               <div class="flex gap-2 items-center h-full">
                 <img
-                  :src="fileUrl + details.imagePath"
+                  :src="
+                    details.imagePath
+                      ? fileUrl + details.imagePath
+                      : details.imageUrl
+                  "
                   class="rounded-xl w-auto h-[200px]"
                 />
-                <div class="flex flex-col justify-around h-full">
-                  <div class="text-sm w-full gap-3 flex flex-col">
+                <div class="flex flex-col h-full">
+                  <div class="text-sm w-full h-full justify-around flex flex-col">
                     <div class="font-semibold">{{ details.title }}</div>
-                    <el-rate v-model="details.make" allow-half disabled />
+                    <el-rate v-if="details.make" v-model="details.make" allow-half disabled />
                     <div class="flex items-center gap-2 text-xs">
                       <icon-mdi:calendar-multiselect />
-                      {{ details.releaseTime }}
+                      {{ details.releaseTime || details.year }}
+                    </div>
+                    <div v-if="details.views" class="text-xs text-gray-500 dark:text-gray-400">
+                      <div class="flex gap-2 items-center">
+                        <icon-ic:sharp-remove-red-eye />
+                        {{ details.views || 0 }}
+                      </div>
                     </div>
                     <div class="text-xs text-gray-500 dark:text-gray-400">
                       <div class="flex gap-2 items-center">
-                        <icon-ic:sharp-remove-red-eye />
-                        {{ details.views }}
+                        <span v-for="item in details.directors" :key="item">{{
+                          item
+                        }}</span>
+                      </div>
+                    </div>
+                    <div class="text-xs text-gray-500 dark:text-gray-400">
+                      <div class="flex gap-2 items-center">
+                        <span v-for="item in details.stars" :key="item">{{
+                          item
+                        }}</span>
+                      </div>
+                    </div>
+                    <div class="text-xs text-gray-500 dark:text-gray-400">
+                      <div class="flex gap-2 items-center">
+                        <el-tag v-for="item in details.genres" :key="item">{{
+                          item
+                        }}</el-tag>
                       </div>
                     </div>
                     <p
-                      :title="details.description"
+                      :title="details.description || details.synopsis"
                       class="text-xs line-clamp-3"
                     >
-                      {{ details.description }}
+                      {{ details.description || details.synopsis }}
                     </p>
                   </div>
                 </div>
@@ -95,6 +171,62 @@ function timeAgos(date: string) {
                     喜欢
                   </div>
                 </el-button>
+                <!-- 更换接口地址 -->
+                <el-popover
+                  placement="bottom"
+                  :width="500"
+                  trigger="click"
+                  v-if="episodeListV1.videoPlays?.length > 0"
+                >
+                  <template #reference>
+                    <el-button class="h-9 rounded-md px-3">
+                      <div class="flex gap-1 items-center">
+                        <Icon
+                          icon="material-symbols-light:database-outline"
+                          class="text-base"
+                        />
+                        接口
+                      </div>
+                    </el-button>
+                  </template>
+                  <div class="grid grid-cols-4 gap-2">
+                    <el-button
+                      v-for="(item, index) in episodeListV1.videoPlays"
+                      :type="ExternalIndex == index ? 'primary' : ''"
+                      :key="item.playData"
+                      @click="ExternalIndex = index"
+                      >{{ item.srcSite }}接口</el-button
+                    >
+                  </div>
+                </el-popover>
+                <!-- 更换剧集 -->
+                <el-popover
+                  placement="bottom"
+                  :width="500"
+                  trigger="click"
+                  v-if="episodeListV1.videoPlays?.length > 0"
+                >
+                  <template #reference>
+                    <el-button class="h-9 rounded-md px-3">
+                      <div class="flex gap-1 items-center">
+                        <Icon
+                          icon="material-symbols-light:database-outline"
+                          class="text-base"
+                        />
+                        剧集
+                      </div>
+                    </el-button>
+                  </template>
+                  <div class="grid grid-cols-4 gap-2">
+                    <el-button
+                      v-for="(item, index) in episodeListV1.episodesCount"
+                      :type="ExternalIndex2 == index ? 'primary' : ''"
+                      :key="item"
+                      @click="changeEP(index)"
+                      >第 {{ item }} 集</el-button
+                    >
+                  </div>
+                </el-popover>
               </div>
             </div>
           </div>

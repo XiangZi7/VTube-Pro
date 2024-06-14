@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @AllArgsConstructor
 @Tag(name = "播放")
 @RequestMapping("/play")
-public class playController {
+public class PlayController {
 
     @Resource
     private VideoService videoService;

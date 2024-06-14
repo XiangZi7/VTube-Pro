@@ -20,7 +20,7 @@ import java.util.List;
 @AllArgsConstructor
 @Tag(name = "字典")
 @RequestMapping("/dict")
-public class dictController {
+public class DictController {
 
 
     @Resource

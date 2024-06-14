@@ -61,6 +61,9 @@ vtube:
       # 评论
       - /comments
       - /ws/**
+      - /search/**
+      - /detail
+      - /getVideoPlays
 
 netty:
   server:

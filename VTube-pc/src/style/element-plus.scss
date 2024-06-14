@@ -10,6 +10,10 @@
   border-right: none
 }
 
+.el-button+.el-button {
+  margin-left: 0 !important
+}
+
 .el-form-item {
   // margin: 0 5px !important;
   // padding: 20px;

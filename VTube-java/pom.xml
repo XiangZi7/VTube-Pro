@@ -50,6 +50,12 @@
 
     <dependencyManagement>
         <dependencies>
+            <!-- 添加Jsoup依赖项 -->
+            <dependency>
+                <groupId>org.jsoup</groupId>
+                <artifactId>jsoup</artifactId>
+                <version>1.14.3</version> <!-- 请确保使用当前最新版本 -->
+            </dependency>
             <!-- Gson -->
             <dependency>
                 <groupId>com.google.code.gson</groupId>
